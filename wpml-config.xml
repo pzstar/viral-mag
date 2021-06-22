@@ -1,0 +1,9 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_viral-mag">
+            <key name="viral_mag_th_text" />
+            <key name="viral_mag_archive_readmore" />
+            <key name="viral_mag_footer_copyright" />
+        </key>
+    </admin-texts>
+</wpml-config>
