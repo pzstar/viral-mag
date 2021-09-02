@@ -16,8 +16,8 @@ $wp_customize->add_setting('viral_mag_sidebar_nav', array(
     'sanitize_callback' => 'wp_kses_post',
 ));
 
-$wp_customize->add_control(new Viral_Mag_Control_Tab($wp_customize, 'viral_mag_sidebar_nav', array(
-    'type' => 'tab',
+$wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_sidebar_nav', array(
+    
     'section' => 'viral_mag_layout_options_section',
     'priority' => 1,
     'buttons' => array(
@@ -48,7 +48,7 @@ $wp_customize->add_setting('viral_mag_sticky_sidebar', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_sticky_sidebar', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_sticky_sidebar', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Sticky Sidebar', 'viral-mag'),
     'description' => esc_html__('The sidebar will stick at the top on scrolling', 'viral-mag')
@@ -59,16 +59,16 @@ $wp_customize->add_setting('viral_mag_page_layout', array(
     'default' => 'right-sidebar'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_page_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_page_layout', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Page Layout', 'viral-mag'),
-    'class' => 'ht-one-forth-width',
+    'class' => 'viral-mag-one-forth-width',
     'description' => esc_html__('Applies to all the General Pages and Portfolio Pages.', 'viral-mag'),
     'options' => array(
-        'right-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/right-sidebar.png',
-        'left-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/left-sidebar.png',
-        'no-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar.png',
-        'no-sidebar-narrow' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar-narrow.png'
+        'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
+        'left-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/left-sidebar.png',
+        'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
+        'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     )
 )));
 
@@ -77,16 +77,16 @@ $wp_customize->add_setting('viral_mag_post_layout', array(
     'default' => 'right-sidebar'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_post_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_post_layout', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Post Layout', 'viral-mag'),
-    'class' => 'ht-one-forth-width',
+    'class' => 'viral-mag-one-forth-width',
     'description' => esc_html__('Applies to all the Posts.', 'viral-mag'),
     'options' => array(
-        'right-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/right-sidebar.png',
-        'left-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/left-sidebar.png',
-        'no-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar.png',
-        'no-sidebar-narrow' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar-narrow.png'
+        'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
+        'left-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/left-sidebar.png',
+        'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
+        'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     )
 )));
 
@@ -95,16 +95,16 @@ $wp_customize->add_setting('viral_mag_archive_layout', array(
     'default' => 'right-sidebar'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_archive_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_archive_layout', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Archive Page Layout', 'viral-mag'),
-    'class' => 'ht-one-forth-width',
+    'class' => 'viral-mag-one-forth-width',
     'description' => esc_html__('Applies to all Archive Pages.', 'viral-mag'),
     'options' => array(
-        'right-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/right-sidebar.png',
-        'left-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/left-sidebar.png',
-        'no-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar.png',
-        'no-sidebar-narrow' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar-narrow.png'
+        'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
+        'left-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/left-sidebar.png',
+        'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
+        'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     )
 )));
 
@@ -113,16 +113,16 @@ $wp_customize->add_setting('viral_mag_home_blog_layout', array(
     'default' => 'right-sidebar'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_home_blog_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_home_blog_layout', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Blog Page Layout', 'viral-mag'),
-    'class' => 'ht-one-forth-width',
+    'class' => 'viral-mag-one-forth-width',
     'description' => esc_html__('Applies to Blog Page.', 'viral-mag'),
     'options' => array(
-        'right-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/right-sidebar.png',
-        'left-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/left-sidebar.png',
-        'no-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar.png',
-        'no-sidebar-narrow' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar-narrow.png'
+        'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
+        'left-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/left-sidebar.png',
+        'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
+        'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     )
 )));
 
@@ -131,16 +131,16 @@ $wp_customize->add_setting('viral_mag_search_layout', array(
     'default' => 'right-sidebar'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_search_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_search_layout', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Search Page Layout', 'viral-mag'),
-    'class' => 'ht-one-forth-width',
+    'class' => 'viral-mag-one-forth-width',
     'description' => esc_html__('Applies to Search Page.', 'viral-mag'),
     'options' => array(
-        'right-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/right-sidebar.png',
-        'left-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/left-sidebar.png',
-        'no-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar.png',
-        'no-sidebar-narrow' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar-narrow.png'
+        'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
+        'left-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/left-sidebar.png',
+        'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
+        'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     )
 )));
 
@@ -149,16 +149,16 @@ $wp_customize->add_setting('viral_mag_shop_layout', array(
     'default' => 'right-sidebar'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_shop_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_shop_layout', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Shop Page Layout(WooCommerce)', 'viral-mag'),
-    'class' => 'ht-one-forth-width',
+    'class' => 'viral-mag-one-forth-width',
     'description' => esc_html__('Applies to Shop Page, Product Category, Product Tag and all Single Products Pages.', 'viral-mag'),
     'options' => array(
-        'right-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/right-sidebar.png',
-        'left-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/left-sidebar.png',
-        'no-sidebar' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar.png',
-        'no-sidebar-narrow' => $imagepath . '/inc/customizer/images/sidebar-layouts/no-sidebar-narrow.png'
+        'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
+        'left-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/left-sidebar.png',
+        'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
+        'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     ),
         //'active_callback' => 'viral_mag_is_woocommerce_activated'
 )));
@@ -169,13 +169,13 @@ $wp_customize->add_setting('viral_mag_sidebar_style', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_sidebar_style', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_sidebar_style', array(
     'section' => 'viral_mag_layout_options_section',
     'label' => esc_html__('Sidebar Style', 'viral-mag'),
     'class' => 'ht-half-width',
     'options' => array(
-        'sidebar-style1' => $imagepath . '/inc/customizer/images/sidebar-styles/sidebar-style1.png',
-        'sidebar-style2' => $imagepath . '/inc/customizer/images/sidebar-styles/sidebar-style2.png'
+        'sidebar-style1' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-styles/sidebar-style1.png',
+        'sidebar-style2' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-styles/sidebar-style2.png'
     )
 )));
 

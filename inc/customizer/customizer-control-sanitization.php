@@ -1,12 +1,8 @@
 <?php
 
-/**
- *
- * @package Viral Mag
- */
 //SANITIZATION FUNCTIONS
 function viral_mag_sanitize_text($input) {
-    return wp_kses_post(force_balance_tags($input));
+    return wp_kses_post($input);
 }
 
 function viral_mag_sanitize_checkbox($input) {
@@ -45,16 +41,16 @@ function viral_mag_sanitize_choices_array($input, $setting) {
     return $input;
 }
 
-function viral_mag_sanitize_color_alpha($color) {
-    $color = str_replace('#', '', $color);
-    if ('' === $color) {
+function viral_mag_sanitize_color_alpha($viral_mag_color) {
+    $viral_mag_color = str_replace('#', '', $viral_mag_color);
+    if ('' === $viral_mag_color) {
         return '';
     }
 
     // 3 or 6 hex digits, or the empty string.
-    if (preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', '#' . $color)) {
+    if (preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', '#' . $viral_mag_color)) {
         // convert to rgb
-        $colour = $color;
+        $colour = $viral_mag_color;
         if (strlen($colour) == 6) {
             list( $r, $g, $b ) = array($colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5]);
         } elseif (strlen($colour) == 3) {
@@ -68,7 +64,7 @@ function viral_mag_sanitize_color_alpha($color) {
         return 'rgba(' . join(',', array('r' => $r, 'g' => $g, 'b' => $b, 'a' => 1)) . ')';
     }
 
-    return strpos(trim($color), 'rgb') !== false ? $color : false;
+    return strpos(trim($viral_mag_color), 'rgb') !== false ? $viral_mag_color : false;
 }
 
 /**
@@ -205,4 +201,9 @@ function viral_mag_sanitize_multi_choices($input, $setting) {
     // If the input is a valid key, return it;
     // otherwise, return the default.
     return ( is_array($input) ? $input : $setting->default );
+}
+
+/** Sanitize Boolean */
+function viral_mag_sanitize_boolean($input) {
+    return ( ( isset($input) && true == $input ) ? true : false );
 }

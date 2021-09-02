@@ -32,7 +32,7 @@ $wp_customize->add_setting('viral_mag_color_content_info', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Info_Text($wp_customize, 'viral_mag_color_content_info', array(
+$wp_customize->add_control(new Viral_Mag_Text_Info_Control($wp_customize, 'viral_mag_color_content_info', array(
     'section' => 'colors',
     'label' => esc_html__('Content Colors', 'viral-mag'),
     'description' => esc_html__('This settings apply only in the single posts (ie page and post detail pages only)', 'viral-mag')
@@ -95,13 +95,13 @@ $wp_customize->add_setting('viral_mag_category_color_heading', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Customize_Heading($wp_customize, 'viral_mag_category_color_heading', array(
+$wp_customize->add_control(new Viral_Mag_Heading_Control($wp_customize, 'viral_mag_category_color_heading', array(
     'section' => 'colors',
     'label' => esc_html__('Category Color', 'viral-mag'),
     'description' => esc_html__('Choose the background color for the Category.', 'viral-mag')
 )));
 
-foreach ($viral_mag_cat as $viral_mag_cat_id => $viral_mag_cat_name) {
+foreach (viral_mag_cat() as $viral_mag_cat_id => $viral_mag_cat_name) {
     $wp_customize->add_setting("viral_mag_category_{$viral_mag_cat_id}_color", array(
         'sanitize_callback' => 'sanitize_hex_color'
     ));

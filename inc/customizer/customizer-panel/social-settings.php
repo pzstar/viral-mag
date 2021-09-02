@@ -36,7 +36,7 @@ $wp_customize->add_setting('viral_mag_social_icons', array(
     ))
 ));
 
-$wp_customize->add_control(new Viral_Mag_Repeater_Controler($wp_customize, 'viral_mag_social_icons', array(
+$wp_customize->add_control(new Viral_Mag_Repeater_Control($wp_customize, 'viral_mag_social_icons', array(
     'label' => esc_html__('Add Social Link', 'viral-mag'),
     'section' => 'viral_mag_social_section',
     'box_label' => esc_html__('Social Links', 'viral-mag'),

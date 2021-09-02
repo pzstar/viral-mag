@@ -15,8 +15,8 @@ $wp_customize->add_setting('viral_mag_blog_sec_nav', array(
     'sanitize_callback' => 'wp_kses_post',
 ));
 
-$wp_customize->add_control(new Viral_Mag_Control_Tab($wp_customize, 'viral_mag_blog_sec_nav', array(
-    'type' => 'tab',
+$wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_blog_sec_nav', array(
+    
     'section' => 'viral_mag_blog_options_section',
     'priority' => 1,
     'buttons' => array(
@@ -85,10 +85,10 @@ $wp_customize->add_setting('viral_mag_blog_layout', array(
     'default' => 'layout1'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Image_Select($wp_customize, 'viral_mag_blog_layout', array(
+$wp_customize->add_control(new Viral_Mag_Image_Selector_Control($wp_customize, 'viral_mag_blog_layout', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Blog & Archive Layout', 'viral-mag'),
-    'image_path' => $imagepath . '/inc/customizer/images/blog-layouts/',
+    'image_path' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/blog-layouts/',
     'choices' => array(
         'layout1' => esc_html__('Layout 1', 'viral-mag'),
         'layout2' => esc_html__('Layout 2', 'viral-mag')
@@ -99,7 +99,7 @@ $wp_customize->add_setting('viral_mag_blog_cat', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Customize_Checkbox_Multiple($wp_customize, 'viral_mag_blog_cat', array(
+$wp_customize->add_control(new Viral_Mag_Multiple_Checkbox_Control($wp_customize, 'viral_mag_blog_cat', array(
     'label' => esc_html__('Exclude Category', 'viral-mag'),
     'section' => 'viral_mag_blog_options_section',
     'choices' => $viral_mag_cat,
@@ -126,7 +126,7 @@ $wp_customize->add_setting('viral_mag_archive_excerpt_length', array(
     'default' => 100
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_archive_excerpt_length', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_archive_excerpt_length', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Excerpt Length (words)', 'viral-mag'),
     'input_attrs' => array(
@@ -152,7 +152,7 @@ $wp_customize->add_setting('viral_mag_blog_date', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_blog_date', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_blog_date', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Posted Date', 'viral-mag')
 )));
@@ -162,7 +162,7 @@ $wp_customize->add_setting('viral_mag_blog_author', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_blog_author', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_blog_author', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Author', 'viral-mag')
 )));
@@ -172,7 +172,7 @@ $wp_customize->add_setting('viral_mag_blog_comment', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_blog_comment', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_blog_comment', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Comment', 'viral-mag')
 )));
@@ -182,7 +182,7 @@ $wp_customize->add_setting('viral_mag_blog_category', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_blog_category', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_blog_category', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Category', 'viral-mag')
 )));
@@ -192,7 +192,7 @@ $wp_customize->add_setting('viral_mag_blog_tag', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_blog_tag', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_blog_tag', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Tag', 'viral-mag')
 )));
@@ -202,11 +202,11 @@ $wp_customize->add_setting('viral_mag_single_layout', array(
     'default' => 'layout1'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Image_Select($wp_customize, 'viral_mag_single_layout', array(
+$wp_customize->add_control(new Viral_Mag_Image_Selector_Control($wp_customize, 'viral_mag_single_layout', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Single Post Layout', 'viral-mag'),
     'description' => esc_html__('This option can be overwritten in single page settings.', 'viral-mag'),
-    'image_path' => $imagepath . '/inc/customizer/images/single-layouts/',
+    'image_path' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/single-layouts/',
     'choices' => array(
         'layout1' => esc_html__('Layout 1', 'viral-mag'),
         'layout2' => esc_html__('Layout 2', 'viral-mag')
@@ -218,7 +218,7 @@ $wp_customize->add_setting('viral_mag_single_categories', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_categories', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_categories', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Categories', 'viral-mag')
 )));
@@ -237,7 +237,7 @@ $wp_customize->add_setting('viral_mag_single_author', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_author', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_author', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Author', 'viral-mag')
 )));
@@ -247,7 +247,7 @@ $wp_customize->add_setting('viral_mag_single_date', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_date', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_date', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Posted Date', 'viral-mag')
 )));
@@ -257,7 +257,7 @@ $wp_customize->add_setting('viral_mag_single_comment_count', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_comment_count', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_comment_count', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Comment Count', 'viral-mag')
 )));
@@ -276,7 +276,7 @@ $wp_customize->add_setting('viral_mag_single_tags', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_tags', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_tags', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Tags', 'viral-mag')
 )));
@@ -295,7 +295,7 @@ $wp_customize->add_control(new Viral_Mag_Separator_Control($wp_customize, 'viral
     'section' => 'viral_mag_blog_options_section',
 )));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_author_box', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_author_box', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Author Box', 'viral-mag')
 )));
@@ -305,7 +305,7 @@ $wp_customize->add_setting('viral_mag_single_prev_next_post', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_prev_next_post', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_prev_next_post', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Prev/Next Post', 'viral-mag')
 )));
@@ -315,7 +315,7 @@ $wp_customize->add_setting('viral_mag_single_comments', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_single_comments', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_comments', array(
     'section' => 'viral_mag_blog_options_section',
     'label' => esc_html__('Display Comments', 'viral-mag')
 )));

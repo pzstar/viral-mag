@@ -354,11 +354,6 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 require get_template_directory() . '/inc/font-icons.php';
 
 /**
- * Typography
- */
-require get_template_directory() . '/inc/typography/typography.php';
-
-/**
  * Widgets
  */
 require get_template_directory() . '/inc/widgets/widgets.php';

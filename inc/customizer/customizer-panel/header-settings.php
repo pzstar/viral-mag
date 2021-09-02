@@ -87,8 +87,8 @@ $wp_customize->add_setting('viral_mag_header_nav', array(
     'sanitize_callback' => 'wp_kses_post',
 ));
 
-$wp_customize->add_control(new Viral_Mag_Control_Tab($wp_customize, 'viral_mag_header_nav', array(
-    'type' => 'tab',
+$wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_header_nav', array(
+    
     'section' => 'viral_mag_header_options',
     'priority' => 1,
     'buttons' => array(
@@ -167,13 +167,13 @@ $wp_customize->add_setting('viral_mag_mh_layout', array(
     'default' => 'header-style2'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Selector($wp_customize, 'viral_mag_mh_layout', array(
+$wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_mh_layout', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Header Layout', 'viral-mag'),
-    'class' => 'ht-full-width',
+    'class' => 'viral-mag-full-width',
     'options' => array(
-        'header-style2' => $imagepath . '/inc/customizer/images/headers/header-2.png',
-        'header-style3' => $imagepath . '/inc/customizer/images/headers/header-3.png'
+        'header-style2' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/headers/header-2.png',
+        'header-style3' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/headers/header-3.png'
     )
 )));
 
@@ -183,7 +183,7 @@ $wp_customize->add_setting('viral_mag_logo_height', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_logo_height', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_logo_height', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Logo Height(px)', 'viral-mag'),
     'description' => esc_html__('The logo height will not increase beyond the header height. Increase the header height first. Logo will appear blur if the image size is small.', 'viral-mag'),
@@ -200,7 +200,7 @@ $wp_customize->add_setting('viral_mag_logo_padding', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_logo_padding', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_logo_padding', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Logo Top & Bottom Spacing(px)', 'viral-mag'),
     'input_attrs' => array(
@@ -245,7 +245,7 @@ $wp_customize->add_setting('viral_mag_mh_header_bg_attach', array(
 ));
 
 // Registers example_background control
-$wp_customize->add_control(new Viral_Mag_Background_Control($wp_customize, 'viral_mag_mh_header_bg', array(
+$wp_customize->add_control(new Viral_Mag_Background_Image_Control($wp_customize, 'viral_mag_mh_header_bg', array(
     'label' => esc_html__('Header Background', 'viral-mag'),
     'section' => 'viral_mag_header_options',
     'settings' => array(
@@ -263,7 +263,7 @@ $wp_customize->add_setting('viral_mag_responsive_width', array(
     'default' => 780
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_responsive_width', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_responsive_width', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Enable Responsive Menu After(px)', 'viral-mag'),
     'description' => esc_html__('Set the value of the screen immediately after the menu item breaks into multiple line.', 'viral-mag'),
@@ -295,7 +295,7 @@ $wp_customize->add_setting('viral_mag_th_height', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_th_height', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_th_height', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Top Header Height', 'viral-mag'),
     'input_attrs' => array(
@@ -366,7 +366,7 @@ $wp_customize->add_setting('viral_mag_th_disable_mobile', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_th_disable_mobile', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_th_disable_mobile', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Disable in Mobile', 'viral-mag')
 )));
@@ -375,7 +375,7 @@ $wp_customize->add_setting('viral_mag_top_header_options_heading', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Customize_Heading($wp_customize, 'viral_mag_top_header_options_heading', array(
+$wp_customize->add_control(new Viral_Mag_Heading_Control($wp_customize, 'viral_mag_top_header_options_heading', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Top Header Content', 'viral-mag')
 )));
@@ -430,7 +430,7 @@ $wp_customize->add_setting('viral_mag_social_link', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Info_Text($wp_customize, 'viral_mag_social_link', array(
+$wp_customize->add_control(new Viral_Mag_Text_Info_Control($wp_customize, 'viral_mag_social_link', array(
     'label' => esc_html__('Social Icons', 'viral-mag'),
     'section' => 'viral_mag_header_options',
     'description' => sprintf(esc_html__('Add your %s here', 'viral-mag'), '<a href="#" target="_blank">Social Icons</a>')
@@ -463,7 +463,7 @@ $wp_customize->add_setting('viral_mag_th_text', array(
     'default' => 'California, TX 70240 | (1800) 456 7890',
 ));
 
-$wp_customize->add_control(new Viral_Mag_Page_Editor($wp_customize, 'viral_mag_th_text', array(
+$wp_customize->add_control(new Viral_Mag_Editor_Control($wp_customize, 'viral_mag_th_text', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Html Text', 'viral-mag'),
     'include_admin_print_footer' => true
@@ -474,7 +474,7 @@ $wp_customize->add_setting('viral_mag_add_menu', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Info_Text($wp_customize, 'viral_mag_add_menu', array(
+$wp_customize->add_control(new Viral_Mag_Text_Info_Control($wp_customize, 'viral_mag_add_menu', array(
     'section' => 'viral_mag_header_options',
     'description' => sprintf(esc_html__('Add %1$s and configure the below Settings. Set Menu Typography from %2$s.', 'viral-mag'), '<a href="' . admin_url() . '/nav-menus.php" target="_blank">Menu</a>', '<a href="#" id="menu_typography_link">Here</a>')
 )));
@@ -499,7 +499,7 @@ $wp_customize->add_setting('viral_mag_mh_height', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_mh_height', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_mh_height', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Header Height', 'viral-mag'),
     'input_attrs' => array(
@@ -514,7 +514,7 @@ $wp_customize->add_setting('viral_mag_mh_show_search', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_mh_show_search', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_search', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Show Search Button', 'viral-mag')
 )));
@@ -524,7 +524,7 @@ $wp_customize->add_setting('viral_mag_mh_show_cart', array(
     'default' => false
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_mh_show_cart', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_cart', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Show Cart Button', 'viral-mag'),
     'active_callback' => 'viral_mag_is_woocommerce_activated'
@@ -535,7 +535,7 @@ $wp_customize->add_setting('viral_mag_mh_show_social', array(
     'default' => false,
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_mh_show_social', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_social', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Show Social Icons', 'viral-mag')
 )));
@@ -545,7 +545,7 @@ $wp_customize->add_setting('viral_mag_mh_show_offcanvas', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_mh_show_offcanvas', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_offcanvas', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Show Offcanvas Menu', 'viral-mag')
 )));
@@ -748,7 +748,7 @@ $wp_customize->add_setting('viral_mag_menu_dropdown_padding', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_menu_dropdown_padding', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_menu_dropdown_padding', array(
     'section' => 'viral_mag_header_options',
     'label' => esc_html__('Menu item Top/Bottom Padding', 'viral-mag'),
     'description' => esc_html__('(in px) Select appropriate number so that the submenu on hover appears just below the header bar.', 'viral-mag'),

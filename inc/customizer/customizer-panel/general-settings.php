@@ -44,7 +44,7 @@ $wp_customize->add_setting('viral_mag_website_width', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_website_width', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_website_width', array(
     'section' => 'viral_mag_general_options_section',
     'label' => esc_html__('Website Container Width', 'viral-mag'),
     'input_attrs' => array(
@@ -60,7 +60,7 @@ $wp_customize->add_setting('viral_mag_sidebar_width', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Viral_Mag_Range_Control($wp_customize, 'viral_mag_sidebar_width', array(
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_sidebar_width', array(
     'section' => 'viral_mag_general_options_section',
     'label' => esc_html__('Sidebar Width (%)', 'viral-mag'),
     'input_attrs' => array(
@@ -83,7 +83,7 @@ $wp_customize->add_setting('viral_mag_show_title', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_show_title', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_show_title', array(
     'section' => 'viral_mag_general_options_section',
     'label' => esc_html__('Page Title', 'viral-mag'),
     'description' => esc_html__('It is the title of the page that appears below the menu', 'viral-mag')
@@ -94,7 +94,7 @@ $wp_customize->add_setting('viral_mag_breadcrumb', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_breadcrumb', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_breadcrumb', array(
     'section' => 'viral_mag_general_options_section',
     'label' => esc_html__('BreadCrumb', 'viral-mag'),
     'description' => esc_html__('Breadcrumbs are a great way of letting your visitors find out where they are on your site.', 'viral-mag')
@@ -105,7 +105,7 @@ $wp_customize->add_setting('viral_mag_backtotop', array(
     'default' => true
 ));
 
-$wp_customize->add_control(new Viral_Mag_Checkbox_Control($wp_customize, 'viral_mag_backtotop', array(
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_backtotop', array(
     'section' => 'viral_mag_general_options_section',
     'label' => esc_html__('Back to Top Button', 'viral-mag'),
     'description' => esc_html__('A button on click scrolls to the top of the page.', 'viral-mag')
