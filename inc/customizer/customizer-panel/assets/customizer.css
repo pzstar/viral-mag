@@ -1,5 +1,5 @@
 .customize-pane-parent .control-section .accordion-section-title:before,
-#sub-accordion-panel-viral_mag_home_panel .control-section .accordion-section-title:before{
+#sub-accordion-panel-viral_mag_front_page_panel .control-section .accordion-section-title:before{
     font-family: dashicons;
     content: "\f103";
     font-size: 18px;
@@ -167,7 +167,7 @@
     margin-bottom: 8px;
 }
 
-#sub-accordion-panel-viral_mag_home_panel .customize-info .customize-panel-description {
+#sub-accordion-panel-viral_mag_front_page_panel .customize-info .customize-panel-description {
     display: block !important;
 }
 
@@ -176,11 +176,11 @@
     float: right;
 }
 
-#sub-accordion-panel-viral_mag_home_panel #accordion-section-viral_mag_slider_section.control-section .accordion-section-title:before {
+#sub-accordion-panel-viral_mag_front_page_panel #accordion-section-viral_mag_slider_section.control-section .accordion-section-title:before {
     content: "\f180";
 }
 
-#sub-accordion-panel-viral_mag_home_panel .control-section .accordion-section-title:before {
+#sub-accordion-panel-viral_mag_front_page_panel .control-section .accordion-section-title:before {
     content: "\f545";
     color: #AAA;
 }

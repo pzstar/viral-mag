@@ -6,8 +6,6 @@
  */
 get_header();
 
-$viral_mag_single_layout = get_theme_mod('viral_mag_single_layout', 'layout1');
-
-get_template_part('template-parts/single/single', $viral_mag_single_layout);
+do_action('viral_mag_single_template');
 
 get_footer();
