@@ -59,7 +59,7 @@ $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
                          * If you want to override this in a child theme, then include a file
                          * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                          */
-                        get_template_part('template-parts/content', 'summary');
+                        viral_mag_content_summary();
                         ?>
 
                     <?php endwhile; ?>
