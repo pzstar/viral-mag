@@ -23,7 +23,6 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
         array(
             'name' => esc_html__('BLog Page', 'viral-mag'),
             'fields' => array(
-                'viral_mag_display_frontpage_sections',
                 'viral_mag_blog_layout',
                 'viral_mag_blog_cat',
                 'viral_mag_archive_content',
@@ -63,21 +62,6 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
             ),
         ),
     ),
-)));
-
-$wp_customize->add_setting('viral_mag_display_frontpage_sections', array(
-    'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => 'off'
-));
-
-$wp_customize->add_control(new Viral_Mag_Switch_Control($wp_customize, 'viral_mag_display_frontpage_sections', array(
-    'section' => 'viral_mag_blog_options_section',
-    'label' => esc_html__('Display Front Page Sections', 'viral-mag'),
-    'on_off_label' => array(
-        'on' => esc_html__('Yes', 'viral-mag'),
-        'off' => esc_html__('No', 'viral-mag')
-    ),
-    'description' => sprintf(esc_html__('Display Front Page sections before the blog. Customize Front Page sections %s', 'viral-mag'), '<a href="javascript:wp.customize.panel( \'viral_mag_front_page_panel\' ).focus()">' . esc_html__('here', 'viral-mag') . '</a>'),
 )));
 
 $wp_customize->add_setting('viral_mag_blog_layout', array(

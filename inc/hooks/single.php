@@ -57,7 +57,7 @@ if (!function_exists('viral_mag_page_content')) {
 if (!function_exists('viral_mag_single_post')) {
 
     function viral_mag_single_post() {
-        $post_layout = viral_mag_get_single_layout();
+        $post_layout = get_theme_mod('viral_mag_single_layout', 'layout1');
 
         if (function_exists('viral_mag_single_' . $post_layout)) {
             call_user_func('viral_mag_single_' . $post_layout);
@@ -87,7 +87,7 @@ if (!function_exists('viral_mag_single_layout1')) {
 		                        <?php
 		                        viral_mag_single_category();
 
-		                        do_action('viral_mag_single_template_header');
+		                        the_title('<h1 class="entry-title">', '</h1>');
 
 		                        viral_mag_single_post_meta();
 		                        ?>
@@ -109,7 +109,7 @@ if (!function_exists('viral_mag_single_layout1')) {
 		                            ?>
 		                        </div><!-- .entry-content -->
 		                        <?php
-		                    	do_action('viral_mag_single_template_options');
+		                    	viral_mag_single_tag();
 		                        ?>
 		                    </div>
 
@@ -118,7 +118,9 @@ if (!function_exists('viral_mag_single_layout1')) {
 		            </article><!-- #post-## -->
 
 		            <?php
-		            do_action('viral_mag_single_template_end');
+		            viral_mag_single_author_box();
+					viral_mag_single_pagination();
+					viral_mag_single_comment();
 		            ?>
 		        </div><!-- #primary -->
 
@@ -148,7 +150,7 @@ if (!function_exists('viral_mag_single_layout2')) {
 
 		                viral_mag_single_category();
 
-		                do_action('viral_mag_single_template_header');
+		                the_title('<h1 class="entry-title">', '</h1>');
 
 		                viral_mag_single_post_meta();
 		                ?>
@@ -175,11 +177,13 @@ if (!function_exists('viral_mag_single_layout2')) {
 		                        </div><!-- .entry-content -->
 
 		                        <?php	
-		                        do_action('viral_mag_single_template_options');
+		                        viral_mag_single_tag();
 						        ?>
 						    </div>
 						    <?php 	                    
-		                    do_action('viral_mag_single_template_end');
+		                    viral_mag_single_author_box();
+							viral_mag_single_pagination();
+							viral_mag_single_comment();
 		                    ?>
 		                </div><!-- #primary -->
 
@@ -192,46 +196,7 @@ if (!function_exists('viral_mag_single_layout2')) {
 		</div>
         <?php
     }
-
 }
-
-if (!function_exists('viral_mag_get_single_layout')) {
-
-    function viral_mag_get_single_layout() {
-		
-		$post_layout = get_theme_mod('viral_mag_single_layout', 'layout1');
-        return apply_filters('viral_mag_post_layout', $post_layout);
-    }
-
-}
-
-
-if(!function_exists('viral_mag_single_end')){
-	function viral_mag_single_end() {
-		
-		viral_mag_single_author_box();
-		viral_mag_single_pagination();
-		viral_mag_single_comment();
-	}
-
-}
-
-if(!function_exists('viral_mag_single_header')){
-	function viral_mag_single_header() {
-		the_title('<h1 class="entry-title">', '</h1>');
-	}
-}
-
-if(!function_exists('viral_mag_single_options')){
-	function viral_mag_single_options() {
-		viral_mag_single_tag();
-	}
-}
-
-
-add_action('viral_mag_single_template_options', 'viral_mag_single_options');
-add_action('viral_mag_single_template_header','viral_mag_single_header');
-add_action('viral_mag_single_template_end','viral_mag_single_end', 10);
 
 add_action('viral_mag_single_template', 'viral_mag_single_post');
 
