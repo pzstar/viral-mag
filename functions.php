@@ -235,28 +235,38 @@ if (!function_exists('viral_mag_fonts_url')) :
      *
      * @return string Google fonts URL for the theme.
      */
-    function viral_mag_fonts_url() {
+    function Viral_mag_fonts_url() {
         $fonts_url = '';
-        $fonts = $standard_font_family = $font_family_array = array();
         $subsets = 'latin,latin-ext';
-        $variants_array = $font_array = $google_fonts = array();
-        $viral_mag_standard_font = viral_mag_standard_font_array();
-        $customizer_fonts = viral_mag_get_customizer_fonts();
-        $google_font_list = viral_mag_google_font_array();
+        $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
 
-        foreach ($viral_mag_standard_font as $key => $value) {
+        $customizer_fonts = apply_filters('Viral_mag_customizer_fonts', array(
+            'Viral_mag_body_family' => 'Poppins',
+            'Viral_mag_menu_family' => 'Poppins',
+            'Viral_mag_h_family' => 'Poppins'
+        ));
+        
+        $standard_font = Viral_mag_standard_font_array();
+        $google_font_list = Viral_mag_google_font_array();
+        $default_font_list = Viral_mag_default_font_array();
+
+        foreach ($standard_font as $key => $value) {
             $standard_font_family[] = $value['family'];
         }
 
+        foreach ($default_font_list as $key => $value) {
+            $default_font_family[] = $value['family'];
+        }
+
         foreach ($customizer_fonts as $key => $value) {
-            $font_family_array[] = get_theme_mod($key . '_font_family', $value['font_family']);
+            $font_family_array[] = get_theme_mod($key, $value);
         }
 
         $font_family_array = array_unique($font_family_array);
-        $font_family_array = array_diff($font_family_array, $standard_font_family);
+        $font_family_array = array_diff($font_family_array, array_merge($standard_font_family, $default_font_family));
 
         foreach ($font_family_array as $font_family) {
-            $font_array = viral_mag_search_key($google_font_list, 'family', $font_family);
+            $font_array = Viral_mag_search_key($google_font_list, 'family', $font_family);
             $variants_array = $font_array['0']['variants'];
             $variants_keys = array_keys($variants_array);
             $variants = implode(',', $variants_keys);
@@ -267,7 +277,7 @@ if (!function_exists('viral_mag_fonts_url')) :
          * Translators: To add an additional character subset specific to your language,
          * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
          */
-        $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'viral-mag');
+        $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'Viral-mag');
 
         if ('cyrillic' == $subset) {
             $subsets .= ',cyrillic,cyrillic-ext';

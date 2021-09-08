@@ -51,68 +51,45 @@ function viral_mag_dymanic_styles() {
         'h' => 'h1, h2, h3, h4, h5, h6, .ht-site-title'
     );
 
-    foreach ($fonts as $key => $value) {
-        $font_css = array();
-        $font_family = get_theme_mod($key . '_font_family', $value['font_family']);
-        $font_style = get_theme_mod($key . '_font_style', $value['font_style']);
-        $text_transform = get_theme_mod($key . '_text_transform', $value['text_transform']);
-        $text_decoration = get_theme_mod($key . '_text_decoration', $value['text_decoration']);
-        if ($key != 'h') {
-            $font_size = get_theme_mod($key . '_font_size', $value['font_size']);
-        }
-        $line_height = get_theme_mod($key . '_line_height', $value['line_height']);
-        $letter_spacing = get_theme_mod($key . '_letter_spacing', $value['letter_spacing']);
-        if ($key == 'body') {
-            $font_color = get_theme_mod($key . '_color', $value['color']);
-        }
-        $font_italic = 'normal';
+    /* =============== Typography CSS =============== */
+    $custom_css .= viral_mag_typography_css('viral_mag_body', 'html, body, button, input, select, textarea', array(
+        'family' => 'Poppins',
+        'style' => '400',
+        'text_transform' => 'none',
+        'text_decoration' => 'none',
+        'size' => '16',
+        'line_height' => '1.6',
+        'letter_spacing' => '0',
+        'color' => '#444444'
+    ));
 
-        if (strpos($font_style, 'italic')) {
-            $font_italic = 'italic';
-        }
+    $custom_css .= viral_mag_typography_css('viral_mag_menu', '.ht-menu > ul > li > a', array(
+        'family' => 'Poppins',
+        'style' => '400',
+        'text_transform' => 'uppercase',
+        'text_decoration' => 'none',
+        'size' => '14',
+        'line_height' => '2.6',
+        'letter_spacing' => '0'
+    ));
 
-        $font_weight = absint($font_style);
+    $custom_css .= viral_mag_typography_css('viral_mag_h', 'h1, h2, h3, h4, h5, h6, .ht-site-title, .ht-slide-cap-title, .ht-counter-count', array(
+        'family' => 'Poppins',
+        'style' => '400',
+        'text_transform' => 'none',
+        'text_decoration' => 'none',
+        'line_height' => '1.3',
+        'letter_spacing' => '0'
+    ));
 
-        $font_css[] = !empty($font_family) ? "font-family: '{$font_family}', serif" : '';
-        $font_css[] = !empty($font_weight) ? "font-weight: {$font_weight}" : '';
-        $font_css[] = !empty($font_italic) ? "font-style: {$font_italic}" : '';
-        $font_css[] = !empty($text_transform) ? "text-transform: {$text_transform}" : '';
-        $font_css[] = !empty($text_decoration) ? "text-decoration: {$text_decoration}" : '';
-        if ($key != 'h') {
-            $font_css[] = !empty($font_size) ? "font-size: {$font_size}px" : '';
-        }
-        $font_css[] = !empty($line_height) ? "line-height: {$line_height}" : '';
-        $font_css[] = !empty($letter_spacing) ? "letter-spacing: {$letter_spacing}px" : '';
-        if ($key == 'body' || $key == 'page_title') {
-            $font_css[] = !empty($font_color) ? "color: {$font_color}" : '';
-        }
-
-        $font_style = implode(';', $font_css);
-
-        $custom_css .= "
-            $font_class[$key]{{$font_style}}";
-    }
-
-    $common_header_typography = get_theme_mod('common_header_typography', true);
-
-    if ($common_header_typography) {
-        $h1_font_size = get_theme_mod('hh1_font_size', 38);
-        $h2_font_size = get_theme_mod('hh2_font_size', 34);
-        $h3_font_size = get_theme_mod('hh3_font_size', 30);
-        $h4_font_size = get_theme_mod('hh4_font_size', 26);
-        $h5_font_size = get_theme_mod('hh5_font_size', 22);
-        $h6_font_size = get_theme_mod('hh6_font_size', 18);
-
-        $custom_css .= "h1, .ht-site-title{font-size:{$h1_font_size}px}";
-        $custom_css .= "h2{font-size:{$h2_font_size}px}";
-        $custom_css .= "h3{font-size:{$h3_font_size}px}";
-        $custom_css .= "h4{font-size:{$h4_font_size}px}";
-        $custom_css .= "h5{font-size:{$h5_font_size}px}";
-        $custom_css .= "h6{font-size:{$h6_font_size}px}";
-    }
-
-    $i_font_size = get_theme_mod('menu_font_size', 14);
+    $i_font_size = get_theme_mod('menu_font_size', '14');
     $i_font_family = get_theme_mod('menu_font_family', 'Poppins');
+    $custom_css .= ".ht-menu ul ul{
+            font-size: {$i_font_size}px;
+            font-family: {$i_font_family};
+    }";
+
+
     $custom_css .= "
 	.ht-main-navigation,
         .menu-item-megamenu .widget-title,
