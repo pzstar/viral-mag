@@ -138,8 +138,6 @@ function viral_mag_top_left_header() {
                 viral_mag_top_header_text();
             } elseif ($left_header == 'date') {
                 viral_mag_top_header_date();
-            } elseif ($left_header == 'ticker') {
-                viral_mag_top_header_ticker();
             }
         }
         ?>

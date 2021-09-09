@@ -444,7 +444,7 @@ $wp_customize->add_control('viral_mag_th_menu', array(
     'section' => 'viral_mag_header_options',
     'type' => 'select',
     'label' => esc_html__('Select Menu', 'viral-mag'),
-    'choices' => $viral_mag_menu_choice
+    'choices' => viral_mag_menu_choice()
 ));
 
 $wp_customize->add_setting('viral_mag_th_widget', array(
@@ -455,7 +455,7 @@ $wp_customize->add_control('viral_mag_th_widget', array(
     'section' => 'viral_mag_header_options',
     'type' => 'select',
     'label' => esc_html__('Select Widget', 'viral-mag'),
-    'choices' => $viral_mag_widget_list
+    'choices' => viral_mag_widget_list()
 ));
 
 $wp_customize->add_setting('viral_mag_th_text', array(
