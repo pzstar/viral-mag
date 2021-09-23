@@ -127,5 +127,26 @@ if (!function_exists('viral_mag_comments_content')) {
 	}
 }
 
+function viral_mag_create_elementor_kit() {
+    if (!did_action('elementor/loaded')) {
+        return;
+    }
+
+    $kit = Elementor\Plugin::$instance->kits_manager->get_active_kit();
+
+    if (!$kit->get_id()) {
+        $created_default_kit = Elementor\Plugin::$instance->kits_manager->create_default();
+        update_option('elementor_active_kit', $created_default_kit);
+    }
+}
+
+function viral_mag_enable_wpform_export($args) {
+    $args['can_export'] = true;
+    return $args;
+}
+
+add_action('init', 'viral_mag_create_elementor_kit');
+add_filter('wpforms_post_type_args', 'viral_mag_enable_wpform_export');
+
 add_action('viral_mag_404_template', 'viral_mag_404_content');
 add_action('viral_mag_comments_template', 'viral_mag_comments_content');
