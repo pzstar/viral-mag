@@ -240,11 +240,28 @@ if (!function_exists('viral_mag_fonts_url')) :
         $subsets = 'latin,latin-ext';
         $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
 
-        $customizer_fonts = apply_filters('Viral_mag_customizer_fonts', array(
-            'Viral_mag_body_family' => 'Poppins',
-            'Viral_mag_menu_family' => 'Poppins',
-            'Viral_mag_h_family' => 'Poppins'
-        ));
+        $custom_fonts = array(
+            'viral_mag_body_family' => 'Poppins',
+            'viral_mag_menu_family' => 'Poppins',
+            'Viral_mag_h_family' => 'Poppins',
+            'viral_mag_page_title_family' => 'Default',
+            'viral_mag_frontpage_title_family' => 'Default',
+            'viral_mag_sidebar_title_family' => 'Default'
+        );
+
+        $common_header_typography = get_theme_mod('viral_mag_common_header_typography', true);
+        if ($common_header_typography) {
+            $custom_fonts['viral_mag_h_family'] = 'Oswald';
+        } else {
+            $custom_fonts['viral_mag_h1_family'] = 'Oswald';
+            $custom_fonts['viral_mag_h2_family'] = 'Oswald';
+            $custom_fonts['viral_mag_h3_family'] = 'Oswald';
+            $custom_fonts['viral_mag_h4_family'] = 'Oswald';
+            $custom_fonts['viral_mag_h5_family'] = 'Oswald';
+            $custom_fonts['viral_mag_h6_family'] = 'Oswald';
+        }
+
+        $customizer_fonts = apply_filters('viral_mag_customizer_fonts', $custom_fonts);
         
         $standard_font = Viral_mag_standard_font_array();
         $google_font_list = Viral_mag_google_font_array();

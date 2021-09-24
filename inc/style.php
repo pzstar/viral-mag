@@ -33,23 +33,6 @@ function viral_mag_dymanic_styles() {
     $viral_mag_title_color = get_theme_mod('viral_mag_title_color', '#333333');
     $custom_css .= ".ht-site-title-tagline a, .ht-site-title a, .ht-site-title-tagline a:hover, .ht-site-title a:hover, .ht-site-description{color:$viral_mag_title_color}";
 
-    /* =============== Typography CSS =============== */
-    $fonts = viral_mag_get_customizer_fonts();
-    $font_class = array(
-        'body' => 'html, body, button, input, select, textarea',
-        'menu' => '.ht-menu > ul > li > a, a.ht-header-bttn',
-        'frontpage_title' => 'h3.vl-post-title, h3.he-post-title',
-        'frontpage_block_title' => '.vl-block-title span.vl-title, .vp-block-title span.vl-title, .he-block-title span',
-        'sidebar_title' => '.widget-title',
-        'page_title' => '.ht-main-title, .single-post .entry-title',
-        'h1' => 'h1, .ht-site-title',
-        'h2' => 'h2',
-        'h3' => 'h3',
-        'h4' => 'h4',
-        'h5' => 'h5',
-        'h6' => 'h6',
-        'h' => 'h1, h2, h3, h4, h5, h6, .ht-site-title'
-    );
 
     /* =============== Typography CSS =============== */
     $custom_css .= viral_mag_typography_css('viral_mag_body', 'html, body, button, input, select, textarea', array(
@@ -63,22 +46,13 @@ function viral_mag_dymanic_styles() {
         'color' => '#444444'
     ));
 
-    $custom_css .= viral_mag_typography_css('viral_mag_menu', '.ht-menu > ul > li > a', array(
+    $custom_css .= viral_mag_typography_css('viral_mag_menu', '.ht-menu > ul > li > a, a.ht-header-bttn', array(
         'family' => 'Poppins',
         'style' => '400',
         'text_transform' => 'uppercase',
         'text_decoration' => 'none',
         'size' => '14',
         'line_height' => '2.6',
-        'letter_spacing' => '0'
-    ));
-
-    $custom_css .= viral_mag_typography_css('viral_mag_h', 'h1, h2, h3, h4, h5, h6, .ht-site-title, .ht-slide-cap-title, .ht-counter-count', array(
-        'family' => 'Poppins',
-        'style' => '400',
-        'text_transform' => 'none',
-        'text_decoration' => 'none',
-        'line_height' => '1.3',
         'letter_spacing' => '0'
     ));
 
@@ -102,6 +76,135 @@ function viral_mag_dymanic_styles() {
         font-family: $i_font_family;
         }
 	";
+
+    /*=== Front Page Post Title ===*/
+    $custom_css .= viral_mag_typography_css('viral_mag_frontpage_title', 'h3.vl-post-title, h3.he-post-title', array(
+        'family' => 'Default',
+        'style' => '400',
+        'text_transform' => 'none',
+        'text_decoration' => 'none',
+        'size' => '16',
+        'line_height' => '1.6',
+        'letter_spacing' => '0'
+    ));
+
+    /*=== Front Page Block Title ===*/
+    $custom_css .= viral_mag_typography_css('viral_mag_frontpage_block_title', '.vl-block-title span.vl-title, .vp-block-title span.vl-title, .he-block-title span', array(
+        'family' => 'Default',
+        'style' => '400',
+        'text_transform' => 'none',
+        'text_decoration' => 'none',
+        'size' => '16',
+        'line_height' => '1.6',
+        'letter_spacing' => '0'
+    ));
+
+    /* =============== Page Title =============== */
+    $custom_css .= viral_mag_typography_css('viral_mag_page_title', '.ht-main-title, .single-post .entry-title', array(
+        'family' => 'Default',
+        'style' => '400',
+        'text_transform' => 'uppercase',
+        'text_decoration' => 'none',
+        'size' => '36',
+        'line_height' => '1.3',
+        'letter_spacing' => '1',
+    ));
+
+    /* =============== Sidebar Title =============== */
+    $custom_css .= viral_mag_typography_css('viral_mag_sidebar_title', '.widget-title', array(
+        'family' => 'Default',
+        'style' => '400',
+        'text_transform' => 'uppercase',
+        'text_decoration' => 'none',
+        'size' => '22',
+        'line_height' => '1.3',
+        'letter_spacing' => '0'
+    ));
+
+    /* ========== Header Typography ========== */
+    $common_header_typography = get_theme_mod('viral_mag_common_header_typography', true);
+
+    if ($common_header_typography) {
+        $custom_css .= viral_mag_typography_css('viral_mag_h', 'h1, h2, h3, h4, h5, h6, .ht-site-title, .ht-slide-cap-title, .ht-counter-count', array(
+            'family' => 'Poppins',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'line_height' => '1.3',
+            'letter_spacing' => '0'
+        ));
+
+        $hh1_size = get_theme_mod('viral_mag_hh1_size', 28);
+        $hh2_size = get_theme_mod('viral_mag_hh2_size', 26);
+        $hh3_size = get_theme_mod('viral_mag_hh3_size', 24);
+        $hh4_size = get_theme_mod('viral_mag_hh4_size', 22);
+        $hh5_size = get_theme_mod('viral_mag_hh5_size', 20);
+        $hh6_size = get_theme_mod('viral_mag_hh6_size', 18);
+
+        $custom_css .= "h1{font-size: {$hh1_size}px}";
+        $custom_css .= "h2{font-size: {$hh2_size}px}";
+        $custom_css .= "h3{font-size: {$hh3_size}px}";
+        $custom_css .= "h4{font-size: {$hh4_size}px}";
+        $custom_css .= "h5{font-size: {$hh5_size}px}";
+        $custom_css .= "h6{font-size: {$hh6_size}px}";
+    } else {
+        $custom_css .= viral_mag_typography_css('viral_mag_h1', 'h1, .ht-site-title', array(
+            'family' => 'Default',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'size' => '38',
+            'line_height' => '1.3',
+            'letter_spacing' => '0',
+        ));
+
+        $custom_css .= viral_mag_typography_css('viral_mag_h2', 'h2', array(
+            'family' => 'Default',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'size' => '34',
+            'line_height' => '1.3',
+            'letter_spacing' => '0',
+        ));
+
+        $custom_css .= viral_mag_typography_css('viral_mag_h3', 'h3', array(
+            'family' => 'Default',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'size' => '30',
+            'line_height' => '1.3',
+            'letter_spacing' => '0',
+        ));
+        $custom_css .= viral_mag_typography_css('viral_mag_h4', 'h4', array(
+            'family' => 'Default',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'size' => '26',
+            'line_height' => '1.3',
+            'letter_spacing' => '0',
+        ));
+        $custom_css .= viral_mag_typography_css('viral_mag_h5', 'h5', array(
+            'family' => 'Default',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'size' => '22',
+            'line_height' => '1.3',
+            'letter_spacing' => '0',
+        ));
+        $custom_css .= viral_mag_typography_css('viral_mag_h6', 'h6', array(
+            'family' => 'Default',
+            'style' => '400',
+            'text_transform' => 'none',
+            'text_decoration' => 'none',
+            'size' => '18',
+            'line_height' => '1.3',
+            'letter_spacing' => '0',
+        ));
+    }
 
     $viral_mag_content_header_color = get_theme_mod('viral_mag_content_header_color', '#000000');
     $viral_mag_content_text_color = get_theme_mod('viral_mag_content_text_color', '#333333');

@@ -29,6 +29,7 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/register-customizer-controls.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/sidebar-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/social-settings.php';
+            require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/typography.php';
 
             /** For Additional Hooks */
             do_action('viral_mag_new_options', $wp_customize);
