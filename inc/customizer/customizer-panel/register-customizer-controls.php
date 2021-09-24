@@ -36,7 +36,7 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
         }
 
         public function enqueue_customizer_script() {
-            // wp_enqueue_script('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.js', array('jquery'), $this->get_version(), true);
+            wp_enqueue_script('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.js', array('jquery'), $this->get_version(), true);
             wp_enqueue_style('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.css', array(), $this->get_version());
         }
 
