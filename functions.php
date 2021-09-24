@@ -246,6 +246,7 @@ if (!function_exists('viral_mag_fonts_url')) :
             'Viral_mag_h_family' => 'Poppins',
             'viral_mag_page_title_family' => 'Default',
             'viral_mag_frontpage_title_family' => 'Default',
+            'viral_mag_frontpage_block_title_family' => 'Default',
             'viral_mag_sidebar_title_family' => 'Default'
         );
 
