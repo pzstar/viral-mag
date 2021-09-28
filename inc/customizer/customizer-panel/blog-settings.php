@@ -86,7 +86,7 @@ $wp_customize->add_setting('viral_mag_blog_cat', array(
 $wp_customize->add_control(new Viral_Mag_Multiple_Checkbox_Control($wp_customize, 'viral_mag_blog_cat', array(
     'label' => esc_html__('Exclude Category', 'viral-mag'),
     'section' => 'viral_mag_blog_options_section',
-    'choices' => $viral_mag_cat,
+    'choices' => viral_mag_cat(),
     'description' => esc_html__('Post with selected category will not display in the blog page', 'viral-mag')
 )));
 
