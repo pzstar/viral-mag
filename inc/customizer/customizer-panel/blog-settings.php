@@ -22,6 +22,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
     'buttons' => array(
         array(
             'name' => esc_html__('BLog Page', 'viral-mag'),
+            'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'viral_mag_blog_layout',
                 'viral_mag_blog_cat',
@@ -38,6 +39,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
         ),
         array(
             'name' => esc_html__('Single Post', 'viral-mag'),
+            'icon' => 'dashicons dashicons-admin-page',
             'fields' => array(
                 'viral_mag_single_layout',
                 'viral_mag_single_categories',

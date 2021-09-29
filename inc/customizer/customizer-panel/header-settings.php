@@ -94,6 +94,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_h
     'buttons' => array(
         array(
             'name' => esc_html__('Layouts', 'viral-mag'),
+            'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'viral_mag_mh_layout',
                 'viral_mag_header_position',
@@ -107,6 +108,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_h
         ),
         array(
             'name' => esc_html__('Top Bar', 'viral-mag'),
+            'icon' => 'dashicons dashicons-art',
             'fields' => array(
                 'viral_mag_top_header',
                 'viral_mag_th_bg_color',
@@ -129,6 +131,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_h
         ),
         array(
             'name' => esc_html__('Main Menu', 'viral-mag'),
+            'icon' => 'dashicons dashicons-edit',
             'fields' => array(
                 'viral_mag_sticky_header',
                 'viral_mag_mh_bg_color',
