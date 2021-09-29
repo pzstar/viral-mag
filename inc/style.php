@@ -378,6 +378,17 @@ function viral_mag_dymanic_styles() {
         .hover-style5 .ht-header-social-icons a:hover{
             color: $viral_mag_mh_menu_color;
         }
+
+        .hover-style6 .ht-menu > ul > li.menu-item:hover > a:before,
+        .hover-style6 .ht-menu > ul > li.menu-item > a:before,
+        .hover-style6 .ht-menu > ul > li.menu-item.current_page_item > a:before,
+        .hover-style6 .ht-menu > ul > li.menu-item.current-menu-item > a:before,
+        .hover-style6 .ht-menu > ul > li.menu-item.current_page_ancestor > a:before,
+        .hover-style6 .ht-menu > ul > li.menu-item.current > a:before,
+        .hover-style8 .ht-menu>ul>li.menu-item>a:before,
+        .hover-style9 .ht-menu>ul>li.menu-item>a:before{
+            background: $viral_mag_mh_menu_hover_color;
+        }
         
         .ht-offcanvas-nav a>span,
         .hover-style1 .ht-offcanvas-nav a:hover>span,
