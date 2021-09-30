@@ -3,7 +3,7 @@
  *
  * @package Viral Mag
  */
-$viral_mag_active_widgets = array_keys(viral_mag_widget_list());
+$viral_mag_active_widgets = array_keys(viral_mag_registered_widget_list());
 
 if (is_array($viral_mag_active_widgets)) {
     foreach ($viral_mag_active_widgets as $viral_mag_widgets) {
@@ -13,7 +13,7 @@ if (is_array($viral_mag_active_widgets)) {
     }
 }
 
-function viral_mag_widget_list() {
+function viral_mag_registered_widget_list() {
     return array(
         'widget-category' => esc_html__('Categories', 'viral-mag'),
         'widget-contact-info' => esc_html__('Contact Info', 'viral-mag'),

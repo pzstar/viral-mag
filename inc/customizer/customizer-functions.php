@@ -1,29 +1,16 @@
 <?php
+if (!function_exists('viral_mag_widget_list')) {
 
-add_action('wp_ajax_viral_mag_order_sections', 'viral_mag_order_sections');
-
-function viral_mag_order_sections() {
-    if (isset($_POST['sections'])) {
-        set_theme_mod('viral_mag_frontpage_sections', $_POST['sections']);
-    }
-    wp_die();
-}
-
-if (!function_exists('viral_mag_post_count_choice')) {
-
-    function viral_mag_post_count_choice() {
-        return array(3 => 3, 6 => 6, 9 => 9);
-    }
-
-}
-
-if (!function_exists('viral_mag_percentage')) {
-
-    function viral_mag_percentage() {
-        for ($i = 1; $i <= 100; $i++) {
-            $viral_mag_percentage[$i] = $i;
+    function viral_mag_widget_list() {
+        global $wp_registered_sidebars;
+        $menu_choice = array();
+        $widget_list['none'] = esc_html__('-- Choose Widget --', 'viral-mag');
+        if ($wp_registered_sidebars) {
+            foreach ($wp_registered_sidebars as $wp_registered_sidebar) {
+                $widget_list[$wp_registered_sidebar['id']] = $wp_registered_sidebar['name'];
+            }
         }
-        return $viral_mag_percentage;
+        return $widget_list;
     }
 
 }

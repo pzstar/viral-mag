@@ -456,7 +456,7 @@
     float: right;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -viral-mag-user-select: none;
+    -ms-user-select: none;
 }
 
 .viral-mag-toggle-checkbox {

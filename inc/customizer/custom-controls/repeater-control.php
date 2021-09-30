@@ -228,70 +228,42 @@ class Viral_Mag_Repeater_Control extends WP_Customize_Control {
                                         echo '<div class="viral-mag-icon-search">';
                                         echo '<select>';
 
-                                        if (apply_filters('viral_mag_show_ico_font', true)) {
-                                            echo '<option value="icofont-list">' . esc_html__('Ico Font', 'viral-mag') . '</option>';
-                                        }
+                                        //See customizer-fonts-iucon.php file
+                                        $viral_mag_icons = apply_filters('viral_mag_register_icon', array());
 
-                                        if (apply_filters('viral_mag_show_font_awesome', true)) {
-                                            echo '<option value="fontawesome-list">' . esc_html__('Font Awesome', 'viral-mag') . '</option>';
-                                        }
-
-                                        if (apply_filters('viral_mag_show_material_icon', true)) {
-                                            echo '<option value="material-icon-list">' . esc_html__('Material Icon', 'viral-mag') . '</option>';
-                                        }
-
-                                        if (apply_filters('viral_mag_show_essential_icon', true)) {
-                                            echo '<option value="essential-icon-list">' . esc_html__('Essential Icon', 'viral-mag') . '</option>';
+                                        if ($viral_mag_icons && is_array($viral_mag_icons)) {
+                                            foreach ($viral_mag_icons as $viral_mag_icon) {
+                                                if ($viral_mag_icon['name'] && $viral_mag_icon['label']) {
+                                                    echo '<option value="' . esc_attr($viral_mag_icon['name']) . '">' . esc_html__($viral_mag_icon['label']) . '</option>';
+                                                }
+                                            }
                                         }
 
                                         echo '</select>';
                                         echo '<input type="text" class="viral-mag-icon-search-input" placeholder="' . esc_html__('Type to filter', 'viral-mag') . '" />';
                                         echo '</div>';
 
-                                        $active_class = ' active';
 
-                                        if (apply_filters('viral_mag_show_ico_font', true)) {
-                                            echo '<ul class="viral-mag-icon-list icofont-list viral-mag-clearfix' . $active_class . '">';
-                                            $viral_mag_icofont_icon_array = viral_mag_icofont_icon_array();
-                                            foreach ($viral_mag_icofont_icon_array as $viral_mag_icofont_icon) {
-                                                $icon_class = $new_value == $viral_mag_icofont_icon ? 'icon-active' : '';
-                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($viral_mag_icofont_icon) . '"></i></li>';
-                                            }
-                                            echo '</ul>';
-                                            $active_class = '';
-                                        }
+                                        $viral_mag_active_class = ' active';
 
-                                        if (apply_filters('viral_mag_show_font_awesome', true)) {
-                                            echo '<ul class="viral-mag-icon-list fontawesome-list viral-mag-clearfix' . $active_class . '">';
-                                            $viral_mag_plus_font_awesome_icon_array = viral_mag_font_awesome_icon_array();
-                                            foreach ($viral_mag_plus_font_awesome_icon_array as $viral_mag_plus_font_awesome_icon) {
-                                                $icon_class = $new_value == $viral_mag_plus_font_awesome_icon ? 'icon-active' : '';
-                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($viral_mag_plus_font_awesome_icon) . '"></i></li>';
-                                            }
-                                            echo '</ul>';
-                                            $active_class = '';
-                                        }
+                                        if ($viral_mag_icons && is_array($viral_mag_icons)) {
+                                            foreach ($viral_mag_icons as $viral_mag_icon) {
+                                                $viral_mag_icon_name = $viral_mag_icon['name'] ? $viral_mag_icon['name'] : '';
+                                                $viral_mag_icon_prefix = $viral_mag_icon['prefix'] ? $viral_mag_icon['prefix'] : '';
+                                                $viral_mag_icon_displayPrefix = $viral_mag_icon['displayPrefix'] ? $viral_mag_icon['displayPrefix'] . ' ' : '';
 
-                                        if (apply_filters('viral_mag_show_material_icon', true)) {
-                                            echo '<ul class="viral-mag-icon-list material-icon-list viral-mag-clearfix' . $active_class . '">';
-                                            $viral_mag_materialdesignicons_icon_array = viral_mag_materialdesignicons_array();
-                                            foreach ($viral_mag_materialdesignicons_icon_array as $viral_mag_materialdesignicons_icon) {
-                                                $icon_class = $new_value == $viral_mag_materialdesignicons_icon ? 'icon-active' : '';
-                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($viral_mag_materialdesignicons_icon) . '"></i></li>';
-                                            }
-                                            echo '</ul>';
-                                            $active_class = '';
-                                        }
+                                                echo '<ul class="viral-mag-icon-list ' . esc_attr($viral_mag_icon_name) . esc_attr($viral_mag_active_class) . '">';
+                                                $viral_mag_icon_array = isset($viral_mag_icon['icons']) ? $viral_mag_icon['icons'] : '';
+                                                if (is_array($viral_mag_icon_array)) {
+                                                    foreach ($viral_mag_icon_array as $viral_mag_icon_id) {
 
-                                        if (apply_filters('viral_mag_show_essential_icon', true)) {
-                                            echo '<ul class="viral-mag-icon-list essential-icon-list viral-mag-clearfix' . $active_class . '">';
-                                            $viral_mag_essentialicons_icon_array = viral_mag_essential_icon_array();
-                                            foreach ($viral_mag_essentialicons_icon_array as $viral_mag_essentialicons_icon) {
-                                                $icon_class = $new_value == $viral_mag_essentialicons_icon ? 'icon-active' : '';
-                                                echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($viral_mag_essentialicons_icon) . '"></i></li>';
+                                                        $icon_class = ($new_value == $viral_mag_icon_id) ? 'icon-active' : '';
+                                                        echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($viral_mag_icon_displayPrefix) . esc_attr($viral_mag_icon_prefix) . esc_attr($viral_mag_icon_id) . '"></i></li>';
+                                                    }
+                                                }
+                                                echo '</ul>';
+                                                $active_class = '';
                                             }
-                                            echo '</ul>';
-                                            $active_class = '';
                                         }
 
                                         echo '</div>';

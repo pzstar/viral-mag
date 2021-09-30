@@ -16,7 +16,7 @@ class Viral_Mag_Upgrade_Info_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/viral-mag-plus/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'viral-mag'); ?></strong></a>
+            <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'viral-mag'); ?></strong></a>
         </label>
 
         <?php if ($this->description) { ?>

@@ -7,8 +7,8 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
         protected $version;
 
         function __construct() {
-            if (defined('VIRAL_MAG_VERSION')) {
-                $this->version = VIRAL_MAG_VERSION;
+            if (defined('VIRAL_MAG_VER')) {
+                $this->version = VIRAL_MAG_VER;
             } else {
                 $this->version = '1.0.0';
             }
@@ -26,7 +26,6 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/footer-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/general-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/header-settings.php';
-            require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/register-customizer-controls.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/sidebar-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/social-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/typography.php';
@@ -42,6 +41,7 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
 
         public function enqueue_customize_preview_js() {
             wp_enqueue_script('webfont', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/typography/js/webfont.js', array('jquery'), $this->get_version(), false);
+            wp_enqueue_script('viral-mag-customizer-preview', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer-preview.js', array('customize-preview'), $this->get_version(), true);
         }
 
         public function get_version() {
