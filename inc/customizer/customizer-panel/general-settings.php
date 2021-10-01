@@ -8,7 +8,7 @@
 /* GENERAL SETTINGS PANEL */
 $wp_customize->add_panel('viral_mag_general_settings_panel', array(
     'title' => esc_html__('General Settings', 'viral-mag'),
-    'priority' => 2
+    'priority' => 4
 ));
 
 //MOVE BACKGROUND AND COLOR SETTING INTO GENERAL SETTING PANEL

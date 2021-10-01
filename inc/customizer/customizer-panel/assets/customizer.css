@@ -19,7 +19,7 @@
     content: "\f111";
 }
 
-#accordion-panel-viral_mag_typography_panel .accordion-section-title:before{
+#accordion-panel-viral_mag_typography_settings_panel .accordion-section-title:before{
     content: "\f464";
 }
 
@@ -35,8 +35,16 @@
     content: "\f102";
 }
 
-#accordion-section-viral_mag_footer_settings .accordion-section-title:before{
+#accordion-section-viral_mag_footer_section .accordion-section-title:before{
     content: "\f15c";
+}
+
+#accordion-section-viral_mag_sidebar_settings_section .accordion-section-title:before {
+    content: "\f152";
+}
+
+#accordion-section-viral_mag_blog_settings_section .accordion-section-title:before {
+    content: "\f119";
 }
 
 #accordion-panel-nav_menus .accordion-section-title:before{

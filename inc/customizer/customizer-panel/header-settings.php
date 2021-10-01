@@ -5,6 +5,7 @@
  *
  * @package Viral Mag
  */
+$wp_customize->remove_control('header_text');
 /* HEADER PANEL */
 $wp_customize->add_panel('viral_mag_header_settings_panel', array(
     'title' => esc_html__('Header Settings', 'viral-mag'),
@@ -88,7 +89,6 @@ $wp_customize->add_setting('viral_mag_header_nav', array(
 ));
 
 $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_header_nav', array(
-    
     'section' => 'viral_mag_header_options',
     'priority' => 1,
     'buttons' => array(

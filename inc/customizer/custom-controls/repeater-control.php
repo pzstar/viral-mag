@@ -76,7 +76,7 @@ class Viral_Mag_Repeater_Control extends WP_Customize_Control {
                                 <?php
                                 $label = isset($field['label']) ? $field['label'] : '';
                                 $description = isset($field['description']) ? $field['description'] : '';
-                                if ($field['type'] != 'toggle' && $field['type'] != 'checkbox') {
+                                if ($field['type'] != 'toggle' && $field['type'] != 'checkbox' && $field['type'] != 'switch') {
                                     ?>
                                     <span class="customize-control-repeater-title"><?php echo esc_html($label); ?></span>
                                     <span class="description customize-control-description"><?php echo wp_kses_post($description); ?></span>
@@ -204,6 +204,13 @@ class Viral_Mag_Repeater_Control extends WP_Customize_Control {
                                         echo '</div>';
                                         echo '</div>';
                                         echo '<input data-default="' . esc_attr($default) . '" type="hidden" value="' . esc_attr($new_value) . '" data-name="' . esc_attr($key) . '"/>';
+
+                                        if (!empty($label)) {
+                                            echo '<span class="customize-control-title viral-mag-toggle-title">' . esc_html($label) . '</span>';
+                                        }
+                                        if (!empty($description)) {
+                                            echo '<span class="description customize-control-description">' . esc_html($description) . '</span>';
+                                        }
                                         break;
 
                                     case 'range':
@@ -243,26 +250,21 @@ class Viral_Mag_Repeater_Control extends WP_Customize_Control {
                                         echo '<input type="text" class="viral-mag-icon-search-input" placeholder="' . esc_html__('Type to filter', 'viral-mag') . '" />';
                                         echo '</div>';
 
-
-                                        $viral_mag_active_class = ' active';
-
                                         if ($viral_mag_icons && is_array($viral_mag_icons)) {
                                             foreach ($viral_mag_icons as $viral_mag_icon) {
-                                                $viral_mag_icon_name = $viral_mag_icon['name'] ? $viral_mag_icon['name'] : '';
-                                                $viral_mag_icon_prefix = $viral_mag_icon['prefix'] ? $viral_mag_icon['prefix'] : '';
-                                                $viral_mag_icon_displayPrefix = $viral_mag_icon['displayPrefix'] ? $viral_mag_icon['displayPrefix'] . ' ' : '';
+                                                $viral_mag_icon_name = isset($viral_mag_icon['name']) && $viral_mag_icon['name'] ? $viral_mag_icon['name'] : '';
+                                                $viral_mag_icon_prefix = isset($viral_mag_icon['prefix']) && $viral_mag_icon['prefix'] ? $viral_mag_icon['prefix'] : '';
+                                                $viral_mag_icon_displayPrefix = isset($viral_mag_icon['displayPrefix']) && $viral_mag_icon['displayPrefix'] ? $viral_mag_icon['displayPrefix'] . ' ' : '';
 
-                                                echo '<ul class="viral-mag-icon-list ' . esc_attr($viral_mag_icon_name) . esc_attr($viral_mag_active_class) . '">';
+                                                echo '<ul class="viral-mag-icon-list ' . esc_attr($viral_mag_icon_name) . '">';
                                                 $viral_mag_icon_array = isset($viral_mag_icon['icons']) ? $viral_mag_icon['icons'] : '';
                                                 if (is_array($viral_mag_icon_array)) {
                                                     foreach ($viral_mag_icon_array as $viral_mag_icon_id) {
-
                                                         $icon_class = ($new_value == $viral_mag_icon_id) ? 'icon-active' : '';
                                                         echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($viral_mag_icon_displayPrefix) . esc_attr($viral_mag_icon_prefix) . esc_attr($viral_mag_icon_id) . '"></i></li>';
                                                     }
                                                 }
                                                 echo '</ul>';
-                                                $active_class = '';
                                             }
                                         }
 

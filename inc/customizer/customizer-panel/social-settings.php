@@ -16,22 +16,22 @@ $wp_customize->add_setting('viral_mag_social_icons', array(
         array(
             'icon' => 'icofont-facebook',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-twitter',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-instagram',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-youtube',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         )
     ))
 ));
@@ -53,12 +53,8 @@ $wp_customize->add_control(new Viral_Mag_Repeater_Control($wp_customize, 'viral_
         'default' => ''
     ),
     'enable' => array(
-        'type' => 'switch',
+        'type' => 'toggle',
         'label' => esc_html__('Enable', 'viral-mag'),
-        'switch' => array(
-            'on' => 'Yes',
-            'off' => 'No'
-        ),
-        'default' => 'on'
+        'default' => 'yes'
     )
 )));

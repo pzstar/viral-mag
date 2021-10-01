@@ -173,29 +173,29 @@ function viral_mag_social_icons() {
         array(
             'icon' => 'icofont-facebook',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-twitter',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-instagram',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-youtube',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         )
     )));
     $social_icons = json_decode($social_icons);
 
     if (!empty($social_icons)) {
         foreach ($social_icons as $social_icon) {
-            if ($social_icon->enable === 'on' && !empty($social_icon->link)) {
+            if ($social_icon->enable === 'yes' && !empty($social_icon->link)) {
                 echo '<a href="' . esc_attr($social_icon->link) . '" target="_blank"><i class="' . esc_attr($social_icon->icon) . '"></i></a>';
             }
         }

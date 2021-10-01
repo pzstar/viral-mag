@@ -1,14 +1,14 @@
 <?php
 
 // Add the typography panel.
-$wp_customize->add_panel('viral_mag_typography', array(
-    'priority' => 1,
+$wp_customize->add_panel('viral_mag_typography_settings_panel', array(
+    'priority' => 5,
     'title' => esc_html__('Typography Settings', 'viral-pro')
 ));
 
 // Add the body typography section.
 $wp_customize->add_section('viral_mag_body_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Body', 'viral-pro')
 ));
 
@@ -84,7 +84,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add the Menu typography section.
 $wp_customize->add_section('viral_mag_menu_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Menu', 'viral-pro')
 ));
 
@@ -152,7 +152,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add the Page Title typography section.
 $wp_customize->add_section('viral_mag_page_title_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Page Title', 'viral-pro')
 ));
 
@@ -228,7 +228,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add H1 typography section.
 $wp_customize->add_section('viral_mag_header_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Headers(H1, H2, H3, H4, H5, H6)', 'viral-pro')
 ));
 
@@ -837,7 +837,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add the Frontpage Block Title typography section.
 $wp_customize->add_section('viral_mag_frontpage_block_title_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Front Page Block Title', 'viral-pro')
 ));
 
@@ -906,7 +906,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add the Frontpage Title typography section.
 $wp_customize->add_section('viral_mag_frontpage_title_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Front Page Post Title', 'viral-pro')
 ));
 
@@ -974,7 +974,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add the Widget typography section.
 $wp_customize->add_section('viral_mag_sidebar_title_typography', array(
-    'panel' => 'viral_mag_typography',
+    'panel' => 'viral_mag_typography_settings_panel',
     'title' => esc_html__('Widget Title', 'viral-pro')
 ));
 

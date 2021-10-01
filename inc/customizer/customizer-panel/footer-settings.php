@@ -7,7 +7,7 @@
  */
 $wp_customize->add_section('viral_mag_footer_section', array(
     'title' => esc_html__('Footer Settings', 'viral-mag'),
-    'priority' => 50
+    'priority' => 20
 ));
 
 $wp_customize->add_setting('viral_mag_footer_nav', array(
