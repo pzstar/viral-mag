@@ -382,11 +382,6 @@ require get_template_directory() . '/inc/hooks.php';
 require get_template_directory() . '/inc/customizer/customizer.php';
 
 /**
- * Icons Array
- */
-require get_template_directory() . '/inc/font-icons.php';
-
-/**
  * Widgets
  */
 require get_template_directory() . '/inc/widgets/widgets.php';

@@ -67,6 +67,17 @@ if (!class_exists('Viral_Mag_Customizer_Custom_Controls')) {
         }
 
         public function enqueue_customizer_script() {
+            //See customizer-fonts-iucon.php file
+            $viral_mag_icons = apply_filters('viral_mag_register_icon', array());
+
+            if ($viral_mag_icons && is_array($viral_mag_icons)) {
+                foreach ($viral_mag_icons as $viral_mag_icon) {
+                    if (isset($viral_mag_icon['name']) && isset($viral_mag_icon['url'])) {
+                        wp_enqueue_style($viral_mag_icon['name'], $viral_mag_icon['url'], array(), $this->get_version());
+                    }
+                }
+            }
+
             wp_enqueue_script('selectize', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/selectize.js', array('jquery'), $this->get_version(), true);
             wp_enqueue_script('chosen-jquery', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/chosen.jquery.js', array('jquery'), $this->get_version(), true);
             wp_enqueue_script('wp-color-picker-alpha', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/wp-color-picker-alpha.js', array('jquery', 'wp-color-picker'), $this->get_version(), true);
