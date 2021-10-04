@@ -8,26 +8,50 @@ function viral_mag_dymanic_styles() {
     $color = get_theme_mod('viral_mag_template_color', '#cf0701');
     $lighter_color_rgba = viral_mag_hex2rgba($color, 0.2);
     $darker_color = viral_mag_color_brightness($color, -0.9);
-    $container_width = get_theme_mod('viral_mag_website_width', 1170);
-    $container_width_200 = $container_width + 200;
     $sidebar_width = get_theme_mod('viral_mag_sidebar_width', 30);
     $primary_width = 100 - 4 - $sidebar_width;
-    $boxed_container_width = $container_width + 80;
     $viral_mag_preloader_color = get_theme_mod('viral_mag_preloader_color', '#000000');
     $viral_mag_preloader_bg_color = get_theme_mod('viral_mag_preloader_bg_color', '#FFFFFF');
     $viral_mag_responsive_width = get_theme_mod('viral_mag_responsive_width', 780);
 
     /* =============== Full & Boxed width =============== */
+    $website_layout = get_theme_mod('viral_mag_website_layout', 'wide');
+    if ($website_layout == 'wide') {
+        $container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
+    } elseif ($website_layout == 'fluid') {
+        $container_width = get_theme_mod('viral_mag_fluid_container_width', 80);
+    } elseif ($website_layout == 'boxed') {
+        $container_padding = get_theme_mod('viral_mag_container_padding', 80);
+        $container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
+        $boxed_container_width = $container_width - $container_padding - $container_padding;
+    }
+    $container_width_200 = $container_width + 200;
+
+    /* =============== Full & Boxed width =============== */
+    if ($website_layout == "wide") {
+        $custom_css .= "
+    .ht-container{
+            width:{$container_width}px; 
+    }";
+    } else if ($website_layout == "boxed") {
+        $custom_css .= "
+        .ht-container{
+            width:{$boxed_container_width}px; 
+        }
+        body.ht-boxed #ht-page{
+            width:{$container_width}px;
+    }";
+    } else if ($website_layout == "fluid") {
+        $custom_css .= "
+        .ht-container{
+            width:{$container_width}%; 
+        }";
+    }
+
     $custom_css .= "
-	.ht-container{
-            max-width:{$container_width}px; 
-	}
-	body.ht-boxed #ht-page{
-            max-width:{$boxed_container_width}px;
-	}
         #primary{ width:{$primary_width}%}
         #secondary{ width:{$sidebar_width}%}
-	";
+    ";
 
     /* =============== Site Title & Tagline Color =============== */
     $viral_mag_title_color = get_theme_mod('viral_mag_title_color', '#333333');
