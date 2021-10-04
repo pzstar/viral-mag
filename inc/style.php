@@ -138,7 +138,7 @@ function viral_mag_dymanic_styles() {
         $hh2_size = get_theme_mod('viral_mag_hh2_size', 34);
         $hh3_size = get_theme_mod('viral_mag_hh3_size', 30);
         $hh4_size = get_theme_mod('viral_mag_hh4_size', 26);
-        $hh5_size = get_theme_mod('viral_mag_hh5_size', 20);
+        $hh5_size = get_theme_mod('viral_mag_hh5_size', 22);
         $hh6_size = get_theme_mod('viral_mag_hh6_size', 18);
 
         $custom_css .= "h1{font-size: {$hh1_size}px}";
@@ -149,7 +149,7 @@ function viral_mag_dymanic_styles() {
         $custom_css .= "h6{font-size: {$hh6_size}px}";
     } else {
         $custom_css .= viral_mag_typography_css('viral_mag_h1', 'h1, .ht-site-title', array(
-            'family' => 'Default',
+            'family' => 'Poppins',
             'style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
@@ -159,7 +159,7 @@ function viral_mag_dymanic_styles() {
         ));
 
         $custom_css .= viral_mag_typography_css('viral_mag_h2', 'h2', array(
-            'family' => 'Default',
+            'family' => 'Poppins',
             'style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
@@ -169,7 +169,7 @@ function viral_mag_dymanic_styles() {
         ));
 
         $custom_css .= viral_mag_typography_css('viral_mag_h3', 'h3', array(
-            'family' => 'Default',
+            'family' => 'Poppins',
             'style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
@@ -178,7 +178,7 @@ function viral_mag_dymanic_styles() {
             'letter_spacing' => '0',
         ));
         $custom_css .= viral_mag_typography_css('viral_mag_h4', 'h4', array(
-            'family' => 'Default',
+            'family' => 'Poppins',
             'style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
@@ -187,7 +187,7 @@ function viral_mag_dymanic_styles() {
             'letter_spacing' => '0',
         ));
         $custom_css .= viral_mag_typography_css('viral_mag_h5', 'h5', array(
-            'family' => 'Default',
+            'family' => 'Poppins',
             'style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
@@ -196,7 +196,7 @@ function viral_mag_dymanic_styles() {
             'letter_spacing' => '0',
         ));
         $custom_css .= viral_mag_typography_css('viral_mag_h6', 'h6', array(
-            'family' => 'Default',
+            'family' => 'Poppins',
             'style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
