@@ -13,6 +13,7 @@ if (!function_exists('viral_mag_footer_open')) {
 if (!function_exists('viral_mag_main_footer')) {
 
     function viral_mag_main_footer() {
+        $viral_mag_footer_col = get_theme_mod('viral_mag_footer_col', 'col-3-1-1-1');
         $viral_mag_footer_array = explode('-', $viral_mag_footer_col);
         $count = count($viral_mag_footer_array);
         $footer_col = $count - 2;
