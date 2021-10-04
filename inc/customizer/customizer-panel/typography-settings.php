@@ -13,7 +13,7 @@ $wp_customize->add_section('viral_mag_body_typography', array(
 ));
 
 $wp_customize->add_setting('viral_mag_body_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -89,7 +89,7 @@ $wp_customize->add_section('viral_mag_menu_typography', array(
 ));
 
 $wp_customize->add_setting('viral_mag_menu_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -157,7 +157,7 @@ $wp_customize->add_section('viral_mag_page_title_typography', array(
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -244,7 +244,7 @@ $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_ma
 
 // Add H typography section.
 $wp_customize->add_setting('viral_mag_h_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -459,7 +459,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_h
 
 // Add H1 typography section.
 $wp_customize->add_setting('viral_mag_h1_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -522,7 +522,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add H2 typography section.
 $wp_customize->add_setting('viral_mag_h2_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -585,7 +585,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add H3 typography section.
 $wp_customize->add_setting('viral_mag_h3_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -648,7 +648,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add H4 typography section.
 $wp_customize->add_setting('viral_mag_h4_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -711,7 +711,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add H5 typography section.
 $wp_customize->add_setting('viral_mag_h5_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -774,7 +774,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
 
 // Add H6 typography section.
 $wp_customize->add_setting('viral_mag_h6_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -842,13 +842,13 @@ $wp_customize->add_section('viral_mag_frontpage_block_title_typography', array(
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_style', array(
-    'default' => '700',
+    'default' => '500',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -911,7 +911,7 @@ $wp_customize->add_section('viral_mag_frontpage_title_typography', array(
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_title_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
@@ -979,13 +979,13 @@ $wp_customize->add_section('viral_mag_sidebar_title_typography', array(
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_family', array(
-    'default' => 'Roboto',
+    'default' => 'Poppins',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_style', array(
-    'default' => '700',
+    'default' => '500',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));
