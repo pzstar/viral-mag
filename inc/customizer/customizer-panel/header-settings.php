@@ -104,9 +104,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_t
                 'viral_mag_social_link',
                 'viral_mag_th_menu',
                 'viral_mag_th_widget',
-                'viral_mag_th_text',
-                'viral_mag_th_ticker_title',
-                'viral_mag_th_ticker_category'
+                'viral_mag_th_text'
             ),
             'active' => true,
         ),
@@ -118,9 +116,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_t
                 'viral_mag_th_bottom_border_color',
                 'viral_mag_th_bg_color',
                 'viral_mag_th_text_color',
-                'viral_mag_th_anchor_color',
-                'viral_mag_th_anchor_hover_color',
-                'viral_mag_th_padding',
+                'viral_mag_th_anchor_color'
             ),
         )
     )
@@ -139,77 +135,6 @@ $wp_customize->add_control(new Viral_Mag_Switch_Control($wp_customize, 'viral_ma
         'on' => esc_html__('Yes', 'viral-mag'),
         'off' => esc_html__('No', 'viral-mag')
     )
-)));
-
-$wp_customize->add_setting('viral_mag_th_height', array(
-    'sanitize_callback' => 'absint',
-    'default' => 45,
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_th_height', array(
-    'section' => 'viral_mag_top_header_section',
-    'label' => esc_html__('Top Header Height', 'viral-mag'),
-    'input_attrs' => array(
-        'min' => 5,
-        'max' => 100,
-        'step' => 1
-    )
-)));
-
-$wp_customize->add_setting('viral_mag_th_bg_color', array(
-    'default' => '#cf0701',
-    'sanitize_callback' => 'viral_mag_sanitize_color_alpha',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Viral_Mag_Alpha_Color_Control($wp_customize, 'viral_mag_th_bg_color', array(
-    'label' => esc_html__('Top Header Background', 'viral-mag'),
-    'section' => 'viral_mag_top_header_section',
-    'palette' => array(
-        '#FFFFFF',
-        '#000000',
-        '#f5245f',
-        '#1267b3',
-        '#feb600',
-        '#00C569',
-        'rgba( 255, 255, 255, 0.2 )',
-        'rgba( 0, 0, 0, 0.2 )'
-    )
-)));
-
-$wp_customize->add_setting('viral_mag_th_bottom_border_color', array(
-    'default' => '',
-    'sanitize_callback' => 'viral_mag_sanitize_color_alpha',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Viral_Mag_Alpha_Color_Control($wp_customize, 'viral_mag_th_bottom_border_color', array(
-    'label' => esc_html__('Top Header Bottom Border Color', 'viral-mag'),
-    'description' => esc_html__('Leave Empty to Hide Border', 'viral-mag'),
-    'section' => 'viral_mag_top_header_section'
-)));
-
-$wp_customize->add_setting('viral_mag_th_text_color', array(
-    'default' => '#FFFFFF',
-    'sanitize_callback' => 'sanitize_hex_color',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_th_text_color', array(
-    'section' => 'viral_mag_top_header_section',
-    'label' => esc_html__('Text Color', 'viral-mag')
-)));
-
-$wp_customize->add_setting('viral_mag_th_anchor_color', array(
-    'default' => '#EEEEEE',
-    'sanitize_callback' => 'sanitize_hex_color',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_th_anchor_color', array(
-    'section' => 'viral_mag_top_header_section',
-    'label' => esc_html__('Anchor(Link) Color', 'viral-mag')
 )));
 
 $wp_customize->add_setting('viral_mag_th_disable_mobile', array(
@@ -321,9 +246,76 @@ $wp_customize->add_control(new Viral_Mag_Editor_Control($wp_customize, 'viral_ma
     'include_admin_print_footer' => true
 )));
 
+$wp_customize->add_setting('viral_mag_th_height', array(
+    'sanitize_callback' => 'absint',
+    'default' => 45,
+    'transport' => 'postMessage'
+));
 
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_th_height', array(
+    'section' => 'viral_mag_top_header_section',
+    'label' => esc_html__('Top Header Height', 'viral-mag'),
+    'input_attrs' => array(
+        'min' => 5,
+        'max' => 100,
+        'step' => 1
+    )
+)));
 
+$wp_customize->add_setting('viral_mag_th_bottom_border_color', array(
+    'default' => '',
+    'sanitize_callback' => 'viral_mag_sanitize_color_alpha',
+    'transport' => 'postMessage'
+));
 
+$wp_customize->add_control(new Viral_Mag_Alpha_Color_Control($wp_customize, 'viral_mag_th_bottom_border_color', array(
+    'label' => esc_html__('Top Header Bottom Border Color', 'viral-mag'),
+    'description' => esc_html__('Leave Empty to Hide Border', 'viral-mag'),
+    'section' => 'viral_mag_top_header_section'
+)));
+
+$wp_customize->add_setting('viral_mag_th_bg_color', array(
+    'default' => '#cf0701',
+    'sanitize_callback' => 'viral_mag_sanitize_color_alpha',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Viral_Mag_Alpha_Color_Control($wp_customize, 'viral_mag_th_bg_color', array(
+    'label' => esc_html__('Top Header Background', 'viral-mag'),
+    'section' => 'viral_mag_top_header_section',
+    'palette' => array(
+        '#FFFFFF',
+        '#000000',
+        '#f5245f',
+        '#1267b3',
+        '#feb600',
+        '#00C569',
+        'rgba( 255, 255, 255, 0.2 )',
+        'rgba( 0, 0, 0, 0.2 )'
+    )
+)));
+
+$wp_customize->add_setting('viral_mag_th_text_color', array(
+    'default' => '#FFFFFF',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_th_text_color', array(
+    'section' => 'viral_mag_top_header_section',
+    'label' => esc_html__('Text Color', 'viral-mag')
+)));
+
+$wp_customize->add_setting('viral_mag_th_anchor_color', array(
+    'default' => '#EEEEEE',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_th_anchor_color', array(
+    'section' => 'viral_mag_top_header_section',
+    'label' => esc_html__('Anchor(Link) Color', 'viral-mag')
+)));
 
 //MAIN HEADER SETTINGS
 $wp_customize->add_section('viral_mag_main_header_section', array(
@@ -364,7 +356,6 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_m
                 'viral_mag_mh_button_color',
                 'viral_mag_mh_bg_color',
                 'viral_mag_mh_bg_color_mobile',
-                'viral_mag_toggle_button_color',
                 'viral_mag_mh_border_sep_start',
                 'viral_mag_mh_border',
                 'viral_mag_mh_border_color',
@@ -400,6 +391,47 @@ $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_
         'header-style2' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/headers/header-2.png',
         'header-style3' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/headers/header-3.png'
     )
+)));
+
+$wp_customize->add_setting('viral_mag_mh_show_search', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text',
+    'default' => true
+));
+
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_search', array(
+    'section' => 'viral_mag_main_header_section',
+    'label' => esc_html__('Show Search Button', 'viral-mag')
+)));
+
+$wp_customize->add_setting('viral_mag_mh_show_cart', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text',
+    'default' => false
+));
+
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_cart', array(
+    'section' => 'viral_mag_main_header_section',
+    'label' => esc_html__('Show Cart Button', 'viral-mag'),
+    'active_callback' => 'viral_mag_is_woocommerce_activated'
+)));
+
+$wp_customize->add_setting('viral_mag_mh_show_social', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text',
+    'default' => false,
+));
+
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_social', array(
+    'section' => 'viral_mag_main_header_section',
+    'label' => esc_html__('Show Social Icons', 'viral-mag')
+)));
+
+$wp_customize->add_setting('viral_mag_mh_show_offcanvas', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text',
+    'default' => true
+));
+
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_offcanvas', array(
+    'section' => 'viral_mag_main_header_section',
+    'label' => esc_html__('Show Offcanvas Menu', 'viral-mag')
 )));
 
 $wp_customize->add_setting('viral_mag_logo_height', array(
@@ -499,48 +531,6 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
     )
 )));
 
-$wp_customize->add_setting('viral_mag_mh_show_search', array(
-    'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => true
-));
-
-$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_search', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Show Search Button', 'viral-mag')
-)));
-
-$wp_customize->add_setting('viral_mag_mh_show_cart', array(
-    'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => false
-));
-
-$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_cart', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Show Cart Button', 'viral-mag'),
-    'active_callback' => 'viral_mag_is_woocommerce_activated'
-)));
-
-$wp_customize->add_setting('viral_mag_mh_show_social', array(
-    'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => false,
-));
-
-$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_social', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Show Social Icons', 'viral-mag')
-)));
-
-$wp_customize->add_setting('viral_mag_mh_show_offcanvas', array(
-    'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => true
-));
-
-$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_offcanvas', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Show Offcanvas Menu', 'viral-mag')
-)));
-
-
 $wp_customize->add_setting('viral_mag_mh_button_color', array(
     'default' => '#000000',
     'sanitize_callback' => 'sanitize_hex_color',
@@ -584,12 +574,9 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
     'label' => esc_html__('Header Bar Background Color(Mobile)', 'viral-mag')
 )));
 
-$wp_customize->add_setting('viral_mag_toggle_button_color', array(
-    'default' => '#FFFFFF',
-    'sanitize_callback' => 'sanitize_hex_color',
-    'transport' => 'postMessage'
+$wp_customize->add_setting('viral_mag_mh_border_sep_start', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
-
 
 $wp_customize->add_control(new Viral_Mag_Separator_Control($wp_customize, 'viral_mag_mh_border_sep_start', array(
     'section' => 'viral_mag_main_header_section'
@@ -663,8 +650,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_p
                 'viral_mag_mh_submenu_hover_color',
                 'viral_mag_toggle_button_color',
                 'viral_mag_menu_dropdown_padding',
-                'viral_mag_responsive_width',
-                'viral_mag_toggle_button_color'
+                'viral_mag_responsive_width'
             ),
         ),
         array(
@@ -778,6 +764,17 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
     'label' => esc_html__('SubMenu Link Color - Hover', 'viral-mag')
 )));
 
+$wp_customize->add_setting('viral_mag_toggle_button_color', array(
+    'default' => '#FFFFFF',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_toggle_button_color', array(
+    'section' => 'viral_mag_menu_settings_section',
+    'label' => esc_html__('Mobile Menu Button Color', 'viral-mag')
+)));
+
 $wp_customize->add_setting('viral_mag_menu_dropdown_padding', array(
     'default' => 0,
     'sanitize_callback' => 'absint',
@@ -793,11 +790,6 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
         'max' => 100,
         'step' => 1
     )
-)));
-
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_toggle_button_color', array(
-    'section' => 'viral_mag_menu_settings_section',
-    'label' => esc_html__('Mobile Menu Button Color', 'viral-mag')
 )));
 
 $wp_customize->add_setting('viral_mag_responsive_width', array(
@@ -901,7 +893,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_p
             'name' => esc_html__('Typography', 'viral-mag'),
             'icon' => 'dashicons dashicons-edit',
             'fields' => array(
-                'viral_mag_page_title_typography',                
+                'viral_mag_page_title_typography',
             ),
         ),
     )
