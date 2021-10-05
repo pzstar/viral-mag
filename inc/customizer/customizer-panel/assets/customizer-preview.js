@@ -264,15 +264,6 @@ function viral_mag_convert_hex(hexcolor, opacity) {
         });
     });
 
-    wp.customize('viral_mag_website_width', function (value) {
-        value.bind(function (container_width) {
-            var boxed_container_width = parseInt(container_width) + 80;
-            var css = '.ht-container,.ht-slide-caption{max-width:' + container_width + 'px}';
-            css += 'body.ht-boxed #ht-page{max-width:' + boxed_container_width + 'px;}';
-            viral_mag_dynamic_css('viral_mag_website_width', css);
-        });
-    });
-
     wp.customize('viral_mag_mh_menu_color', function (value) {
         value.bind(function (to) {
             var css = '.ht-menu > ul > li.menu-item > a,.ht-search-button a,.ht-header-social-icons a,.hover-style1 .ht-search-button a:hover,.hover-style3 .ht-search-button a:hover,.hover-style5 .ht-search-button a:hover,.hover-style1 .ht-header-social-icons a:hover,.hover-style3 .ht-header-social-icons a:hover,.hover-style5 .ht-header-social-icons a:hover{color:' + to + '}';

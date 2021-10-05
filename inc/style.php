@@ -14,37 +14,35 @@ function viral_mag_dymanic_styles() {
     $viral_mag_preloader_bg_color = get_theme_mod('viral_mag_preloader_bg_color', '#FFFFFF');
     $viral_mag_responsive_width = get_theme_mod('viral_mag_responsive_width', 780);
 
-    /* =============== Full & Boxed width =============== */
     $website_layout = get_theme_mod('viral_mag_website_layout', 'wide');
     if ($website_layout == 'wide') {
         $container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
     } elseif ($website_layout == 'fluid') {
         $container_width = get_theme_mod('viral_mag_fluid_container_width', 80);
     } elseif ($website_layout == 'boxed') {
-        $container_padding = get_theme_mod('viral_mag_container_padding', 80);
         $container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
-        $boxed_container_width = $container_width - $container_padding - $container_padding;
+        $container_padding = get_theme_mod('viral_mag_container_padding', 80);
+        $boxed_container_width = $container_width + $container_padding + $container_padding;
     }
-    $container_width_200 = $container_width + 200;
 
     /* =============== Full & Boxed width =============== */
     if ($website_layout == "wide") {
         $custom_css .= "
     .ht-container{
-            width:{$container_width}px; 
+            max-width:{$container_width}px; 
     }";
     } else if ($website_layout == "boxed") {
         $custom_css .= "
         .ht-container{
-            width:{$boxed_container_width}px; 
+            max-width:{$container_width}px; 
         }
         body.ht-boxed #ht-page{
-            width:{$container_width}px;
+            max-width:{$boxed_container_width}px;
     }";
     } else if ($website_layout == "fluid") {
         $custom_css .= "
         .ht-container{
-            width:{$container_width}%; 
+                max-width:{$container_width}%; 
         }";
     }
 
@@ -892,17 +890,6 @@ function viral_mag_dymanic_styles() {
             .ht-container{
                 padding-left: 5% !important;
                 padding-right: 5% !important;
-            }
-        }
-            
-        @media screen and (max-width: {$container_width_200}px){        
-            .ht-single-layout5 .entry-header,
-            .ht-single-layout6 .entry-header{
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .ht-single-layout6 .entry-header{
-                height: auto;
             }
         }";
 
