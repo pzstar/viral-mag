@@ -57,7 +57,7 @@ function viral_mag_delete_media_image(selector) {
 
 function viral_mag_widget_color_picker(selector) {
     if (jQuery(selector).parents('#widgets-left').length < 1) {
-        var el = selector + ' .ht-widget-color-picker';
+        var el = selector + ' .vm-widget-color-picker';
         jQuery(el).wpColorPicker({
             change: function (event, ui) {
                 setTimeout(function (event, ui) {
@@ -74,14 +74,14 @@ function viral_mag_widget_color_picker(selector) {
 }
 
 function viral_mag_widget_sortable(selector) {
-    var el = selector + ' .ht-widget-repeater';
+    var el = selector + ' .vm-widget-repeater';
     jQuery(el).sortable({
         axis: 'y',
         helper: 'clone',
         cursor: 'move',
-        handle: '.ht-repeater-box-title',
+        handle: '.vm-repeater-box-title',
         update: function (event, ui) {
-            jQuery(this).find('.ht-widget-repeater-box').each(function (index) {
+            jQuery(this).find('.vm-widget-repeater-box').each(function (index) {
                 jQuery(this).find('[name]').each(function () {
                     var name = jQuery(this).attr('name');
                     name = name.split('[');
@@ -100,7 +100,7 @@ function viral_mag_widget_editor(selector) {
     if (jQuery(selector).parents('#widgets-left').length < 1) {
 
         setTimeout(function () {
-            var editorId = jQuery(selector + ' .ht-inline-editor').attr('id');
+            var editorId = jQuery(selector + ' .vm-inline-editor').attr('id');
 
             if (tinymce.get(editorId)) {
                 wp.editor.remove(editorId);
@@ -123,13 +123,13 @@ function viral_mag_widget_editor(selector) {
 }
 
 function viral_mag_widget_tabs(selector) {
-    jQuery(selector).find('.ht-widget-tab > div:first').addClass('active');
-    jQuery(selector).find('.ht-widget-tab-content').not(':first').hide();
+    jQuery(selector).find('.vm-widget-tab > div:first').addClass('active');
+    jQuery(selector).find('.vm-widget-tab-content').not(':first').hide();
 }
 
 function viral_mag_widget_datepicker(selector) {
     if (jQuery(selector).parents('#widgets-left').length < 1) {
-        var el = selector + ' .ht-datepicker';
+        var el = selector + ' .vm-datepicker';
         jQuery(el).datepicker({
             dateFormat: "yy/mm/dd"
         });
@@ -137,8 +137,8 @@ function viral_mag_widget_datepicker(selector) {
 }
 
 jQuery(document).ready(function ($) {
-    viral_mag_upload_media_image('.widget-media-view .ht-upload-button');
-    viral_mag_delete_media_image('.widget-media-view .ht-delete-button');
+    viral_mag_upload_media_image('.widget-media-view .vm-upload-button');
+    viral_mag_delete_media_image('.widget-media-view .vm-delete-button');
 
     $(document).on('widget-added widget-updated', function (event, widget) {
 
@@ -156,13 +156,13 @@ jQuery(document).ready(function ($) {
     });
 
     //Widget Repeater Add Item
-    $('body').on('click', '.ht-widget-add-item', function () {
-        var $this = $(this).prev('.ht-widget-repeater');
+    $('body').on('click', '.vm-widget-add-item', function () {
+        var $this = $(this).prev('.vm-widget-repeater');
         var count = $this.data('count');
         $this.data('count', count + 1);
 
         if (typeof $this != 'undefined') {
-            var field = $this.find('.ht-widget-repeater-box:first').clone();
+            var field = $this.find('.vm-widget-repeater-box:first').clone();
             field.find('[name]').each(function () {
                 var name = $(this).attr('name');
                 name = name.split('[');
@@ -195,31 +195,31 @@ jQuery(document).ready(function ($) {
             });
             $this.append(field);
 
-            var fieldTitle = field.find('.ht-repeater-box-title span:first').text();
+            var fieldTitle = field.find('.vm-repeater-box-title span:first').text();
             fieldTitle = fieldTitle.split('-');
             fieldTitle = fieldTitle[0] + ' - ';
-            field.find('.ht-repeater-box-title span:first').text(fieldTitle);
-            field.find('.ht-repeater-content').show();
+            field.find('.vm-repeater-box-title span:first').text(fieldTitle);
+            field.find('.vm-repeater-content').show();
             $this.find('[name]:first').trigger('change');
         }
         return false;
     });
 
     //Widget Repeater Remove Item
-    $('body').on('click', '.ht-widget-repeater-remove', function () {
-        $(this).closest('.ht-widget-repeater-box').find('[name]:first').trigger('change');
-        $(this).closest('.ht-widget-repeater-box').remove();
+    $('body').on('click', '.vm-widget-repeater-remove', function () {
+        $(this).closest('.vm-widget-repeater-box').find('[name]:first').trigger('change');
+        $(this).closest('.vm-widget-repeater-box').remove();
         return false;
     });
 
     //Widget Repeater Toggle Item
-    $('body').on('click', '.ht-repeater-toggle', function () {
-        $(this).closest('.ht-repeater-box-title').next('.ht-repeater-content').slideToggle();
+    $('body').on('click', '.vm-repeater-toggle', function () {
+        $(this).closest('.vm-repeater-box-title').next('.vm-repeater-content').slideToggle();
         $(this).toggleClass('closed');
     });
 
     //Widget Tabs
-    $('body').on('click', '.ht-widget-tab > div', function () {
+    $('body').on('click', '.vm-widget-tab > div', function () {
         if ($(this).hasClass('active')) {
             return false;
         }
@@ -227,27 +227,27 @@ jQuery(document).ready(function ($) {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
 
-        $(this).parent('.ht-widget-tab').next('.ht-widget-tab-content-wrap').children('.ht-widget-tab-content').hide();
-        $(this).parent('.ht-widget-tab').next('.ht-widget-tab-content-wrap').children('.ht-widget-tab-content[data-id=' + el + ']').fadeIn();
+        $(this).parent('.vm-widget-tab').next('.vm-widget-tab-content-wrap').children('.vm-widget-tab-content').hide();
+        $(this).parent('.vm-widget-tab').next('.vm-widget-tab-content-wrap').children('.vm-widget-tab-content[data-id=' + el + ']').fadeIn();
     });
 
     // Icon Chooser
-    $('body').on('click', '.ht-widget-icon-box .ht-icon-list li', function () {
+    $('body').on('click', '.vm-widget-icon-box .vm-icon-list li', function () {
         var icon_class = $(this).find('i').attr('class');
-        $(this).closest('.ht-icon-box').find('.ht-icon-list li').removeClass('icon-active');
+        $(this).closest('.vm-icon-box').find('.vm-icon-list li').removeClass('icon-active');
         $(this).addClass('icon-active');
-        $(this).closest('.ht-icon-box').prev('.ht-selected-icon').children('i').attr('class', '').addClass(icon_class);
-        $(this).closest('.ht-icon-box').next('input').val(icon_class).trigger('change');
-        $(this).closest('.ht-icon-box').slideUp();
+        $(this).closest('.vm-icon-box').prev('.vm-selected-icon').children('i').attr('class', '').addClass(icon_class);
+        $(this).closest('.vm-icon-box').next('input').val(icon_class).trigger('change');
+        $(this).closest('.vm-icon-box').slideUp();
     });
 
-    $('body').on('click', '.ht-widget-icon-box .ht-selected-icon', function () {
+    $('body').on('click', '.vm-widget-icon-box .vm-selected-icon', function () {
         $(this).next().slideToggle();
     });
 
-    $('body').on('keyup', '.ht-widget-icon-box .ht-icon-search input', function (e) {
+    $('body').on('keyup', '.vm-widget-icon-box .vm-icon-search input', function (e) {
         var keyword = $(this).val().toLowerCase();
-        search_criteria = $(this).closest('.ht-icon-box').find('.ht-icon-list i');
+        search_criteria = $(this).closest('.vm-icon-box').find('.vm-icon-list i');
 
         $(search_criteria).each(function () {
             if ($(this).attr('class').indexOf(keyword) > -1) {
@@ -258,11 +258,11 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    $(document).on('click', '.ht-wp-editor-button', function () {
-        $(this).addClass('ht-wp-editor-widget-active');
-        $('#ht-wp-editor-widget-backdrop').show();
-        $('body.widgets-php #ht-wp-editor-widget-container, body.post-php #ht-wp-editor-widget-container, body.post-new-php #ht-wp-editor-widget-container, body.fl-builder #ht-wp-editor-widget-container, body.elementor-editor-active #ht-wp-editor-widget-container').show();
-        $('body.wp-customizer #ht-wp-editor-widget-container').fadeIn(100).animate({
+    $(document).on('click', '.vm-wp-editor-button', function () {
+        $(this).addClass('vm-wp-editor-widget-active');
+        $(' #vm-wp-editor-widget-backdrop').show();
+        $('body.widgets-php  #vm-wp-editor-widget-container, body.post-php  #vm-wp-editor-widget-container, body.post-new-php  #vm-wp-editor-widget-container, body.fl-builder  #vm-wp-editor-widget-container, body.elementor-editor-active  #vm-wp-editor-widget-container').show();
+        $('body.wp-customizer  #vm-wp-editor-widget-container').fadeIn(100).animate({
             'left': '0'
         });
 
@@ -294,11 +294,11 @@ jQuery(document).ready(function ($) {
 
     });
 
-    $(document).on('click', '.ht-wp-editor-widget-close', function () {
-        $('.ht-wp-editor-button').removeClass('ht-wp-editor-widget-active');
-        $('#ht-wp-editor-widget-backdrop').hide();
-        $('body.widgets-php #ht-wp-editor-widget-container, body.post-php #ht-wp-editor-widget-container, body.post-new-php #ht-wp-editor-widget-container, body.fl-builder #ht-wp-editor-widget-container, body.elementor-editor-active #ht-wp-editor-widget-container').hide();
-        $('body.wp-customizer #ht-wp-editor-widget-container').animate({
+    $(document).on('click', '.vm-wp-editor-widget-close', function () {
+        $('.vm-wp-editor-button').removeClass('vm-wp-editor-widget-active');
+        $(' #vm-wp-editor-widget-backdrop').hide();
+        $('body.widgets-php  #vm-wp-editor-widget-container, body.post-php  #vm-wp-editor-widget-container, body.post-new-php  #vm-wp-editor-widget-container, body.fl-builder  #vm-wp-editor-widget-container, body.elementor-editor-active  #vm-wp-editor-widget-container').hide();
+        $('body.wp-customizer  #vm-wp-editor-widget-container').animate({
             "left": "-650px"
         }).fadeOut();
 
@@ -319,7 +319,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-    $(document).on('click', '.ht-wp-editor-widget-update-close', function () {
+    $(document).on('click', '.vm-wp-editor-widget-update-close', function () {
         var currentEditorPage = '';
         if ($('body').hasClass('wp-customizer')) {
             var currentEditorPage = 'wp-customizer';
@@ -329,7 +329,7 @@ jQuery(document).ready(function ($) {
             var currentEditorPage = 'wp-pagescreen';
         }
 
-        var currentContentId = $('.ht-wp-editor-widget-active').prev('input')
+        var currentContentId = $('.vm-wp-editor-widget-active').prev('input')
 
         $('#wpeditorwidget-tmce').trigger('click');
         var editor = tinyMCE.EditorManager.get('wpeditorwidget');
@@ -369,10 +369,10 @@ jQuery(document).ready(function ($) {
             $(currentContentId).closest('div.form').find('input.widget-id').val(editor.getContent());
         }
 
-        $('.ht-wp-editor-button').removeClass('ht-wp-editor-widget-active');
-        $('#ht-wp-editor-widget-backdrop').hide();
-        $('body.widgets-php #ht-wp-editor-widget-container, body.post-php #ht-wp-editor-widget-container, body.post-new-php #ht-wp-editor-widget-container, body.fl-builder #ht-wp-editor-widget-container, body.elementor-editor-active #ht-wp-editor-widget-container').hide();
-        $('body.wp-customizer #ht-wp-editor-widget-container').animate({
+        $('.vm-wp-editor-button').removeClass('vm-wp-editor-widget-active');
+        $(' #vm-wp-editor-widget-backdrop').hide();
+        $('body.widgets-php  #vm-wp-editor-widget-container, body.post-php  #vm-wp-editor-widget-container, body.post-new-php  #vm-wp-editor-widget-container, body.fl-builder  #vm-wp-editor-widget-container, body.elementor-editor-active  #vm-wp-editor-widget-container').hide();
+        $('body.wp-customizer  #vm-wp-editor-widget-container').animate({
             "left": "-650px"
         }).fadeOut();
 

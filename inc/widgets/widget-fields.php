@@ -28,7 +28,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                     viral_mag_widget_tabs(id);
                 });
             </script>
-            <div class="ht-widget-tab <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
+            <div class="vm-widget-tab <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
                 <?php
                 foreach ($viral_mag_widgets_tabs as $viral_mag_widgets_class => $viral_mag_widgets_tab_name) {
                     ?>
@@ -53,22 +53,22 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'icon' :
             ?>
-            <div class="ht-widget-icon-box ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <div class="vm-widget-icon-box vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
 
-                <div class="ht-selected-icon">
+                <div class="vm-selected-icon">
                     <i class="<?php echo esc_attr($viral_mag_field_value); ?>"></i>
                     <span><i class="icofont-simple-down"></i></span>
                 </div>
 
-                <div class="ht-icon-box">
-                    <div class="ht-icon-search">
-                        <input type="text" class="ht-icon-search-input" placeholder="<?php echo esc_attr__('Type to filter', 'viral-mag') ?>" />
+                <div class="vm-icon-box">
+                    <div class="vm-icon-search">
+                        <input type="text" class="vm-icon-search-input" placeholder="<?php echo esc_attr__('Type to filter', 'viral-mag') ?>" />
                     </div>
 
-                    <ul class="ht-icon-list clearfix">
+                    <ul class="vm-icon-list clearfix">
                         <?php
                         if (isset($viral_mag_icon_array) && !empty($viral_mag_icon_array)) {
                             $icon_array = $viral_mag_icon_array;
@@ -95,13 +95,13 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'selector' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label><?php echo esc_html($viral_mag_widgets_title); ?></label>
                 <?php } ?>
 
                 <?php foreach ($viral_mag_widgets_field_options as $viral_mag_option_name => $viral_mag_option_title) { ?>
-                    <label class="ht-image-label" for="<?php echo $instance->get_field_id($viral_mag_option_name); ?>">
+                    <label class="vm-image-label" for="<?php echo $instance->get_field_id($viral_mag_option_name); ?>">
                         <input id="<?php echo $instance->get_field_id($viral_mag_option_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" type="radio" value="<?php echo esc_attr($viral_mag_option_name); ?>" <?php checked($viral_mag_option_name, $viral_mag_field_value); ?> />
                         <img src="<?php echo esc_url($viral_mag_option_title); ?>" />
                     </label>
@@ -117,7 +117,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'text' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
@@ -134,7 +134,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'url' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
@@ -151,13 +151,13 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'editor' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php }
                 ?>
                 <input class="widefat" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" value='<?php echo wp_kses_post($viral_mag_field_value); ?>' type="hidden" />
-                <a href="#" class="button ht-wp-editor-button"><?php esc_html_e('Add/Edit Content', 'viral-mag') ?></a>
+                <a href="#" class="button vm-wp-editor-button"><?php esc_html_e('Add/Edit Content', 'viral-mag') ?></a>
 
                 <?php if (isset($viral_mag_widgets_description)) { ?>
                     <br />
@@ -170,12 +170,12 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
         case 'inline_editor' :
             $selector = 'viral_mag_' . md5(uniqid(rand(), true));
             ?>
-            <div class="ht-form-row <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
+            <div class="vm-form-row <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
 
-                <textarea class="widefat ht-inline-editor" rows="<?php echo absint($viral_mag_widgets_row); ?>" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>"><?php echo wp_kses_post($viral_mag_field_value); ?></textarea>
+                <textarea class="widefat vm-inline-editor" rows="<?php echo absint($viral_mag_widgets_row); ?>" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>"><?php echo wp_kses_post($viral_mag_field_value); ?></textarea>
 
                 <?php if (isset($viral_mag_widgets_description)) { ?>
                     <br />
@@ -194,7 +194,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'textarea' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
@@ -212,12 +212,12 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
         case 'color' :
             $selector = 'viral_mag_' . md5(uniqid(rand(), true));
             ?>
-            <div class="ht-color-widget ht-form-row <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
+            <div class="vm-color-widget vm-form-row <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
 
-                <input class="ht-widget-color-picker" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" type="text" value="<?php echo esc_attr($viral_mag_field_value) ?>"/>
+                <input class="vm-widget-color-picker" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" type="text" value="<?php echo esc_attr($viral_mag_field_value) ?>"/>
 
                 <?php if (isset($viral_mag_widgets_description)) { ?>
                     <br />
@@ -236,7 +236,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'checkbox' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <input id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" type="checkbox" value="1" <?php checked('1', $viral_mag_field_value); ?>/>
 
                 <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?></label>
@@ -251,7 +251,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'multicheckbox' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label><?php echo esc_html($viral_mag_widgets_title); ?></label>
                     <?php
@@ -279,7 +279,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'radio' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label><?php echo esc_html($viral_mag_widgets_title); ?></label>
                 <?php } ?>
@@ -300,7 +300,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'select' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
@@ -321,7 +321,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'number' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
@@ -343,7 +343,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                 $image_class = ' hidden';
             }
             ?>
-            <div class="ht-form-row attachment-media-view widget-media-view <?php echo $viral_mag_widgets_class; ?>">
+            <div class="vm-form-row attachment-media-view widget-media-view <?php echo $viral_mag_widgets_class; ?>">
 
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
@@ -357,8 +357,8 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                 </div>
 
                 <div class="actions clearfix">
-                    <button type="button" class="button ht-delete-button align-left"><?php esc_html_e('Remove', 'viral-mag'); ?></button>
-                    <button type="button" class="button ht-upload-button alignright"><?php esc_html_e('Select Image', 'viral-mag'); ?></button>
+                    <button type="button" class="button vm-delete-button align-left"><?php esc_html_e('Remove', 'viral-mag'); ?></button>
+                    <button type="button" class="button vm-upload-button alignright"><?php esc_html_e('Select Image', 'viral-mag'); ?></button>
 
                     <input name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" class="upload-id" type="hidden" value="<?php echo esc_url($viral_mag_field_value) ?>"/>
                 </div>
@@ -375,12 +375,12 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
         case 'datepicker' :
             $selector = 'viral_mag_' . md5(uniqid(rand(), true));
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <label for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                 <?php } ?>
 
-                <input class="widefat ht-datepicker" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" type="text" value="<?php echo esc_html($viral_mag_field_value); ?>" autocomplete="off" />
+                <input class="widefat vm-datepicker" id="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>" name="<?php echo $instance->get_field_name($viral_mag_widgets_name); ?>" type="text" value="<?php echo esc_html($viral_mag_field_value); ?>" autocomplete="off" />
 
                 <?php if (isset($viral_mag_widgets_description)) { ?>
                     <br />
@@ -399,9 +399,9 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
         case 'heading' :
             ?>
-            <p class="ht-form-row <?php echo $viral_mag_widgets_class; ?>">
+            <p class="vm-form-row <?php echo $viral_mag_widgets_class; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
-                    <label class="ht-label-heading" for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
+                    <label class="vm-label-heading" for="<?php echo $instance->get_field_id($viral_mag_widgets_name); ?>"><?php echo esc_html($viral_mag_widgets_title); ?>:</label>
                     <?php
                 }
 
@@ -417,7 +417,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
         case 'repeater':
             $selector = 'viral_mag_' . md5(uniqid(rand(), true));
             ?>
-            <div class="ht-form-row ht-widget-repeater-wrap <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
+            <div class="vm-form-row vm-widget-repeater-wrap <?php echo $viral_mag_widgets_class; ?>" id="<?php echo $selector; ?>">
                 <?php if (isset($viral_mag_widgets_title)) { ?>
                     <p><?php echo esc_html($viral_mag_widgets_title); ?></p>
                     <?php
@@ -435,18 +435,18 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                 $count = count($viral_mag_field_value);
                 ?>
 
-                <div class="ht-widget-repeater" data-count="<?php echo $count; ?>">
+                <div class="vm-widget-repeater" data-count="<?php echo $count; ?>">
                     <?php
                     $i = 0;
                     foreach ($viral_mag_field_value as $viral_mag_field_val) {
                         $i++;
                         ?>
-                        <div class="ht-widget-repeater-box">
+                        <div class="vm-widget-repeater-box">
                             <?php if (isset($viral_mag_widgets_repeater_title)) { ?>
-                                <div class="ht-repeater-box-title"><?php echo '<span>' . esc_html($viral_mag_widgets_repeater_title) . ' - ' . $viral_mag_field_val[$viral_mag_widgets_repeater_fields_title] . '</span>'; ?> <span class="ht-repeater-toggle"></span></div>
+                                <div class="vm-repeater-box-title"><?php echo '<span>' . esc_html($viral_mag_widgets_repeater_title) . ' - ' . $viral_mag_field_val[$viral_mag_widgets_repeater_fields_title] . '</span>'; ?> <span class="vm-repeater-toggle"></span></div>
                             <?php }
                             ?>
-                            <div class="ht-repeater-content">
+                            <div class="vm-repeater-content">
                                 <?php
                                 foreach ($viral_mag_widgets_repeater_fields as $key => $viral_mag_widgets_repeater_field) {
                                     $id = $instance->get_field_id($viral_mag_widgets_name . '-' . $i . '-' . $key);
@@ -520,22 +520,22 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
 
                                         case 'icon' :
                                             ?>
-                                            <div class="ht-widget-icon-box">
+                                            <div class="vm-widget-icon-box">
                                                 <?php if (isset($viral_mag_widgets_repeater_field['title'])) { ?>
                                                     <label for="<?php echo esc_attr($id); ?>"><?php echo esc_html($viral_mag_widgets_repeater_field['title']); ?>:</label><br />
                                                 <?php }
                                                 ?>
 
-                                                <div class="ht-selected-icon">
+                                                <div class="vm-selected-icon">
                                                     <i class="<?php echo esc_attr($value); ?>"></i>
                                                     <span><i class="icofont-simple-down"></i></span>
                                                 </div>
 
-                                                <div class="ht-icon-box">
-                                                    <div class="ht-icon-search">
-                                                        <input type="text" class="ht-icon-search-input" placeholder="<?php echo esc_attr__('Type to filter', 'viral-mag') ?>" />
+                                                <div class="vm-icon-box">
+                                                    <div class="vm-icon-search">
+                                                        <input type="text" class="vm-icon-search-input" placeholder="<?php echo esc_attr__('Type to filter', 'viral-mag') ?>" />
                                                     </div>
-                                                    <ul class="ht-icon-list clearfix">
+                                                    <ul class="vm-icon-list clearfix">
                                                         <?php
                                                         if (isset($viral_mag_widgets_repeater_field['icon_array']) && !empty($viral_mag_widgets_repeater_field['icon_array'])) {
                                                             $icon_array = $viral_mag_widgets_repeater_field['icon_array'];
@@ -567,7 +567,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                                                 <?php }
                                                 ?>
                                                 <input class="widefat" id="<?php echo esc_attr($id); ?>" name="<?php echo $name . '[' . $i . '][' . $key . ']'; ?>" value="<?php echo esc_textarea($value); ?>" type="hidden" />
-                                                <a href="#" class="button ht-wp-editor-button"><?php esc_html_e('Add/Edit Content', 'viral-mag') ?></a>
+                                                <a href="#" class="button vm-wp-editor-button"><?php esc_html_e('Add/Edit Content', 'viral-mag') ?></a>
                                                 <?php if (isset($viral_mag_widgets_repeater_field['desc'])) { ?>
                                                     <br />
                                                     <small><?php echo wp_kses_post($viral_mag_widgets_repeater_field['desc']); ?></small>
@@ -597,8 +597,8 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                                                 </div>
 
                                                 <div class="actions clearfix">
-                                                    <button type="button" class="button ht-delete-button align-left"><?php esc_html_e('Remove', 'viral-mag'); ?></button>
-                                                    <button type="button" class="button ht-upload-button alignright"><?php esc_html_e('Select Image', 'viral-mag'); ?></button>
+                                                    <button type="button" class="button vm-delete-button align-left"><?php esc_html_e('Remove', 'viral-mag'); ?></button>
+                                                    <button type="button" class="button vm-upload-button alignright"><?php esc_html_e('Select Image', 'viral-mag'); ?></button>
 
                                                     <input name="<?php echo $name . '[' . $i . '][' . $key . ']'; ?>" id="<?php echo esc_attr($id); ?>" class="upload-id" type="hidden" value="<?php echo esc_url($value) ?>"/>
                                                 </div>
@@ -614,14 +614,14 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                                     }
                                 }
                                 ?>
-                                <a href="#" class="button ht-widget-repeater-remove"><?php esc_html_e('Remove', 'viral-mag'); ?></a>
+                                <a href="#" class="button vm-widget-repeater-remove"><?php esc_html_e('Remove', 'viral-mag'); ?></a>
                             </div>
                         </div>
                         <?php
                     }
                     ?>
                 </div>
-                <a href="#" class="button ht-widget-add-item"><?php echo esc_html($viral_mag_widgets_add_button); ?></a>
+                <a href="#" class="button vm-widget-add-item"><?php echo esc_html($viral_mag_widgets_add_button); ?></a>
             </div>
             <script>
                 jQuery(function ($) {

@@ -8,13 +8,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if ('post' == get_post_type()) : ?>
-        <div class="entry-meta ht-post-info">
+        <div class="entry-meta vm-post-info">
             <?php viral_mag_posted_on(); ?>
         </div><!-- .entry-meta -->
     <?php endif; ?>
 
 
-    <div class="ht-post-wrapper">
+    <div class="vm-post-wrapper">
         <?php if (has_post_thumbnail()): ?>
             <figure class="entry-figure">
                 <?php

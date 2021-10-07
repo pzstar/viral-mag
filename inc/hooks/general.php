@@ -4,12 +4,12 @@ if (!function_exists('viral_mag_404_content')) {
     function viral_mag_404_content() {
         $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
         ?>
-        <header class="ht-main-header">
-            <div class="ht-container">
+        <header class="vm-main-header">
+            <div class="vm-container">
                 <?php
                 if ($viral_mag_show_title) {
                     ?>
-                    <h1 class="ht-main-title"><?php esc_html_e('404 Error', 'viral-mag'); ?></h1>
+                    <h1 class="vm-main-title"><?php esc_html_e('404 Error', 'viral-mag'); ?></h1>
                     <?php
                 }
 
@@ -18,7 +18,7 @@ if (!function_exists('viral_mag_404_content')) {
             </div>
         </header><!-- .entry-header -->
 
-        <div class="ht-container">
+        <div class="vm-container">
             <div class="oops-text"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'viral-mag'); ?></div>
             <div class="oops-image">
                 <img alt="<?php esc_attr_e('404 Error', 'viral-mag'); ?>" src="<?php echo esc_url(get_template_directory_uri() . '/images/404.png'); ?>"/>
@@ -92,7 +92,7 @@ if (!function_exists('viral_mag_comments_content')) {
 
             $fields = array(
                 'author' =>
-                '<div class="author-email-url ht-clearfix"><p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) .
+                '<div class="author-email-url vm-clearfix"><p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) .
                 '" size="30"' . $aria_req . ' placeholder="' . esc_attr__('Name', 'viral-mag') . ( $req ? '*' : '' ) . '" /></p>',
                 'email' =>
                 '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) .
@@ -253,8 +253,11 @@ function viral_mag_migrate_theme_mods() {
         'sidebar_title_letter_spacing' => 'viral_mag_sidebar_title_letter_spacing'
     );
 
+    $theme = wp_get_theme();
+    $theme_version = $theme->get('Version');
+
     $is_updated = get_option('viral_mag_update_old_theme_mods');
-    if (!$is_updated) {
+    if (!$is_updated && version_compare($theme_version, '1.1') >= 0) {
         foreach ($mapping_array as $oldkey => $newkey) {
             $oldvalue = get_theme_mod($oldkey);
             if ($oldvalue) {

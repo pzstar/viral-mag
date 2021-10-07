@@ -26,18 +26,18 @@ class viral_mag_contact_info extends WP_Widget {
         $fields = array(
             'ht_tab' => array(
                 'viral_mag_widgets_tabs' => array(
-                    'ht-input' => esc_html__('Inputs', 'viral-mag'),
-                    'ht-settings' => esc_html__('Settings', 'viral-mag')
+                    'vm-input' => esc_html__('Inputs', 'viral-mag'),
+                    'vm-settings' => esc_html__('Settings', 'viral-mag')
                 ),
                 'viral_mag_widgets_field_type' => 'tab'
             ),
             'tab_open' => array(
-                'viral_mag_widgets_class' => 'ht-widget-tab-content-wrap',
+                'viral_mag_widgets_class' => 'vm-widget-tab-content-wrap',
                 'viral_mag_widgets_field_type' => 'open'
             ),
             'input_open' => array(
-                'viral_mag_widgets_class' => 'ht-widget-tab-content',
-                'viral_mag_widgets_data_id' => 'ht-input',
+                'viral_mag_widgets_class' => 'vm-widget-tab-content',
+                'viral_mag_widgets_data_id' => 'vm-input',
                 'viral_mag_widgets_field_type' => 'open'
             ),
             'title' => array(
@@ -76,8 +76,8 @@ class viral_mag_contact_info extends WP_Widget {
                 'viral_mag_widgets_field_type' => 'close'
             ),
             'settings_open' => array(
-                'viral_mag_widgets_class' => 'ht-widget-tab-content',
-                'viral_mag_widgets_data_id' => 'ht-settings',
+                'viral_mag_widgets_class' => 'vm-widget-tab-content',
+                'viral_mag_widgets_data_id' => 'vm-settings',
                 'viral_mag_widgets_field_type' => 'open'
             ),
             'title_color' => array(
@@ -173,7 +173,7 @@ class viral_mag_contact_info extends WP_Widget {
             echo $before_title . '<span ' . $title_style . '>' . apply_filters('widget_title', $title) . '</span>' . $after_title;
         endif;
         ?>
-        <div class="ht-contact-info" <?php echo $wrap_style; ?>>
+        <div class="vm-contact-info" <?php echo $wrap_style; ?>>
             <ul <?php echo $text_style; ?>>
                 <?php if (!empty($phone)): ?>
                     <li><i class="icofont-phone" <?php echo $icon_style; ?>></i><?php echo wp_kses_post($phone); ?></li>

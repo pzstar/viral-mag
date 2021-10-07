@@ -18,9 +18,9 @@
         <?php
         do_action('viral_mag_before_page');
         ?>
-        <div id="ht-page">
-            <a class="skip-link screen-reader-text" href="#ht-content"><?php esc_html_e('Skip to content', 'viral-mag'); ?></a>
+        <div id="vm-page">
+            <a class="skip-link screen-reader-text" href=" #vm-content"><?php esc_html_e('Skip to content', 'viral-mag'); ?></a>
             <?php
             do_action('viral_mag_header');
             ?>
-            <div id="ht-content" class="ht-site-content ht-clearfix">
+            <div id="vm-content" class="vm-site-content vm-clearfix">

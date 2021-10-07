@@ -3,9 +3,9 @@ if (!function_exists('viral_mag_footer_open')) {
 
     function viral_mag_footer_open() {
         $viral_mag_footer_col = get_theme_mod('viral_mag_footer_col', 'col-3-1-1-1');
-        $footer_class = apply_filters('viral_mag_footer_class', array('ht-site-footer'));
+        $footer_class = apply_filters('viral_mag_footer_class', array('vm-site-footer'));
         echo '</div><!-- #content -->';
-        echo '<footer id="ht-colophon" class="' . implode(' ', $footer_class) ." ". esc_attr($viral_mag_footer_col) . '">';
+        echo '<footer id="vm-colophon" class="' . implode(' ', $footer_class) ." ". esc_attr($viral_mag_footer_col) . '">';
     }
 
 }
@@ -18,14 +18,14 @@ if (!function_exists('viral_mag_main_footer')) {
         $count = count($viral_mag_footer_array);
         $footer_col = $count - 2;
         if (viral_mag_check_active_footer()) { ?>
-        <div class="ht-main-footer">
-            <div class="ht-container">
-                <div class="ht-main-footer-wrap ht-clearfix">
+        <div class="vm-main-footer">
+            <div class="vm-container">
+                <div class="vm-main-footer-wrap vm-clearfix">
                     <?php
                     for ($i = 1; $i <= $footer_col; $i++) {
                         if (is_active_sidebar('viral-mag-footer' . $i)) {
                             ?>
-                            <div class="ht-footer ht-footer<?php echo absint($i); ?>">
+                            <div class="vm-footer vm-footer<?php echo absint($i); ?>">
                                 <?php dynamic_sidebar('viral-mag-footer' . $i); ?>  
                             </div>
                             <?php
@@ -45,9 +45,9 @@ if (!function_exists('viral_mag_bottom_footer')) {
 
         $viral_mag_footer_copyright = get_theme_mod('viral_mag_footer_copyright', esc_html__('&copy; 2021 Viral Mag. All Right Reserved.', 'viral-mag'));
         if (!empty($viral_mag_footer_copyright)) { ?>
-            <div class="ht-bottom-footer">
-                <div class="ht-container">
-                    <div class="ht-site-info">
+            <div class="vm-bottom-footer">
+                <div class="vm-container">
+                    <div class="vm-site-info">
                         <?php echo do_shortcode($viral_mag_footer_copyright); ?>
                         <?php printf('%4$s <span class="sep"> | </span><a title="%3$s" href="%1$s" target="_blank">Viral Mag</a> %2$s', 'https://hashthemes.com/wordpress-theme/viral-mag/', esc_html__('by HashThemes', 'viral-mag'), esc_attr__('Download Viral News', 'viral-mag'), esc_html__('WordPress Theme', 'viral-mag')); ?>
                     </div><!-- #site-info -->

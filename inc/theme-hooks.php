@@ -29,7 +29,7 @@ function viral_mag_body_classes($classes) {
         $viral_mag_sidebar_layout = 'right-sidebar';
     }
 
-    $classes[] = 'ht-' . $viral_mag_sidebar_layout;
+    $classes[] = 'vm-' . $viral_mag_sidebar_layout;
 
     $sticky_header = get_theme_mod('viral_mag_sticky_header', 'off');
     $viral_mag_top_header = get_theme_mod('viral_mag_top_header', 'on');
@@ -41,30 +41,30 @@ function viral_mag_body_classes($classes) {
 
     if (is_singular('post')) {
         $viral_mag_post_layout = get_theme_mod('viral_mag_single_layout', 'layout1');
-        $classes[] = 'ht-single-' . $viral_mag_post_layout;
+        $classes[] = 'vm-single-' . $viral_mag_post_layout;
     }
 
-    $classes[] = 'ht-top-header-' . $viral_mag_top_header;
+    $classes[] = 'vm-top-header-' . $viral_mag_top_header;
 
     if ($sticky_header == 'on') {
-        $classes[] = 'ht-sticky-header';
+        $classes[] = 'vm-sticky-header';
     }
 
     if ($sticky_sidebar) {
-        $classes[] = 'ht-sticky-sidebar';
+        $classes[] = 'vm-sticky-sidebar';
     }
 
-    $classes[] = 'ht-' . $website_layout;
+    $classes[] = 'vm-' . $website_layout;
 
-    $classes[] = 'ht-' . $header_style;
+    $classes[] = 'vm-' . $header_style;
 
-    $classes[] = 'ht-' . $sidebar_style;
+    $classes[] = 'vm-' . $sidebar_style;
 
-    $classes[] = 'ht-block-title-' . $block_title_style;
+    $classes[] = 'vm-block-title-' . $block_title_style;
 
     if (is_archive() || is_home() || is_search()) {
         $blog_layout = get_theme_mod('viral_mag_blog_layout', 'layout1');
-        $classes[] = 'ht-blog-' . $blog_layout;
+        $classes[] = 'vm-blog-' . $blog_layout;
     }
 
     return $classes;
@@ -75,7 +75,7 @@ add_filter('body_class', 'viral_mag_body_classes');
 if (!function_exists('viral_mag_change_wp_page_menu_args')) {
 
     function viral_mag_change_wp_page_menu_args($args) {
-        $args['menu_class'] = 'ht-menu ht-clearfix';
+        $args['menu_class'] = 'vm-menu vm-clearfix';
         return $args;
     }
 

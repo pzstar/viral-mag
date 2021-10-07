@@ -41,21 +41,21 @@ function viral_mag_header_logo() {
 
     if (!$hide_title || !$hide_tagline) {
         ?>
-        <div class="ht-site-title-tagline">
+        <div class="vm-site-title-tagline">
             <?php
             if (!$hide_title) {
                 if (is_front_page()) :
                     ?>
-                    <h1 class="ht-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                    <h1 class="vm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                 <?php else : ?>
-                    <p class="ht-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+                    <p class="vm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
                 <?php
                 endif;
             }
 
             if (!$hide_tagline) {
                 ?>
-                <p class="ht-site-description"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('description'); ?></a></p>
+                <p class="vm-site-description"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('description'); ?></a></p>
                 <?php
             }
             ?>
@@ -67,8 +67,8 @@ function viral_mag_header_logo() {
 function viral_mag_main_navigation() {
     wp_nav_menu(array(
         'theme_location' => 'viral-mag-primary-menu',
-        'container_class' => 'ht-menu ht-clearfix',
-        'menu_class' => 'ht-clearfix',
+        'container_class' => 'vm-menu vm-clearfix',
+        'menu_class' => 'vm-clearfix',
         'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
         'fallback_cb' => false,
     ));
@@ -77,8 +77,8 @@ function viral_mag_main_navigation() {
 function viral_mag_responsive_navigation() {
     wp_nav_menu(array(
         'theme_location' => 'viral-mag-primary-menu',
-        'container_id' => 'ht-mobile-menu',
-        'menu_id' => 'ht-responsive-menu',
+        'container_id' => 'vm-mobile-menu',
+        'menu_id' => 'vm-responsive-menu',
         'items_wrap' => '<a href="javascript:void(0)"  class="menu-collapser"><div class="collapse-button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div></a><ul id="%1$s" class="%2$s">%3$s</ul>',
         'fallback_cb' => false,
     ));
@@ -91,7 +91,7 @@ function viral_mag_top_header_menu() {
         wp_nav_menu(array(
             'menu' => $menu_id,
             'container' => NULL,
-            'menu_class' => 'ht-clearfix',
+            'menu_class' => 'vm-clearfix',
             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
         ));
     }
@@ -118,14 +118,14 @@ function viral_mag_top_header_date() {
     echo date_i18n('l, F j', time());
     echo '</span>';
     echo '<span><i class="mdi mdi-clock-time-four-outline"></i>';
-    echo '<span class="vl-time"></span>';
+    echo '<span class="vm-time"></span>';
     echo '</span>';
 }
 
 function viral_mag_top_left_header() {
     $left_header = get_theme_mod('viral_mag_th_left_display', 'date');
     ?>
-    <div class="ht-th-left th-<?php echo esc_attr($left_header) ?>">
+    <div class="vm-th-left th-<?php echo esc_attr($left_header) ?>">
         <?php
         if ($left_header !== 'none') {
             if ($left_header == 'social') {
@@ -141,14 +141,14 @@ function viral_mag_top_left_header() {
             }
         }
         ?>
-    </div><!-- .ht-th-left -->
+    </div><!-- .vm-th-left -->
     <?php
 }
 
 function viral_mag_top_right_header() {
     $right_header = get_theme_mod('viral_mag_th_right_display', 'social');
     ?>
-    <div class="ht-th-right th-<?php echo esc_attr($right_header) ?>">
+    <div class="vm-th-right th-<?php echo esc_attr($right_header) ?>">
         <?php
         if ($right_header !== 'none') {
             if ($right_header == 'social') {
@@ -164,7 +164,7 @@ function viral_mag_top_right_header() {
             }
         }
         ?>
-    </div><!-- .ht-th-right -->
+    </div><!-- .vm-th-right -->
     <?php
 }
 
@@ -207,7 +207,7 @@ function viral_mag_offcanvas_menu_button() {
     $header_style = get_theme_mod('viral_mag_mh_layout', 'header-style2');
 
     if ($enable_button && $header_style != 'header-style2' && $header_style != 'header-style7') {
-        echo '<div class="ht-offcanvas-nav"><a href="javascript:void(0)"><span></span><span></span><span></span></a></div>';
+        echo '<div class="vm-offcanvas-nav"><a href="javascript:void(0)"><span></span><span></span><span></span></a></div>';
     }
 }
 
@@ -216,7 +216,7 @@ function viral_mag_search_button() {
     $header_style = get_theme_mod('viral_mag_mh_layout', 'header-style2');
 
     if ($enable_button && $header_style != 'header-style2') {
-        echo '<div class="ht-search-button"><a href="javascript:void(0)"><i class="icofont-search-1"></i></a></div>';
+        echo '<div class="vm-search-button"><a href="javascript:void(0)"><i class="icofont-search-1"></i></a></div>';
     }
 }
 
@@ -250,7 +250,7 @@ function viral_mag_header_social_icons() {
 
     if ($enable_button && $header_style != 'header-style2') {
         if (!empty($social_icons)) {
-            echo '<div class="ht-header-social-icons">';
+            echo '<div class="vm-header-social-icons">';
             foreach ($social_icons as $social_icon) {
                 if ($social_icon->enable === 'on' && !empty($social_icon->link)) {
                     echo '<a href="' . esc_attr($social_icon->link) . '" target="_blank"><i class="' . esc_attr($social_icon->icon) . '"></i></a>';
@@ -266,12 +266,12 @@ if (!function_exists('viral_mag_header_search_wrapper')) {
     function viral_mag_header_search_wrapper() {
         $enable_search = get_theme_mod('viral_mag_mh_show_search', true);
         $placeholder_text = esc_attr__('Enter a keyword to search...', 'viral-mag');
-        $form = '<div class="ht-search-wrapper">';
-        $form .= '<div class="ht-search-container">';
+        $form = '<div class="vm-search-wrapper">';
+        $form .= '<div class="vm-search-container">';
         $form .= '<form role="search" method="get" class="search-form" action="' . esc_url(home_url('/')) . '">';
         $form .= '<input autocomplete="off" type="search" class="search-field" placeholder="' . $placeholder_text . '" value="' . get_search_query() . '" name="s" />';
         $form .= '<button type="submit" class="search-submit"><i class="icofont-search"></i></button>';
-        $form .= '<a href="#" class="ht-search-close"><div class="viral-mag-selected-icon"><i class="icofont-close-line-squared"></i></div></a>';
+        $form .= '<a href="#" class="vm-search-close"><div class="viral-mag-selected-icon"><i class="icofont-close-line-squared"></i></div></a>';
         $form .= '</form>';
         $form .= '</div>';
         $form .= '</div>';
@@ -296,10 +296,10 @@ if (!function_exists('viral_mag_off_canvas_sidebar')) {
             return;
         }
         ?>
-        <div class="ht-offcanvas-sidebar-modal"></div>
-        <div class="ht-offcanvas-sidebar">
-            <a href="javascript:void(0)" class="ht-offcanvas-close"></a>
-            <div class="ht-offcanvas-sidebar-wrapper">
+        <div class="vm-offcanvas-sidebar-modal"></div>
+        <div class="vm-offcanvas-sidebar">
+            <a href="javascript:void(0)" class="vm-offcanvas-close"></a>
+            <div class="vm-offcanvas-sidebar-wrapper">
                 <?php
                 if (is_active_sidebar('viral-mag-offcanvas-sidebar')) {
                     dynamic_sidebar('viral-mag-offcanvas-sidebar');

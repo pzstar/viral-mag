@@ -83,7 +83,7 @@ if (!function_exists('viral_mag_setup')) :
             'width' => 300,
             'flex-height' => true,
             'flex-width' => true,
-            'header-text' => array('.ht-site-title', '.ht-site-description'),
+            'header-text' => array('.vm-site-title', '.vm-site-description'),
         ));
 
         add_theme_support('woocommerce');

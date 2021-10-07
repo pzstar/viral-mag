@@ -60,17 +60,17 @@ add_action('elementor/editor/before_enqueue_scripts', 'viral_mag_admin_scripts')
 
 function viral_mag_customizer_editor() {
     ?>
-    <div id="ht-wp-editor-widget-container" style="display: none;">
-        <a class="ht-wp-editor-widget-close" href="#" title="<?php esc_attr_e('Close', 'viral-mag'); ?>"><i class="icofont-close-squared-alt"></i></a>
+    <div id="vm-wp-editor-widget-container" style="display: none;">
+        <a class="vm-wp-editor-widget-close" href="#" title="<?php esc_attr_e('Close', 'viral-mag'); ?>"><i class="icofont-close-squared-alt"></i></a>
         <div class="editor">
             <?php
             $settings = array('textarea_rows' => 55, 'editor_height' => 260);
             wp_editor('', 'wpeditorwidget', $settings);
             ?>
-            <p><a href="#" class="ht-wp-editor-widget-update-close button button-primary"><?php _e('Save and Close', 'viral-mag'); ?></a></p>
+            <p><a href="#" class="vm-wp-editor-widget-update-close button button-primary"><?php _e('Save and Close', 'viral-mag'); ?></a></p>
         </div>
     </div>
-    <div id="ht-wp-editor-widget-backdrop" style="display: none;"></div>
+    <div id="vm-wp-editor-widget-backdrop" style="display: none;"></div>
     <?php
 }
 

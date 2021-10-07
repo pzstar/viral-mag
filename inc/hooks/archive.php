@@ -5,14 +5,14 @@ if (!function_exists('viral_mag_home_header')) {
         if (is_home()) {
             $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
             ?>
-            <header class="ht-main-header">
-                <div class="ht-container">
+            <header class="vm-main-header">
+                <div class="vm-container">
                     <?php
                     if ($viral_mag_show_title && 'page' == get_option('show_on_front')) {
                         $blog_page_id = get_option('page_for_posts');
                         $viral_mag_title = get_the_title($blog_page_id);
                         ?>
-                        <h1 class="ht-main-title"><?php echo esc_html($viral_mag_title); ?></h1>
+                        <h1 class="vm-main-title"><?php echo esc_html($viral_mag_title); ?></h1>
                         <?php
                     }
 
@@ -31,8 +31,8 @@ if (!function_exists('viral_mag_home_content')) {
 
     function viral_mag_home_content() {
         ?>
-        <div class="ht-main-content ht-clearfix ht-container">
-            <div class="ht-site-wrapper">
+        <div class="vm-main-content vm-clearfix vm-container">
+            <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
                     <?php if (have_posts()) : ?>
@@ -116,7 +116,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
         ?>
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?>>
-            <div class="ht-post-wrapper">
+            <div class="vm-post-wrapper">
                 <?php if (has_post_thumbnail()): ?>
                     <figure class="entry-figure">
                         <?php
@@ -130,27 +130,27 @@ if (!function_exists('viral_mag_blog_layout1')) {
                     </figure>
                 <?php endif; ?>
 
-                <div class="ht-post-content">
+                <div class="vm-post-content">
 
                     <header class="entry-header">
                         <?php if ('post' == get_post_type() && $viral_mag_blog_date) : ?>
-                            <div class="ht-post-date">
+                            <div class="vm-post-date">
                                 <?php
                                 $post_date = get_the_date('d');
                                 $post_month = get_the_date('M');
                                 ?>
                                 <span class="entry-date">
-                                    <span class="ht-day">
+                                    <span class="vm-day">
                                         <?php echo $post_date; ?>
                                     </span>
-                                    <span class="ht-month-year">
+                                    <span class="vm-month-year">
                                         <?php echo $post_month; ?> 
                                     </span>
                                 </span>
                             </div><!-- .entry-meta -->
                         <?php endif; ?>
 
-                        <div class="ht-post-header">
+                        <div class="vm-post-header">
                             <?php the_title(sprintf('<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>'); ?>
                             <?php if ('post' == get_post_type() && ($viral_mag_blog_author || $viral_mag_blog_comment || $viral_mag_blog_category || $viral_mag_blog_tag)) { ?>
                                 <div class="entry-meta">
@@ -228,7 +228,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?>>
 
-            <div class="ht-post-wrapper">
+            <div class="vm-post-wrapper">
                 <?php if (has_post_thumbnail()): ?>
                     <figure class="entry-figure">
                         <?php
@@ -242,9 +242,9 @@ if (!function_exists('viral_mag_blog_layout2')) {
                     </figure>
                 <?php endif; ?>
 
-                <div class="entry-body ht-clearfix">
+                <div class="entry-body vm-clearfix">
                     <?php if ('post' == get_post_type() && ($viral_mag_blog_date || $viral_mag_blog_author || $viral_mag_blog_comment)) : ?>
-                        <div class="ht-post-info">
+                        <div class="vm-post-info">
                             <?php
                             $avatar = get_avatar(get_the_author_meta('ID'), 48);
                             $post_date = get_the_date('d');
@@ -255,10 +255,10 @@ if (!function_exists('viral_mag_blog_layout2')) {
                             );
                             if ($viral_mag_blog_date) {
                                 ?>
-                                <div class="ht-post-date">
+                                <div class="vm-post-date">
                                     <div class="entry-date published updated">
-                                        <div class="ht-day"><?php echo $post_date; ?></div>
-                                        <div class="ht-month"><?php echo $post_month; ?></div>
+                                        <div class="vm-day"><?php echo $post_date; ?></div>
+                                        <div class="vm-month"><?php echo $post_month; ?></div>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -277,7 +277,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
                     <?php endif; ?>
 
 
-                    <div class="ht-post-content">
+                    <div class="vm-post-content">
                         <?php if ('post' == get_post_type() && ($viral_mag_blog_category || $viral_mag_blog_tag)) { ?>
                             <div class="entry-meta">
                                 <?php
@@ -324,9 +324,9 @@ if (!function_exists('viral_mag_search_header')) {
 
     function viral_mag_search_header() {
         ?>
-        <header class="ht-main-header">
-            <div class="ht-container">
-                <h1 class="ht-main-title"><?php printf(esc_html__('Search Results for: %s', 'viral-mag'), '<span>' . get_search_query() . '</span>'); ?></h1>
+        <header class="vm-main-header">
+            <div class="vm-container">
+                <h1 class="vm-main-title"><?php printf(esc_html__('Search Results for: %s', 'viral-mag'), '<span>' . get_search_query() . '</span>'); ?></h1>
                 <?php do_action('viral_mag_breadcrumbs'); ?>
             </div>
         </header><!-- .entry-header -->
@@ -338,8 +338,8 @@ if (!function_exists('viral_mag_search_content')) {
 
     function viral_mag_search_content() {
         ?>
-        <div class="ht-main-content ht-clearfix ht-container">
-            <div class="ht-site-wrapper">
+        <div class="vm-main-content vm-clearfix vm-container">
+            <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
                     <?php if (have_posts()) : 
@@ -378,11 +378,11 @@ if (!function_exists('viral_mag_archive_header')) {
     function viral_mag_archive_header() {
         $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
         ?>
-        <header class="ht-main-header">
-            <div class="ht-container">
+        <header class="vm-main-header">
+            <div class="vm-container">
                 <?php
                 if ($viral_mag_show_title) {
-                    the_archive_title('<h1 class="ht-main-title">', '</h1>');
+                    the_archive_title('<h1 class="vm-main-title">', '</h1>');
                     the_archive_description('<div class="taxonomy-description">', '</div>');
                 }
 
@@ -399,8 +399,8 @@ if (!function_exists('viral_mag_archive_content')) {
 
     function viral_mag_archive_content() {
         ?>
-        <div class="ht-main-content ht-clearfix ht-container">
-            <div class="ht-site-wrapper">
+        <div class="vm-main-content vm-clearfix vm-container">
+            <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
                     <?php if (have_posts()) : ?>

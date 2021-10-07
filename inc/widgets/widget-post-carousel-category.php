@@ -23,18 +23,18 @@ class viral_mag_category_post_carousel extends WP_Widget {
         $fields = array(
             'ht_tab' => array(
                 'viral_mag_widgets_tabs' => array(
-                    'ht-input' => esc_html__('Inputs', 'viral-mag'),
-                    'ht-settings' => esc_html__('Settings', 'viral-mag')
+                    'vm-input' => esc_html__('Inputs', 'viral-mag'),
+                    'vm-settings' => esc_html__('Settings', 'viral-mag')
                 ),
                 'viral_mag_widgets_field_type' => 'tab'
             ),
             'tab_open' => array(
-                'viral_mag_widgets_class' => 'ht-widget-tab-content-wrap',
+                'viral_mag_widgets_class' => 'vm-widget-tab-content-wrap',
                 'viral_mag_widgets_field_type' => 'open'
             ),
             'input_open' => array(
-                'viral_mag_widgets_class' => 'ht-widget-tab-content',
-                'viral_mag_widgets_data_id' => 'ht-input',
+                'viral_mag_widgets_class' => 'vm-widget-tab-content',
+                'viral_mag_widgets_data_id' => 'vm-input',
                 'viral_mag_widgets_field_type' => 'open'
             ),
             'title' => array(
@@ -82,8 +82,8 @@ class viral_mag_category_post_carousel extends WP_Widget {
                 'viral_mag_widgets_field_type' => 'close'
             ),
             'settings_open' => array(
-                'viral_mag_widgets_class' => 'ht-widget-tab-content',
-                'viral_mag_widgets_data_id' => 'ht-settings',
+                'viral_mag_widgets_class' => 'vm-widget-tab-content',
+                'viral_mag_widgets_data_id' => 'vm-settings',
                 'viral_mag_widgets_field_type' => 'open'
             ),
             'title_html_tag' => array(
@@ -148,11 +148,11 @@ class viral_mag_category_post_carousel extends WP_Widget {
         $excerpt_color = isset($instance['excerpt_color']) ? $instance['excerpt_color'] : '';
 
         $title_style = $excerpt_style = "";
-        $class = 'ht-pl-title';
+        $class = 'vm-pl-title';
 
         if ($title_html_tag == 'default') {
             $title_html_tag = 'h3';
-            $class = 'ht-pl-title vl-post-title';
+            $class = 'vm-pl-title vm-post-title';
         }
 
         if (!empty($title_color)) {
@@ -168,7 +168,7 @@ class viral_mag_category_post_carousel extends WP_Widget {
             echo $before_title . apply_filters('widget_title', $title) . $after_title;
         endif;
         ?>
-        <div class="ht-post-carousel owl-carousel">
+        <div class="vm-post-carousel owl-carousel">
             <?php
             $args = array(
                 'post_type' => 'post',
@@ -186,15 +186,15 @@ class viral_mag_category_post_carousel extends WP_Widget {
 
             while ($query->have_posts()) : $query->the_post();
                 ?>
-                <div class="ht-post-slide">
+                <div class="vm-post-slide">
 
-                    <div class="ht-pl-image">
+                    <div class="vm-pl-image">
                         <a href="<?php echo the_permalink(); ?>">
                             <?php viral_mag_post_featured_image($thumbnail_size, false); ?>
                         </a>
                     </div>
 
-                    <div class="ht-pl-content">
+                    <div class="vm-pl-content">
                         <<?php echo $title_html_tag; ?> class="<?php echo $class; ?>" <?php echo $title_style; ?>>
                         <a href="<?php echo the_permalink(); ?>">
                             <?php the_title(); ?>
@@ -202,13 +202,13 @@ class viral_mag_category_post_carousel extends WP_Widget {
                         </<?php echo $title_html_tag; ?>>
 
                         <?php if ($display_date) { ?>
-                            <div class="ht-pl-date" <?php echo $excerpt_style; ?>>
+                            <div class="vm-pl-date" <?php echo $excerpt_style; ?>>
                                 <?php echo viral_mag_post_date(); ?>
                             </div>
                         <?php } ?>
 
                         <?php if ($display_excerpt) { ?>
-                            <div class="ht-pl-excerpt" <?php echo $excerpt_style; ?>>
+                            <div class="vm-pl-excerpt" <?php echo $excerpt_style; ?>>
                                 <?php echo viral_mag_excerpt(get_the_content(), $excerpt_letter_count); ?>
                             </div>
                         <?php } ?>

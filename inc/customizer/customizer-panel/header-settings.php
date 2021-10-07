@@ -41,7 +41,7 @@ $wp_customize->add_control('viral_mag_hide_tagline', array(
 
 $wp_customize->add_setting('viral_mag_tagline_position', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => 'ht-tagline-inline-logo',
+    'default' => 'vm-tagline-inline-logo',
     'transport' => 'postMessage'
 ));
 
@@ -50,8 +50,8 @@ $wp_customize->add_control('viral_mag_tagline_position', array(
     'type' => 'select',
     'label' => esc_html__('Title/Tagline Position', 'viral-mag'),
     'choices' => array(
-        'ht-tagline-inline-logo' => esc_html__('Inline With Logo', 'viral-mag'),
-        'ht-tagline-below-logo' => esc_html__('Below Logo', 'viral-mag')
+        'vm-tagline-inline-logo' => esc_html__('Inline With Logo', 'viral-mag'),
+        'vm-tagline-below-logo' => esc_html__('Below Logo', 'viral-mag')
     )
 ));
 
@@ -67,12 +67,12 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
 )));
 
 $wp_customize->selective_refresh->add_partial('viral_mag_hide_title', array(
-    'selector' => '#ht-site-branding',
+    'selector' => ' #vm-site-branding',
     'render_callback' => 'viral_mag_header_logo'
 ));
 
 $wp_customize->selective_refresh->add_partial('viral_mag_hide_tagline', array(
-    'selector' => '#ht-site-branding',
+    'selector' => ' #vm-site-branding',
     'render_callback' => 'viral_mag_header_logo'
 ));
 
@@ -583,7 +583,7 @@ $wp_customize->add_control(new Viral_Mag_Separator_Control($wp_customize, 'viral
 )));
 
 $wp_customize->add_setting('viral_mag_mh_border', array(
-    'default' => 'ht-no-border',
+    'default' => 'vm-no-border',
     'sanitize_callback' => 'viral_mag_sanitize_choices',
     'transport' => 'postMessage'
 ));
@@ -593,10 +593,10 @@ $wp_customize->add_control('viral_mag_mh_border', array(
     'type' => 'select',
     'label' => esc_html__('Top and Bottom Border Settings', 'viral-mag'),
     'choices' => array(
-        'ht-no-border' => esc_html__('Disable', 'viral-mag'),
-        'ht-top-border' => esc_html__('Enable Top Border', 'viral-mag'),
-        'ht-bottom-border' => esc_html__('Enable Bottom Border', 'viral-mag'),
-        'ht-top-bottom-border' => esc_html__('Enable Top & Bottom Border', 'viral-mag')
+        'vm-no-border' => esc_html__('Disable', 'viral-mag'),
+        'vm-top-border' => esc_html__('Enable Top Border', 'viral-mag'),
+        'vm-bottom-border' => esc_html__('Enable Bottom Border', 'viral-mag'),
+        'vm-top-bottom-border' => esc_html__('Enable Top & Bottom Border', 'viral-mag')
     )
 ));
 

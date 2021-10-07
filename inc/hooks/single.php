@@ -5,11 +5,11 @@ if (!function_exists('viral_mag_page_header')) {
     function viral_mag_page_header() {
 		$viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
 		?>
-		<header class="ht-main-header">
-		    <div class="ht-container">
+		<header class="vm-main-header">
+		    <div class="vm-container">
 		        <?php
 		        if ($viral_mag_show_title) {
-		            the_title('<h1 class="ht-main-title">', '</h1>');
+		            the_title('<h1 class="vm-main-title">', '</h1>');
 		        }
 
 		        do_action('viral_mag_breadcrumbs');
@@ -25,10 +25,10 @@ if (!function_exists('viral_mag_page_content')) {
 
     function viral_mag_page_content() {
 
-		$container_class = array('ht-main-content', 'ht-clearfix', 'ht-container');
+		$container_class = array('vm-main-content', 'vm-clearfix', 'vm-container');
 		?>
 		<div class="<?php echo implode(' ', $container_class); ?>">
-		    <div class="ht-site-wrapper">
+		    <div class="vm-site-wrapper">
 		        <div id="primary" class="content-area">
 
 		            <?php while (have_posts()) : the_post(); ?>
@@ -73,10 +73,10 @@ if (!function_exists('viral_mag_single_layout1')) {
 
     function viral_mag_single_layout1() {
         ?>
-        <div class="ht-main-content ht-container">
+        <div class="vm-main-content vm-container">
 		    <?php do_action('viral_mag_breadcrumbs'); ?>
 
-		    <div class="ht-site-wrapper">
+		    <div class="vm-site-wrapper">
 		        <div id="primary" class="content-area">
 
 		            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -139,7 +139,7 @@ if (!function_exists('viral_mag_single_layout2')) {
     function viral_mag_single_layout2() {
         ?>
 
-        <div class="ht-main-content ht-container ht-clearfix">
+        <div class="vm-main-content vm-container vm-clearfix">
 		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		        <?php while (have_posts()) : the_post(); ?>
@@ -156,7 +156,7 @@ if (!function_exists('viral_mag_single_layout2')) {
 		                ?>
 		            </div>
 
-		            <div class="ht-site-wrapper">
+		            <div class="vm-site-wrapper">
 
 		                <div id="primary" class="content-area">
 

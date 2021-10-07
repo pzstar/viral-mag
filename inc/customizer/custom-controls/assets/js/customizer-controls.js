@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
     $('.viral-mag-preloader-selector').on('change', function () {
         var activePreloader = $(this).val();
         $(this).next('.viral-mag-preloader-container').find('.viral-mag-preloader').hide();
-        $(this).next('.viral-mag-preloader-container').find('.ht-' + activePreloader).show();
+        $(this).next('.viral-mag-preloader-container').find('.vm-' + activePreloader).show();
     });
 
     // Icon Control JS

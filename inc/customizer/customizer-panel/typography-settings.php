@@ -683,7 +683,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
     ),
     'input_attrs' => array(
         'min' => 12,
-        'max' => 40,
+        'max' => 100,
         'step' => 1
     )
 )));

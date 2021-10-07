@@ -31,10 +31,10 @@ class viral_mag_category extends WP_Widget {
                 'viral_mag_widgets_title' => esc_html__('Display in', 'viral-mag'),
                 'viral_mag_widgets_field_type' => 'select',
                 'viral_mag_widgets_field_options' => array(
-                    'ht-col-1' => esc_html__('One Column', 'viral-mag'),
-                    'ht-col-2' => esc_html__('Two Columns', 'viral-mag'),
-                    'ht-col-3' => esc_html__('Three Columns', 'viral-mag'),
-                    'ht-col-4' => esc_html__('Four Columns', 'viral-mag'),
+                    'vm-col-1' => esc_html__('One Column', 'viral-mag'),
+                    'vm-col-2' => esc_html__('Two Columns', 'viral-mag'),
+                    'vm-col-3' => esc_html__('Three Columns', 'viral-mag'),
+                    'vm-col-4' => esc_html__('Four Columns', 'viral-mag'),
                 ),
                 'viral_mag_widgets_default' => 'col-1'
             ),
@@ -67,7 +67,7 @@ class viral_mag_category extends WP_Widget {
         extract($args);
 
         $title = isset($instance['title']) ? $instance['title'] : '';
-        $column = isset($instance['column']) ? $instance['column'] : 'ht-col-1';
+        $column = isset($instance['column']) ? $instance['column'] : 'vm-col-1';
         $post_count = (isset($instance['post_count']) && $instance['post_count'] == '1') ? 'true' : 'false';
         $category = isset($instance['category']) ? $instance['category'] : '';
 
@@ -77,7 +77,7 @@ class viral_mag_category extends WP_Widget {
             echo $before_title . apply_filters('widget_title', $title) . $after_title;
         endif;
         ?>
-        <ul class="ht-category-widget <?php echo esc_attr($column); ?>">
+        <ul class="vm-category-widget <?php echo esc_attr($column); ?>">
             <?php
             if (!$category) {
                 $category = viral_mag_category_list();

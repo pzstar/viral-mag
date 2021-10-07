@@ -10,8 +10,8 @@ get_header();
 
 $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
 ?>
-<header class="ht-main-header">
-    <div class="ht-container">
+<header class="vm-main-header">
+    <div class="vm-container">
         <?php
         if ($viral_mag_show_title) {
             $author = get_queried_object();
@@ -27,7 +27,7 @@ $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
                 <?php
             }
 
-            the_archive_title('<h1 class="ht-main-title">', '</h1>');
+            the_archive_title('<h1 class="vm-main-title">', '</h1>');
             the_archive_description('<div class="taxonomy-description">', '</div>');
             ?>
 
@@ -44,8 +44,8 @@ $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
     </div>
 </header><!-- .entry-header -->
 
-<div class="ht-main-content ht-clearfix ht-container">
-    <div class="ht-site-wrapper">
+<div class="vm-main-content vm-clearfix vm-container">
+    <div class="vm-site-wrapper">
         <div id="primary" class="content-area">
 
             <?php if (have_posts()) : ?>

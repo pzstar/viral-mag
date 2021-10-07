@@ -75,7 +75,7 @@ if (!function_exists('viral_mag_posted_on')) {
 if (!function_exists('viral_mag_post_author')) {
 
     function viral_mag_post_author() {
-        echo '<span class="vl-posted-by"><i class="mdi mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
+        echo '<span class="vm-posted-by"><i class="mdi mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
     }
 
 }
@@ -87,7 +87,7 @@ if (!function_exists('viral_mag_post_date')) {
      */
     function viral_mag_post_date() {
         $time_string = get_the_date();
-        echo '<span class="vl-posted-on"><i class="mdi mdi-clock-time-four-outline"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
+        echo '<span class="vm-posted-on"><i class="mdi mdi-clock-time-four-outline"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
     }
 
 }
@@ -292,7 +292,7 @@ if (!function_exists('viral_mag_single_pagination')) {
             ?>
             <nav class="navigation post-navigation" role="navigation">
                 <div class="nav-links">
-                    <div class="nav-previous ht-clearfix">
+                    <div class="nav-previous vm-clearfix">
                         <?php
                         if ($prev_post = get_previous_post()) {
                             $prev_post_thumb = get_the_post_thumbnail($prev_post->ID, 'viral-mag-150x150');
@@ -301,7 +301,7 @@ if (!function_exists('viral_mag_single_pagination')) {
                         ?>
                     </div>
 
-                    <div class="nav-next ht-clearfix">
+                    <div class="nav-next vm-clearfix">
                         <?php
                         if ($next_post = get_next_post()) {
                             $next_post_thumb = get_the_post_thumbnail($next_post->ID, 'viral-mag-150x150');

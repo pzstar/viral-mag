@@ -174,7 +174,7 @@ $wp_customize->add_setting('viral_mag_sidebar_style', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_sidebar_style', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Sidebar Style', 'viral-mag'),
-    'class' => 'ht-half-width',
+    'class' => 'vm-half-width',
     'options' => array(
         'sidebar-style1' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-styles/sidebar-style1.png',
         'sidebar-style2' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-styles/sidebar-style2.png'
