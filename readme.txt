@@ -3,13 +3,13 @@
 Contributors: HashThemes
 Tags: two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, photography, holiday, custom-logo
 
-Requires at least: 5.0
+Requires at least: 56
 Tested up to: 5.8
-Stable tag: 1.0.7
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Viral Mag WordPress Theme copyright HashThemes 2021
+Viral Mag WordPress Theme copyright HashThemes 2022
 Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
@@ -24,6 +24,12 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 1.0.9 - Jan 07, 2021 =
+* New Year & Christmas discount removed
+
+= 1.0.8 - Dec 21, 2021 =
+* New Year & Christmas discount added
+
 = 1.0.7 - Dec 12, 2021 =
 * Black Friday discount removed
 
