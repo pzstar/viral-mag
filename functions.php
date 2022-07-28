@@ -312,7 +312,7 @@ if (!function_exists('viral_mag_fonts_url')) :
                 'family' => urlencode(implode('|', $fonts)),
                 'subset' => urlencode($subsets),
                 'display' => 'swap',
-                    ), '//fonts.googleapis.com/css');
+                    ), 'https://fonts.googleapis.com/css');
         }
 
         return $fonts_url;
@@ -324,6 +324,8 @@ endif;
  * Enqueue scripts and styles.
  */
 function viral_mag_scripts() {
+    $is_rtl = (is_rtl()) ? 'true' : 'false';
+
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), VIRAL_MAG_VER, true);
     wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/hoverintent.js', array(), VIRAL_MAG_VER, true);
     wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), VIRAL_MAG_VER, true);
@@ -332,22 +334,31 @@ function viral_mag_scripts() {
     wp_enqueue_script('resizesensor', get_template_directory_uri() . '/js/ResizeSensor.js', array('jquery'), VIRAL_MAG_VER, true);
     wp_enqueue_script('viral-mag-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), VIRAL_MAG_VER, true);
 
-    $is_rtl = (is_rtl()) ? 'true' : 'false';
-
-    wp_localize_script('viral-mag-custom', 'viral_mag_options', array(
-        'template_path' => get_template_directory_uri(),
-        'rtl' => $is_rtl,
-    ));
-
     wp_enqueue_style('viral-mag-style', get_stylesheet_uri(), array(), VIRAL_MAG_VER);
     wp_style_add_data('viral-mag-style', 'rtl', 'replace');
-    wp_enqueue_style('viral-mag-fonts', viral_mag_fonts_url(), array(), NULL);
     wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_MAG_VER);
     wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_MAG_VER);
     wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VER);
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), VIRAL_MAG_VER);
 
     wp_add_inline_style('viral-mag-style', viral_mag_dymanic_styles());
+
+    $fonts_url = viral_mag_fonts_url();
+    $load_font_locally = get_theme_mod('viral_mag_load_google_font_locally', false);
+    if ($fonts_url && $load_font_locally) {
+        require_once get_theme_file_path('inc/wptt-webfont-loader.php');
+        $fonts_url = wptt_get_webfont_url($fonts_url);
+    }
+
+    // Load Fonts if necessary.
+    if ($fonts_url) {
+        wp_enqueue_style('viral-mag-fonts', $fonts_url, array(), NULL);
+    }
+
+    wp_localize_script('viral-mag-custom', 'viral_mag_options', array(
+        'template_path' => get_template_directory_uri(),
+        'rtl' => $is_rtl,
+    ));
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
