@@ -294,7 +294,7 @@ if (!class_exists('Viral_Mag_Welcome')) :
             };
 
             if (get_option('viral_mag_hide_notice') && !$this->is_dismissed('welcome')) {
-                delete_option('viral_mag_dismissed_notices');
+                delete_option('viral_mag_hide_notice');
                 self::dismiss('welcome');
             }
 
