@@ -17,7 +17,7 @@ $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-m
 
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-demo-import-section', array(
     'title' => esc_html__('Import Demo Content', 'viral-mag'),
-    'priority' => 0,
+    'priority' => 999,
     'pro_text' => esc_html__('Import', 'viral-mag'),
     'pro_url' => admin_url('admin.php?page=viral-mag-welcome')
 )));

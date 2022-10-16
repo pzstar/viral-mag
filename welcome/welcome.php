@@ -172,6 +172,7 @@ if (!class_exists('Viral_Mag_Welcome')) :
                     'importer_page' => esc_html__('Go to Demo Importer Page', 'viral-mag'),
                     'importer_url' => admin_url('themes.php?page=hdi-demo-importer'),
                     'error' => esc_html__('Error! Reload the page and try again.', 'viral-mag'),
+                    'ajax_nonce' => wp_create_nonce('viral_mag_activate_hdi_plugin')
                 );
                 wp_enqueue_style('viral-mag-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), VIRAL_MAG_VER);
                 wp_enqueue_script('viral-mag-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), VIRAL_MAG_VER, true);
@@ -225,6 +226,12 @@ if (!class_exists('Viral_Mag_Welcome')) :
 
         /** Ajax Plugin Activation */
         public function activate_plugin() {
+            if (!current_user_can('manage_options')) {
+                return;
+            }
+
+            check_ajax_referer('viral_mag_activate_hdi_plugin', 'security');
+
             $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
             $file = isset($_POST['file']) ? $_POST['file'] : '';
             $success = false;
@@ -289,7 +296,7 @@ if (!class_exists('Viral_Mag_Welcome')) :
          * @return void
          */
         public function welcome_init() {
-            if(!get_option('viral_mag_first_activation')) {
+            if (!get_option('viral_mag_first_activation')) {
                 update_option('viral_mag_first_activation', time());
             };
 
@@ -298,11 +305,11 @@ if (!class_exists('Viral_Mag_Welcome')) :
                 self::dismiss('welcome');
             }
 
-            if (isset($_GET['viral-hide-notice'], $_GET['viral_mag_notice_nonce'])) {
-                $notice = sanitize_key($_GET['viral-hide-notice']);
+            if (isset($_GET['viral-mag-hide-notice'], $_GET['viral_mag_notice_nonce'])) {
+                $notice = sanitize_key($_GET['viral-mag-hide-notice']);
                 check_admin_referer($notice, 'viral_mag_notice_nonce');
                 self::dismiss($notice);
-                wp_safe_redirect(remove_query_arg(array('viral-hide-notice', 'viral_mag_notice_nonce' ), wp_get_referer()));
+                wp_safe_redirect(remove_query_arg(array('viral-mag-hide-notice', 'viral_mag_notice_nonce'), wp_get_referer()));
                 exit;
             }
         }
@@ -315,17 +322,18 @@ if (!class_exists('Viral_Mag_Welcome')) :
         private function review_notice() {
             ?>
             <div class="viral-mag-notice notice notice-info">
-            <?php $this->dismiss_button('review'); ?>
+                <?php $this->dismiss_button('review'); ?>
+
                 <p>
                     <?php
                     printf(
-                        /* translators: %1$s is link start tag, %2$s is link end tag. */
-                        esc_html__('We have noticed that you have been using Viral Mag for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'viral-mag'),
-                        '<a href="https://wordpress.org/support/theme/viral-mag/reviews/?rate=5#new-post">',
-                        '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('We have noticed that you have been using Viral Mag for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'viral-mag'), '<a href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post">', '</a>'
                     );
                     ?>
                 </p>
+                <a target="_blank" class="button action" href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'viral-mag') ?></a> &nbsp;
+                <a class="button action" href="<?php echo esc_url(wp_nonce_url(add_query_arg('viral-mag-hide-notice', 'review'), 'review', 'viral_mag_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'viral-mag') ?></a>
             </div>
             <?php
         }
@@ -362,7 +370,7 @@ if (!class_exists('Viral_Mag_Welcome')) :
          * @return void
          */
         public function dismiss_button($name) {
-            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('viral-hide-notice', $name), $name, 'viral_mag_notice_nonce')), esc_html__( 'Dismiss this notice.', 'viral-mag' )
+            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('viral-mag-hide-notice', $name), $name, 'viral_mag_notice_nonce')), esc_html__('Dismiss this notice.', 'viral-mag')
             );
         }
 
@@ -372,7 +380,7 @@ if (!class_exists('Viral_Mag_Welcome')) :
          * @param string $notice
          * @return void
          */
-        public static function dismiss( $notice ) {
+        public static function dismiss($notice) {
             $dismissed = get_option('viral_mag_dismissed_notices', array());
 
             if (!in_array($notice, $dismissed)) {
