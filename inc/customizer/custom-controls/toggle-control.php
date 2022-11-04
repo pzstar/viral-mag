@@ -8,7 +8,7 @@ class Viral_Mag_Toggle_Control extends WP_Customize_Control {
      *
      * @var string
      */
-    public $type = 'viral-mag-toggle';
+    public $type = 'ht--toggle';
 
     /**
      * Control method
@@ -17,12 +17,12 @@ class Viral_Mag_Toggle_Control extends WP_Customize_Control {
      */
     public function render_content() {
         ?>
-        <div class="viral-mag-toggle-container">
-            <div class="viral-mag-toggle">
-                <input class="viral-mag-toggle-checkbox" type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
-                <label class="viral-mag-toggle-label" for="<?php echo esc_attr($this->id); ?>"></label>
+        <div class="ht--toggle-container">
+            <div class="ht--toggle">
+                <input class="ht--toggle-checkbox" type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
+                <label class="ht--toggle-label" for="<?php echo esc_attr($this->id); ?>"></label>
             </div>
-            <span class="customize-control-title viral-mag-toggle-title"><?php echo esc_html($this->label); ?></span>
+            <span class="customize-control-title ht--toggle-title"><?php echo esc_html($this->label); ?></span>
             <?php if (!empty($this->description)) { ?>
                 <span class="description customize-control-description">
                     <?php echo $this->description; ?>

@@ -6,50 +6,40 @@
 function viral_mag_dymanic_styles() {
     $custom_css = $tablet_css = $mobile_css = "";
     $color = get_theme_mod('viral_mag_template_color', '#cf0701');
-    $lighter_color_rgba = viral_mag_hex2rgba($color, 0.2);
     $darker_color = viral_mag_color_brightness($color, -0.9);
     $sidebar_width = get_theme_mod('viral_mag_sidebar_width', 30);
     $primary_width = 100 - 4 - $sidebar_width;
-    $viral_mag_preloader_color = get_theme_mod('viral_mag_preloader_color', '#000000');
-    $viral_mag_preloader_bg_color = get_theme_mod('viral_mag_preloader_bg_color', '#FFFFFF');
+    $wide_container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
+    $fluid_container_width = get_theme_mod('viral_mag_fluid_container_width', 80);
+    $container_padding = get_theme_mod('viral_mag_container_padding', 80);
+
+    $hh1_size = get_theme_mod('viral_mag_hh1_size', 38);
+    $hh2_size = get_theme_mod('viral_mag_hh2_size', 34);
+    $hh3_size = get_theme_mod('viral_mag_hh3_size', 30);
+    $hh4_size = get_theme_mod('viral_mag_hh4_size', 26);
+    $hh5_size = get_theme_mod('viral_mag_hh5_size', 22);
+    $hh6_size = get_theme_mod('viral_mag_hh6_size', 18);
+
+
     $viral_mag_responsive_width = get_theme_mod('viral_mag_responsive_width', 780);
 
-    $website_layout = get_theme_mod('viral_mag_website_layout', 'wide');
-    if ($website_layout == 'wide') {
-        $container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
-    } elseif ($website_layout == 'fluid') {
-        $container_width = get_theme_mod('viral_mag_fluid_container_width', 80);
-    } elseif ($website_layout == 'boxed') {
-        $container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
-        $container_padding = get_theme_mod('viral_mag_container_padding', 80);
-        $boxed_container_width = $container_width + $container_padding + $container_padding;
-    }
+    $container_width = 1170;
+    $custom_css = ":root {";
+    $custom_css .= "--vm-template-color: {$color};";
+    $custom_css .= "--vm-wide-container-width: {$wide_container_width}px;";
+    $custom_css .= "--vm-fluid-container-width: {$fluid_container_width}%;";
+    $custom_css .= "--vm-container-padding: {$container_padding}px;";
+    $custom_css .= "--vm-primary-width: {$primary_width}%;";
+    $custom_css .= "--vm-secondary-width: {$sidebar_width}%;";
+    $custom_css .= "--vm-h1-size: {$hh1_size}px;";
+    $custom_css .= "--vm-h2-size: {$hh2_size}px;";
+    $custom_css .= "--vm-h3-size: {$hh3_size}px;";
+    $custom_css .= "--vm-h4-size: {$hh4_size}px;";
+    $custom_css .= "--vm-h5-size: {$hh5_size}px;";
+    $custom_css .= "--vm-h6-size: {$hh6_size}px;";
+    $custom_css .= viral_mag_typography_vars(array('viral_mag_body', 'viral_mag_h', 'viral_mag_h1', 'viral_mag_h2', 'viral_mag_h3', 'viral_mag_h4', 'viral_mag_h5', 'viral_mag_h6', 'viral_mag_frontpage_block_title', 'viral_mag_frontpage_title', 'viral_mag_sidebar_title', 'viral_mag_menu', 'viral_mag_page_title'));
+    $custom_css .= "}";
 
-    /* =============== Full & Boxed width =============== */
-    if ($website_layout == "wide") {
-        $custom_css .= "
-    .vm-container{
-            max-width:{$container_width}px; 
-    }";
-    } else if ($website_layout == "boxed") {
-        $custom_css .= "
-        .vm-container{
-            max-width:{$container_width}px; 
-        }
-        body.vm-boxed  #vm-page{
-            max-width:{$boxed_container_width}px;
-    }";
-    } else if ($website_layout == "fluid") {
-        $custom_css .= "
-        .vm-container{
-                max-width:{$container_width}%; 
-        }";
-    }
-
-    $custom_css .= "
-        #primary{ width:{$primary_width}%}
-        #secondary{ width:{$sidebar_width}%}
-    ";
 
     /* =============== Site Title & Tagline Color =============== */
     $viral_mag_title_color = get_theme_mod('viral_mag_title_color', '#333333');
@@ -57,16 +47,6 @@ function viral_mag_dymanic_styles() {
 
 
     /* =============== Typography CSS =============== */
-    $custom_css .= viral_mag_typography_css('viral_mag_body', 'html, body, button, input, select, textarea', array(
-        'family' => 'Poppins',
-        'style' => '400',
-        'text_transform' => 'none',
-        'text_decoration' => 'none',
-        'size' => '16',
-        'line_height' => '1.6',
-        'letter_spacing' => '0',
-        'color' => '#444444'
-    ));
 
     $custom_css .= viral_mag_typography_css('viral_mag_menu', '.vm-menu > ul > li > a, a.vm-header-bttn', array(
         'family' => 'Poppins',
@@ -99,7 +79,7 @@ function viral_mag_dymanic_styles() {
         }
 	";
 
-    /*=== Front Page Post Title ===*/
+    /* === Front Page Post Title === */
     $custom_css .= viral_mag_typography_css('viral_mag_frontpage_title', 'h3.vm-post-title, h3.he-post-title', array(
         'family' => 'Poppins',
         'style' => '500',
@@ -110,7 +90,7 @@ function viral_mag_dymanic_styles() {
         'letter_spacing' => '0'
     ));
 
-    /*=== Front Page Block Title ===*/
+    /* === Front Page Block Title === */
     $custom_css .= viral_mag_typography_css('viral_mag_frontpage_block_title', '.vm-block-title span.vm-title, .he-block-title', array(
         'family' => 'Poppins',
         'style' => '500',
@@ -142,91 +122,6 @@ function viral_mag_dymanic_styles() {
         'line_height' => '1.3',
         'letter_spacing' => '0'
     ));
-
-    /* ========== Header Typography ========== */
-    $common_header_typography = get_theme_mod('viral_mag_common_header_typography', true);
-
-    if ($common_header_typography) {
-        $custom_css .= viral_mag_typography_css('viral_mag_h', 'h1, h2, h3, h4, h5, h6, .vm-site-title, .vm-slide-cap-title, .vm-counter-count', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'line_height' => '1.3',
-            'letter_spacing' => '0'
-        ));
-
-        $hh1_size = get_theme_mod('viral_mag_hh1_size', 38);
-        $hh2_size = get_theme_mod('viral_mag_hh2_size', 34);
-        $hh3_size = get_theme_mod('viral_mag_hh3_size', 30);
-        $hh4_size = get_theme_mod('viral_mag_hh4_size', 26);
-        $hh5_size = get_theme_mod('viral_mag_hh5_size', 22);
-        $hh6_size = get_theme_mod('viral_mag_hh6_size', 18);
-
-        $custom_css .= "h1{font-size: {$hh1_size}px}";
-        $custom_css .= "h2{font-size: {$hh2_size}px}";
-        $custom_css .= "h3{font-size: {$hh3_size}px}";
-        $custom_css .= "h4{font-size: {$hh4_size}px}";
-        $custom_css .= "h5{font-size: {$hh5_size}px}";
-        $custom_css .= "h6{font-size: {$hh6_size}px}";
-    } else {
-        $custom_css .= viral_mag_typography_css('viral_mag_h1', 'h1, .vm-site-title', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'size' => '38',
-            'line_height' => '1.3',
-            'letter_spacing' => '0',
-        ));
-
-        $custom_css .= viral_mag_typography_css('viral_mag_h2', 'h2', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'size' => '34',
-            'line_height' => '1.3',
-            'letter_spacing' => '0',
-        ));
-
-        $custom_css .= viral_mag_typography_css('viral_mag_h3', 'h3', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'size' => '30',
-            'line_height' => '1.3',
-            'letter_spacing' => '0',
-        ));
-        $custom_css .= viral_mag_typography_css('viral_mag_h4', 'h4', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'size' => '26',
-            'line_height' => '1.3',
-            'letter_spacing' => '0',
-        ));
-        $custom_css .= viral_mag_typography_css('viral_mag_h5', 'h5', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'size' => '22',
-            'line_height' => '1.3',
-            'letter_spacing' => '0',
-        ));
-        $custom_css .= viral_mag_typography_css('viral_mag_h6', 'h6', array(
-            'family' => 'Poppins',
-            'style' => '400',
-            'text_transform' => 'none',
-            'text_decoration' => 'none',
-            'size' => '18',
-            'line_height' => '1.3',
-            'letter_spacing' => '0',
-        ));
-    }
 
     $viral_mag_content_header_color = get_theme_mod('viral_mag_content_header_color', '#000000');
     $viral_mag_content_text_color = get_theme_mod('viral_mag_content_text_color', '#333333');

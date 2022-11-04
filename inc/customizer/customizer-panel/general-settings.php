@@ -37,6 +37,7 @@ $wp_customize->get_control('background_attachment')->priority = 20;
 $wp_customize->add_setting('viral_mag_website_layout', array(
     'default' => 'wide',
     'sanitize_callback' => 'viral_mag_sanitize_choices',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control('viral_mag_website_layout', array(
@@ -53,6 +54,7 @@ $wp_customize->add_control('viral_mag_website_layout', array(
 $wp_customize->add_setting('viral_mag_fluid_container_width', array(
     'sanitize_callback' => 'absint',
     'default' => 80,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_fluid_container_width', array(
@@ -68,6 +70,7 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 $wp_customize->add_setting('viral_mag_wide_container_width', array(
     'sanitize_callback' => 'absint',
     'default' => 1170,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_wide_container_width', array(
@@ -83,6 +86,7 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 $wp_customize->add_setting('viral_mag_container_padding', array(
     'sanitize_callback' => 'absint',
     'default' => 80,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_container_padding', array(
@@ -98,6 +102,7 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 $wp_customize->add_setting('viral_mag_sidebar_width', array(
     'sanitize_callback' => 'absint',
     'default' => 30,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_sidebar_width', array(

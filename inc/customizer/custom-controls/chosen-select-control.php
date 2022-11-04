@@ -3,7 +3,7 @@
 /** Select2 Chooser */
 class Viral_Mag_Chosen_Select_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-chosen-select';
+    public $type = 'ht--chosen-select';
 
     public function render_content() {
         if (empty($this->choices)) {
@@ -21,7 +21,7 @@ class Viral_Mag_Chosen_Select_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <select class="viral-mag-chosen-select" <?php $this->link(); ?>>
+            <select class="ht--chosen-select" <?php $this->link(); ?>>
                 <?php
                 foreach ($this->choices as $value => $label) {
                     echo '<option value="' . esc_attr($value) . '" ' . selected($value, $this->value(), false) . '>' . esc_html($label) . '</option>';

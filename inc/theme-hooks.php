@@ -38,6 +38,7 @@ function viral_mag_body_classes($classes) {
     $sidebar_style = get_theme_mod('viral_mag_sidebar_style', 'sidebar-style2');
     $sticky_sidebar = get_theme_mod('viral_mag_sticky_sidebar', true);
     $block_title_style = get_theme_mod('viral_mag_block_title_style', 'style2');
+    $common_header_typography = get_theme_mod('viral_mag_common_header_typography', true);
 
     if (is_singular('post')) {
         $viral_mag_post_layout = get_theme_mod('viral_mag_single_layout', 'layout1');
@@ -52,6 +53,12 @@ function viral_mag_body_classes($classes) {
 
     if ($sticky_sidebar) {
         $classes[] = 'vm-sticky-sidebar';
+    }
+
+    if ($common_header_typography) {
+        $classes[] = 'vm-common-h-type';
+    }else{
+        $classes[] = 'vm-diff-h-type';
     }
 
     $classes[] = 'vm-' . $website_layout;

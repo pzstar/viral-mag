@@ -4,15 +4,7 @@ if (!class_exists('Viral_Mag_Customizer_Custom_Controls')) {
 
     class Viral_Mag_Customizer_Custom_Controls {
 
-        protected $version;
-
         function __construct() {
-            if (defined('VIRAL_MAG_VER')) {
-                $this->version = VIRAL_MAG_VER;
-            } else {
-                $this->version = '1.0.0';
-            }
-
             add_action('customize_register', array($this, 'register_controls'));
             add_action('customize_controls_enqueue_scripts', array($this, 'enqueue_customizer_script'));
         }
@@ -46,7 +38,6 @@ if (!class_exists('Viral_Mag_Customizer_Custom_Controls')) {
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/toggle-control.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/typography/typography-control-class.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/column-control/column-control.php';
-            require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/preloader-control.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
@@ -68,28 +59,24 @@ if (!class_exists('Viral_Mag_Customizer_Custom_Controls')) {
 
         public function enqueue_customizer_script() {
             //See customizer-fonts-iucon.php file
-            $viral_mag_icons = apply_filters('viral_mag_register_icon', array());
+            $icons = apply_filters('viral_mag_register_icon', array());
 
-            if ($viral_mag_icons && is_array($viral_mag_icons)) {
-                foreach ($viral_mag_icons as $viral_mag_icon) {
-                    if (isset($viral_mag_icon['name']) && isset($viral_mag_icon['url'])) {
-                        wp_enqueue_style($viral_mag_icon['name'], $viral_mag_icon['url'], array(), $this->get_version());
+            if ($icons && is_array($icons)) {
+                foreach ($icons as $icon) {
+                    if (isset($icon['name']) && isset($icon['url'])) {
+                        wp_enqueue_style($icon['name'], $icon['url'], array(), VIRAL_MAG_VER);
                     }
                 }
             }
 
-            wp_enqueue_script('selectize', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/selectize.js', array('jquery'), $this->get_version(), true);
-            wp_enqueue_script('chosen-jquery', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/chosen.jquery.js', array('jquery'), $this->get_version(), true);
-            wp_enqueue_script('wp-color-picker-alpha', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/wp-color-picker-alpha.js', array('jquery', 'wp-color-picker'), $this->get_version(), true);
-            wp_enqueue_script('viral-mag-customizer-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/customizer-controls.js', array('jquery', 'jquery-ui-datepicker'), $this->get_version(), true);
+            wp_enqueue_script('selectize', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/selectize.js', array('jquery'), VIRAL_MAG_VER, true);
+            wp_enqueue_script('chosen-jquery', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/chosen.jquery.js', array('jquery'), VIRAL_MAG_VER, true);
+            wp_enqueue_script('wp-color-picker-alpha', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/wp-color-picker-alpha.js', array('jquery', 'wp-color-picker'), VIRAL_MAG_VER, true);
+            wp_enqueue_script('viral-mag-customizer-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/customizer-controls.js', array('jquery', 'jquery-ui-datepicker'), VIRAL_MAG_VER, true);
 
-            wp_enqueue_style('selectize', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/selectize.css', array(), $this->get_version());
-            wp_enqueue_style('chosen', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/chosen.css', array(), $this->get_version());
-            wp_enqueue_style('viral-mag-customizer-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.css', array('wp-color-picker'), $this->get_version());
-        }
-
-        public function get_version() {
-            return $this->version;
+            wp_enqueue_style('selectize', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/selectize.css', array(), VIRAL_MAG_VER);
+            wp_enqueue_style('chosen', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/chosen.css', array(), VIRAL_MAG_VER);
+            wp_enqueue_style('viral-mag-customizer-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.css', array('wp-color-picker'), VIRAL_MAG_VER);
         }
 
     }

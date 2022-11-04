@@ -3,7 +3,7 @@
 /** Control Tab */
 class Viral_Mag_Group_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-group';
+    public $type = 'ht--group';
     public $params = '';
 
     public function __construct($manager, $id, $args = array()) {
@@ -25,14 +25,14 @@ class Viral_Mag_Group_Control extends WP_Customize_Control {
 
     public function content_template() {
         ?>
-        <div class="viral-mag-group-wrap">
-            <div class="viral-mag-group-heading">
+        <div class="ht--group-wrap">
+            <div class="ht--group-heading">
                 <# if ( data.heading ) { #>
                 <label>{{{ data.heading }}}</label>
                 <# } #>
             </div>
 
-            <div class="viral-mag-group-content"></div>
+            <div class="ht--group-content"></div>
         </div>
         <?php
     }

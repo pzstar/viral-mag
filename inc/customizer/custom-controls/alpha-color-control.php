@@ -6,7 +6,7 @@ class Viral_Mag_Alpha_Color_Control extends WP_Customize_Control {
     /**
      * Official control name.
      */
-    public $type = 'viral-mag-alpha-color';
+    public $type = 'ht--alpha-color';
 
     /**
      * Add support for palettes to be passed in.
@@ -49,7 +49,7 @@ class Viral_Mag_Alpha_Color_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
         </label>
-        <input class="viral-mag-alpha-color-control" data-alpha-enabled="<?php echo esc_attr($show_opacity); ?>" type="text" data-palette="<?php echo esc_attr($palette); ?>" data-default-color="<?php echo esc_attr($this->settings['default']->default); ?>" <?php $this->link(); ?>  />
+        <input class="ht--alpha-color-control" data-alpha-color-type="hex" data-alpha-enabled="<?php echo esc_attr($show_opacity); ?>" type="text" data-palette="<?php echo esc_attr($palette); ?>" data-default-color="<?php echo esc_attr($this->settings['default']->default); ?>" <?php $this->link(); ?>  />
         <?php
     }
 

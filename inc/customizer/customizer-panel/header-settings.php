@@ -386,7 +386,7 @@ $wp_customize->add_setting('viral_mag_mh_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_mh_layout', array(
     'section' => 'viral_mag_main_header_section',
     'label' => esc_html__('Header Layout', 'viral-mag'),
-    'class' => 'viral-mag-full-width',
+    'class' => 'ht--full-width',
     'options' => array(
         'header-style2' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/headers/header-2.png',
         'header-style3' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/headers/header-3.png'

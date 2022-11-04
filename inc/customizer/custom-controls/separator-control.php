@@ -8,7 +8,7 @@ class Viral_Mag_Separator_Control extends WP_Customize_Control {
      *
      * @var string
      */
-    public $type = 'viral-mag-separator';
+    public $type = 'ht--separator';
 
     /**
      * Control method

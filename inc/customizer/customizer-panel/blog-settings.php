@@ -74,6 +74,7 @@ $wp_customize->add_control(new Viral_Mag_Image_Selector_Control($wp_customize, '
     'section' => 'viral_mag_blog_settings_section',
     'label' => esc_html__('Blog & Archive Layout', 'viral-mag'),
     'image_path' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/blog-layouts/',
+    'image_type' => 'png',
     'choices' => array(
         'layout1' => esc_html__('Layout 1', 'viral-mag'),
         'layout2' => esc_html__('Layout 2', 'viral-mag')
@@ -192,6 +193,7 @@ $wp_customize->add_control(new Viral_Mag_Image_Selector_Control($wp_customize, '
     'label' => esc_html__('Single Post Layout', 'viral-mag'),
     'description' => esc_html__('This option can be overwritten in single page settings.', 'viral-mag'),
     'image_path' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/single-layouts/',
+    'image_type' => 'png',
     'choices' => array(
         'layout1' => esc_html__('Layout 1', 'viral-mag'),
         'layout2' => esc_html__('Layout 2', 'viral-mag')

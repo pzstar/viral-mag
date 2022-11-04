@@ -1,0 +1,46 @@
+<?php
+
+class Viral_Mag_Column_Control extends WP_Customize_Control {
+
+    public $type = 'viral-mag-column';
+
+    public function __construct($manager, $id, $args = array()) {
+        parent::__construct($manager, $id, $args);
+    }
+
+    public function enqueue() {
+        wp_enqueue_script('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.js', array('jquery'), VIRAL_MAG_VER, true);
+        wp_enqueue_script('wNumb', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/wNumb.js', array('jquery'), VIRAL_MAG_VER, true);
+        wp_enqueue_script('viral-mag-column-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), VIRAL_MAG_VER, true);
+
+        wp_enqueue_style('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.css', array(), VIRAL_MAG_VER);
+    }
+
+    public function render_content() {
+
+        if (!empty($this->label)) :
+            ?>
+            <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+            <?php
+        endif;
+
+        if (!empty($this->description)) :
+            ?>
+            <span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
+            <?php
+        endif;
+
+        echo '<div class="viral-mag-column-selector"></div>';
+
+        echo '<div class="viral-mag-column-selector-buttons">';
+        echo '<button class="viral-mag-remove-col"><i class="mdi mdi-minus"></i><span>' . esc_html('Remove Column', 'viral-mag') . '</span></button>';
+        echo '<button class="viral-mag-add-col"><i class="mdi mdi-plus"></i><span>' . esc_html('Add Column', 'viral-mag') . '</span></button>';
+        echo '<button class="viral-mag-reset-col"><i class="mdi mdi-cached"></i><span>' . esc_html('Reset Column', 'viral-mag') . '</span></button>';
+        echo '</div>';
+        ?>
+        <input type="hidden" value="<?php echo esc_attr($this->value()) ?>" <?php $this->link(); ?> />
+        </div>
+        <?php
+    }
+
+}

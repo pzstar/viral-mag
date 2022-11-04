@@ -264,6 +264,45 @@ function viral_mag_check_active_footer() {
     return $status;
 }
 
+function viral_mag_typography_vars($keys) {
+    if (!$keys && !is_array($keys)) {
+        return;
+    }
+    $css = array();
+
+    foreach ($keys as $key) {
+        $family = get_theme_mod($key . '_family');
+        $style = get_theme_mod($key . '_style');
+        $text_decoration = get_theme_mod($key . '_text_decoration');
+        $text_transform = get_theme_mod($key . '_text_transform');
+        $size = get_theme_mod($key . '_size');
+        $line_height = get_theme_mod($key . '_line_height');
+        $letter_spacing = get_theme_mod($key . '_letter_spacing');
+        $color = get_theme_mod($key . '_color');
+
+        if (strpos($style, 'italic')) {
+            $italic = 'italic';
+        }
+
+        $weight = absint($style);
+        $key = str_replace('_', '-', $key);
+
+        $css[] = (!empty($family) && $family != 'Default') ? "--" . $key . "-family: '{$family}', serif" : NULL;
+        $css[] = !empty($weight) ? "--" . $key . "-weight: {$weight}" : NULL;
+        $css[] = !empty($italic) ? "--" . $key . "-style: {$italic}" : NULL;
+        $css[] = !empty($text_transform) ? "--" . $key . "-text-transform: {$text_transform}" : NULL;
+        $css[] = !empty($text_decoration) ? "--" . $key . "-text-decoration: {$text_decoration}" : NULL;
+        $css[] = !empty($size) ? "--" . $key . "-size: {$size}px" : NULL;
+        $css[] = !empty($line_height) ? "--" . $key . "-line-height: {$line_height}" : NULL;
+        $css[] = !empty($letter_spacing) ? "--" . $key . "-letter-spacing: {$letter_spacing}px" : NULL;
+        $css[] = !empty($color) ? "--" . $key . "-color: {$color}" : NULL;
+    }
+
+    $css = array_filter($css);
+
+    return implode(';', $css);
+}
+
 if (!function_exists('viral_mag_typography_css')) {
 
     function viral_mag_typography_css($key, $selector, $default = array()) {

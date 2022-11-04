@@ -3,7 +3,7 @@
 /** Date Control */
 class Viral_Mag_Date_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-date-picker';
+    public $type = 'ht--date-picker';
 
     public function render_content() {
         ?>
@@ -18,7 +18,7 @@ class Viral_Mag_Date_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <input class="viral-mag-datepicker" type="text" autocomplete="off" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?>>
+            <input class="ht--datepicker" type="text" autocomplete="off" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?>>
         </label>
         <?php
     }

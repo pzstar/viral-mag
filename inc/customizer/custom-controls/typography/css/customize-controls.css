@@ -1,16 +1,16 @@
-.customize-control-viral-mag-typography li.viral-mag-typography-line-height,
-.customize-control-viral-mag-typography li.viral-mag-typography-font-size,
-.customize-control-viral-mag-typography li.viral-mag-typography-letter-spacing{
+.customize-control-ht--typography li.ht--typography-line-height,
+.customize-control-ht--typography li.ht--typography-font-size,
+.customize-control-ht--typography li.ht--typography-letter-spacing{
     clear: both;
     margin-bottom: 15px;
 }
 
-.viral-mag-typography-loading {
+.ht--typography-loading {
     opacity: 0.4;
     pointer-events: none;
 }
 
-.viral-mag-typography-customize-control-title {
+.ht--typography-customize-control-title {
     display: block;
     font-size: 14px;
     line-height: 24px;
@@ -18,7 +18,7 @@
     margin-bottom: 4px;
 }
 
-.viral-mag-typography-slider-range.ui-widget {
+.ht--typography-slider-range.ui-widget {
     position: relative;
     height: 4px;
     margin: 0;
@@ -31,11 +31,11 @@
     border: 0;
 }
 
-.viral-mag-typography-slider-range:hover {
+.ht--typography-slider-range:hover {
     background: rgba(0, 0, 0, .2);
 }
 
-.viral-mag-typography-slider-range .ui-slider-range {
+.ht--typography-slider-range .ui-slider-range {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@
     background: #13a1dc;
 }
 
-.viral-mag-typography-slider-range .ui-slider-handle {
+.ht--typography-slider-range .ui-slider-handle {
     height: 16px;
     width: 16px;
     background: #fff;
@@ -60,36 +60,36 @@
     cursor: pointer;
 }
 
-.viral-mag-typography-font-family,
-.viral-mag-typography-text-transform{
+.ht--typography-font-family,
+.ht--typography-text-transform{
     float: left;
     width: 48%;
     margin-bottom: 10px;
 }
 
-.viral-mag-typography-font-style,
-.viral-mag-typography-text-decoration{
+.ht--typography-font-style,
+.ht--typography-text-decoration{
     float: right;
     width: 48%;
     margin-bottom: 10px;
 }
 
-.viral-mag-typography-slider{
+.ht--typography-slider{
     display: flex;
     align-items: center;
 }
 
-.viral-mag-typography-slider-range{
+.ht--typography-slider-range{
     flex-grow: 1;
 }
 
-.viral-mag-typography-slider-range + div{
+.ht--typography-slider-range + div{
     margin-left: 10px;
     width: 50px;
     text-align: right;
     font-weight: bold;
 }
 
-.viral-mag-typography-color{
+.ht--typography-color{
     position: relative;
 }

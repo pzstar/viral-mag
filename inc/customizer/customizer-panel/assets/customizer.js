@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
     "use strict";
-
     wp.customize('viral_mag_website_layout', function (setting) {
         var setupWideLayout = function (control) {
             var visibility = function () {

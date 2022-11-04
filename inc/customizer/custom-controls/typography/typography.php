@@ -4,8 +4,8 @@ function viral_mag_get_google_font_variants() {
 
     $font_list = array_merge(viral_mag_default_font_array(), viral_mag_standard_font_array(), viral_mag_google_font_array());
 
-    $viral_mag_font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
-    $font_array = viral_mag_search_key($font_list, 'family', $viral_mag_font_family);
+    $font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
+    $font_array = viral_mag_search_key($font_list, 'family', $font_family);
 
     $variants_array = $font_array['0']['variants'];
 

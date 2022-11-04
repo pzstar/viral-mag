@@ -10,7 +10,7 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
      * @access public
      * @var    string
      */
-    public $type = 'background-image';
+    public $type = 'ht--background-image';
 
     /**
      * Labels for upload control buttons.
@@ -116,28 +116,28 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
         <span class="customize-control-title">{{{ data.label }}}</span>
         <# } #>
 
-        <div class="viral-mag-placeholder <# if ( data.image_url.value ) { #>hidden<# } #>">
+        <div class="ht--placeholder <# if ( data.image_url.value ) { #>hidden<# } #>">
             {{{ data.button_label.select }}}
         </div>
 
-        <div class="viral-mag-thumbnail">
+        <div class="ht--thumbnail">
             <# if ( data.image_url.value ) { #>
             <img src='{{ data.image_url.value }}'>
             <# } #>
         </div>
 
-        <div class="viral-mag-actions viral-mag-clearfix">
-            <button type="button" class="button viral-mag-upload-button align-left">{{{ data.button_label.select }}}</button>
-            <button type="button" class="button viral-mag-remove-button alignright">{{{ data.button_label.remove }}}</button>
+        <div class="ht--actions ht--clearfix">
+            <button type="button" class="button ht--upload-button align-left">{{{ data.button_label.select }}}</button>
+            <button type="button" class="button ht--remove-button alignright">{{{ data.button_label.remove }}}</button>
         </div>
 
-        <input class="viral-mag-background-image-url" type="hidden" value="{{ data.image_url.value }}" {{{ data.image_url.link }}}>
+        <input class="ht--background-image-url" type="hidden" value="{{ data.image_url.value }}" {{{ data.image_url.link }}}>
 
-               <input class="viral-mag-background-image-id" type="hidden" value="{{ data.image_id.value }}" {{{ data.image_id.link }}}>
+               <input class="ht--background-image-id" type="hidden" value="{{ data.image_id.value }}" {{{ data.image_id.link }}}>
 
-               <div class="viral-mag-background-image-fields" <# if ( !data.image_url.value ) { #> style="display:none "<# } #>>
+               <div class="ht--background-image-fields" <# if ( !data.image_url.value ) { #> style="display:none "<# } #>>
                <# if ( data.repeat && data.repeat.choices ) { #>
-               <li class="background-image-repeat">
+               <li class="ht--background-image-repeat">
                 <# if ( data.repeat.label ) { #>
                 <span class="customize-control-title">{{ data.repeat.label }}</span>
                 <# } #>
@@ -150,7 +150,7 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.size && data.size.choices ) { #>
-            <li class="background-image-size">
+            <li class="ht--background-image-size">
                 <# if ( data.size.label ) { #>
                 <span class="customize-control-title">{{ data.size.label }}</span>
                 <# } #>
@@ -163,7 +163,7 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.position && data.position.choices ) { #>
-            <li class="background-image-position">
+            <li class="ht--background-image-position">
                 <# if ( data.position.label ) { #>
                 <span class="customize-control-title">{{ data.position.label }}</span>
                 <# } #>
@@ -176,7 +176,7 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.attachment && data.attachment.choices ) { #>
-            <li class="background-image-attachment">
+            <li class="ht--background-image-attachment">
                 <# if ( data.attachment.label ) { #>
                 <span class="customize-control-title">{{ data.attachment.label }}</span>
                 <# } #>
@@ -189,7 +189,7 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.overlay ) { #>
-            <li class="background-image-overlay">
+            <li class="ht--background-image-overlay">
                 <# if ( data.overlay.label ) { #>
                 <span class="customize-control-title">{{ data.overlay.label }}</span>
                 <# } #>
@@ -199,7 +199,7 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
         </div>
 
         <# if ( data.color ) { #>
-        <div class="background-image-color">
+        <div class="ht--background-image-color">
             <# if ( data.color.label ) { #>
             <span class="customize-control-title">{{ data.color.label }}</span>
             <# } #>

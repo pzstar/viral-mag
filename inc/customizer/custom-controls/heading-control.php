@@ -4,7 +4,7 @@
 class Viral_Mag_Heading_Control extends WP_Customize_Control {
 
     /** Control Type */
-    public $type = 'viral-mag-heading';
+    public $type = 'ht--heading';
 
     /** Render Layout */
     public function render_content() {

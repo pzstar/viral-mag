@@ -1,5 +1,4 @@
-.customize-pane-parent .control-section .accordion-section-title:before,
-#sub-accordion-panel-viral_mag_front_page_panel .control-section .accordion-section-title:before{
+.customize-pane-parent .control-section .accordion-section-title:before{
     font-family: dashicons;
     content: "\f103";
     font-size: 18px;

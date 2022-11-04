@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
-    $('.customize-control-viral-mag-column').each(function () {
-        var columnSelector = $(this).find('.viral-mag-column-selector')[0];
+    $('.customize-control-ht--column').each(function () {
+        var columnSelector = $(this).find('.ht--column-selector')[0];
         var defaultval = $(this).find('input').val();
 
         if (defaultval.indexOf(',') == -1) {
@@ -40,40 +40,40 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        viral_mag_update_nouislider(columnSelector, $th);
+        update_nouislider(columnSelector, $th);
     });
 
-    $('.viral-mag-add-col').on('click', function () {
+    $('.ht--add-col').on('click', function () {
         $th = $(this);
-        var columnSelectorAdd = $(this).closest('.customize-control-viral-mag-column').find('.viral-mag-column-selector')[0];
-        var count = $(this).closest('.customize-control-viral-mag-column').find('input').val().split(',').length + 1;
+        var columnSelectorAdd = $(this).closest('.customize-control-ht--column').find('.ht--column-selector')[0];
+        var count = $(this).closest('.customize-control-ht--column').find('input').val().split(',').length + 1;
 
-        viral_mag_set_uislider(columnSelectorAdd, count);
+        set_uislider(columnSelectorAdd, count);
 
         if (count != 6) {
-            viral_mag_update_nouislider(columnSelectorAdd, $th.closest('.customize-control-viral-mag-column'));
+            update_nouislider(columnSelectorAdd, $th.closest('.customize-control-ht--column'));
         }
 
         return false;
     });
 
-    $('.viral-mag-remove-col').on('click', function () {
+    $('.ht--remove-col').on('click', function () {
         $th = $(this);
-        var columnSelectorRemove = $(this).closest('.customize-control-viral-mag-column').find('.viral-mag-column-selector')[0];
-        var count = $(this).closest('.customize-control-viral-mag-column').find('input').val().split(',').length - 1;
+        var columnSelectorRemove = $(this).closest('.customize-control-ht--column').find('.ht--column-selector')[0];
+        var count = $(this).closest('.customize-control-ht--column').find('input').val().split(',').length - 1;
 
-        viral_mag_set_uislider(columnSelectorRemove, count);
+        set_uislider(columnSelectorRemove, count);
 
         if (count != 0) {
-            viral_mag_update_nouislider(columnSelectorRemove, $th.closest('.customize-control-viral-mag-column'));
+            update_nouislider(columnSelectorRemove, $th.closest('.customize-control-ht--column'));
         }
 
         return false;
     });
 
-    $('.viral-mag-reset-col').on('click', function () {
-        var columnSelectorReset = $(this).closest('.customize-control-viral-mag-column').find('.viral-mag-column-selector')[0];
-        var count = $(this).closest('.customize-control-viral-mag-column').find('input').val().split(',').length;
+    $('.ht--reset-col').on('click', function () {
+        var columnSelectorReset = $(this).closest('.customize-control-ht--column').find('.ht--column-selector')[0];
+        var count = $(this).closest('.customize-control-ht--column').find('input').val().split(',').length;
         if (count == 1) {
             columnSelectorReset.noUiSlider.set([50]);
         } else if (count == 2) {
@@ -85,9 +85,11 @@ jQuery(document).ready(function ($) {
         } else if (count == 5) {
             columnSelectorReset.noUiSlider.set([16.66, 33.33, 50, 66.66, 83.33]);
         }
+        
+        return false;
     });
 
-    function viral_mag_update_nouislider(columnSelector, $elements) {
+    function update_nouislider(columnSelector, $elements) {
         $('[data-handle]').append('<div class="noUi-width"><span class="noUi-width-left"></span><span class="noUi-width-right"></span></div>');
 
         columnSelector.noUiSlider.on('update', function (values, handle, unencoded, tap, positions, noUiSlider) {
@@ -123,7 +125,7 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    function viral_mag_set_uislider(columnSelector, count) {
+    function set_uislider(columnSelector, count) {
         if (count == 0) {
             alert('Mimimum Column Count Reached');
         } else if (count == 1) {

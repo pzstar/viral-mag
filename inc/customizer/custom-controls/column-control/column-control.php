@@ -2,7 +2,7 @@
 
 class Viral_Mag_Column_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-column';
+    public $type = 'ht--column';
 
     public function __construct($manager, $id, $args = array()) {
         parent::__construct($manager, $id, $args);
@@ -11,7 +11,7 @@ class Viral_Mag_Column_Control extends WP_Customize_Control {
     public function enqueue() {
         wp_enqueue_script('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.js', array('jquery'), VIRAL_MAG_VER, true);
         wp_enqueue_script('wNumb', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/wNumb.js', array('jquery'), VIRAL_MAG_VER, true);
-        wp_enqueue_script('viral-mag-column-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), VIRAL_MAG_VER, true);
+        wp_enqueue_script('ht--column-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), VIRAL_MAG_VER, true);
 
         wp_enqueue_style('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.css', array(), VIRAL_MAG_VER);
     }
@@ -30,12 +30,12 @@ class Viral_Mag_Column_Control extends WP_Customize_Control {
             <?php
         endif;
 
-        echo '<div class="viral-mag-column-selector"></div>';
+        echo '<div class="ht--column-selector"></div>';
 
-        echo '<div class="viral-mag-column-selector-buttons">';
-        echo '<button class="viral-mag-remove-col"><i class="mdi mdi-minus"></i><span>' . esc_html('Remove Column', 'viral-mag') . '</span></button>';
-        echo '<button class="viral-mag-add-col"><i class="mdi mdi-plus"></i><span>' . esc_html('Add Column', 'viral-mag') . '</span></button>';
-        echo '<button class="viral-mag-reset-col"><i class="mdi mdi-cached"></i><span>' . esc_html('Reset Column', 'viral-mag') . '</span></button>';
+        echo '<div class="ht--column-selector-buttons">';
+        echo '<button class="ht--remove-col"><i class="mdi mdi-minus"></i><span>' . esc_html('Remove Column', 'viral-mag') . '</span></button>';
+        echo '<button class="ht--add-col"><i class="mdi mdi-plus"></i><span>' . esc_html('Add Column', 'viral-mag') . '</span></button>';
+        echo '<button class="ht--reset-col"><i class="mdi mdi-cached"></i><span>' . esc_html('Reset Column', 'viral-mag') . '</span></button>';
         echo '</div>';
         ?>
         <input type="hidden" value="<?php echo esc_attr($this->value()) ?>" <?php $this->link(); ?> />

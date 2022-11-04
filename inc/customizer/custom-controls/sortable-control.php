@@ -9,7 +9,7 @@ class Viral_Mag_Sortable_Control extends WP_Customize_Control {
      * @access public
      * @var string
      */
-    public $type = 'viral-mag-sortable';
+    public $type = 'ht--sortable';
 
     /**
      * Refresh the parameters passed to the JavaScript via JSON.
@@ -48,7 +48,7 @@ class Viral_Mag_Sortable_Control extends WP_Customize_Control {
      */
     protected function content_template() {
         ?>
-        <label class='viral-mag-sortable-label'>
+        <label class='ht--sortable-label'>
             <span class="customize-control-title">
                 {{{ data.label }}}
             </span>
@@ -56,9 +56,9 @@ class Viral_Mag_Sortable_Control extends WP_Customize_Control {
             <span class="description customize-control-description">{{{ data.description }}}</span>
             <# } #>
 
-            <ul class="viral-mag-sortable">
+            <ul class="ht--sortable">
                 <# _.each( data.value, function( choiceID ) { #>
-                <li {{{ data.inputAttrs }}} class='viral-mag-sortable-item' data-value='{{ choiceID }}'>
+                <li {{{ data.inputAttrs }}} class='ht--sortable-item' data-value='{{ choiceID }}'>
                     <i class='dashicons dashicons-menu'></i>
                     <i class="dashicons dashicons-visibility visibility"></i>
                     {{{ data.choices[ choiceID ] }}}
@@ -66,7 +66,7 @@ class Viral_Mag_Sortable_Control extends WP_Customize_Control {
                 <# }); #>
                 <# _.each( data.choices, function( choiceLabel, choiceID ) { #>
                 <# if ( -1 === data.value.indexOf( choiceID ) ) { #>
-                <li {{{ data.inputAttrs }}} class='viral-mag-sortable-item invisible' data-value='{{ choiceID }}'>
+                <li {{{ data.inputAttrs }}} class='ht--sortable-item invisible' data-value='{{ choiceID }}'>
                     <i class='dashicons dashicons-menu'></i>
                     <i class="dashicons dashicons-visibility visibility"></i>
                     {{{ data.choices[ choiceID ] }}}

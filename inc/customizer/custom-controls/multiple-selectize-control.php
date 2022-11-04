@@ -2,7 +2,7 @@
 
 class Viral_Mag_Multiple_Selectize_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-multiple-selectize';
+    public $type = 'ht--multiple-selectize';
     public $placeholder;
     public $empty_text;
 
@@ -55,7 +55,7 @@ class Viral_Mag_Multiple_Selectize_Control extends WP_Customize_Control {
                 }
                 ?>
 
-                <select data-placeholder="<?php echo esc_html($this->placeholder); ?>" multiple="multiple" class="viral-mag-selectize" <?php $this->link(); ?>>
+                <select data-placeholder="<?php echo esc_html($this->placeholder); ?>" multiple="multiple" class="ht--selectize" <?php $this->link(); ?>>
                     <?php
                     foreach ($new_array as $value => $label) {
                         echo '<option value="' . esc_attr($value) . '">' . esc_html($label) . '</option>';

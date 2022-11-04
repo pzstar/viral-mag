@@ -3,7 +3,7 @@
 /** Multiple Checkbox Control */
 class Viral_Mag_Multiple_Checkbox_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-checkbox-multiple';
+    public $type = 'ht--checkbox-multiple';
 
     public function render_content() {
 

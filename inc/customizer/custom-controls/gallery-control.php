@@ -2,7 +2,7 @@
 
 class Viral_Mag_Gallery_Control extends WP_Customize_Control {
 
-    public $type = 'viral-mag-gallery';
+    public $type = 'ht--gallery';
 
     public function render_content() {
         ?>
@@ -17,13 +17,13 @@ class Viral_Mag_Gallery_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <ul class="viral-mag-gallery-container">
+            <ul class="ht--gallery-container">
                 <?php
                 if ($this->value()) {
                     $images = explode(',', $this->value());
                     foreach ($images as $image) {
                         $image_src = wp_get_attachment_image_src($image, 'thumbnail');
-                        echo '<li data-id="' . $image . '"><span style="background-image:url(' . $image_src[0] . ')"></span><a href="#" class="viral-mag-gallery-remove">×</a></li>';
+                        echo '<li data-id="' . $image . '"><span style="background-image:url(' . $image_src[0] . ')"></span><a href="#" class="ht--gallery-remove">×</a></li>';
                     }
                 }
                 ?>
@@ -31,7 +31,7 @@ class Viral_Mag_Gallery_Control extends WP_Customize_Control {
 
             <input type="hidden" <?php echo esc_attr($this->link()) ?> value="<?php echo esc_attr($this->value()); ?>" />
 
-            <a href="#" class="button viral-mag-gallery-button"><?php esc_html_e('Add Images', 'viral-mag') ?></a>
+            <a href="#" class="button ht--gallery-button"><?php esc_html_e('Add Images', 'viral-mag') ?></a>
         </label>
         <?php
     }

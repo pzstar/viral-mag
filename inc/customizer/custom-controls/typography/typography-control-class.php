@@ -15,7 +15,7 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
      * @access public
      * @var    string
      */
-    public $type = 'viral-mag-typography';
+    public $type = 'ht--typography';
 
     /**
      * Array 
@@ -62,8 +62,8 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
      * @return void
      */
     public function enqueue() {
-        wp_enqueue_script('viral-mag-customize-typograhpy-controls', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/typography/js/customize-controls.js', array('jquery'), VIRAL_MAG_VER, true);
-        wp_enqueue_style('viral-mag-customize-typograhpy-controls', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/typography/css/customize-controls.css', array(), VIRAL_MAG_VER);
+        wp_enqueue_script('ht--customize-typograhpy-controls', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/typography/js/customize-controls.js', array('jquery'), VIRAL_MAG_VER, true);
+        wp_enqueue_style('ht--customize-typograhpy-controls', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/typography/css/customize-controls.css', array(), VIRAL_MAG_VER);
     }
 
     /**
@@ -121,9 +121,9 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
 
         <ul>
             <# if ( data.family && (data.family.standard_choices || data.family.google_choices) ) { #>
-            <li class="viral-mag-typography-font-family">
+            <li class="ht--typography-font-family">
                 <# if ( data.family.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{ data.family.label }}</span>
+                <span class="ht--typography-customize-control-title">{{ data.family.label }}</span>
                 <# } #>
 
                 <select {{{ data.family.link }}} data-default="{{data.family.default}}">
@@ -155,9 +155,9 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.style && data.style.choices ) { #>
-            <li class="viral-mag-typography-font-style">
+            <li class="ht--typography-font-style">
                 <# if ( data.style.label ) { #>
-                <span class=            "viral-mag-typography-customize-control-title">{{ data.style.label }}</span>
+                <span class="ht--typography-customize-control-title">{{ data.style.label }}</span>
                 <# } #>
                 <select {{{ data.style.link }}}>
                     <# _.each( data.style.choices, function( label, choice ) { #>
@@ -168,9 +168,9 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.text_transform && data.text_transform.choices ) { #>
-            <li class="viral-mag-typography-text-transform">
+            <li class="ht--typography-text-transform">
                 <# if ( data.text_transform.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{ data.text_transform.label }}</span>
+                <span class="ht--typography-customize-control-title">{{ data.text_transform.label }}</span>
                 <# } #>
 
                 <select {{{ data.text_transform.link }}}>
@@ -185,9 +185,9 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
             <# } #>
 
             <# if ( data.text_decoration && data.text_decoration.choices ) { #>
-            <li class="viral-mag-typography-text-decoration">
+            <li class="ht--typography-text-decoration">
                 <# if ( data.text_decoration.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{ data.text_decoration.label }}</span>
+                <span class="ht--typography-customize-control-title">{{ data.text_decoration.label }}</span>
                 <# } #>
 
                 <select {{{ data.text_decoration.link }}}>
@@ -203,53 +203,53 @@ class Viral_Mag_Typography_Control extends WP_Customize_Control {
 
             <# if ( data.size ) { #>
 
-            <li class="viral-mag-typography-font-size">
+            <li class="ht--typography-font-size">
                 <# if ( data.size.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{ data.size.label }} </span>
+                <span class="ht--typography-customize-control-title">{{ data.size.label }} </span>
                 <# } #>
-                <div class="viral-mag-typography-slider">
-                    <div class="viral-mag-typography-slider-range viral-mag-slider-range-font-size" {{{ data.inputAttrs }}} ></div>
-                    <div class="viral-mag-slider-value-font-size"><span {{{ data.size.link }}} value="{{ data.size.value }}"></span> px</div>
+                <div class="ht--typography-slider">
+                    <div class="ht--typography-slider-range ht--slider-range-font-size" {{{ data.inputAttrs }}} ></div>
+                    <div class="ht--slider-value-font-size"><span {{{ data.size.link }}} value="{{ data.size.value }}"></span> px</div>
                 </div>
             </li>
             <# } #>
 
             <# if ( data.letter_spacing ) { #>
 
-            <li class="viral-mag-typography-letter-spacing">
+            <li class="ht--typography-letter-spacing">
                 <# if ( data.letter_spacing.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{ data.letter_spacing.label }}</span>
+                <span class="ht--typography-customize-control-title">{{ data.letter_spacing.label }}</span>
                 <# } #>
 
-                <div class="viral-mag-typography-slider">
-                    <div class="viral-mag-typography-slider-range viral-mag-slider-range-letter-spacing"></div>  
-                    <div class="viral-mag-slider-value-letter-spacing"><span {{{ data.letter_spacing.link }}} value="{{ data.letter_spacing.value }}"></span> px</div>
+                <div class="ht--typography-slider">
+                    <div class="ht--typography-slider-range ht--slider-range-letter-spacing"></div>  
+                    <div class="ht--slider-value-letter-spacing"><span {{{ data.letter_spacing.link }}} value="{{ data.letter_spacing.value }}"></span> px</div>
                 </div>
             </li>
             <# } #>
 
             <# if ( data.line_height ) { #>
 
-            <li class="viral-mag-typography-line-height">
+            <li class="ht--typography-line-height">
                 <# if ( data.line_height.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{ data.line_height.label }}</span>
+                <span class="ht--typography-customize-control-title">{{ data.line_height.label }}</span>
                 <# } #>
 
-                <div class="viral-mag-typography-slider">
-                    <div class="viral-mag-typography-slider-range viral-mag-slider-range-line-height" ></div> 
-                    <div class="viral-mag-slider-value-line-height"><span {{{ data.line_height.link }}} value="{{ data.line_height.value }}"></span></div>
+                <div class="ht--typography-slider">
+                    <div class="ht--typography-slider-range ht--slider-range-line-height" ></div> 
+                    <div class="ht--slider-value-line-height"><span {{{ data.line_height.link }}} value="{{ data.line_height.value }}"></span></div>
                 </div>
             </li>
             <# } #>
 
             <# if ( data.color ) { #>
-            <li class="viral-mag-typography-color">
+            <li class="ht--typography-color">
                 <# if ( data.color.label ) { #>
-                <span class="viral-mag-typography-customize-control-title">{{{ data.color.label }}}</span>
+                <span class="ht--typography-customize-control-title">{{{ data.color.label }}}</span>
                 <# } #>
 
                 <div class="customize-control-content">
-                    <input class="viral-mag-color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e('Hex Value', 'viral-mag'); ?>" {{{ data.color.link }}} value="{{ data.color.value }}"  />
+                    <input class="ht--color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e('Hex Value', 'viral-mag'); ?>" {{{ data.color.link }}} value="{{ data.color.value }}"  />
                 </div>
             </li>
             <# } #>

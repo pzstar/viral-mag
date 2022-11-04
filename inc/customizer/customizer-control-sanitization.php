@@ -41,16 +41,16 @@ function viral_mag_sanitize_choices_array($input, $setting) {
     return $input;
 }
 
-function viral_mag_sanitize_color_alpha($viral_mag_color) {
-    $viral_mag_color = str_replace('#', '', $viral_mag_color);
-    if ('' === $viral_mag_color) {
+function viral_mag_sanitize_color_alpha($color) {
+    $color = str_replace('#', '', $color);
+    if ('' === $color) {
         return '';
     }
 
     // 3 or 6 hex digits, or the empty string.
-    if (preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', '#' . $viral_mag_color)) {
+    if (preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', '#' . $color)) {
         // convert to rgb
-        $colour = $viral_mag_color;
+        $colour = $color;
         if (strlen($colour) == 6) {
             list( $r, $g, $b ) = array($colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5]);
         } elseif (strlen($colour) == 3) {
@@ -64,7 +64,19 @@ function viral_mag_sanitize_color_alpha($viral_mag_color) {
         return 'rgba(' . join(',', array('r' => $r, 'g' => $g, 'b' => $b, 'a' => 1)) . ')';
     }
 
-    return strpos(trim($viral_mag_color), 'rgb') !== false ? $viral_mag_color : false;
+    return strpos(trim($color), 'rgb') !== false ? $color : false;
+}
+
+function viral_mag_sanitize_color($color) {
+    // Is this an rgba color or a hex?
+    $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
+    if ('rgba' === $mode) {
+        $color = str_replace(' ', '', $color);
+        sscanf($color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha);
+        return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+    } else {
+        return sanitize_hex_color($color);
+    }
 }
 
 /**

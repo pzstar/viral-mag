@@ -19,37 +19,44 @@ $wp_customize->add_setting('viral_mag_body_family', array(
 
 $wp_customize->add_setting('viral_mag_body_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_body_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_body_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_body_size', array(
     'default' => '15',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_body_line_height', array(
     'default' => '1.6',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_body_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_body_color', array(
     'default' => '#333333',
-    'sanitize_callback' => 'sanitize_hex_color'
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_body_typography', array(
@@ -97,27 +104,32 @@ $wp_customize->add_setting('viral_mag_h_family', array(
 
 $wp_customize->add_setting('viral_mag_h_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h_typography', array(
@@ -133,7 +145,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -149,14 +161,15 @@ $wp_customize->add_control(new Viral_Mag_Separator_Control($wp_customize, 'viral
 
 $wp_customize->add_setting('viral_mag_hh1_size', array(
     'sanitize_callback' => 'absint',
-    'default' => 38
+    'default' => 38,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_hh1_size', array(
     'section' => 'viral_mag_header_typography',
     'label' => esc_html__('H1 Font Size', 'viral-mag'),
     'input_attrs' => array(
-        'min' => 14,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -164,14 +177,15 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 
 $wp_customize->add_setting('viral_mag_hh2_size', array(
     'sanitize_callback' => 'absint',
-    'default' => 34
+    'default' => 34,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_hh2_size', array(
     'section' => 'viral_mag_header_typography',
     'label' => esc_html__('H2 Font Size', 'viral-mag'),
     'input_attrs' => array(
-        'min' => 14,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -179,14 +193,15 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 
 $wp_customize->add_setting('viral_mag_hh3_size', array(
     'sanitize_callback' => 'absint',
-    'default' => 30
+    'default' => 30,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_hh3_size', array(
     'section' => 'viral_mag_header_typography',
     'label' => esc_html__('H3 Font Size', 'viral-mag'),
     'input_attrs' => array(
-        'min' => 14,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -194,14 +209,15 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 
 $wp_customize->add_setting('viral_mag_hh4_size', array(
     'sanitize_callback' => 'absint',
-    'default' => 26
+    'default' => 26,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_hh4_size', array(
     'section' => 'viral_mag_header_typography',
     'label' => esc_html__('H4 Font Size', 'viral-mag'),
     'input_attrs' => array(
-        'min' => 14,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -209,14 +225,15 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 
 $wp_customize->add_setting('viral_mag_hh5_size', array(
     'sanitize_callback' => 'absint',
-    'default' => 22
+    'default' => 22,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_hh5_size', array(
     'section' => 'viral_mag_header_typography',
     'label' => esc_html__('H5 Font Size', 'viral-mag'),
     'input_attrs' => array(
-        'min' => 14,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -224,14 +241,15 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
 
 $wp_customize->add_setting('viral_mag_hh6_size', array(
     'sanitize_callback' => 'absint',
-    'default' => 18
+    'default' => 18,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_hh6_size', array(
     'section' => 'viral_mag_header_typography',
     'label' => esc_html__('H6 Font Size', 'viral-mag'),
     'input_attrs' => array(
-        'min' => 14,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -299,32 +317,38 @@ $wp_customize->add_setting('viral_mag_h1_family', array(
 
 $wp_customize->add_setting('viral_mag_h1_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h1_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h1_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h1_size', array(
     'default' => '38',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h1_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h1_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h1_typography', array(
@@ -341,7 +365,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h1_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -355,32 +379,38 @@ $wp_customize->add_setting('viral_mag_h2_family', array(
 
 $wp_customize->add_setting('viral_mag_h2_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h2_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h2_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h2_size', array(
     'default' => '34',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h2_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h2_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h2_typography', array(
@@ -397,7 +427,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h2_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -411,32 +441,38 @@ $wp_customize->add_setting('viral_mag_h3_family', array(
 
 $wp_customize->add_setting('viral_mag_h3_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h3_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h3_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h3_size', array(
     'default' => '30',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h3_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h3_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h3_typography', array(
@@ -453,7 +489,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h3_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -467,32 +503,38 @@ $wp_customize->add_setting('viral_mag_h4_family', array(
 
 $wp_customize->add_setting('viral_mag_h4_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h4_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h4_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h4_size', array(
     'default' => '26',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h4_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h4_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h4_typography', array(
@@ -509,7 +551,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h4_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -523,32 +565,38 @@ $wp_customize->add_setting('viral_mag_h5_family', array(
 
 $wp_customize->add_setting('viral_mag_h5_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h5_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h5_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h5_size', array(
     'default' => '22',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h5_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h5_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h5_typography', array(
@@ -565,7 +613,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h5_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -579,32 +627,38 @@ $wp_customize->add_setting('viral_mag_h6_family', array(
 
 $wp_customize->add_setting('viral_mag_h6_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h6_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h6_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h6_size', array(
     'default' => '18',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h6_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_h6_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h6_typography', array(
@@ -621,7 +675,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'letter_spacing' => 'viral_mag_h6_letter_spacing'
     ),
     'input_attrs' => array(
-        'min' => 20,
+        'min' => 10,
         'max' => 100,
         'step' => 1
     )
@@ -640,32 +694,38 @@ $wp_customize->add_setting('viral_mag_frontpage_block_title_family', array(
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_style', array(
     'default' => '500',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_text_transform', array(
     'default' => 'uppercase',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_size', array(
     'default' => '20',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_line_height', array(
     'default' => '1.1',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_block_title_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_frontpage_block_title_typography', array(
@@ -702,32 +762,38 @@ $wp_customize->add_setting('viral_mag_frontpage_title_family', array(
 
 $wp_customize->add_setting('viral_mag_frontpage_title_style', array(
     'default' => '500',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_title_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_title_text_transform', array(
     'default' => 'capitalize',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_title_size', array(
     'default' => '16',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_title_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_frontpage_title_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_frontpage_title_typography', array(
@@ -763,32 +829,38 @@ $wp_customize->add_setting('viral_mag_sidebar_title_family', array(
 
 $wp_customize->add_setting('viral_mag_sidebar_title_style', array(
     'default' => '500',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_text_transform', array(
     'default' => 'uppercase',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_size', array(
     'default' => '18',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_sidebar_title_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_sidebar_title_typography', array(
