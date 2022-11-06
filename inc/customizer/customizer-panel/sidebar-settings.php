@@ -39,6 +39,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_s
             'icon' => 'dashicons dashicons-art',
             'fields' => array(
                 'viral_mag_sidebar_style',
+                'viral_mag_sidebar_title_typography',
                 'viral_mag_content_widget_title_color'
             ),
         )
@@ -64,7 +65,7 @@ $wp_customize->add_setting('viral_mag_page_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_page_layout', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Page Layout', 'viral-mag'),
-    'class' => 'viral-mag-one-forth-width',
+    'class' => 'ht--one-forth-width',
     'description' => esc_html__('Applies to all the General Pages and Portfolio Pages.', 'viral-mag'),
     'options' => array(
         'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
@@ -82,7 +83,7 @@ $wp_customize->add_setting('viral_mag_post_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_post_layout', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Post Layout', 'viral-mag'),
-    'class' => 'viral-mag-one-forth-width',
+    'class' => 'ht--one-forth-width',
     'description' => esc_html__('Applies to all the Posts.', 'viral-mag'),
     'options' => array(
         'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
@@ -100,7 +101,7 @@ $wp_customize->add_setting('viral_mag_archive_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_archive_layout', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Archive Page Layout', 'viral-mag'),
-    'class' => 'viral-mag-one-forth-width',
+    'class' => 'ht--one-forth-width',
     'description' => esc_html__('Applies to all Archive Pages.', 'viral-mag'),
     'options' => array(
         'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
@@ -118,7 +119,7 @@ $wp_customize->add_setting('viral_mag_home_blog_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_home_blog_layout', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Blog Page Layout', 'viral-mag'),
-    'class' => 'viral-mag-one-forth-width',
+    'class' => 'ht--one-forth-width',
     'description' => esc_html__('Applies to Blog Page.', 'viral-mag'),
     'options' => array(
         'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
@@ -136,7 +137,7 @@ $wp_customize->add_setting('viral_mag_search_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_search_layout', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Search Page Layout', 'viral-mag'),
-    'class' => 'viral-mag-one-forth-width',
+    'class' => 'ht--one-forth-width',
     'description' => esc_html__('Applies to Search Page.', 'viral-mag'),
     'options' => array(
         'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
@@ -154,7 +155,7 @@ $wp_customize->add_setting('viral_mag_shop_layout', array(
 $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_mag_shop_layout', array(
     'section' => 'viral_mag_sidebar_settings_section',
     'label' => esc_html__('Shop Page Layout(WooCommerce)', 'viral-mag'),
-    'class' => 'viral-mag-one-forth-width',
+    'class' => 'ht--one-forth-width',
     'description' => esc_html__('Applies to Shop Page, Product Category, Product Tag and all Single Products Pages.', 'viral-mag'),
     'options' => array(
         'right-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/right-sidebar.png',
@@ -162,7 +163,73 @@ $wp_customize->add_control(new Viral_Mag_Selector_Control($wp_customize, 'viral_
         'no-sidebar' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar.png',
         'no-sidebar-narrow' => VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/images/sidebar-layouts/no-sidebar-narrow.png'
     ),
-        //'active_callback' => 'viral_mag_is_woocommerce_activated'
+)));
+
+// Add the Widget typography section.
+$wp_customize->add_section('viral_mag_sidebar_title_typography', array(
+    'panel' => 'viral_mag_typography_settings_panel',
+    'title' => esc_html__('Widget Title', 'viral-mag')
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_family', array(
+    'default' => 'Poppins',
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_style', array(
+    'default' => '500',
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_text_decoration', array(
+    'default' => 'none',
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_text_transform', array(
+    'default' => 'uppercase',
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_size', array(
+    'default' => '18',
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_line_height', array(
+    'default' => '1.3',
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_setting('viral_mag_sidebar_title_letter_spacing', array(
+    'default' => '0',
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_sidebar_title_typography', array(
+    'label' => esc_html__('Widget Title Typography', 'viral-mag'),
+    'description' => __('Select how you want your widget title to appear. This settings applies for sidebar and footer widget titles', 'viral-mag'),
+    'section' => 'viral_mag_sidebar_settings_section',
+    'settings' => array(
+        'family' => 'viral_mag_sidebar_title_family',
+        'style' => 'viral_mag_sidebar_title_style',
+        'text_decoration' => 'viral_mag_sidebar_title_text_decoration',
+        'text_transform' => 'viral_mag_sidebar_title_text_transform',
+        'size' => 'viral_mag_sidebar_title_size',
+        'line_height' => 'viral_mag_sidebar_title_line_height',
+        'letter_spacing' => 'viral_mag_sidebar_title_letter_spacing'
+    ),
+    'input_attrs' => array(
+        'min' => 12,
+        'max' => 40,
+        'step' => 1
+    )
 )));
 
 $wp_customize->add_setting('viral_mag_sidebar_style', array(

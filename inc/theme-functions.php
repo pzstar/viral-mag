@@ -282,6 +282,8 @@ function viral_mag_typography_vars($keys) {
 
         if (strpos($style, 'italic')) {
             $italic = 'italic';
+        } else {
+            $italic = '';
         }
 
         $weight = absint($style);
@@ -300,7 +302,9 @@ function viral_mag_typography_vars($keys) {
 
     $css = array_filter($css);
 
-    return implode(';', $css);
+    if ($css) {
+        return implode(';', $css) . ';';
+    }
 }
 
 if (!function_exists('viral_mag_typography_css')) {

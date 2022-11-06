@@ -12,6 +12,7 @@ function viral_mag_dymanic_styles() {
     $wide_container_width = get_theme_mod('viral_mag_wide_container_width', 1170);
     $fluid_container_width = get_theme_mod('viral_mag_fluid_container_width', 80);
     $container_padding = get_theme_mod('viral_mag_container_padding', 80);
+    $common_header_typography = get_theme_mod('viral_mag_common_header_typography', true);
 
     $hh1_size = get_theme_mod('viral_mag_hh1_size', 38);
     $hh2_size = get_theme_mod('viral_mag_hh2_size', 34);
@@ -20,24 +21,42 @@ function viral_mag_dymanic_styles() {
     $hh5_size = get_theme_mod('viral_mag_hh5_size', 22);
     $hh6_size = get_theme_mod('viral_mag_hh6_size', 18);
 
+    $content_header_color = get_theme_mod('viral_mag_content_header_color', '#000000');
+    $content_text_color = get_theme_mod('viral_mag_content_text_color', '#333333');
+    $content_link_color = get_theme_mod('viral_mag_content_link_color', '#000000');
+    $content_link_hov_color = get_theme_mod('viral_mag_content_link_hov_color', '#cf0701');
+    $content_light_color = viral_mag_hex2rgba($content_text_color, 0.1);
+    $content_lighter_color = viral_mag_hex2rgba($content_text_color, 0.05);
 
     $viral_mag_responsive_width = get_theme_mod('viral_mag_responsive_width', 780);
 
     $container_width = 1170;
     $custom_css = ":root {";
     $custom_css .= "--vm-template-color: {$color};";
+    $custom_css .= "--vm-template-dark-color: {$darker_color};";
     $custom_css .= "--vm-wide-container-width: {$wide_container_width}px;";
     $custom_css .= "--vm-fluid-container-width: {$fluid_container_width}%;";
     $custom_css .= "--vm-container-padding: {$container_padding}px;";
     $custom_css .= "--vm-primary-width: {$primary_width}%;";
     $custom_css .= "--vm-secondary-width: {$sidebar_width}%;";
-    $custom_css .= "--vm-h1-size: {$hh1_size}px;";
-    $custom_css .= "--vm-h2-size: {$hh2_size}px;";
-    $custom_css .= "--vm-h3-size: {$hh3_size}px;";
-    $custom_css .= "--vm-h4-size: {$hh4_size}px;";
-    $custom_css .= "--vm-h5-size: {$hh5_size}px;";
-    $custom_css .= "--vm-h6-size: {$hh6_size}px;";
-    $custom_css .= viral_mag_typography_vars(array('viral_mag_body', 'viral_mag_h', 'viral_mag_h1', 'viral_mag_h2', 'viral_mag_h3', 'viral_mag_h4', 'viral_mag_h5', 'viral_mag_h6', 'viral_mag_frontpage_block_title', 'viral_mag_frontpage_title', 'viral_mag_sidebar_title', 'viral_mag_menu', 'viral_mag_page_title'));
+    if ($common_header_typography) {
+        $custom_css .= "--vm-h1-size: {$hh1_size}px;";
+        $custom_css .= "--vm-h2-size: {$hh2_size}px;";
+        $custom_css .= "--vm-h3-size: {$hh3_size}px;";
+        $custom_css .= "--vm-h4-size: {$hh4_size}px;";
+        $custom_css .= "--vm-h5-size: {$hh5_size}px;";
+        $custom_css .= "--vm-h6-size: {$hh6_size}px;";
+        $custom_css .= viral_mag_typography_vars(array('viral_mag_h'));
+    } else {
+        $custom_css .= viral_mag_typography_vars(array('viral_mag_h1', 'viral_mag_h2', 'viral_mag_h3', 'viral_mag_h4', 'viral_mag_h5', 'viral_mag_h6'));
+    }
+    $custom_css .= viral_mag_typography_vars(array('viral_mag_body', 'viral_mag_frontpage_block_title', 'viral_mag_frontpage_title', 'viral_mag_sidebar_title', 'viral_mag_menu', 'viral_mag_page_title'));
+    $custom_css .= "--vm-content-header-color: {$content_header_color};";
+    $custom_css .= "--vm-content-text-color: {$content_text_color};";
+    $custom_css .= "--vm-content-text-light-color: {$content_light_color};";
+    $custom_css .= "--vm-content-text-lighter-color: {$content_lighter_color};";
+    $custom_css .= "--vm-content-link-color: {$content_link_color};";
+    $custom_css .= "--vm-content-link-hov-color: {$content_link_hov_color};";
     $custom_css .= "}";
 
 
@@ -79,27 +98,8 @@ function viral_mag_dymanic_styles() {
         }
 	";
 
-    /* === Front Page Post Title === */
-    $custom_css .= viral_mag_typography_css('viral_mag_frontpage_title', 'h3.vm-post-title, h3.he-post-title', array(
-        'family' => 'Poppins',
-        'style' => '500',
-        'text_transform' => 'capitalize',
-        'text_decoration' => 'none',
-        'size' => '16',
-        'line_height' => '1.3',
-        'letter_spacing' => '0'
-    ));
 
-    /* === Front Page Block Title === */
-    $custom_css .= viral_mag_typography_css('viral_mag_frontpage_block_title', '.vm-block-title span.vm-title, .he-block-title', array(
-        'family' => 'Poppins',
-        'style' => '500',
-        'text_transform' => 'uppercase',
-        'text_decoration' => 'none',
-        'size' => '20',
-        'line_height' => '1.1',
-        'letter_spacing' => '0'
-    ));
+
 
     /* =============== Page Title =============== */
     $custom_css .= viral_mag_typography_css('viral_mag_page_title', '.vm-main-title, .single-post .entry-title', array(
@@ -112,34 +112,12 @@ function viral_mag_dymanic_styles() {
         'letter_spacing' => '0',
     ));
 
-    /* =============== Sidebar Title =============== */
-    $custom_css .= viral_mag_typography_css('viral_mag_sidebar_title', '.widget-title', array(
-        'family' => 'Poppins',
-        'style' => '500',
-        'text_transform' => 'uppercase',
-        'text_decoration' => 'none',
-        'size' => '18',
-        'line_height' => '1.3',
-        'letter_spacing' => '0'
-    ));
 
-    $viral_mag_content_header_color = get_theme_mod('viral_mag_content_header_color', '#000000');
-    $viral_mag_content_text_color = get_theme_mod('viral_mag_content_text_color', '#333333');
-    $viral_mag_content_link_color = get_theme_mod('viral_mag_content_link_color', '#000000');
-    $viral_mag_content_link_hov_color = get_theme_mod('viral_mag_content_link_hov_color', '#cf0701');
+
+
+
     $viral_mag_content_widget_title_color = get_theme_mod('viral_mag_content_widget_title_color', '#000000');
-    $viral_mag_content_light_color = viral_mag_hex2rgba($viral_mag_content_text_color, 0.1);
-    $viral_mag_content_lighter_color = viral_mag_hex2rgba($viral_mag_content_text_color, 0.05);
-
-    $custom_css .= ".vm-main-content h1, .vm-main-content h2, .vm-main-content h3, .vm-main-content h4, .vm-main-content h5, .vm-main-content h6 {color:$viral_mag_content_header_color}";
-    $custom_css .= ".vm-main-content{color:$viral_mag_content_text_color}";
-    $custom_css .= "a{color:$viral_mag_content_link_color}";
-    $custom_css .= "a:hover, .woocommerce .woocommerce-breadcrumb a:hover, .breadcrumb-trail a:hover{color:$viral_mag_content_link_hov_color}";
-    $custom_css .= ".vm-sidebar-style1 .vm-site-wrapper .widget-area ul ul, .vm-sidebar-style1 .vm-site-wrapper .widget-area li{border-color:$viral_mag_content_lighter_color}";
-    $custom_css .= ".vm-sidebar-style2 .vm-site-wrapper .widget, .vm-sidebar-style2 .vm-site-wrapper .widget-title, .vm-sidebar-style3 .vm-site-wrapper .widget, .vm-sidebar-style5 .vm-site-wrapper .widget, .vm-sidebar-style7 .vm-site-wrapper .widget, .vm-sidebar-style7 .vm-site-wrapper .widget-title, .comment-list .sp-comment-content, .post-navigation, .post-navigation .nav-next, .vm-social-share{border-color:$viral_mag_content_light_color}";
-    $custom_css .= ".vm-sidebar-style5 .vm-site-wrapper .widget-title:before, .vm-sidebar-style5 .vm-site-wrapper .widget-title:after{background-color:$viral_mag_content_light_color}";
-    $custom_css .= ".single-entry-tags a, .widget-area .tagcloud a{border-color:$viral_mag_content_text_color}";
-    $custom_css .= ".vm-sidebar-style3 .vm-site-wrapper .widget{background:$viral_mag_content_lighter_color}";
+    
     $custom_css .= ".vm-main-content .widget-title{color:$viral_mag_content_widget_title_color}";
     $custom_css .= ".vm-sidebar-style1 .vm-site-wrapper .widget-title:after, .vm-sidebar-style3 .vm-site-wrapper .widget-title:after, .vm-sidebar-style6 .vm-site-wrapper .widget-title:after, .vm-sidebar-style7 .vm-site-wrapper .widget:before {background-color:$viral_mag_content_widget_title_color}";
 
@@ -419,178 +397,6 @@ function viral_mag_dymanic_styles() {
         .vm-block-title-style4.vm-block-title:after, .vm-block-title-style6.vm-block-title:before, .vm-block-title-style6.vm-block-title:after, .vm-block-title-style7.vm-block-title:after{background-color:$viral_mag_block_title_border_color}
     ";
 
-    /* =============== Background Color =============== */
-    $custom_css .= "
-        button,
-        input[type='button'],
-        input[type='reset'],
-        input[type='submit'],
-        .vm-button,
-        .comment-navigation .nav-previous a,
-        .comment-navigation .nav-next a,
-        .pagination .page-numbers,
-        .vm-progress-bar-length,
-        .vm-main-content .entry-readmore a,
-        .blog-layout2 .entry-date,
-        .blog-layout4 .vm-post-date,
-        .woocommerce #respond input#submit,
-        .woocommerce a.button,
-        .woocommerce button.button,
-        .woocommerce input.button,
-        .woocommerce ul.products li.product:hover .viral-mag-product-title-wrap .button,
-        .woocommerce #respond input#submit.alt,
-        .woocommerce a.button.alt,
-        .woocommerce button.button.alt,
-        .woocommerce input.button.alt,
-        .woocommerce nav.woocommerce-pagination ul li a,
-        .woocommerce nav.woocommerce-pagination ul li span,
-        .woocommerce span.onsale,
-        .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-        .woocommerce #respond input#submit.disabled,
-        .woocommerce #respond input#submit:disabled,
-        .woocommerce #respond input#submit:disabled[disabled],
-        .woocommerce a.button.disabled, .woocommerce a.button:disabled,
-        .woocommerce a.button:disabled[disabled],
-        .woocommerce button.button.disabled,
-        .woocommerce button.button:disabled,
-        .woocommerce button.button:disabled[disabled],
-        .woocommerce input.button.disabled,
-        .woocommerce input.button:disabled,
-        .woocommerce input.button:disabled[disabled],
-        .woocommerce #respond input#submit.alt.disabled,
-        .woocommerce #respond input#submit.alt.disabled:hover,
-        .woocommerce #respond input#submit.alt:disabled,
-        .woocommerce #respond input#submit.alt:disabled:hover,
-        .woocommerce #respond input#submit.alt:disabled[disabled],
-        .woocommerce #respond input#submit.alt:disabled[disabled]:hover,
-        .woocommerce a.button.alt.disabled,
-        .woocommerce a.button.alt.disabled:hover,
-        .woocommerce a.button.alt:disabled,
-        .woocommerce a.button.alt:disabled:hover,
-        .woocommerce a.button.alt:disabled[disabled],
-        .woocommerce a.button.alt:disabled[disabled]:hover,
-        .woocommerce button.button.alt.disabled,
-        .woocommerce button.button.alt.disabled:hover,
-        .woocommerce button.button.alt:disabled,
-        .woocommerce button.button.alt:disabled:hover,
-        .woocommerce button.button.alt:disabled[disabled],
-        .woocommerce button.button.alt:disabled[disabled]:hover,
-        .woocommerce input.button.alt.disabled,
-        .woocommerce input.button.alt.disabled:hover,
-        .woocommerce input.button.alt:disabled,
-        .woocommerce input.button.alt:disabled:hover,
-        .woocommerce input.button.alt:disabled[disabled],
-        .woocommerce input.button.alt:disabled[disabled]:hover,
-        .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
-        .woocommerce-MyAccount-navigation-link a,
-        .vm-style2-accordion .vm-accordion-header,
-        #back-to-top,
-        .vm-pt-header .vm-pt-tab.vm-pt-active,
-        .vm-post-listing .vm-pl-count,
-       .vm-post-categories li a.vm-category,
-       .vm-slider-block .owl-carousel .owl-nav .owl-prev:hover, 
-       .vm-slider-block .owl-carousel .owl-nav .owl-next:hover,
-       .vm-fwcarousel-block .owl-carousel .owl-nav .owl-prev, 
-       .vm-fwcarousel-block .owl-carousel .owl-nav .owl-next,
-       .vm-primary-cat-block.vm-primary-cat,
-       .vm-carousel-block .owl-carousel .owl-nav .owl-prev, 
-       .vm-carousel-block .owl-carousel .owl-nav .owl-next,
-        .video-controls,
-       .vm-ticker.style1.vm-ticker-title,
-       .vm-ticker.style1 .owl-carousel .owl-nav button.owl-prev, 
-       .vm-ticker.style1 .owl-carousel .owl-nav button.owl-next,
-       .vm-ticker.style2.vm-ticker-title,
-       .vm-ticker.style3.vm-ticker-title,
-       .vm-ticker.style4.vm-ticker-title,
-        .single-entry-gallery .owl-carousel .owl-nav .owl-prev, 
-        .single-entry-gallery .owl-carousel .owl-nav .owl-next,
-        .viral-mag-related-post.style3 .owl-carousel .owl-nav .owl-prev, 
-        .viral-mag-related-post.style3 .owl-carousel .owl-nav .owl-next,
-        .vm-instagram-widget-footer a,
-        .blog-layout7 .vm-post-date,
-        .he-post-thumb .post-categories li a:hover
-        {
-            background:{$color};
-        }";
-
-    /* =============== Color =============== */
-    $custom_css .= "
-        .no-comments,
-        .woocommerce div.product p.price,
-        .woocommerce div.product span.price,
-        .woocommerce .product_meta a:hover,
-        .woocommerce-error:before,
-        .woocommerce-info:before,
-        .woocommerce-message:before,
-        #back-to-top,
-        .blog-layout1 .vm-post-date .entry-date span
-        {
-            color:{$color};
-        }";
-
-    /* =============== Border Color =============== */
-    $custom_css .= "
-        .woocommerce ul.products li.product:hover,
-        .woocommerce-page ul.products li.product:hover,
-        .woocommerce #respond input#submit,
-        .woocommerce a.button,
-        .woocommerce button.button,
-        .woocommerce input.button,
-        .woocommerce ul.products li.product:hover .viral-mag-product-title-wrap .button,
-        .woocommerce #respond input#submit.alt,
-        .woocommerce a.button.alt,
-        .woocommerce button.button.alt,
-        .woocommerce input.button.alt,
-        .woocommerce div.product .woocommerce-tabs ul.tabs,
-        .woocommerce #respond input#submit.alt.disabled,
-        .woocommerce #respond input#submit.alt.disabled:hover,
-        .woocommerce #respond input#submit.alt:disabled,
-        .woocommerce #respond input#submit.alt:disabled:hover,
-        .woocommerce #respond input#submit.alt:disabled[disabled],
-        .woocommerce #respond input#submit.alt:disabled[disabled]:hover,
-        .woocommerce a.button.alt.disabled,
-        .woocommerce a.button.alt.disabled:hover,
-        .woocommerce a.button.alt:disabled,
-        .woocommerce a.button.alt:disabled:hover,
-        .woocommerce a.button.alt:disabled[disabled],
-        .woocommerce a.button.alt:disabled[disabled]:hover,
-        .woocommerce button.button.alt.disabled,
-        .woocommerce button.button.alt.disabled:hover,
-        .woocommerce button.button.alt:disabled,
-        .woocommerce button.button.alt:disabled:hover,
-        .woocommerce button.button.alt:disabled[disabled],
-        .woocommerce button.button.alt:disabled[disabled]:hover,
-        .woocommerce input.button.alt.disabled,
-        .woocommerce input.button.alt.disabled:hover,
-        .woocommerce input.button.alt:disabled,
-        .woocommerce input.button.alt:disabled:hover,
-        .woocommerce input.button.alt:disabled[disabled],
-        .woocommerce input.button.alt:disabled[disabled]:hover,
-        .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
-        .vm-style2-accordion .vm-accordion-content-wrap,
-        .content-area .entry-content blockquote
-        {
-            border-color: {$color};
-        }
-
-        .woocommerce-error,
-        .woocommerce-info,
-        .woocommerce-message{
-            border-top-color: {$color};
-        }
-
-        .woocommerce ul.products li.product .onsale:after{
-            border-color: transparent transparent {$darker_color} {$darker_color};
-        }
-
-        .woocommerce span.onsale:after{
-            border-color: transparent {$darker_color} {$darker_color} transparent;
-        }
-
-        .woocommerce div.product .woocommerce-tabs ul.tabs li.active a:before{
-            border-color: {$color} transparent transparent;
-        }
-    ";
 
     /* =============== Footer Settings =============== */
     $viral_mag_footer_bg_url = get_theme_mod('viral_mag_footer_bg_url');

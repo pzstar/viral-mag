@@ -12,6 +12,7 @@ $wp_customize->get_section('colors')->priority = 10;
 $wp_customize->add_setting('viral_mag_template_color', array(
     'default' => '#cf0701',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage',
     'priority' => 1
 ));
 
