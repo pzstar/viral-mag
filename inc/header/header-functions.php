@@ -91,7 +91,7 @@ function viral_mag_top_header_menu() {
         wp_nav_menu(array(
             'menu' => $menu_id,
             'container' => NULL,
-            'menu_class' => 'vm-clearfix',
+            'menu_class' => 'vm-th-menu',
             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
         ));
     }
@@ -225,22 +225,22 @@ function viral_mag_header_social_icons() {
         array(
             'icon' => 'icofont-facebook',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-twitter',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-instagram',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         ),
         array(
             'icon' => 'icofont-youtube',
             'link' => '#',
-            'enable' => 'on'
+            'enable' => 'yes'
         )
     )));
     $social_icons = json_decode($social_icons);
@@ -252,7 +252,7 @@ function viral_mag_header_social_icons() {
         if (!empty($social_icons)) {
             echo '<div class="vm-header-social-icons">';
             foreach ($social_icons as $social_icon) {
-                if ($social_icon->enable === 'on' && !empty($social_icon->link)) {
+                if ($social_icon->enable === 'yes' && !empty($social_icon->link)) {
                     echo '<a href="' . esc_attr($social_icon->link) . '" target="_blank"><i class="' . esc_attr($social_icon->icon) . '"></i></a>';
                 }
             }

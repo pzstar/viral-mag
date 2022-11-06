@@ -49,7 +49,7 @@ if (!function_exists('viral_mag_page_choice')) {
 if (!function_exists('viral_mag_menu_choice')) {
 
     function viral_mag_menu_choice() {
-        $menu_choice = array('none' => esc_html('Select Menu', 'viral-mag'));
+        $menu_choice = array('none' => esc_html('-- Select Menu --', 'viral-mag'));
         $menus = get_terms('nav_menu', array('hide_empty' => false));
         if ($menus) {
             foreach ($menus as $menus_single) {

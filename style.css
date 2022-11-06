@@ -4570,10 +4570,10 @@ body.vm-no-header-space .vm-main-header {
 }
 
 .vm-top-header {
-    background: var(--vm-template-color, #cf0701);
+    background: var(--vm-th-bg-color, var(--vm-template-color, #cf0701));
     font-size: 0.86rem;
     line-height: 1.2;
-    color: #FFF;
+    color: var(--vm-th-text-color, #FFF);
 }
 
 .vm-mobile-top-header {
@@ -4584,11 +4584,12 @@ body.vm-no-header-space .vm-main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: var(--vm-th-height, 45px);
 }
 
 .vm-top-header a {
     text-decoration: none;
-    color: #FFF;
+    color: var(--vm-th-anchor-color, #FFF);
 }
 
 .vm-top-header p {
@@ -4596,6 +4597,7 @@ body.vm-no-header-space .vm-main-header {
 }
 
 .vm-top-header ul {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -4608,8 +4610,18 @@ body.vm-no-header-space .vm-main-header {
 
 .th-menu>ul>li {
     position: relative;
-    display: inline-block;
-    margin: 0 8px;
+}
+
+.vm-th-left.th-menu > ul > li{
+    margin-right: 15px;
+}
+
+.vm-th-right.th-menu > ul > li{
+    margin-left: 15px;
+}
+
+.th-menu>ul>li>a{
+    line-height: var(--vm-th-height, 45px);
 }
 
 .th-menu li {
@@ -4627,8 +4639,9 @@ body.vm-no-header-space .vm-main-header {
     left: 0;
     top: 100%;
     width: 200px;
-    background: var(--vm-template-color, #cf0701);
+    background: var(--vm-th-bg-color, var(--vm-template-color, #cf0701));
     z-index: 9;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
 
 .th-menu ul ul ul {
@@ -4669,12 +4682,10 @@ body.vm-no-header-space .vm-main-header {
 }
 
 .vm-th-left {
-    float: left;
     max-width: 80%;
 }
 
 .vm-th-right {
-    float: right;
     max-width: 80%;
 }
 
@@ -4758,11 +4769,12 @@ body.vm-no-header-space .vm-main-header {
 }
 
 #vm-site-branding {
-    padding: 15px 0;
+    padding: var(--vm-logo-padding, 15px) 0;
 }
 
 #vm-site-branding img {
     width: auto;
+    height: var(--vm-logo-height, 60px);
 }
 
 .vm-tagline-inline-logo  #vm-site-branding {
@@ -4797,18 +4809,17 @@ body.vm-no-header-space .vm-main-header {
 
 .vm-site-title a {
     text-decoration: none;
-    color: var(--vm-template-color, #cf0701);
+    color: var(--vm-title-color, var(--vm-template-color, #cf0701));
 }
 
 .vm-site-description {
-    color: #EEE;
     margin: 0;
     font-size: 15px;
     line-height: 1;
 }
 
 .vm-site-description a {
-    color: #333;
+    color: var(--vm-title-color, #EEE);
 }
 
 .breadcrumb-trail,
@@ -5127,6 +5138,10 @@ body.vm-no-header-space .vm-main-header {
 
 /*Header One*/
 
+.vm-header-one .vm-header{
+    background: var(--vm-mh-bg-color, #FFF);
+}
+
 .vm-header-one .vm-header .vm-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5153,10 +5168,11 @@ body.vm-no-header-space .vm-main-header {
 
 .vm-header-two .vm-middle-header {
     padding: 40px 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll;
+    background-image: var(--vm-mh-header-bg-url);
+    background-repeat: var(--vm-mh-header-bg-repeat, no-repeat);
+    background-size: var(--vm-mh-header-bg-size, cover);
+    background-position: var(--vm-mh-header-bg-position, center center);
+    background-attachment: var(--vm-mh-header-bg-attach, scroll);
 }
 
 .vm-header-two .vm-middle-header .vm-container {
@@ -5192,17 +5208,21 @@ body.vm-no-header-space .vm-main-header {
 .vm-header-two .vm-middle-header-left a {
     padding: 10px;
     font-size: 20px;
-    color: #333;
+    color: var(--vm-mh-button-color, #333);
 }
 
 .vm-header-two .vm-middle-header-right>div>a {
     display: block;
     padding: 10px;
-    color: #333 !important;
+    color: var(--vm-mh-button-color, #333);
 }
 
 .vm-header-two .vm-offcanvas-nav a>span {
-    background: #333 !important;
+    background: var(--vm-mh-button-color, #333);
+}
+
+.vm-header-two .vm-header{
+    background: var(--vm-mh-bg-color, #FFF);
 }
 
 .vm-header-two .vm-header .vm-container {
@@ -5221,6 +5241,10 @@ body.vm-no-header-space .vm-main-header {
 
 .vm-header-three .vm-container {
     max-width: 100%;
+}
+
+.vm-header-three .vm-header{
+    background: var(--vm-mh-bg-color, #FFF);
 }
 
 .vm-header-three .vm-header .vm-container {
@@ -5437,11 +5461,12 @@ body.vm-no-header-space .vm-main-header {
 }
 
 .vm-header-seven .vm-middle-header {
+    background-image: var(--vm-mh-header-bg-url);
+    background-repeat: var(--vm-mh-header-bg-repeat, no-repeat);
+    background-size: var(--vm-mh-header-bg-size, cover);
+    background-position: var(--vm-mh-header-bg-position, center center);
+    background-attachment: var(--vm-mh-header-bg-attach, scroll);
     background: #FFF;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll;
 }
 
 .vm-header-seven .vm-middle-header .vm-container {
@@ -5820,7 +5845,7 @@ body.vm-no-header-space .vm-main-header {
 .vm-top-border.vm-header-five .vm-header,
 .vm-top-border.vm-header-six .vm-header .vm-container,
 .vm-top-border.vm-header-seven .vm-header {
-    border-top: 1px solid #EEE;
+    border-top: 1px solid var(--vm-mh-bg-border-color, #EEE);
 }
 
 .vm-bottom-border.vm-header-one .vm-header,
@@ -5830,7 +5855,7 @@ body.vm-no-header-space .vm-main-header {
 .vm-bottom-border.vm-header-five .vm-header,
 .vm-bottom-border.vm-header-six .vm-header .vm-container,
 .vm-bottom-border.vm-header-seven .vm-header {
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid var(--vm-mh-bg-border-color, #EEE);
 }
 
 .vm-top-bottom-border.vm-header-one .vm-header,
@@ -5840,8 +5865,8 @@ body.vm-no-header-space .vm-main-header {
 .vm-top-bottom-border.vm-header-five .vm-header,
 .vm-top-bottom-border.vm-header-six .vm-header .vm-container,
 .vm-top-bottom-border.vm-header-seven .vm-header {
-    border-top: 1px solid #EEE;
-    border-bottom: 1px solid #EEE;
+    border-top: 1px solid var(--vm-mh-bg-border-color, #EEE);
+    border-bottom: 1px solid var(--vm-mh-bg-border-color, #EEE);
 }
 
 
@@ -12181,6 +12206,12 @@ body.video  .vm-maintenance-bg:after {
     }
 }
 
+@media screen and (max-width: var(--vm-responsive-width, 768px)) {
+    .vm-header-one .vm-header, 
+    .vm-header-three .vm-header{
+        background: var(--vm-mh-bg-color-mobile);
+    }
+}
 
 /* Social Count Plus CSS */
 

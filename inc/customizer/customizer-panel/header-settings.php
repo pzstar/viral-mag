@@ -6,6 +6,8 @@
  * @package Viral Mag
  */
 $wp_customize->remove_control('header_text');
+$wp_customize->get_setting('blogname')->transport = 'postMessage';
+$wp_customize->get_setting('blogdescription')->transport = 'postMessage';
 /* HEADER PANEL */
 $wp_customize->add_panel('viral_mag_header_settings_panel', array(
     'title' => esc_html__('Header Settings', 'viral-mag'),
@@ -215,6 +217,7 @@ $wp_customize->add_control(new Viral_Mag_Text_Info_Control($wp_customize, 'viral
 
 $wp_customize->add_setting('viral_mag_th_menu', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
+    'default' => 'none'
 ));
 
 $wp_customize->add_control('viral_mag_th_menu', array(
@@ -226,6 +229,7 @@ $wp_customize->add_control('viral_mag_th_menu', array(
 
 $wp_customize->add_setting('viral_mag_th_widget', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
+    'default' => 'none'
 ));
 
 $wp_customize->add_control('viral_mag_th_widget', array(
@@ -511,23 +515,7 @@ $wp_customize->add_control(new Viral_Mag_Background_Image_Control($wp_customize,
         'repeat' => 'viral_mag_mh_header_bg_repeat', // Use false to hide the field
         'size' => 'viral_mag_mh_header_bg_size',
         'position' => 'viral_mag_mh_header_bg_position',
-        'attach' => 'viral_mag_mh_header_bg_attach'
-    )
-)));
-
-$wp_customize->add_setting('viral_mag_mh_height', array(
-    'sanitize_callback' => 'absint',
-    'default' => 65,
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_mh_height', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Header Height', 'viral-mag'),
-    'input_attrs' => array(
-        'min' => 50,
-        'max' => 200,
-        'step' => 1
+        'attachment' => 'viral_mag_mh_header_bg_attach'
     )
 )));
 
