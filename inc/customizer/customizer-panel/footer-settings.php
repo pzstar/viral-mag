@@ -107,7 +107,7 @@ $wp_customize->add_control(new Viral_Mag_Background_Image_Control($wp_customize,
         'repeat' => 'viral_mag_footer_bg_repeat', // Use false to hide the field
         'size' => 'viral_mag_footer_bg_size',
         'position' => 'viral_mag_footer_bg_position',
-        'attach' => 'viral_mag_footer_bg_attach'
+        'attachment' => 'viral_mag_footer_bg_attach'
     )
 )));
 

@@ -69,11 +69,6 @@ function viral_mag_body_classes($classes) {
 
     $classes[] = 'vm-block-title-' . $block_title_style;
 
-    if (is_archive() || is_home() || is_search()) {
-        $blog_layout = get_theme_mod('viral_mag_blog_layout', 'layout1');
-        $classes[] = 'vm-blog-' . $blog_layout;
-    }
-
     return $classes;
 }
 

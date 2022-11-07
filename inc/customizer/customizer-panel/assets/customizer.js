@@ -59,6 +59,39 @@ jQuery(document).ready(function ($) {
         wp.customize.control('viral_mag_mh_button_color', setupHeaderStyle2);
     });
 
+    wp.customize('viral_mag_mh_border', function (setting) {
+        var setupBorder = function (control) {
+            var visibility = function () {
+                if ('vm-no-border' === setting.get()) {
+                    control.container.addClass('customizer-hidden');
+                } else {
+                    control.container.removeClass('customizer-hidden');
+                }
+            };
+            visibility();
+            setting.bind(visibility);
+        };
+
+        wp.customize.control('viral_mag_mh_border_color', setupBorder);
+    });
+    
+    wp.customize('viral_mag_archive_content', function (setting) {
+        var setupAcrhiveContent = function (control) {
+            var visibility = function () {
+                if ('full-content' === setting.get()) {
+                    control.container.addClass('customizer-hidden');
+                } else {
+                    control.container.removeClass('customizer-hidden');
+                }
+            };
+            visibility();
+            setting.bind(visibility);
+        };
+
+        wp.customize.control('viral_mag_archive_excerpt_length', setupAcrhiveContent);
+        wp.customize.control('viral_mag_archive_readmore', setupAcrhiveContent);
+    });
+
     wp.customize('viral_mag_common_header_typography', function (setting) {
         var setupControlCommonTypography = function (control) {
             var visibility = function () {

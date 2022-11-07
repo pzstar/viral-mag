@@ -226,7 +226,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
         }
         ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout2')); ?>>
 
             <div class="vm-post-wrapper">
                 <?php if (has_post_thumbnail()): ?>

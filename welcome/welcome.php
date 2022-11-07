@@ -53,6 +53,12 @@ if (!class_exists('Viral_Mag_Welcome')) :
                     'filename' => 'simple-floating-menu',
                     'thumb_path' => 'https://ps.w.org/simple-floating-menu/assets/icon-256x256.png'
                 ),
+                'smart-blocks' => array(
+                    'name' => 'Smart Blocks - Wordpress Gutenberg Blocks',
+                    'slug' => 'smart-blocks',
+                    'filename' => 'smart-blocks',
+                    'thumb_path' => 'https://ps.w.org/smart-blocks/assets/icon-256x256.png'
+                )
             );
 
             /* Create a Welcome Page */

@@ -59,6 +59,10 @@ jQuery(document).ready(function ($) {
         value.bind(function (to) {
             var css = '--vm-wide-container-width:' + to + 'px;';
             viralMagDynamicCss('viral_mag_wide_container_width', css);
+            var mediacss = '@media screen and (max-width: ' + to + 'px){';
+            mediacss += '.elementor-section.elementor-section-boxed>.elementor-container,.vm-wide .vm-container, .vm-boxed .vm-container{padding-left: 40px !important;padding-right: 40px !important;}';
+            mediacss += '}';
+            viral_mag_dynamic_css('viral_mag_wide_container_width_mediacss', mediacss);
         });
     });
     wp.customize('viral_mag_fluid_container_width', function (value) {
@@ -303,6 +307,12 @@ jQuery(document).ready(function ($) {
             viralMagDynamicCss('viral_mag_mh_bg_color_mobile', css);
         });
     });
+    wp.customize('viral_mag_toggle_button_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-toggle-button-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_toggle_button_color', css);
+        });
+    });
     wp.customize('viral_mag_mh_border', function (value) {
         value.bind(function (to) {
             $(' #vm-masthead').removeClass('vm-no-border vm-top-border vm-bottom-border vm-top-bottom-border').addClass(to);
@@ -348,6 +358,83 @@ jQuery(document).ready(function ($) {
         value.bind(function (to) {
             var css = '--vm-mh-menu-dropdown-padding:' + to + 'px;';
             viralMagDynamicCss('viral_mag_menu_dropdown_padding', css);
+        });
+    });
+    wp.customize('viral_mag_footer_copyright', function (value) {
+        value.bind(function (to) {
+            $('.vm-site-info .vm-copyright-text').html(to);
+        });
+    });
+    wp.customize('viral_mag_footer_bg_url', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-bg-url:url(' + to + ');';
+            viralMagDynamicCss('viral_mag_footer_bg_url', css);
+        });
+    });
+    wp.customize('viral_mag_footer_bg_repeat', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-bg-repeat:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_bg_repeat', css);
+        });
+    });
+    wp.customize('viral_mag_footer_bg_size', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-bg-size:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_bg_size', css);
+        });
+    });
+    wp.customize('viral_mag_footer_bg_position', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-bg-position:' + to.replace('-', ' ') + ';';
+            viralMagDynamicCss('viral_mag_footer_bg_position', css);
+        });
+    });
+    wp.customize('viral_mag_footer_bg_attach', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-bg-attach:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_bg_attach', css);
+        });
+    });
+    wp.customize('viral_mag_footer_bg_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-bg-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_bg_color', css);
+        });
+    });
+    wp.customize('viral_mag_footer_title_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-title-color:' + to + ';';
+            css += '--vm-footer-title-light-color:' + viralMagConvertHex(to, 10) + ';';
+            viralMagDynamicCss('viral_mag_footer_title_color', css);
+        });
+    });
+    wp.customize('viral_mag_footer_text_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-text-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_text_color', css);
+        });
+    });
+    wp.customize('viral_mag_footer_anchor_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-anchor-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_anchor_color', css);
+        });
+    });
+    wp.customize('viral_mag_footer_border_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-footer-border-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_footer_border_color', css);
+        });
+    });
+    wp.customize('viral_mag_content_widget_title_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-content-widget-title-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_content_widget_title_color', css);
+        });
+    });
+    wp.customize('viral_mag_sidebar_style', function (value) {
+        value.bind(function (to) {
+            $('body').removeClass('vm-sidebar-style1 vm-sidebar-style2').addClass('vm-' + to);
         });
     });
 });

@@ -360,6 +360,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_m
                 'viral_mag_mh_button_color',
                 'viral_mag_mh_bg_color',
                 'viral_mag_mh_bg_color_mobile',
+                'viral_mag_toggle_button_color',
                 'viral_mag_mh_border_sep_start',
                 'viral_mag_mh_border',
                 'viral_mag_mh_border_color',
@@ -562,6 +563,17 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
     'label' => esc_html__('Header Bar Background Color(Mobile)', 'viral-mag')
 )));
 
+$wp_customize->add_setting('viral_mag_toggle_button_color', array(
+    'default' => '#FFFFFF',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_toggle_button_color', array(
+    'section' => 'viral_mag_main_header_section',
+    'label' => esc_html__('Mobile Menu Button Color', 'viral-mag')
+)));
+
 $wp_customize->add_setting('viral_mag_mh_border_sep_start', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
@@ -636,7 +648,6 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_p
                 'viral_mag_mh_submenu_bg_color',
                 'viral_mag_mh_submenu_color',
                 'viral_mag_mh_submenu_hover_color',
-                'viral_mag_toggle_button_color',
                 'viral_mag_menu_dropdown_padding',
                 'viral_mag_responsive_width'
             ),
@@ -741,17 +752,6 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
     'label' => esc_html__('SubMenu Link Color - Hover', 'viral-mag')
 )));
 
-$wp_customize->add_setting('viral_mag_toggle_button_color', array(
-    'default' => '#FFFFFF',
-    'sanitize_callback' => 'sanitize_hex_color',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_toggle_button_color', array(
-    'section' => 'viral_mag_menu_settings_section',
-    'label' => esc_html__('Mobile Menu Button Color', 'viral-mag')
-)));
-
 $wp_customize->add_setting('viral_mag_menu_dropdown_padding', array(
     'default' => 0,
     'sanitize_callback' => 'absint',
@@ -792,32 +792,38 @@ $wp_customize->add_setting('viral_mag_menu_family', array(
 
 $wp_customize->add_setting('viral_mag_menu_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_menu_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_menu_text_transform', array(
     'default' => 'uppercase',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_menu_size', array(
     'default' => '14',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_menu_line_height', array(
     'default' => '3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_menu_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_menu_typography', array(
@@ -925,37 +931,44 @@ $wp_customize->add_setting('viral_mag_page_title_family', array(
 
 $wp_customize->add_setting('viral_mag_page_title_style', array(
     'default' => '400',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_text_decoration', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_text_transform', array(
     'default' => 'none',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_size', array(
     'default' => '40',
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'absint',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_line_height', array(
     'default' => '1.3',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_letter_spacing', array(
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field'
+    'sanitize_callback' => 'sanitize_text_field',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_setting('viral_mag_page_title_color', array(
     'default' => '#333333',
-    'sanitize_callback' => 'sanitize_hex_color'
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_page_title_typography', array(
@@ -970,7 +983,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'size' => 'viral_mag_page_title_size',
         'line_height' => 'viral_mag_page_title_line_height',
         'letter_spacing' => 'viral_mag_page_title_letter_spacing',
-        'typocolor' => 'viral_mag_page_title_color'
+        'color' => 'viral_mag_page_title_color'
     ),
     'input_attrs' => array(
         'min' => 20,

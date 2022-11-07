@@ -48,7 +48,7 @@ if (!function_exists('viral_mag_bottom_footer')) {
             <div class="vm-bottom-footer">
                 <div class="vm-container">
                     <div class="vm-site-info">
-                        <?php echo do_shortcode($viral_mag_footer_copyright); ?>
+                        <span class="vm-copyright-text"><?php echo do_shortcode($viral_mag_footer_copyright); ?></span>
                         <?php printf('%4$s <span class="sep"> | </span><a title="%3$s" href="%1$s" target="_blank">Viral Mag</a> %2$s', 'https://hashthemes.com/wordpress-theme/viral-mag/', esc_html__('by HashThemes', 'viral-mag'), esc_attr__('Download Viral News', 'viral-mag'), esc_html__('WordPress Theme', 'viral-mag')); ?>
                     </div><!-- #site-info -->
                 </div>
