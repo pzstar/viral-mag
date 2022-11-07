@@ -314,4 +314,40 @@ jQuery(document).ready(function ($) {
             viralMagDynamicCss('viral_mag_mh_border_color', css);
         });
     });
+    wp.customize('viral_mag_mh_menu_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-menu-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_mh_menu_color', css);
+        });
+    });
+    wp.customize('viral_mag_mh_menu_hover_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-menu-hover-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_mh_menu_hover_color', css);
+        });
+    });
+    wp.customize('viral_mag_mh_submenu_bg_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-submenu-bg-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_mh_submenu_bg_color', css);
+        });
+    });
+    wp.customize('viral_mag_mh_submenu_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-submenu-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_mh_submenu_color', css);
+        });
+    });
+    wp.customize('viral_mag_mh_submenu_hover_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-submenu-hover-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_mh_submenu_hover_color', css);
+        });
+    });
+    wp.customize('viral_mag_menu_dropdown_padding', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-menu-dropdown-padding:' + to + 'px;';
+            viralMagDynamicCss('viral_mag_menu_dropdown_padding', css);
+        });
+    });
 });

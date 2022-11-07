@@ -690,17 +690,6 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
     'label' => esc_html__('Menu Link Color - Hover', 'viral-mag')
 )));
 
-$wp_customize->add_setting('viral_mag_mh_menu_hover_bg_color', array(
-    'default' => '#cf0701',
-    'sanitize_callback' => 'sanitize_hex_color',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_mh_menu_hover_bg_color', array(
-    'section' => 'viral_mag_menu_settings_section',
-    'label' => esc_html__('Menu Link Background Color - Hover', 'viral-mag')
-)));
-
 $wp_customize->add_setting('viral_mag_submenu_seperator', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));

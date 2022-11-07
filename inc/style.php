@@ -51,6 +51,13 @@ function viral_mag_dymanic_styles() {
     $viral_mag_mh_bg_color_mobile = get_theme_mod('viral_mag_mh_bg_color_mobile', '#cf0701');
     $viral_mag_mh_border_color = get_theme_mod('viral_mag_mh_border_color', '#EEEEEE');
 
+    $viral_mag_mh_menu_color = get_theme_mod('viral_mag_mh_menu_color', '#FFFFFF');
+    $viral_mag_mh_menu_hover_color = get_theme_mod('viral_mag_mh_menu_hover_color', '#FFFFFF');
+    $viral_mag_mh_submenu_bg_color = get_theme_mod('viral_mag_mh_submenu_bg_color', '#F2F2F2');
+    $viral_mag_mh_submenu_color = get_theme_mod('viral_mag_mh_submenu_color', '#333333');
+    $viral_mag_mh_submenu_hover_color = get_theme_mod('viral_mag_mh_submenu_hover_color', '#333333');
+    $viral_mag_menu_dropdown_padding = get_theme_mod('viral_mag_menu_dropdown_padding', 0);
+
     $viral_mag_responsive_width = get_theme_mod('viral_mag_responsive_width', 780);
 
     $container_width = 1170;
@@ -97,6 +104,12 @@ function viral_mag_dymanic_styles() {
     $custom_css .= "--vm-mh-bg-color: {$viral_mag_mh_bg_color};";
     $custom_css .= "--vm-mh-bg-color-mobile: {$viral_mag_mh_bg_color_mobile};";
     $custom_css .= "--vm-mh-bg-border-color: {$viral_mag_mh_border_color};";
+    $custom_css .= "--vm-mh-menu-color: {$viral_mag_mh_menu_color};";
+    $custom_css .= "--vm-mh-menu-hover-color: {$viral_mag_mh_menu_hover_color};";
+    $custom_css .= "--vm-mh-submenu-bg-color: {$viral_mag_mh_submenu_bg_color};";
+    $custom_css .= "--vm-mh-submenu-color: {$viral_mag_mh_submenu_color};";
+    $custom_css .= "--vm-mh-submenu-hover-color: {$viral_mag_mh_submenu_hover_color};";
+    $custom_css .= "--vm-mh-menu-dropdown-padding: {$viral_mag_menu_dropdown_padding}px;";
     $custom_css .= "}";
 
     if ($th_bottom_border_color) {
@@ -166,14 +179,8 @@ function viral_mag_dymanic_styles() {
     $viral_mag_mh_height = get_theme_mod('viral_mag_mh_height', 65);
     $viral_mag_mh_half_height = $viral_mag_mh_height / 2;
 
-    
-    $viral_mag_mh_menu_color = get_theme_mod('viral_mag_mh_menu_color', '#FFFFFF');
-    $viral_mag_mh_menu_hover_color = get_theme_mod('viral_mag_mh_menu_hover_color', '#FFFFFF');
-    $viral_mag_mh_menu_hover_bg_color = get_theme_mod('viral_mag_mh_menu_hover_bg_color', '#cf0701');
-    $viral_mag_mh_submenu_bg_color = get_theme_mod('viral_mag_mh_submenu_bg_color', '#F2F2F2');
-    $viral_mag_mh_submenu_color = get_theme_mod('viral_mag_mh_submenu_color', '#333333');
-    $viral_mag_mh_submenu_hover_color = get_theme_mod('viral_mag_mh_submenu_hover_color', '#333333');
-    $viral_mag_menu_dropdown_padding = get_theme_mod('viral_mag_menu_dropdown_padding', 0);
+
+
     $viral_mag_logo_height = $viral_mag_mh_height - 30;
     $viral_mag_header6_height = $th_height + $viral_mag_mh_half_height;
     $viral_mag_header6_single_bottom_margin = 40 - $viral_mag_mh_half_height;
@@ -217,96 +224,6 @@ function viral_mag_dymanic_styles() {
             line-height: {$viral_mag_mh_height}px;
         }
         
-            
-        .vm-menu > ul > li.menu-item > a,
-        .vm-search-button a,
-        .vm-header-social-icons a,
-        .hover-style1 .vm-search-button a:hover,
-        .hover-style3 .vm-search-button a:hover,
-        .hover-style5 .vm-search-button a:hover,
-        .hover-style1 .vm-header-social-icons a:hover,
-        .hover-style3 .vm-header-social-icons a:hover,
-        .hover-style5 .vm-header-social-icons a:hover{
-            color: $viral_mag_mh_menu_color;
-        }
-
-        .hover-style6 .vm-menu > ul > li.menu-item:hover > a:before,
-        .hover-style6 .vm-menu > ul > li.menu-item > a:before,
-        .hover-style6 .vm-menu > ul > li.menu-item.current_page_item > a:before,
-        .hover-style6 .vm-menu > ul > li.menu-item.current-menu-item > a:before,
-        .hover-style6 .vm-menu > ul > li.menu-item.current_page_ancestor > a:before,
-        .hover-style6 .vm-menu > ul > li.menu-item.current > a:before,
-        .hover-style8 .vm-menu>ul>li.menu-item>a:before,
-        .hover-style9 .vm-menu>ul>li.menu-item>a:before{
-            background: $viral_mag_mh_menu_hover_color;
-        }
-        
-        .vm-offcanvas-nav a>span,
-        .hover-style1 .vm-offcanvas-nav a:hover>span,
-        .hover-style3 .vm-offcanvas-nav a:hover>span,
-        .hover-style5 .vm-offcanvas-nav a:hover>span{
-            background-color: $viral_mag_mh_menu_color;
-        }
-        
-        .vm-search-button a:hover,
-        .vm-header-social-icons a:hover,
-        .hover-style1 .vm-menu > ul> li.menu-item:hover > a,
-        .hover-style1 .vm-menu > ul> li.menu-item.current_page_item > a, 
-        .hover-style1 .vm-menu > ul > li.menu-item.current-menu-item > a,
-        .vm-menu > ul > li.menu-item:hover > a,
-        .vm-menu > ul > li.menu-item:hover > a > i,
-        .vm-menu > ul > li.menu-item.current_page_item > a,
-        .vm-menu > ul > li.menu-item.current-menu-item > a,
-        .vm-menu > ul > li.menu-item.current_page_ancestor > a,
-        .vm-menu > ul > li.menu-item.current > a{
-            color: $viral_mag_mh_menu_hover_color;
-        }
-        
-        .vm-offcanvas-nav a:hover>span{
-            background-color: $viral_mag_mh_menu_hover_color;
-        }
-
-        .vm-menu ul ul,
-        .menu-item-vm-cart .widget_shopping_cart,
-         #vm-responsive-menu{
-            background: $viral_mag_mh_submenu_bg_color;
-        }
-        
-        .vm-menu .megamenu *,
-         #vm-responsive-menu .megamenu *,
-        .vm-menu .megamenu a,
-         #vm-responsive-menu .megamenu a,
-        .vm-menu ul ul li.menu-item > a,
-        .menu-item-vm-cart .widget_shopping_cart a,
-        .menu-item-vm-cart .widget_shopping_cart,
-         #vm-responsive-menu li.menu-item > a,
-         #vm-responsive-menu li.menu-item > a i,
-         #vm-responsive-menu li .dropdown-nav,
-        .megamenu-category .mega-post-title a{
-            color: $viral_mag_mh_submenu_color;
-        }
-        
-        .vm-menu .megamenu a:hover,
-         #vm-responsive-menu .megamenu a:hover,
-        .vm-menu .megamenu a:hover > i,
-         #vm-responsive-menu .megamenu a:hover > i,
-        .vm-menu > ul > li > ul:not(.megamenu) li.menu-item:hover > a,
-        .vm-menu ul ul.megamenu li.menu-item > a:hover,
-        .vm-menu ul ul li.menu-item > a:hover i,
-        .menu-item-vm-cart .widget_shopping_cart a:hover,
-        .vm-menu .megamenu-full-width.megamenu-category .cat-megamenu-tab > div.active-tab,
-        .vm-menu .megamenu-full-width.megamenu-category .mega-post-title a:hover{
-            color: $viral_mag_mh_submenu_hover_color;
-        }
-        
-        .vm-menu ul ul li.menu-item>a:after{
-            background: $viral_mag_mh_submenu_hover_color;
-        }
-        
-        .vm-menu>ul>li.menu-item{
-            padding-top: {$viral_mag_menu_dropdown_padding}px;
-            padding-bottom: {$viral_mag_menu_dropdown_padding}px;
-        }
     ";
 
     /* =============== Block Title Style =============== */
@@ -399,7 +316,13 @@ function viral_mag_dymanic_styles() {
                 display: block;
             }
             
+            .vm-header-two .vm-header, 
+            .vm-header-three .vm-header{
+                background: var(--vm-mh-bg-color-mobile);
+            }
+            
             .vm-header-two .vm-header .vm-container {
+                padding: 15px 0;
                 justify-content: flex-end;
             }
             
