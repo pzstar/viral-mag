@@ -157,6 +157,8 @@ function viral_mag_dymanic_styles() {
             .vm-header-two .vm-header, 
             .vm-header-three .vm-header{
                 background: var(--vm-mh-bg-color-mobile);
+                padding-top: 15px;
+                padding-bottom: 15px;
             }
             .vm-header-two .vm-header .vm-container {
                 justify-content: flex-end;
@@ -200,8 +202,8 @@ function viral_mag_dymanic_styles() {
     foreach ($cat as $cat_id => $cat_name) {
         $cat_color = get_theme_mod("viral_mag_category_{$cat_id}_color");
         if ($cat_color) {
-            $custom_css .= ".post-categories li a.he-category-{$cat_id},.he-primary-cat-block .he-category-{$cat_id}{
-            background: $cat_color;
+            $custom_css .= ".he-post-categories li a.he-category-{$cat_id},.he-primary-cat-block .he-category-{$cat_id}{
+            background: {$cat_color} !important;
             }";
         }
     }

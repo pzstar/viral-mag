@@ -753,7 +753,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
 )));
 
 $wp_customize->add_setting('viral_mag_menu_dropdown_padding', array(
-    'default' => 0,
+    'default' => 12,
     'sanitize_callback' => 'absint',
     'transport' => 'postMessage'
 ));
