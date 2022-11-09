@@ -2908,6 +2908,7 @@ body.vm-no-header-space .vm-main-header {
     display: block;
     padding: 10px;
     color: var(--vm-mh-button-color, #333);
+    font-size: 20px;
 }
 
 .vm-header-two .vm-offcanvas-nav a > span {
