@@ -2637,8 +2637,8 @@ body.vm-no-header-space .vm-main-header {
 .vm-menu > ul > li.menu-item {
     float: left;
     margin-left: 6px;
-    padding-top: var(--vm-mh-menu-dropdown-padding, 0);
-    padding-bottom: var(--vm-mh-menu-dropdown-padding, 0);
+    padding-top: var(--vm-mh-menu-dropdown-padding, 12px);
+    padding-bottom: var(--vm-mh-menu-dropdown-padding, 12px);
 }
 
 .vm-menu > ul > li.menu-item:first-child {
@@ -2865,6 +2865,7 @@ body.vm-no-header-space .vm-main-header {
     background-size: var(--vm-mh-header-bg-size, cover);
     background-position: var(--vm-mh-header-bg-position, center center);
     background-attachment: var(--vm-mh-header-bg-attach, scroll);
+    background-color: var(--vm-mh-header-bg-color, transparent);
 }
 
 .vm-header-two .vm-middle-header .vm-container {

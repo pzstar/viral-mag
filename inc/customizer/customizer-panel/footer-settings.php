@@ -122,7 +122,7 @@ $wp_customize->add_control(new Viral_Mag_Heading_Control($wp_customize, 'viral_m
 
 $wp_customize->add_setting('viral_mag_footer_bg_color', array(
     'default' => '#333333',
-    'sanitize_callback' => 'viral_mag_sanitize_color_alpha',
+    'sanitize_callback' => 'viral_mag_sanitize_color',
     'transport' => 'postMessage'
 ));
 
@@ -140,7 +140,7 @@ $wp_customize->add_setting('viral_mag_footer_title_color', array(
 
 $wp_customize->add_setting('viral_mag_footer_border_color', array(
     'default' => '#444444',
-    'sanitize_callback' => 'viral_mag_sanitize_color_alpha',
+    'sanitize_callback' => 'viral_mag_sanitize_color',
     'transport' => 'postMessage'
 ));
 

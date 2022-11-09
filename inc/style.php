@@ -44,6 +44,7 @@ function viral_mag_dymanic_styles() {
     $mh_header_bg_position = get_theme_mod('viral_mag_mh_header_bg_position', 'center-center');
     $mh_header_bg_position = str_replace('-', ' ', $mh_header_bg_position);
     $mh_header_bg_attach = get_theme_mod('viral_mag_mh_header_bg_attach', 'scroll');
+    $mh_header_bg_color = get_theme_mod('viral_mag_mh_header_bg_color');
 
     $mh_button_color = get_theme_mod('viral_mag_mh_button_color', '#000000');
     $mh_bg_color = get_theme_mod('viral_mag_mh_bg_color', '#cf0701');
@@ -114,6 +115,7 @@ function viral_mag_dymanic_styles() {
     $custom_css .= "--vm-mh-header-bg-size: {$mh_header_bg_size};";
     $custom_css .= "--vm-mh-header-bg-position: {$mh_header_bg_position};";
     $custom_css .= "--vm-mh-header-bg-attach: {$mh_header_bg_attach};";
+    $custom_css .= "--vm-mh-header-bg-color: {$mh_header_bg_color};";
     $custom_css .= "--vm-mh-button-color: {$mh_button_color};";
     $custom_css .= "--vm-mh-bg-color: {$mh_bg_color};";
     $custom_css .= "--vm-mh-bg-color-mobile: {$mh_bg_color_mobile};";

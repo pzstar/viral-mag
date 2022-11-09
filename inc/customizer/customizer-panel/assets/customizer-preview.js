@@ -289,6 +289,12 @@ jQuery(document).ready(function ($) {
             viralMagDynamicCss('viral_mag_mh_header_bg_attach', css);
         });
     });
+    wp.customize('viral_mag_mh_header_bg_color', function (value) {
+        value.bind(function (to) {
+            var css = '--vm-mh-header-bg-color:' + to + ';';
+            viralMagDynamicCss('viral_mag_mh_header_bg_color', css);
+        });
+    });
     wp.customize('viral_mag_mh_button_color', function (value) {
         value.bind(function (to) {
             var css = '--vm-mh-button-color:' + to + ';';

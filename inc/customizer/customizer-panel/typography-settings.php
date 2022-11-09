@@ -71,7 +71,7 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'size' => 'viral_mag_body_size',
         'line_height' => 'viral_mag_body_line_height',
         'letter_spacing' => 'viral_mag_body_letter_spacing',
-        'typocolor' => 'viral_mag_body_color'
+        'color' => 'viral_mag_body_color'
     ),
     'input_attrs' => array(
         'min' => 10,
