@@ -3066,7 +3066,7 @@ body.vm-no-header-space .vm-main-header {
 ## Footer
 --------------------------------------------------------------*/
 
-#vm-colophon {
+.vm-site-footer {
     background-image: var(--vm-footer-bg-url);
     background-size: var(--vm-footer-bg-size, cover);
     background-position: var(--vm-footer-bg-position, center center);
@@ -3077,23 +3077,23 @@ body.vm-no-header-space .vm-main-header {
     color: var(--vm-footer-text-color, #EEEEEE);
 }
 
-.page-template-home-template #vm-colophon,
-.home:not(.blog) #vm-colophon,
-.vm-enable-frontpage #vm-colophon {
+.page-template-home-template .vm-site-footer,
+.home:not(.blog) .vm-site-footer,
+.vm-enable-frontpage .vm-site-footer {
     margin-top: 0 !important;
 }
 
-#vm-colophon .widget-title {
+.vm-site-footer .widget-title {
     margin-bottom: 20px;
     position: relative;
     color: var(--vm-footer-title-color, #EEEEEE);
 }
 
-#vm-colophon .widget-title * {
+.vm-site-footer .widget-title * {
     color: inherit;
 }
 
-#vm-colophon a{
+.vm-site-footer a{
     color: var(--vm-footer-anchor-color, #EEEEEE);
 }
 
@@ -3149,7 +3149,8 @@ body.vm-no-header-space .vm-main-header {
     margin-bottom: 30px;
 }
 
-.vm-footer .widget:last-child {
+.vm-footer .widget:last-child,
+.vm-footer .widget.widget_block{
     margin-bottom: 0;
 }
 
@@ -3578,7 +3579,8 @@ body.vm-no-header-space .vm-main-header {
     color: #333;
 }
 
-.vm-offcanvas-sidebar .widget:last-child {
+.vm-offcanvas-sidebar .widget:last-child,
+.vm-offcanvas-sidebar .widget.widget_block{
     margin-bottom: 0;
 }
 
@@ -5114,4 +5116,8 @@ a.add_to_wishlist.button.alt {
 
 .he-post-thumb .post-categories li a:hover {
     background: var(--vm-template-color, #cf0701);
+}
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link{
+    padding: 0;
 }
