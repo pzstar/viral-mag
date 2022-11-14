@@ -56,7 +56,7 @@ function viral_mag_dymanic_styles() {
     $mh_submenu_bg_color = get_theme_mod('viral_mag_mh_submenu_bg_color', '#F2F2F2');
     $mh_submenu_color = get_theme_mod('viral_mag_mh_submenu_color', '#333333');
     $mh_submenu_hover_color = get_theme_mod('viral_mag_mh_submenu_hover_color', '#333333');
-    $menu_dropdown_padding = get_theme_mod('viral_mag_menu_dropdown_padding', 0);
+    $menu_dropdown_padding = get_theme_mod('viral_mag_menu_dropdown_padding', '12');
 
     $toggle_button_color = get_theme_mod('viral_mag_toggle_button_color', '#FFFFFF');
 
