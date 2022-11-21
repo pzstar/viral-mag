@@ -1576,6 +1576,7 @@ body.vm-boxed #vm-page .vm-container {
 .blog-layout1 .vm-post-date .entry-date span.vm-day {
     font-size: 30px;
     line-height: 1.3;
+    font-weight: bold;
 }
 
 .blog-layout1 .vm-post-header {
