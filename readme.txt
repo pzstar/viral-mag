@@ -24,6 +24,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.0 - Nov 23, 2021 =
+* Major update with refinement and added demos
+
 = 1.1.0 - Oct 16, 2021 =
 * Minor security issue fixed
 
