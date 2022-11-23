@@ -7,7 +7,7 @@
  */
 $wp_customize->add_section('viral_mag_footer_section', array(
     'title' => esc_html__('Footer Settings', 'viral-mag'),
-    'priority' => 20
+    'priority' => 25
 ));
 
 $wp_customize->add_setting('viral_mag_footer_nav', array(
@@ -188,3 +188,18 @@ $wp_customize->add_control('viral_mag_footer_copyright', array(
     'label' => esc_html__('Copyright Text', 'viral-mag'),
     'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'viral-mag')
 ));
+
+$wp_customize->add_setting('viral_mag_footer_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_footer_upgrade_text', array(
+    'section' => 'viral_mag_footer_section',
+    'label' => esc_html__('For more options,', 'viral-news'),
+    'choices' => array(
+        esc_html__('More footer columns styles with up to 6 columns', 'viral-news'),
+        esc_html__('20+ widgets/blocks for footer', 'viral-news'),
+    ),
+    'priority' => 100,
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));

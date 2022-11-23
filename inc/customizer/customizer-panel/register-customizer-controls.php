@@ -15,12 +15,13 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/homepage-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/blog-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/color-settings.php';
-            require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/footer-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/general-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/header-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/sidebar-settings.php';
+            require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/footer-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/social-settings.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/typography-settings.php';
+            require VIRAL_MAG_CUSTOMIZER_PATH . 'customizer-panel/pro-features.php';
 
             /** For Additional Hooks */
             do_action('viral_mag_new_options', $wp_customize);

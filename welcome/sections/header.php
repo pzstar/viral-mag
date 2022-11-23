@@ -1,5 +1,5 @@
 <div class="welcome-header clearfix">
-    <!--<a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-blackfriday&utm_campaign=viral-mag-upgrade'); ?>" target="_blank"><img style="width:100%;margin-bottom:40px;display:block;" src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/black-friday.jpg'); ?>"></a>-->
+    <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-blackfriday&utm_campaign=viral-mag-upgrade'); ?>" target="_blank"><img style="width:100%;margin-bottom:40px;display:block;" src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/bf-banner.jpg'); ?>"></a>
     <div class="welcome-intro">
         <h2><?php
             printf(// WPCS: XSS OK.
@@ -15,7 +15,7 @@
         </div>
 
         <div class="free-pro-demos">
-            <a class="button button-primary" href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>/news" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'viral-mag'); ?></a>
+            <a class="button button-primary" href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>" target="_blank"><span class="dashicons dashicons-visibility"></span><?php esc_html_e('Free Demos', 'viral-mag'); ?></a>
             <a class="button button-primary" href="https://demo.hashthemes.com/viral-pro/" target="_blank"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Premium Demos', 'viral-mag'); ?></a>
         </div>
     </div>

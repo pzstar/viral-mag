@@ -108,3 +108,8 @@ if (!function_exists('viral_mag_icon_choices')) {
 }
 
 add_action('customize_controls_print_footer_scripts', 'viral_mag_icon_choices');
+
+function viral_mag_is_upgrade_notice_active() {
+    $show_upgrade_notice = get_theme_mod('viral_mag_hide_upgrade_notice', false);
+    return !$show_upgrade_notice;
+}

@@ -124,6 +124,20 @@ $wp_customize->add_control(new Viral_Mag_Heading_Control($wp_customize, 'viral_m
     'label' => esc_html__('Background', 'viral-mag'),
 )));
 
+$wp_customize->add_setting('viral_mag_general_options_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_general_options_upgrade_text', array(
+    'section' => 'viral_mag_general_options_section',
+    'label' => esc_html__('For more options,', 'viral-news'),
+    'choices' => array(
+        esc_html__('16+ animated preloaders', 'viral-news'),
+        esc_html__('Admin page custom logo', 'viral-news')
+    ),
+    'priority' => 100,
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));
 
 /* BACK TO TOP SECTION */
 $wp_customize->add_section('viral_mag_backtotop_section', array(
@@ -142,6 +156,16 @@ $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_ma
     'description' => esc_html__('A button on click scrolls to the top of the page.', 'viral-mag')
 )));
 
+$wp_customize->add_setting('viral_mag_backtotop_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_backtotop_upgrade_text', array(
+    'section' => 'viral_mag_backtotop_section',
+    'label' => esc_html__('For advanced settings,', 'viral-news'),
+    'priority' => 100,
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));
 
 /* GOOGLE FONT SECTION */
 $wp_customize->add_section('viral_mag_google_font_section', array(

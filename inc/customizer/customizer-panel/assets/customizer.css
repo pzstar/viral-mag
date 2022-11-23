@@ -66,23 +66,8 @@
     content: "\f316";
 }
 
-#customize-control-viral_mag_pro_features .description ul{
-    list-style: disc;
-    font-style: normal;
-    background: #FFF;
-    padding: 20px 20px 20px 30px;
-    font-size: 14px;
-    margin: 0;
-}
-
-#customize-control-viral_mag_pro_features .description ul li{
-    margin-bottom: 8px;
-    padding: 0;
-}
-
-#customize-control-viral_mag_pro_features .description ul li:before{
-    content: "";
-    margin: 0;
+#accordion-section-viral_pro_feature_section .accordion-section-title:before{
+    content: "\f174";
 }
 
 #customize-controls .control-section-pro-section .accordion-section-title:hover,
@@ -111,6 +96,13 @@
     color: #FFF;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 15px;
+}
+
+#accordion-section-viral-mag-pro-section .accordion-section-title span{
+    font-size: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 10px;
 }
 
 #accordion-section-viral-mag-doc-section .accordion-section-title .button,
@@ -174,15 +166,6 @@
     margin-bottom: 8px;
 }
 
-#sub-accordion-panel-viral_mag_front_page_panel .customize-info .customize-panel-description {
-    display: block !important;
-}
-
-.viral-mag-drag-spinner {
-    display: none;
-    float: right;
-}
-
 #sub-accordion-panel-viral_mag_front_page_panel #accordion-section-viral_mag_slider_section.control-section .accordion-section-title:before {
     content: "\f180";
 }
@@ -192,13 +175,13 @@
     color: #AAA;
 }
 
-.vm-implink {
+.ht-implink {
     background: #0073aa;
     padding: 5px 10px;
     color: #FFF !important;
     text-align: center;
     display: block;
-    margin-top: 5px;
+    margin-top: 15px;
     line-height: 1.2;
     box-shadow: none;
     font-style: normal;
@@ -211,7 +194,6 @@
     border: 1px solid #DDD;
 }
 
-.upsell-features{
-    list-style: decimal outside;
-    margin-left: 20px;
+.customize-control-ht--upgrade-info ul.upsell-features{
+    margin: 0;
 }

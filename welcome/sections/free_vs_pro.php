@@ -39,9 +39,9 @@
     </tr>
     <tr>
         <td>
-            <span><?php esc_html_e('50+ Magazine Blocks', 'viral-mag'); ?></span>
+            <span><?php esc_html_e('50+ Magazine Blocks in Customizer', 'viral-mag'); ?></span>
             <p><?php esc_html_e('The theme has a huge collection of ready to use blocks with tons of options. Play with these blocks, build your own layout, change the background and colors, hide, and show different elements. Have it your Way!', 'viral-mag'); ?></td>
-        <td><?php esc_html_e('10+', 'viral-mag'); ?></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="<?php esc_attr_e('No', 'viral-mag'); ?>"></td>
         <td><?php esc_html_e('50+', 'viral-mag'); ?></td>
     </tr>
     <tr>
@@ -55,28 +55,28 @@
         <td>
             <span><?php esc_html_e('Blog/Archive Layouts', 'viral-mag'); ?></span>
             <p><?php esc_html_e('7 Archive Layouts to showcase your content. Choose from columns, lists, and mosaic layout variations that are suited for your need.', 'viral-mag'); ?></td>
-        <td>1</td>
+        <td>2</td>
         <td>7</td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('Single Article/Post Layouts', 'viral-mag'); ?></span>
             <p><?php esc_html_e('The theme has 7 differently designed article pages suited for different needs. Each or every post can be shown with different layout and with or without the sidebar. Additionally, the theme has video, audio, gallery, link and standard post formats.', 'viral-mag'); ?></td>
-        <td>1</td>
+        <td>2</td>
         <td>7</td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('Custom Widgets', 'viral-mag'); ?></span>
             <p><?php esc_html_e('Huge collection of custom widgets for magazine websites.', 'viral-mag'); ?></td>
-        <td>4</td>
+        <td>6</td>
         <td>22</td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('GDPR Compliance & Cookies Consent', 'viral-mag'); ?></span>
             <p><?php esc_html_e('The Premium version is fully GDPR compliance. This means no data is collected if you use the theme alone. Also, the premium version has the option to add GDPR Compliance & Cookies Consent information with buttons.', 'viral-mag'); ?></td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="<?php esc_attr_e('No', 'viral-mag'); ?>"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
     </tr>
     <tr>
@@ -132,7 +132,7 @@
         <td>
             <span><?php esc_html_e('Home Section Reorder', 'viral-mag'); ?></span>
             <p><?php esc_html_e('Option to organize how the front page section appears.', 'viral-mag'); ?></td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="<?php esc_attr_e('No', 'viral-mag'); ?>"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
     </tr>
 
@@ -149,13 +149,6 @@
             <p><?php esc_html_e('The premium version has the option to change the sidebar layout universally or change the sidebar for individual post/page. Moreover, it allows choosing the sidebar widgets for individual post/page.', 'viral-mag'); ?></td>
         <td><?php esc_html_e('Basic', 'viral-mag'); ?></td>
         <td><?php esc_html_e('Advanced', 'viral-mag'); ?></td>
-    </tr>
-    <tr>
-        <td>
-            <span><?php esc_html_e('Website Layout (Fullwidth or Boxed)', 'viral-mag'); ?></span>
-            <p><?php esc_html_e('The premium version has the option to change the website layout to be full width or boxed. Additionally, you can set the width of the website container.', 'viral-mag'); ?></td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="<?php esc_attr_e('No', 'viral-mag'); ?>"></td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
     </tr>
     <tr>
         <td>

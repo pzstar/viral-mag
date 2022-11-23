@@ -33,6 +33,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
                 'viral_mag_blog_comment',
                 'viral_mag_blog_category',
                 'viral_mag_blog_tag',
+                'viral_mag_blog_upgrade_text'
             ),
             'active' => true,
         ),
@@ -59,7 +60,8 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
                 'viral_mag_single_related_heading',
                 'viral_mag_single_related_post_title',
                 'viral_mag_single_related_post_style',
-                'viral_mag_single_related_post_count'
+                'viral_mag_single_related_post_count',
+                'viral_mag_single_upgrade_text'
             ),
         ),
     ),
@@ -181,6 +183,20 @@ $wp_customize->add_setting('viral_mag_blog_tag', array(
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_blog_tag', array(
     'section' => 'viral_mag_blog_settings_section',
     'label' => esc_html__('Display Tag', 'viral-mag')
+)));
+
+$wp_customize->add_setting('viral_mag_blog_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_blog_upgrade_text', array(
+    'section' => 'viral_mag_blog_settings_section',
+    'label' => esc_html__('For more options,', 'viral-news'),
+    'choices' => array(
+        esc_html__('7 differently designed archive page layouts', 'viral-news'),
+    ),
+    'priority' => 100,
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_setting('viral_mag_single_layout', array(
@@ -305,4 +321,20 @@ $wp_customize->add_setting('viral_mag_single_comments', array(
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_single_comments', array(
     'section' => 'viral_mag_blog_settings_section',
     'label' => esc_html__('Display Comments', 'viral-mag')
+)));
+
+$wp_customize->add_setting('viral_mag_single_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_single_upgrade_text', array(
+    'section' => 'viral_mag_blog_settings_section',
+    'label' => esc_html__('For more options,', 'viral-news'),
+    'choices' => array(
+        esc_html__('7 differently designed single page layouts', 'viral-news'),
+        esc_html__('Sticky social share buttons', 'viral-news'),
+        esc_html__('Display related posts', 'viral-news'),
+    ),
+    'priority' => 100,
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));

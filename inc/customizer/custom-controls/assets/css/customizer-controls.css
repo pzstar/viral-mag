@@ -1415,6 +1415,10 @@
     margin-left: -8px;
 }
 
+.customize-control-ht--upgrade-info ul li::marker{
+    content:"";
+}
+
 /* Toggle Section Control*/
 .control-section-ht--toggle-section .ht--toggle-section{
     text-decoration: none;
