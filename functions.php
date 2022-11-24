@@ -263,7 +263,7 @@ if (!function_exists('viral_mag_fonts_url')) :
         }
 
         $customizer_fonts = apply_filters('viral_mag_customizer_fonts', $custom_fonts);
-        
+
         $standard_font = Viral_mag_standard_font_array();
         $google_font_list = Viral_mag_google_font_array();
         $default_font_list = Viral_mag_default_font_array();
@@ -420,4 +420,3 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
  * Dynamic Styles additions
  */
 require get_template_directory() . '/inc/style.php';
-
