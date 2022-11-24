@@ -265,10 +265,10 @@ $wp_customize->add_setting('viral_mag_sidebar_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_sidebar_upgrade_text', array(
     'section' => 'viral_mag_sidebar_settings_section',
-    'label' => esc_html__('For more options,', 'viral-news'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('8 sidebar styles', 'viral-news'),
-        esc_html__('20+ widgets/blocks for sidebar', 'viral-news'),
+        esc_html__('8 sidebar styles', 'viral-mag'),
+        esc_html__('20+ widgets/blocks for sidebar', 'viral-mag'),
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'

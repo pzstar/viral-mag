@@ -130,10 +130,10 @@ $wp_customize->add_setting('viral_mag_general_options_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_general_options_upgrade_text', array(
     'section' => 'viral_mag_general_options_section',
-    'label' => esc_html__('For more options,', 'viral-news'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('16+ animated preloaders', 'viral-news'),
-        esc_html__('Admin page custom logo', 'viral-news')
+        esc_html__('16+ animated preloaders', 'viral-mag'),
+        esc_html__('Admin page custom logo', 'viral-mag')
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
@@ -162,7 +162,7 @@ $wp_customize->add_setting('viral_mag_backtotop_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_backtotop_upgrade_text', array(
     'section' => 'viral_mag_backtotop_section',
-    'label' => esc_html__('For advanced settings,', 'viral-news'),
+    'label' => esc_html__('For advanced settings,', 'viral-mag'),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));

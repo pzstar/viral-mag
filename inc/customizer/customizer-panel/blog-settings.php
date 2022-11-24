@@ -191,9 +191,9 @@ $wp_customize->add_setting('viral_mag_blog_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_blog_upgrade_text', array(
     'section' => 'viral_mag_blog_settings_section',
-    'label' => esc_html__('For more options,', 'viral-news'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('7 differently designed archive page layouts', 'viral-news'),
+        esc_html__('7 differently designed archive page layouts', 'viral-mag'),
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
@@ -329,11 +329,11 @@ $wp_customize->add_setting('viral_mag_single_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_single_upgrade_text', array(
     'section' => 'viral_mag_blog_settings_section',
-    'label' => esc_html__('For more options,', 'viral-news'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('7 differently designed single page layouts', 'viral-news'),
-        esc_html__('Sticky social share buttons', 'viral-news'),
-        esc_html__('Display related posts', 'viral-news'),
+        esc_html__('7 differently designed single page layouts', 'viral-mag'),
+        esc_html__('Sticky social share buttons', 'viral-mag'),
+        esc_html__('Display related posts', 'viral-mag'),
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'

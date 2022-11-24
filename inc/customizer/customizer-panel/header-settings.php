@@ -327,7 +327,7 @@ $wp_customize->add_setting('viral_mag_th_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_th_upgrade_text', array(
     'section' => 'viral_mag_top_header_section',
-    'label' => esc_html__('For more settings,', 'viral-news'),
+    'label' => esc_html__('For more settings,', 'viral-mag'),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
@@ -634,10 +634,10 @@ $wp_customize->add_setting('viral_mag_mh_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_mh_upgrade_text', array(
     'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('For more options,', 'viral-news'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('7 header layouts', 'viral-news'),
-        esc_html__('More advanced options', 'viral-news')
+        esc_html__('7 header layouts', 'viral-mag'),
+        esc_html__('More advanced options', 'viral-mag')
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
@@ -882,11 +882,11 @@ $wp_customize->add_setting('viral_mag_menu_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_menu_upgrade_text', array(
     'section' => 'viral_mag_menu_settings_section',
-    'label' => esc_html__('For more options,', 'viral-news'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('10 menu hover styles', 'viral-news'),
-        esc_html__('Differently designed call to action button at the end of the menu', 'viral-news'),
-        esc_html__('More advanced options', 'viral-news')
+        esc_html__('10 menu hover styles', 'viral-mag'),
+        esc_html__('Differently designed call to action button at the end of the menu', 'viral-mag'),
+        esc_html__('More advanced options', 'viral-mag')
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
