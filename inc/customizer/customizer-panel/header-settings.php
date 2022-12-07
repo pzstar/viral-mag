@@ -17,6 +17,40 @@ $wp_customize->add_panel('viral_mag_header_settings_panel', array(
 $wp_customize->get_section('title_tagline')->panel = 'viral_mag_header_settings_panel';
 $wp_customize->get_section('title_tagline')->title = esc_html__('Logo & Favicon', 'viral-mag');
 
+$wp_customize->add_setting('viral_mag_title_tagline_nav', array(
+    'sanitize_callback' => 'wp_kses_post',
+));
+
+$wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_title_tagline_nav', array(
+    'section' => 'title_tagline',
+    'priority' => 1,
+    'buttons' => array(
+        array(
+            'name' => esc_html__('Content', 'viral-mag'),
+            'icon' => 'dashicons dashicons-welcome-write-blog',
+            'fields' => array(
+                'custom_logo',
+                'blogname',
+                'blogdescription',
+                'viral_mag_hide_title',
+                'viral_mag_hide_tagline',
+                'viral_mag_tagline_position',
+                'viral_mag_title_color',
+                'site_icon',
+            ),
+            'active' => true,
+        ),
+        array(
+            'name' => esc_html__('Style', 'viral-mag'),
+            'icon' => 'dashicons dashicons-art',
+            'fields' => array(
+                'viral_mag_logo_height',
+                'viral_mag_logo_padding',
+            ),
+        )
+    )
+)));
+
 $wp_customize->add_setting('viral_mag_hide_title', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
     'default' => false,
@@ -66,6 +100,54 @@ $wp_customize->add_setting('viral_mag_title_color', array(
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_mag_title_color', array(
     'section' => 'title_tagline',
     'label' => esc_html__('Title/Tagline Color', 'viral-mag')
+)));
+
+$wp_customize->add_setting('viral_mag_logo_height', array(
+    'sanitize_callback' => 'absint',
+    'default' => 60,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_logo_height', array(
+    'section' => 'title_tagline',
+    'label' => esc_html__('Logo Height(px)', 'viral-mag'),
+    'description' => esc_html__('The logo height will not increase beyond the header height. Increase the header height first. Logo will appear blur if the image size is small.', 'viral-mag'),
+    'input_attrs' => array(
+        'min' => 40,
+        'max' => 200,
+        'step' => 1
+    )
+)));
+
+$wp_customize->add_setting('viral_mag_logo_padding', array(
+    'sanitize_callback' => 'absint',
+    'default' => 15,
+    'transport' => 'postMessage'
+));
+
+$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_logo_padding', array(
+    'section' => 'title_tagline',
+    'label' => esc_html__('Logo Top & Bottom Spacing(px)', 'viral-mag'),
+    'input_attrs' => array(
+        'min' => 0,
+        'max' => 100,
+        'step' => 1
+    )
+)));
+
+$wp_customize->add_setting('viral_mag_title_tagline_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_title_tagline_upgrade_text', array(
+    'section' => 'title_tagline',
+    'label' => esc_html__('For more options,', 'viral'),
+    'choices' => array(
+        esc_html__('Set typography for title & tagline individually', 'viral'),
+        esc_html__('Set color for title & tagline individually', 'viral'),
+    ),
+    'priority' => 100,
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
 $wp_customize->selective_refresh->add_partial('viral_mag_hide_title', array(
@@ -123,7 +205,6 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_t
         )
     )
 )));
-
 
 $wp_customize->add_setting('viral_mag_top_header', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
@@ -364,8 +445,6 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_m
             'name' => esc_html__('Style', 'viral-mag'),
             'icon' => 'dashicons dashicons-art',
             'fields' => array(
-                'viral_mag_logo_height',
-                'viral_mag_logo_padding',
                 'viral_mag_mh_header_bg',
                 'viral_mag_mh_height',
                 'viral_mag_mh_button_color',
@@ -448,39 +527,6 @@ $wp_customize->add_setting('viral_mag_mh_show_offcanvas', array(
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_offcanvas', array(
     'section' => 'viral_mag_main_header_section',
     'label' => esc_html__('Show Offcanvas Menu', 'viral-mag')
-)));
-
-$wp_customize->add_setting('viral_mag_logo_height', array(
-    'sanitize_callback' => 'absint',
-    'default' => 60,
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_logo_height', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Logo Height(px)', 'viral-mag'),
-    'description' => esc_html__('The logo height will not increase beyond the header height. Increase the header height first. Logo will appear blur if the image size is small.', 'viral-mag'),
-    'input_attrs' => array(
-        'min' => 40,
-        'max' => 200,
-        'step' => 1
-    )
-)));
-
-$wp_customize->add_setting('viral_mag_logo_padding', array(
-    'sanitize_callback' => 'absint',
-    'default' => 15,
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'viral_mag_logo_padding', array(
-    'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Logo Top & Bottom Spacing(px)', 'viral-mag'),
-    'input_attrs' => array(
-        'min' => 0,
-        'max' => 100,
-        'step' => 1
-    )
 )));
 
 $wp_customize->add_setting('viral_mag_mh_header_bg_url', array(

@@ -163,6 +163,11 @@ $wp_customize->add_setting('viral_mag_backtotop_upgrade_text', array(
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_backtotop_upgrade_text', array(
     'section' => 'viral_mag_backtotop_section',
     'label' => esc_html__('For advanced settings,', 'viral-mag'),
+    'choices' => array(
+        esc_html__('Set custom top icon', 'viral-mag'),
+        esc_html__('Set custom height, width, position & icon size', 'viral-mag'),
+        esc_html__('Set custom normal & hover color', 'viral-mag')
+    ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
