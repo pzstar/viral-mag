@@ -1,4 +1,4 @@
-59<div class="free-vs-pro-info-wrap">
+<div class="free-vs-pro-info-wrap">
     <div class="free-vs-pro-info">
         <h4><?php esc_html_e('ONE TIME PAYMENT', 'viral-mag'); ?></h4>
         <p><?php esc_html_e('No renewal needed', 'viral-mag'); ?></p>
