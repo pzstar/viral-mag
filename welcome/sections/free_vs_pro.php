@@ -1,4 +1,4 @@
-<div class="free-vs-pro-info-wrap">
+59<div class="free-vs-pro-info-wrap">
     <div class="free-vs-pro-info">
         <h4><?php esc_html_e('ONE TIME PAYMENT', 'viral-mag'); ?></h4>
         <p><?php esc_html_e('No renewal needed', 'viral-mag'); ?></p>
@@ -22,7 +22,7 @@
             <p><?php esc_html_e('Upgrade to Pro version for additional features and better supports.', 'viral-mag'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-freevspro&utm_campaign=viral-mag-upgrade"><?php esc_html_e('Buy Now ($59 only)', 'viral-mag'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-freevspro&utm_campaign=viral-mag-upgrade"><?php esc_html_e('Buy Now ($69 only)', 'viral-mag'); ?></a>
         </td>
     </tr>
     <tr>
@@ -240,7 +240,7 @@
             <p><?php esc_html_e('Upgrade to Pro version for additional features and better supports.', 'viral-mag'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-freevspro&utm_campaign=viral-mag-upgrade"><?php esc_html_e('Buy Now ($59 only)', 'viral-mag'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-freevspro&utm_campaign=viral-mag-upgrade"><?php esc_html_e('Buy Now ($69 only)', 'viral-mag'); ?></a>
         </td>
     </tr>
 </table>

@@ -24,6 +24,10 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.21 - Dec 12, 2021 =
+* Black Friday banner removed
+* Google font list in typography updated
+
 = 2.0.2 - Dec 06, 2021 =
 * Adjustment in welcome page
 
