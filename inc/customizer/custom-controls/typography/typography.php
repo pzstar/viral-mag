@@ -37,17 +37,17 @@ function viral_mag_search_key($array, $key, $value) {
 
 function viral_mag_default_font_array() {
     return array(
-        'default' => array(
+        'Default' => array(
             'family' => 'Default',
             'variants' => array(
-                '100' => esc_html__('Thin', 'viral-mag'),
-                '300' => esc_html__('Light', 'viral-mag'),
-                '400' => esc_html__('Normal', 'viral-mag'),
-                '400italic' => esc_html__('Normal Italic', 'viral-mag'),
-                '500' => esc_html__('Medium', 'viral-mag'),
-                '600' => esc_html__('Semi Bold', 'viral-mag'),
-                '700' => esc_html__('Bold', 'viral-mag'),
-                '700italic' => esc_html__('Bold Italic', 'viral-mag')
+                '100' => 'Thin',
+                '300' => 'Light',
+                '400' => 'Normal',
+                '400italic' => 'Normal Italic',
+                '500' => 'Medium',
+                '600' => 'Semi Bold',
+                '700' => 'Bold',
+                '700italic' => 'Bold Italic'
             ),
             'subsets' => array(
                 'latin' => 'Latin'
