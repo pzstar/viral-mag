@@ -141,10 +141,10 @@ $wp_customize->add_setting('viral_mag_title_tagline_upgrade_text', array(
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_title_tagline_upgrade_text', array(
     'section' => 'title_tagline',
-    'label' => esc_html__('For more options,', 'viral'),
+    'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('Set typography for title & tagline individually', 'viral'),
-        esc_html__('Set color for title & tagline individually', 'viral'),
+        esc_html__('Set typography for title & tagline individually', 'viral-mag'),
+        esc_html__('Set color for title & tagline individually', 'viral-mag'),
     ),
     'priority' => 100,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
