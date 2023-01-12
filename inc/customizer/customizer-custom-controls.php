@@ -41,7 +41,8 @@ if (!class_exists('Viral_Mag_Customizer_Custom_Controls')) {
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
             require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
-
+            require VIRAL_MAG_CUSTOMIZER_PATH . 'custom-controls/preloader-control.php';
+            
             /** Register Control Type */
             $wp_customize->register_control_type('Viral_Mag_Color_Tab_Control');
             $wp_customize->register_control_type('Viral_Mag_Background_Image_Control');

@@ -4,8 +4,8 @@
 
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-pro-section', array(
     'priority' => 0,
-    'title' => esc_html__('New Year Deal. Use Coupon Code : HOLIDAY', 'viral-mag'),
-    'pro_text' => esc_html__('Upgrade to Pro (40% OFF)', 'viral-mag'),
+    //'title' => esc_html__('New Year Deal. Use Coupon Code : HOLIDAY', 'viral-mag'),
+    'pro_text' => esc_html__('Upgrade to Pro', 'viral-mag'),
     'pro_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-customizer-button&utm_campaign=viral-mag-upgrade'
 )));
 
