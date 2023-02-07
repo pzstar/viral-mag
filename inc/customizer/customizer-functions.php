@@ -16,6 +16,24 @@ if (!function_exists('viral_mag_widget_list')) {
 
 }
 
+if (!function_exists('viral_mag_ticker_cat')) {
+
+    function viral_mag_ticker_cat() {
+        $cat = array(
+            'none' => esc_html__('Don\'t Display', 'viral-mag'),
+            '-1' => esc_html__('Latest Posts', 'viral-mag')
+        );
+        $categories = get_categories(array('hide_empty' => 0));
+        if ($categories) {
+            foreach ($categories as $category) {
+                $cat[$category->term_id] = $category->cat_name;
+            }
+        }
+        return $cat;
+    }
+
+}
+
 if (!function_exists('viral_mag_cat')) {
 
     function viral_mag_cat() {
@@ -49,7 +67,7 @@ if (!function_exists('viral_mag_page_choice')) {
 if (!function_exists('viral_mag_menu_choice')) {
 
     function viral_mag_menu_choice() {
-        $menu_choice = array('none' => esc_html('-- Select Menu --', 'viral-mag'));
+        $menu_choice = array('none' => esc_html('Select Menu', 'viral-mag'));
         $menus = get_terms('nav_menu', array('hide_empty' => false));
         if ($menus) {
             foreach ($menus as $menus_single) {
@@ -110,6 +128,6 @@ if (!function_exists('viral_mag_icon_choices')) {
 add_action('customize_controls_print_footer_scripts', 'viral_mag_icon_choices');
 
 function viral_mag_is_upgrade_notice_active() {
-    $show_upgrade_notice = get_theme_mod('viral_mag_hide_upgrade_notice', false);
+    $show_upgrade_notice = apply_filters('viral_mag_hide_upgrade_notice', get_theme_mod('viral_mag_hide_upgrade_notice', false));
     return !$show_upgrade_notice;
 }

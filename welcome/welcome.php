@@ -180,8 +180,8 @@ if (!class_exists('Viral_Mag_Welcome')) :
                     'error' => esc_html__('Error! Reload the page and try again.', 'viral-mag'),
                     'ajax_nonce' => wp_create_nonce('viral_mag_activate_hdi_plugin')
                 );
-                wp_enqueue_style('viral-mag-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), VIRAL_MAG_VER);
-                wp_enqueue_script('viral-mag-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), VIRAL_MAG_VER, true);
+                wp_enqueue_style('viral-mag-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), VIRAL_MAG_VERSION);
+                wp_enqueue_script('viral-mag-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), VIRAL_MAG_VERSION, true);
                 wp_localize_script('viral-mag-welcome', 'importer_params', $importer_params);
             }
         }

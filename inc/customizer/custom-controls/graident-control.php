@@ -14,9 +14,9 @@ class Viral_Mag_Gradient_Control extends WP_Customize_Control {
     }
 
     public function enqueue() {
-        wp_enqueue_script('color-picker', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/colorpicker.js', array('jquery'), VIRAL_MAG_VER, true);
-        wp_enqueue_script('jquery-classygradient', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/jquery.classygradient.js', array('jquery'), VIRAL_MAG_VER, true);
-        wp_enqueue_script('custom-gradient', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/custom-gradient.js', array('jquery', 'jquery-ui-slider'), VIRAL_MAG_VER, true);
+        wp_enqueue_script('color-picker', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/colorpicker.js', array('jquery'), VIRAL_MAG_VERSION, true);
+        wp_enqueue_script('jquery-classygradient', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/jquery.classygradient.js', array('jquery'), VIRAL_MAG_VERSION, true);
+        wp_enqueue_script('custom-gradient', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/custom-gradient.js', array('jquery', 'jquery-ui-slider'), VIRAL_MAG_VERSION, true);
 
         wp_enqueue_style('color-picker', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/colorpicker.css');
         wp_enqueue_style('jquery-classygradient', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/css/jquery.classygradient.css');

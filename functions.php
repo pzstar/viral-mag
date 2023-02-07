@@ -5,10 +5,10 @@
  *
  * @package Viral Mag
  */
-if (!defined('VIRAL_MAG_VER')) {
+if (!defined('VIRAL_MAG_VERSION')) {
     $viral_mag_get_theme = wp_get_theme();
     $viral_mag_version = $viral_mag_get_theme->Version;
-    define('VIRAL_MAG_VER', $viral_mag_version);
+    define('VIRAL_MAG_VERSION', $viral_mag_version);
 }
 
 if (!function_exists('viral_mag_setup')) :
@@ -235,15 +235,17 @@ if (!function_exists('viral_mag_fonts_url')) :
      *
      * @return string Google fonts URL for the theme.
      */
-    function Viral_mag_fonts_url() {
+    function viral_mag_fonts_url() {
         $fonts_url = '';
+        $fonts = $customizer_font_family = array();
         $subsets = 'latin,latin-ext';
-        $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
+        $all_fonts = viral_mag_all_fonts();
+        $google_fonts = viral_mag_google_fonts();
 
-        $custom_fonts = array(
+        $customizer_fonts = array(
             'viral_mag_body_family' => 'Poppins',
             'viral_mag_menu_family' => 'Poppins',
-            'Viral_mag_h_family' => 'Poppins',
+            'viral_mag_h_family' => 'Poppins',
             'viral_mag_page_title_family' => 'Default',
             'viral_mag_frontpage_title_family' => 'Default',
             'viral_mag_frontpage_block_title_family' => 'Default',
@@ -252,70 +254,45 @@ if (!function_exists('viral_mag_fonts_url')) :
 
         $common_header_typography = get_theme_mod('viral_mag_common_header_typography', true);
         if ($common_header_typography) {
-            $custom_fonts['viral_mag_h_family'] = 'Oswald';
+            $customizer_fonts['viral_mag_h_family'] = 'Oswald';
         } else {
-            $custom_fonts['viral_mag_h1_family'] = 'Oswald';
-            $custom_fonts['viral_mag_h2_family'] = 'Oswald';
-            $custom_fonts['viral_mag_h3_family'] = 'Oswald';
-            $custom_fonts['viral_mag_h4_family'] = 'Oswald';
-            $custom_fonts['viral_mag_h5_family'] = 'Oswald';
-            $custom_fonts['viral_mag_h6_family'] = 'Oswald';
-        }
-
-        $customizer_fonts = apply_filters('viral_mag_customizer_fonts', $custom_fonts);
-
-        $standard_font = Viral_mag_standard_font_array();
-        $google_font_list = Viral_mag_google_font_array();
-        $default_font_list = Viral_mag_default_font_array();
-
-        foreach ($standard_font as $key => $value) {
-            $standard_font_family[] = $value['family'];
-        }
-
-        foreach ($default_font_list as $key => $value) {
-            $default_font_family[] = $value['family'];
+            $customizer_fonts['viral_mag_h1_family'] = 'Oswald';
+            $customizer_fonts['viral_mag_h2_family'] = 'Oswald';
+            $customizer_fonts['viral_mag_h3_family'] = 'Oswald';
+            $customizer_fonts['viral_mag_h4_family'] = 'Oswald';
+            $customizer_fonts['viral_mag_h5_family'] = 'Oswald';
+            $customizer_fonts['viral_mag_h6_family'] = 'Oswald';
         }
 
         foreach ($customizer_fonts as $key => $value) {
-            $font_family_array[] = get_theme_mod($key, $value);
+            $font = get_theme_mod($key, $value);
+            if (array_key_exists($font, $google_fonts)) {
+                $customizer_font_family[] = $font;
+            }
         }
 
-        $font_family_array = array_unique($font_family_array);
-        $font_family_array = array_diff($font_family_array, array_merge($standard_font_family, $default_font_family));
+        if ($customizer_font_family) {
+            $customizer_font_family = array_unique($customizer_font_family);
+            foreach ($customizer_font_family as $font_family) {
+                if (isset($all_fonts[$font_family]['variants'])) {
+                    $variants_array = $all_fonts[$font_family]['variants'];
+                    $variants_keys = array_keys($variants_array);
+                    $variants = implode(',', $variants_keys);
 
-        foreach ($font_family_array as $font_family) {
-            $font_array = Viral_mag_search_key($google_font_list, 'family', $font_family);
-            $variants_array = $font_array['0']['variants'];
-            $variants_keys = array_keys($variants_array);
-            $variants = implode(',', $variants_keys);
+                    $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+                }
+            }
 
-            $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+            if ($fonts) {
+                $fonts_url = add_query_arg(array(
+                    'family' => urlencode(implode('|', $fonts)),
+                    'subset' => urlencode($subsets),
+                    'display' => 'swap',
+                        ), 'https://fonts.googleapis.com/css');
+            }
+
+            return $fonts_url;
         }
-        /*
-         * Translators: To add an additional character subset specific to your language,
-         * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-         */
-        $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'viral-mag');
-
-        if ('cyrillic' == $subset) {
-            $subsets .= ',cyrillic,cyrillic-ext';
-        } elseif ('greek' == $subset) {
-            $subsets .= ',greek,greek-ext';
-        } elseif ('devanagari' == $subset) {
-            $subsets .= ',devanagari';
-        } elseif ('vietnamese' == $subset) {
-            $subsets .= ',vietnamese';
-        }
-
-        if ($fonts) {
-            $fonts_url = add_query_arg(array(
-                'family' => urlencode(implode('|', $fonts)),
-                'subset' => urlencode($subsets),
-                'display' => 'swap',
-                    ), 'https://fonts.googleapis.com/css');
-        }
-
-        return $fonts_url;
     }
 
 endif;
@@ -326,19 +303,19 @@ endif;
 function viral_mag_scripts() {
     $is_rtl = (is_rtl()) ? 'true' : 'false';
 
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), VIRAL_MAG_VER, true);
-    wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/hoverintent.js', array(), VIRAL_MAG_VER, true);
-    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), VIRAL_MAG_VER, true);
-    wp_enqueue_script('headroom', get_template_directory_uri() . '/js/headroom.js', array('jquery'), VIRAL_MAG_VER, true);
-    wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array('jquery'), VIRAL_MAG_VER, true);
-    wp_enqueue_script('resizesensor', get_template_directory_uri() . '/js/ResizeSensor.js', array('jquery'), VIRAL_MAG_VER, true);
-    wp_enqueue_script('viral-mag-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), VIRAL_MAG_VER, true);
+    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), VIRAL_MAG_VERSION, true);
+    wp_enqueue_script('hoverintent', get_template_directory_uri() . '/js/hoverintent.js', array(), VIRAL_MAG_VERSION, true);
+    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), VIRAL_MAG_VERSION, true);
+    wp_enqueue_script('headroom', get_template_directory_uri() . '/js/headroom.js', array('jquery'), VIRAL_MAG_VERSION, true);
+    wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array('jquery'), VIRAL_MAG_VERSION, true);
+    wp_enqueue_script('resizesensor', get_template_directory_uri() . '/js/ResizeSensor.js', array('jquery'), VIRAL_MAG_VERSION, true);
+    wp_enqueue_script('viral-mag-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), VIRAL_MAG_VERSION, true);
 
-    wp_enqueue_style('viral-mag-style', get_stylesheet_uri(), array(), VIRAL_MAG_VER);
-    wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_MAG_VER);
-    wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_MAG_VER);
-    wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VER);
-    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), VIRAL_MAG_VER);
+    wp_enqueue_style('viral-mag-style', get_stylesheet_uri(), array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), VIRAL_MAG_VERSION);
 
     wp_add_inline_style('viral-mag-style', viral_mag_dymanic_styles());
 

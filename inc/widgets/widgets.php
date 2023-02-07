@@ -42,13 +42,13 @@ function viral_mag_category_list() {
 require_once get_template_directory() . '/inc/widgets/widget-fields.php';
 
 function viral_mag_admin_scripts() {
-    wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_MAG_VER);
-    wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VER);
-    wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_MAG_VER);
-    wp_enqueue_style('viral-mag-admin-style', get_template_directory_uri() . '/inc/widgets/css/widget-style.css', array('wp-color-picker'), VIRAL_MAG_VER);
+    wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('viral-mag-admin-style', get_template_directory_uri() . '/inc/widgets/css/widget-style.css', array('wp-color-picker'), VIRAL_MAG_VERSION);
 
     wp_enqueue_media();
-    wp_enqueue_script('viral-mag-widget-script', get_template_directory_uri() . '/inc/widgets/js/widget-script.js', array('jquery', 'wp-color-picker', 'jquery-ui-datepicker'), VIRAL_MAG_VER, true);
+    wp_enqueue_script('viral-mag-widget-script', get_template_directory_uri() . '/inc/widgets/js/widget-script.js', array('jquery', 'wp-color-picker', 'jquery-ui-datepicker'), VIRAL_MAG_VERSION, true);
 }
 
 add_action('admin_enqueue_scripts', 'viral_mag_admin_scripts', 100);

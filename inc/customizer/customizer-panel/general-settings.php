@@ -136,6 +136,8 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
         esc_html__('Admin page custom logo', 'viral-mag')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-mag'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade',
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
@@ -169,6 +171,8 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
         esc_html__('Set custom normal & hover color', 'viral-mag')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-mag'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade',
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
@@ -181,7 +185,8 @@ $wp_customize->add_section('viral_mag_google_font_section', array(
 
 $wp_customize->add_setting('viral_mag_load_google_font_locally', array(
     'sanitize_callback' => 'viral_mag_sanitize_checkbox',
-    'default' => false
+    'default' => false,
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_load_google_font_locally', array(

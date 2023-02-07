@@ -9,11 +9,11 @@ class Viral_Mag_Column_Control extends WP_Customize_Control {
     }
 
     public function enqueue() {
-        wp_enqueue_script('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.js', array('jquery'), VIRAL_MAG_VER, true);
-        wp_enqueue_script('wNumb', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/wNumb.js', array('jquery'), VIRAL_MAG_VER, true);
-        wp_enqueue_script('ht--column-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), VIRAL_MAG_VER, true);
+        wp_enqueue_script('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.js', array('jquery'), VIRAL_MAG_VERSION, true);
+        wp_enqueue_script('wNumb', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/wNumb.js', array('jquery'), VIRAL_MAG_VERSION, true);
+        wp_enqueue_script('ht--column-control', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), VIRAL_MAG_VERSION, true);
 
-        wp_enqueue_style('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.css', array(), VIRAL_MAG_VER);
+        wp_enqueue_style('nouislider', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.css', array(), VIRAL_MAG_VERSION);
     }
 
     public function render_content() {

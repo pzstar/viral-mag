@@ -815,3 +815,15 @@ $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'vira
         'step' => 1
     )
 )));
+
+$wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-hcfu-section', array(
+    'title' => esc_html__('Want To Use Custom Fonts?', 'viral-mag'),
+    'panel' => 'viral_mag_typography_settings_panel',
+    'priority' => 1000,
+    'class' => 'ht--boxed',
+    'options' => array(
+        esc_html__('Upload custom fonts. The uploaded font will display in the typography font family list.', 'viral-mag'),
+    ),
+    'upgrade_text' => esc_html__('Purchase Custom Font Uploader', 'viral-mag'),
+    'upgrade_url' => 'https://hashthemes.com/checkout?edd_action=add_to_cart&download_id=48193',
+)));

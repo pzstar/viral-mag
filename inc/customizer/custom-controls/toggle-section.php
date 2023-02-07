@@ -69,7 +69,7 @@ if (class_exists('WP_Customize_Section')) {
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_script('ht--toggle-section', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/toggle-section.js', array('jquery'), VIRAL_MAG_VER, true);
+            wp_enqueue_script('ht--toggle-section', VIRAL_MAG_CUSTOMIZER_URL . 'custom-controls/assets/js/toggle-section.js', array('jquery'), VIRAL_MAG_VERSION, true);
         }
 
         /**
