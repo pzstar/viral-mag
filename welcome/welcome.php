@@ -342,8 +342,8 @@ if (!class_exists('Viral_Mag_Welcome')) :
                         );
                         ?>
                     </p>
-                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'viral-mag') ?></a> &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('viral-mag-hide-notice', 'review'), 'review', 'viral_mag_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'viral-mag') ?></a>
+                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post"><span class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'viral-mag') ?></a> &nbsp;
+                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('viral-mag-hide-notice', 'review'), 'review', 'viral_mag_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'viral-mag') ?></a>
                 </div>
             </div>
             <?php
