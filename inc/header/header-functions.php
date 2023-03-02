@@ -114,10 +114,10 @@ function viral_mag_top_header_text() {
 }
 
 function viral_mag_top_header_date() {
-    echo '<span><i class="mdi mdi-calendar"></i>';
+    echo '<span><i class="mdi-calendar"></i>';
     echo date_i18n('l, F j', time());
     echo '</span>';
-    echo '<span><i class="mdi mdi-clock-time-four-outline"></i>';
+    echo '<span><i class="mdi-clock-time-four-outline"></i>';
     echo '<span class="vm-time"></span>';
     echo '</span>';
 }

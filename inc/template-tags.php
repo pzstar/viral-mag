@@ -47,7 +47,7 @@ if (!function_exists('viral_mag_posted_on')) {
                     $time_string, esc_attr(get_the_date(DATE_W3C)), esc_html($get_the_date), esc_attr(get_the_modified_date(DATE_W3C)), esc_html($get_the_modified_date)
             );
 
-            echo '<span class="entry-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . $time_string . '</span>';
+            echo '<span class="entry-post-date"><i class="mdi-clock-time-four-outline"></i>' . $time_string . '</span>';
         }
 
         if ($viral_mag_single_comment_count) {
@@ -66,7 +66,7 @@ if (!function_exists('viral_mag_posted_on')) {
                 $comment_link = "";
             }
 
-            echo '<span class="entry-comment"><i class="mdi mdi-comment-outline"></i>' . $comment_link . '</span>';
+            echo '<span class="entry-comment"><i class="mdi-comment-outline"></i>' . $comment_link . '</span>';
         }
     }
 
@@ -75,7 +75,7 @@ if (!function_exists('viral_mag_posted_on')) {
 if (!function_exists('viral_mag_post_author')) {
 
     function viral_mag_post_author() {
-        echo '<span class="vm-posted-by"><i class="mdi mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
+        echo '<span class="vm-posted-by"><i class="mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
     }
 
 }
@@ -87,7 +87,7 @@ if (!function_exists('viral_mag_post_date')) {
      */
     function viral_mag_post_date() {
         $time_string = get_the_date();
-        echo '<span class="vm-posted-on"><i class="mdi mdi-clock-time-four-outline"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
+        echo '<span class="vm-posted-on"><i class="mdi-clock-time-four-outline"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
     }
 
 }
@@ -377,7 +377,7 @@ add_action('save_post', 'viral_mag_category_transient_flusher');
 if (!function_exists('viral_mag_entry_author')) {
 
     function viral_mag_entry_author() {
-        $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="mdi mdi-account"></i>' . esc_html(get_the_author()) . '</a></span>';
+        $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="mdi-account"></i>' . esc_html(get_the_author()) . '</a></span>';
         echo '<span class="entry-author">' . $author . '</span>';
     }
 
@@ -386,7 +386,7 @@ if (!function_exists('viral_mag_entry_author')) {
 if (!function_exists('viral_mag_entry_date')) {
 
     function viral_mag_entry_date() {
-        $post_date = '<a href="' . esc_url(get_permalink()) . '"><i class="mdi mdi-clock-time-four-outline"></i>' . get_the_date() . '</a>';
+        $post_date = '<a href="' . esc_url(get_permalink()) . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</a>';
         echo '<span class="entry-date">' . $post_date . '</span>';
     }
 
@@ -398,7 +398,7 @@ if (!function_exists('viral_mag_entry_category')) {
         $categories_list = get_the_category_list(', ');
         if ($categories_list && viral_mag_categorized_blog()) {
             echo '<span class="entry-categories">';
-            echo '<i class="mdi mdi-folder"></i>' . $categories_list;
+            echo '<i class="mdi-folder"></i>' . $categories_list;
             echo '</span>';
         }
     }
@@ -408,7 +408,7 @@ if (!function_exists('viral_mag_entry_category')) {
 if (!function_exists('viral_mag_entry_tag')) {
 
     function viral_mag_entry_tag() {
-        $tags_list = get_the_tag_list('<i class="mdi mdi-bookmark"></i>', ', ');
+        $tags_list = get_the_tag_list('<i class="mdi-bookmark"></i>', ', ');
         if ($tags_list && viral_mag_categorized_blog()) {
             echo '<span class="entry-tags">';
             echo $tags_list;
@@ -433,7 +433,7 @@ if (!function_exists('viral_mag_comment_link')) {
                 $comments = esc_html__('1 Comment', 'viral-mag');
             }
             $comment_link .= '<span class="entry-comment">';
-            $comment_link .= '<a class="comment-link" href="' . get_comments_link() . '"><i class="mdi mdi-comment"></i>' . $comments . '</a>';
+            $comment_link .= '<a class="comment-link" href="' . get_comments_link() . '"><i class="mdi-comment"></i>' . $comments . '</a>';
             $comment_link .= '</span>';
         }
 
