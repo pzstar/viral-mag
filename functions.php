@@ -318,6 +318,7 @@ function viral_mag_scripts() {
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), VIRAL_MAG_VERSION);
 
     wp_add_inline_style('viral-mag-style', viral_mag_dymanic_styles());
+    wp_style_add_data('viral-mag-style', 'rtl', 'replace');
 
     $fonts_url = viral_mag_fonts_url();
     $load_font_locally = get_theme_mod('viral_mag_load_google_font_locally', false);
