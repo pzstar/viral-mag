@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-menu, editor-style, 
 
 Requires at least: 5.6
 Tested up to: 6.2
-Stable tag: 2.0.27
+Stable tag: 2.0.28
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.28 - May 8, 2023 =
+* RTL Ready
+
 = 2.0.27 - Apr 11, 2023 =
 * Clear colorpicker preview issue in the typography fixed
 * Active callback function added for Hash custom font uploader
