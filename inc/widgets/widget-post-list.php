@@ -12,7 +12,7 @@ class viral_mag_post_list extends WP_Widget {
 
     public function __construct() {
         $widget_ops = array('description' => esc_html__('A widget to display latest, most commented, most viewed post with thumbnail.', 'viral-mag'));
-        parent::__construct('viral_mag_post_list', '&bull; VP : Post Listing', $widget_ops);
+        parent::__construct('viral_mag_post_list', '&bull; VM : Post Listing', $widget_ops);
     }
 
     /**

@@ -48,7 +48,11 @@ function viral_mag_admin_scripts() {
     wp_enqueue_style('viral-mag-admin-style', get_template_directory_uri() . '/inc/widgets/css/widget-style.css', array('wp-color-picker'), VIRAL_MAG_VERSION);
 
     wp_enqueue_media();
+    $is_widgets_block_editor = function_exists('wp_use_widgets_block_editor') && wp_use_widgets_block_editor() ? 'true' : 'false';
     wp_enqueue_script('viral-mag-widget-script', get_template_directory_uri() . '/inc/widgets/js/widget-script.js', array('jquery', 'wp-color-picker', 'jquery-ui-datepicker'), VIRAL_MAG_VERSION, true);
+    wp_localize_script('viral-mag-widget-script', 'viral_mag_widget_options', array(
+        'widgets_block_editor' => $is_widgets_block_editor,
+    ));
 }
 
 add_action('admin_enqueue_scripts', 'viral_mag_admin_scripts', 100);

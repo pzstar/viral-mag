@@ -1109,6 +1109,11 @@ ul.vm-latest-posts li {
     margin-bottom: 10px;
 }
 
+.vm-post-listing .vm-pl-date .vm-posted-on i{
+    display: inline-block;
+    margin-right: 6px;
+}
+
 .vm-post-listing .vm-pl-title:last-child,
 .vm-post-listing .vm-pl-date:last-child {
     margin-bottom: 0;
@@ -1526,6 +1531,7 @@ body.vm-boxed #vm-page .vm-container {
 }
 
 .entry-comment i {
+    display: inline-block;
     margin-right: 5px;
     opacity: 0.7;
 }
@@ -1723,6 +1729,7 @@ body.vm-boxed #vm-page .vm-container {
 }
 
 .single-entry-meta > span > i {
+    display: inline-block;
     margin-right: 5px;
 }
 
@@ -2560,6 +2567,7 @@ body.vm-no-header-space .vm-main-header {
 }
 
 .breadcrumb-trail .icofont-home {
+    display: inline-block;
     margin-right: 10px;
 }
 
@@ -2570,6 +2578,10 @@ body.vm-no-header-space .vm-main-header {
 .woocommerce .woocommerce-breadcrumb a,
 .breadcrumb-trail a {
     color: inherit;
+}
+
+.breadcrumb-trail a span{
+    display: inline-block;
 }
 
 .taxonomy-description,

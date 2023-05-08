@@ -12,7 +12,7 @@ class viral_mag_category extends WP_Widget {
 
     public function __construct() {
         $widget_ops = array('description' => esc_html__('A widget to display Category in columns', 'viral-mag'));
-        parent::__construct('viral_mag_category', '&bull; VP : Categories', $widget_ops);
+        parent::__construct('viral_mag_category', '&bull; VM : Categories', $widget_ops);
     }
 
     /**

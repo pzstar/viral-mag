@@ -12,7 +12,7 @@ class viral_mag_latest_posts extends WP_Widget {
 
     public function __construct() {
         $widget_ops = array('description' => esc_html__('A widget to display latest post with thumbnail.', 'viral-mag'));
-        parent::__construct('viral_mag_latest_posts', '&bull; VP : Latest Posts', $widget_ops);
+        parent::__construct('viral_mag_latest_posts', '&bull; VM : Latest Posts', $widget_ops);
     }
 
     /**

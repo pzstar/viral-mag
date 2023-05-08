@@ -12,7 +12,7 @@ class viral_mag_category_post_list extends WP_Widget {
 
     public function __construct() {
         $widget_ops = array('description' => esc_html__('A widget to display category post with thumbnail.', 'viral-mag'));
-        parent::__construct('viral_mag_category_post_list', '&bull; VP : Post Listing by Category ', $widget_ops);
+        parent::__construct('viral_mag_category_post_list', '&bull; VM : Post Listing by Category ', $widget_ops);
     }
 
     /**

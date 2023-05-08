@@ -12,7 +12,7 @@ class viral_mag_contact_info extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-                'viral_mag_contact_info', '&bull; VP : Contact Info', array(
+                'viral_mag_contact_info', '&bull; VM : Contact Info', array(
             'description' => esc_html__('A widget to display Contact Information', 'viral-mag')
                 )
         );
