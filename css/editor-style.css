@@ -3,6 +3,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     vertical-align: baseline;
+    font-family: Arial;
 }
 
 
@@ -59,11 +60,6 @@ h6:first-child {
 
 p {
     margin: 0 0 28px;
-}
-
-.viral_mag_contact_detail p,
-.viral_mag_th_text p{
-    margin-bottom: 10px;
 }
 
 b,

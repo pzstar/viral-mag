@@ -91,13 +91,10 @@ if (!function_exists('viral_mag_setup')) :
         add_theme_support('wc-product-gallery-lightbox');
         add_theme_support('wc-product-gallery-slider');
 
-        /*
-         * This theme styles the visual editor to resemble the theme style,
-         * specifically font, colors, icons, and column width.
-         */
-        add_editor_style(array('css/editor-style.css', viral_mag_fonts_url()));
-
+        // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
+        
+        add_theme_support('editor-styles');
 
         // Add support for Block Styles.
         add_theme_support('wp-block-styles');
@@ -105,11 +102,21 @@ if (!function_exists('viral_mag_setup')) :
         // Add support for full and wide align images.
         add_theme_support('align-wide');
 
-        // Add support for editor styles.
-        add_theme_support('editor-styles');
-
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
+
+        add_theme_support('custom-line-height');
+
+        add_theme_support('custom-spacing');
+
+        add_theme_support('custom-units');
+        
+        /*
+         * This theme styles the visual editor to resemble the theme style,
+         * specifically font, colors, icons, and column width.
+         */
+        add_editor_style(array('css/editor-style.css'));
+        
     }
 
 endif; // viral_mag_setup
