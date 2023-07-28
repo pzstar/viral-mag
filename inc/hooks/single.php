@@ -73,7 +73,7 @@ if (!function_exists('viral_mag_single_layout1')) {
 
     function viral_mag_single_layout1() {
         ?>
-        <div class="vm-main-content vm-container">
+        <div class="vm-main-content vm-container" <?php echo viral_mag_get_schema_attribute('article'); ?>>
 		    <?php do_action('viral_mag_breadcrumbs'); ?>
 
 		    <div class="vm-site-wrapper">
@@ -139,7 +139,7 @@ if (!function_exists('viral_mag_single_layout2')) {
     function viral_mag_single_layout2() {
         ?>
 
-        <div class="vm-main-content vm-container vm-clearfix">
+        <div class="vm-main-content vm-container vm-clearfix" <?php echo viral_mag_get_schema_attribute('article'); ?>>
 		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		        <?php while (have_posts()) : the_post(); ?>

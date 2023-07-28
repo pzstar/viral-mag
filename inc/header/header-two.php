@@ -14,7 +14,7 @@ if ($viral_mag_th_disable_mobile) {
 }
 ?>
 
-<header id="vm-masthead" class="<?php echo esc_attr(implode(' ', $viral_mag_header_class)); ?>">
+<header id="vm-masthead" class="<?php echo esc_attr(implode(' ', $viral_mag_header_class)); ?>" <?php echo viral_mag_get_schema_attribute('header'); ?>>
     <?php
     $viral_mag_top_header = get_theme_mod('viral_mag_top_header', 'on');
     if ($viral_mag_top_header == 'on') {

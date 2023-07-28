@@ -442,4 +442,91 @@ if (!function_exists('viral_mag_comment_link')) {
 
 }
 
-            
+if(!function_exists('viral_mag_get_schema_attribute')) {
+
+    function viral_mag_get_schema_attribute($place) {
+        $schema_markup = get_theme_mod('viral_mag_schema_markup', false);
+        if(!$schema_markup) {
+            return '';
+        }
+        $attrs = "";
+        switch($place) {
+            case 'single':
+                $itemscope = 'itemscope';
+                $itemtype = 'WebPage';
+                break;
+            case 'article':
+                $itemscope = 'itemscope';
+                $itemtype = 'Article';
+                break;
+            case 'blog':
+                $itemscope = 'itemscope';
+                $itemtype = 'Blog';
+                break;
+            case 'header':
+                $itemscope = '';
+                $itemtype = 'WPHeader';
+                break;
+            case 'logo':
+                $itemscope = 'itemscope';
+                $itemtype = 'Organization';
+                break;
+            case 'navigation':
+                $itemscope = '';
+                $itemtype = 'SiteNavigationElement';
+                break;
+            case 'breadcrumb':
+                $itemscope = '';
+                $itemtype = 'BreadcrumbList';
+                break;
+            case 'sidebar':
+                $itemscope = 'itemscope';
+                $itemtype = 'WPSideBar';
+                break;
+            case 'footer':
+                $itemscope = 'itemscope';
+                $itemtype = 'WPFooter';
+                break;
+            case 'author':
+                $itemprop = 'author';
+                $itemscope = '';
+                $itemtype = 'Person';
+                break;
+            case 'breadcrumb_list':
+                $itemscope = '';
+                $itemtype = 'BreadcrumbList';
+                break;
+            case 'breadcrumb_item':
+                $itemscope = '';
+                $itemprop = 'itemListElement';
+                $itemtype = 'ListItem';
+                break;
+            case 'author_name':
+                $itemprop = 'name';
+                break;
+            case 'author_link':
+                $itemprop = 'author';
+                break;
+            case 'author_url':
+                $itemprop = 'url';
+                break;
+            case 'publish_date':
+                $itemprop = 'datePublished';
+                break;
+            case 'modified_date':
+                $itemprop = 'dateModified';
+                break;
+            default:
+        }
+        if (isset($itemprop)) {
+            $attrs .= 'itemprop="' . $itemprop . '"';
+        }
+        if (isset($itemtype)) {
+            $attrs .= 'itemtype="https://schema.org/' . $itemtype . '"';
+        }
+        if (isset($itemscope)) {
+            $attrs .= 'itemscope="' . $itemscope . '"';
+        }
+        return apply_filters('viral_mag_schema_' . $place . '_attributes', $attrs); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
+}

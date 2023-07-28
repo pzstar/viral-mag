@@ -24,7 +24,7 @@ if (!function_exists('viral_mag_sidebar_content')) {
 
         if (is_active_sidebar('viral-mag-right-sidebar') && $viral_mag_sidebar_layout == "right-sidebar") {
             ?>
-            <div id="secondary" class="widget-area">
+            <div id="secondary" class="widget-area" <?php echo viral_mag_get_schema_attribute('sidebar'); ?>>
                 <div class="theiaStickySidebar">
                     <?php dynamic_sidebar('viral-mag-right-sidebar'); ?>
                 </div>
@@ -34,7 +34,7 @@ if (!function_exists('viral_mag_sidebar_content')) {
 
         if (is_active_sidebar('viral-mag-left-sidebar') && $viral_mag_sidebar_layout == "left-sidebar") {
             ?>
-            <div id="secondary" class="widget-area">
+            <div id="secondary" class="widget-area" <?php echo viral_mag_get_schema_attribute('sidebar'); ?>>
                 <div class="theiaStickySidebar">
                     <?php dynamic_sidebar('viral-mag-left-sidebar'); ?>
                 </div>

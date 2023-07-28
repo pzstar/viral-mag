@@ -31,7 +31,7 @@ if (!function_exists('viral_mag_home_content')) {
 
     function viral_mag_home_content() {
         ?>
-        <div class="vm-main-content vm-clearfix vm-container">
+        <div class="vm-main-content vm-clearfix vm-container" <?php echo viral_mag_get_schema_attribute('blog'); ?>>
             <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
@@ -115,7 +115,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
         }
         ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?> <?php echo viral_mag_get_schema_attribute('article'); ?>>
             <div class="vm-post-wrapper">
                 <?php if (has_post_thumbnail()): ?>
                     <figure class="entry-figure">
