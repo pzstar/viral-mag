@@ -5,7 +5,7 @@ if (!function_exists('viral_mag_footer_open')) {
         $viral_mag_footer_col = get_theme_mod('viral_mag_footer_col', 'col-3-1-1-1');
         $footer_class = apply_filters('viral_mag_footer_class', array('vm-site-footer'));
         echo '</div><!-- #content -->';
-        echo '<footer id="vm-colophon" class="' . implode(' ', $footer_class) ." ". esc_attr($viral_mag_footer_col) . '" ' . viral_mag_get_schema_attribute('sidebar') . '>';
+        echo '<footer id="vm-colophon" class="' . implode(' ', $footer_class) ." ". esc_attr($viral_mag_footer_col) . '" ' . viral_mag_get_schema_attribute('footer') . '>';
     }
 
 }
