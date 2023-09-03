@@ -295,7 +295,7 @@ $wp_customize->add_setting('viral_mag_social_link', array(
 $wp_customize->add_control(new Viral_Mag_Text_Info_Control($wp_customize, 'viral_mag_social_link', array(
     'label' => esc_html__('Social Icons', 'viral-mag'),
     'section' => 'viral_mag_top_header_section',
-    'description' => sprintf(esc_html__('Add your %s here', 'viral-mag'), '<a href="#" target="_blank">Social Icons</a>')
+    'description' => sprintf(esc_html__('Add your %s here', 'viral-mag'), '<a class="viral-mag-open-social-icon" href="#" target="_blank">Social Icons</a>')
 )));
 
 $wp_customize->add_setting('viral_mag_th_menu', array(
@@ -520,7 +520,8 @@ $wp_customize->add_setting('viral_mag_mh_show_social', array(
 
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_mh_show_social', array(
     'section' => 'viral_mag_main_header_section',
-    'label' => esc_html__('Show Social Icons', 'viral-mag')
+    'label' => esc_html__('Show Social Icons', 'viral-mag'),
+    'description' => sprintf(esc_html__('Add your %s here', 'viral-mag'), '<a class="viral-mag-open-social-icon" href="#" target="_blank">Social Icons</a>')
 )));
 
 $wp_customize->add_setting('viral_mag_mh_show_offcanvas', array(

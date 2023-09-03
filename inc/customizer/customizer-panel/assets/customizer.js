@@ -1,5 +1,10 @@
 jQuery(document).ready(function ($) {
     "use strict";
+    $('.viral-mag-open-social-icon').on('click', function () {
+        wp.customize.section( 'viral_mag_social_section' ).focus();
+        return false;
+    });
+
     wp.customize('viral_mag_website_layout', function (setting) {
         var setupWideLayout = function (control) {
             var visibility = function () {
@@ -74,7 +79,7 @@ jQuery(document).ready(function ($) {
 
         wp.customize.control('viral_mag_mh_border_color', setupBorder);
     });
-    
+
     wp.customize('viral_mag_archive_content', function (setting) {
         var setupAcrhiveContent = function (control) {
             var visibility = function () {
