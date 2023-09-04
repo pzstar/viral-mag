@@ -1,15 +1,15 @@
 === Viral Mag===
 
-Contributors: hashthemes
+Contributors: HashThemes
 Tags: two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, photography, holiday, custom-logo
 
 Requires at least: 5.6
 Tested up to: 6.3
-Stable tag: 2.0.32
+Stable tag: 2.0.33
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Viral Mag WordPress Theme copyright HashThemes 2022
+Viral Mag WordPress Theme copyright HashThemes 2023
 Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
@@ -24,6 +24,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.33 - Sep 4, 2023 =
+* Twitter new icon added
+
 = 2.0.32 - Aug 14, 2023 =
 * Compatibility test with WordPress v6.3
 * Schema option added
