@@ -27,27 +27,8 @@ if (!function_exists('viral_mag_posted_on')) {
         }
 
         if ($viral_mag_single_date) {
-            $ago_format = get_theme_mod('viral_mag_display_time_ago', false);
-
-            $get_the_date = get_the_date();
-            $get_the_modified_date = get_the_modified_date();
-
-            if ($ago_format) {
-                $get_the_date = sprintf(_x('%s ago', '%s = human-readable time difference', 'viral-mag'), human_time_diff(get_the_time('U'), current_time('timestamp')));
-                $get_the_modified_date = sprintf(_x('%s ago', '%s = human-readable time difference', 'viral-mag'), human_time_diff(get_the_modified_date('U'), current_time('timestamp')));
-            }
-
-            $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
-            if (get_the_time('U') !== get_the_modified_time('U')) {
-                $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-            }
-
-            $time_string = sprintf(
-                    $time_string, esc_attr(get_the_date(DATE_W3C)), esc_html($get_the_date), esc_attr(get_the_modified_date(DATE_W3C)), esc_html($get_the_modified_date)
-            );
-
-            echo '<span class="entry-post-date"><i class="mdi-clock-time-four-outline"></i>' . $time_string . '</span>';
+            $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
+            echo '<span class="entry-post-date"><i class="mdi-clock-time-four-outline"></i><time class="entry-date published updated">' . ($viral_mag_is_updated_date ? get_the_modified_date() : get_the_date()) . '</time></span>';
         }
 
         if ($viral_mag_single_comment_count) {
@@ -86,7 +67,8 @@ if (!function_exists('viral_mag_post_date')) {
      * Prints HTML with meta information for the current post-date/time and author.
      */
     function viral_mag_post_date() {
-        $time_string = get_the_date();
+        $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
+        $time_string = $viral_mag_is_updated_date ? get_the_modified_date() : get_the_date();
         echo '<span class="vm-posted-on"><i class="mdi-clock-time-four-outline"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
     }
 
@@ -386,7 +368,8 @@ if (!function_exists('viral_mag_entry_author')) {
 if (!function_exists('viral_mag_entry_date')) {
 
     function viral_mag_entry_date() {
-        $post_date = '<a href="' . esc_url(get_permalink()) . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</a>';
+        $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
+        $post_date = '<a href="' . esc_url(get_permalink()) . '"><i class="mdi-clock-time-four-outline"></i>' . ($viral_mag_is_updated_date ? get_the_modified_date() : get_the_date()) . '</a>';
         echo '<span class="entry-date">' . $post_date . '</span>';
     }
 

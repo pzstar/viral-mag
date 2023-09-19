@@ -91,6 +91,7 @@ if (!function_exists('viral_mag_get_blog_layout')) {
 if (!function_exists('viral_mag_blog_layout1')) {
 
     function viral_mag_blog_layout1() {
+        $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
         $viral_mag_archive_content = get_theme_mod('viral_mag_archive_content', 'excerpt');
         $viral_mag_blog_date = get_theme_mod('viral_mag_blog_date', true);
         $viral_mag_blog_author = get_theme_mod('viral_mag_blog_author', true);
@@ -136,8 +137,8 @@ if (!function_exists('viral_mag_blog_layout1')) {
                         <?php if ('post' == get_post_type() && $viral_mag_blog_date) : ?>
                             <div class="vm-post-date">
                                 <?php
-                                $post_date = get_the_date('d');
-                                $post_month = get_the_date('M');
+                                $post_date = $viral_mag_is_updated_date ? get_the_modified_date('d') : get_the_date('d');
+                                $post_month = $viral_mag_is_updated_date ? get_the_modified_date('M') : get_the_date('M');
                                 ?>
                                 <span class="entry-date">
                                     <span class="vm-day">
@@ -202,6 +203,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
 if (!function_exists('viral_mag_blog_layout2')) {
 
     function viral_mag_blog_layout2() {
+        $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
         $viral_mag_archive_content = get_theme_mod('viral_mag_archive_content', 'excerpt');
         $viral_mag_blog_date = get_theme_mod('viral_mag_blog_date', true);
         $viral_mag_blog_author = get_theme_mod('viral_mag_blog_author', true);
@@ -247,8 +249,8 @@ if (!function_exists('viral_mag_blog_layout2')) {
                         <div class="vm-post-info">
                             <?php
                             $avatar = get_avatar(get_the_author_meta('ID'), 48);
-                            $post_date = get_the_date('d');
-                            $post_month = get_the_date('M');
+                            $post_date = $viral_mag_is_updated_date ? get_the_modified_date('d') : get_the_date('d');
+                            $post_month = $viral_mag_is_updated_date ? get_the_modified_date('M') : get_the_date('M');
 
                             $author = sprintf(
                                     esc_html_x('By %s', 'post author', 'viral-mag'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'

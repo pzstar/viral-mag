@@ -34,6 +34,7 @@ $wp_customize->get_control('background_size')->priority = 20;
 $wp_customize->get_control('background_repeat')->priority = 20;
 $wp_customize->get_control('background_attachment')->priority = 20;
 
+
 $wp_customize->add_setting('viral_mag_website_layout', array(
     'default' => 'wide',
     'sanitize_callback' => 'viral_mag_sanitize_choices',
@@ -114,6 +115,22 @@ $wp_customize->add_control(new Viral_Mag_Range_Slider_Control($wp_customize, 'vi
         'step' => 1
     )
 )));
+
+$wp_customize->add_setting('viral_mag_display_date_option', array(
+    'default' => 'posted',
+    'sanitize_callback' => 'viral_mag_sanitize_choices'
+));
+
+$wp_customize->add_control('viral_mag_display_date_option', array(
+    'section' => 'viral_mag_general_options_section',
+    'type' => 'radio',
+    'label' => esc_html__('Display Post Date', 'viral-mag'),
+    'choices' => array(
+        'posted' => esc_html__('Posted Date', 'viral-mag'),
+        'updated' => esc_html__('Updated Date', 'viral-mag')
+    )
+));
+
 
 $wp_customize->add_setting('viral_mag_background_heading', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',

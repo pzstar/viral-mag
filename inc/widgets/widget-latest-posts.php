@@ -190,6 +190,7 @@ class viral_mag_latest_posts extends WP_Widget {
             );
 
             $query = new WP_Query($args);
+            $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
 
             while ($query->have_posts()) : $query->the_post();
                 ?>
@@ -216,7 +217,7 @@ class viral_mag_latest_posts extends WP_Widget {
                         
                         <?php if ($display_date) { ?>
                             <div class="vm-lp-date" <?php echo $excerpt_style; ?>>
-                                <?php echo get_the_date(); ?>
+                                <?php echo $viral_mag_is_updated_date ? get_the_modified_date() : get_the_date(); ?>
                             </div>
                         <?php } ?>
 
