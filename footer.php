@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer.
  *
@@ -6,5 +7,4 @@
  *
  * @package Viral Mag
  */
-
 do_action('viral_mag_footer_template');

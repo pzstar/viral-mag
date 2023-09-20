@@ -254,7 +254,7 @@ class Breadcrumb_Trail {
         $defaults = array(
             'browse' => esc_html__('Browse:', 'viral-mag'),
             'aria_label' => esc_attr_x('Breadcrumbs', 'breadcrumbs aria label', 'viral-mag'),
-            'home' => '<i class="icofont-home"></i> '. esc_html__('Home', 'viral-mag'),
+            'home' => '<i class="icofont-home"></i> ' . esc_html__('Home', 'viral-mag'),
             'error_404' => esc_html__('404 Not Found', 'viral-mag'),
             'archives' => esc_html__('Archives', 'viral-mag'),
             // Translators: %s is the search query.

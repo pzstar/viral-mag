@@ -423,7 +423,7 @@ img {
 
 /* WPEditor popup */
 
- #vm-wp-editor-widget-container {
+#vm-wp-editor-widget-container {
     position: fixed;
     background: #FFF;
     z-index: 100006;
@@ -439,18 +439,18 @@ img {
     bottom: 60px;
 }
 
- #vm-wp-editor-widget-container .mce-btn[aria-label="Fullscreen"] {
+#vm-wp-editor-widget-container .mce-btn[aria-label="Fullscreen"] {
     display: none;
 }
 
- #vm-wp-editor-widget-container ul,
- #vm-wp-editor-widget-container ol {
+#vm-wp-editor-widget-container ul,
+#vm-wp-editor-widget-container ol {
     margin-left: 20px;
 }
 
- #vm-wp-editor-widget-container ul li {}
+#vm-wp-editor-widget-container ul li {}
 
- #vm-wp-editor-widget-container .vm-wp-editor-widget-close {
+#vm-wp-editor-widget-container .vm-wp-editor-widget-close {
     position: absolute;
     top: 30px;
     right: 30px;
@@ -458,11 +458,11 @@ img {
     font-size: 40px;
 }
 
- #vm-wp-editor-widget-container .vm-wp-editor-widget-close:hover {
+#vm-wp-editor-widget-container .vm-wp-editor-widget-close:hover {
     color: #BBB;
 }
 
- #vm-wp-editor-widget-backdrop {
+#vm-wp-editor-widget-backdrop {
     position: fixed;
     background: rgba(0, 0, 0, 0.8);
     left: 0;

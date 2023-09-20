@@ -1,57 +1,58 @@
 <?php
-
 if (!function_exists('viral_mag_page_header')) {
 
     function viral_mag_page_header() {
-		$viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
-		?>
-		<header class="vm-main-header">
-		    <div class="vm-container">
-		        <?php
-		        if ($viral_mag_show_title) {
-		            the_title('<h1 class="vm-main-title">', '</h1>');
-		        }
+        $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
+        ?>
+        <header class="vm-main-header">
+            <div class="vm-container">
+                <?php
+                if ($viral_mag_show_title) {
+                    the_title('<h1 class="vm-main-title">', '</h1>');
+                }
 
-		        do_action('viral_mag_breadcrumbs');
-		        ?>
-		    </div>
-		</header><!-- .entry-header -->
+                do_action('viral_mag_breadcrumbs');
+                ?>
+            </div>
+        </header><!-- .entry-header -->
 
-		<?php
-	}
+        <?php
+    }
+
 }
 
 if (!function_exists('viral_mag_page_content')) {
 
     function viral_mag_page_content() {
 
-		$container_class = array('vm-main-content', 'vm-clearfix', 'vm-container');
-		?>
-		<div class="<?php echo implode(' ', $container_class); ?>">
-		    <div class="vm-site-wrapper">
-		        <div id="primary" class="content-area">
+        $container_class = array('vm-main-content', 'vm-clearfix', 'vm-container');
+        ?>
+        <div class="<?php echo implode(' ', $container_class); ?>">
+            <div class="vm-site-wrapper">
+                <div id="primary" class="content-area">
 
-		            <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()) : the_post(); ?>
 
-		                <?php get_template_part('template-parts/content', 'page'); ?>
+                        <?php get_template_part('template-parts/content', 'page'); ?>
 
-		                <?php
-		                // If comments are open or we have at least one comment, load up the comment template.
-		                if (comments_open() || get_comments_number()) :
-		                    comments_template();
-		                endif;
-		                ?>
+                        <?php
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if (comments_open() || get_comments_number()) :
+                            comments_template();
+                        endif;
+                        ?>
 
-		            <?php endwhile; // End of the loop.   ?>
+                    <?php endwhile; // End of the loop.   ?>
 
-		        </div><!-- #primary -->
+                </div><!-- #primary -->
 
-		        <?php get_sidebar(); ?>
-		    </div>
-		</div>
+                <?php get_sidebar(); ?>
+            </div>
+        </div>
 
-		<?php
-	}
+        <?php
+    }
+
 }
 
 if (!function_exists('viral_mag_single_post')) {
@@ -74,60 +75,62 @@ if (!function_exists('viral_mag_single_layout1')) {
     function viral_mag_single_layout1() {
         ?>
         <div class="vm-main-content vm-container" <?php echo viral_mag_get_schema_attribute('article'); ?>>
-		    <?php do_action('viral_mag_breadcrumbs'); ?>
+            <?php do_action('viral_mag_breadcrumbs'); ?>
 
-		    <div class="vm-site-wrapper">
-		        <div id="primary" class="content-area">
+            <div class="vm-site-wrapper">
+                <div id="primary" class="content-area">
 
-		            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		                <?php while (have_posts()) : the_post(); ?>
+                        <?php while (have_posts()) : the_post(); ?>
 
-		                    <div class="entry-header"> 
-		                        <?php
-		                        viral_mag_single_category();
+                            <div class="entry-header"> 
+                                <?php
+                                viral_mag_single_category();
 
-		                        the_title('<h1 class="entry-title">', '</h1>');
+                                the_title('<h1 class="entry-title">', '</h1>');
 
-		                        viral_mag_single_post_meta();
-		                        ?>
-		                    </div>
+                                viral_mag_single_post_meta();
+                                ?>
+                            </div>
 
-		                    <div class="entry-wrapper">
-		                    	<?php do_action('viral_mag_single_template_top_options'); 
+                            <div class="entry-wrapper">
+                                <?php
+                                do_action('viral_mag_single_template_top_options');
 
-		                    	get_template_part('template-parts/post-format/content', get_post_format()); ?>
+                                get_template_part('template-parts/post-format/content', get_post_format());
+                                ?>
 
-		                        <div class="entry-content">
-		                            <?php
-		                            the_content();
+                                <div class="entry-content">
+                                    <?php
+                                    the_content();
 
-		                            wp_link_pages(array(
-		                                'before' => '<div class="page-links">' . esc_html__('Pages:', 'viral-mag'),
-		                                'after' => '</div>',
-		                            ));
-		                            ?>
-		                        </div><!-- .entry-content -->
-		                        <?php
-		                    	viral_mag_single_tag();
-		                        ?>
-		                    </div>
+                                    wp_link_pages(array(
+                                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'viral-mag'),
+                                        'after' => '</div>',
+                                    ));
+                                    ?>
+                                </div><!-- .entry-content -->
+                                <?php
+                                viral_mag_single_tag();
+                                ?>
+                            </div>
 
-		                <?php endwhile; // End of the loop.   ?>
+                        <?php endwhile; // End of the loop.     ?>
 
-		            </article><!-- #post-## -->
+                    </article><!-- #post-## -->
 
-		            <?php
-		            viral_mag_single_author_box();
-					viral_mag_single_pagination();
-					viral_mag_single_comment();
-		            ?>
-		        </div><!-- #primary -->
+                    <?php
+                    viral_mag_single_author_box();
+                    viral_mag_single_pagination();
+                    viral_mag_single_comment();
+                    ?>
+                </div><!-- #primary -->
 
-		        <?php get_sidebar(); ?>
-		    </div>
+                <?php get_sidebar(); ?>
+            </div>
 
-		</div>
+        </div>
         <?php
     }
 
@@ -140,62 +143,65 @@ if (!function_exists('viral_mag_single_layout2')) {
         ?>
 
         <div class="vm-main-content vm-container vm-clearfix" <?php echo viral_mag_get_schema_attribute('article'); ?>>
-		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		        <?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()) : the_post(); ?>
 
-		            <div class="entry-header">
-		                <?php
-		                do_action('viral_mag_breadcrumbs');
+                    <div class="entry-header">
+                        <?php
+                        do_action('viral_mag_breadcrumbs');
 
-		                viral_mag_single_category();
+                        viral_mag_single_category();
 
-		                the_title('<h1 class="entry-title">', '</h1>');
+                        the_title('<h1 class="entry-title">', '</h1>');
 
-		                viral_mag_single_post_meta();
-		                ?>
-		            </div>
+                        viral_mag_single_post_meta();
+                        ?>
+                    </div>
 
-		            <div class="vm-site-wrapper">
+                    <div class="vm-site-wrapper">
 
-		                <div id="primary" class="content-area">
+                        <div id="primary" class="content-area">
 
-		                    <div class="entry-wrapper">  
-		                    	<?php do_action('viral_mag_single_template_top_options'); 
+                            <div class="entry-wrapper">  
+                                <?php
+                                do_action('viral_mag_single_template_top_options');
 
-		                    	get_template_part('template-parts/post-format/content', get_post_format()); ?>
+                                get_template_part('template-parts/post-format/content', get_post_format());
+                                ?>
 
-		                        <div class="entry-content">
-		                            <?php
-		                            the_content();
+                                <div class="entry-content">
+                                    <?php
+                                    the_content();
 
-		                            wp_link_pages(array(
-		                                'before' => '<div class="page-links">' . esc_html__('Pages:', 'viral-mag'),
-		                                'after' => '</div>',
-		                            ));
-		                            ?>
-		                        </div><!-- .entry-content -->
+                                    wp_link_pages(array(
+                                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'viral-mag'),
+                                        'after' => '</div>',
+                                    ));
+                                    ?>
+                                </div><!-- .entry-content -->
 
-		                        <?php	
-		                        viral_mag_single_tag();
-						        ?>
-						    </div>
-						    <?php 	                    
-		                    viral_mag_single_author_box();
-							viral_mag_single_pagination();
-							viral_mag_single_comment();
-		                    ?>
-		                </div><!-- #primary -->
+                                <?php
+                                viral_mag_single_tag();
+                                ?>
+                            </div>
+                            <?php
+                            viral_mag_single_author_box();
+                            viral_mag_single_pagination();
+                            viral_mag_single_comment();
+                            ?>
+                        </div><!-- #primary -->
 
-		                <?php get_sidebar(); ?>
-		            </div>
+                        <?php get_sidebar(); ?>
+                    </div>
 
-		        <?php endwhile; // End of the loop.   ?>
+                <?php endwhile; // End of the loop.     ?>
 
-		    </article><!-- #post-## -->
-		</div>
+            </article><!-- #post-## -->
+        </div>
         <?php
     }
+
 }
 
 add_action('viral_mag_single_template', 'viral_mag_single_post');

@@ -25,6 +25,7 @@ if (!function_exists('viral_mag_home_header')) {
             <?php
         }
     }
+
 }
 
 if (!function_exists('viral_mag_home_content')) {
@@ -38,21 +39,24 @@ if (!function_exists('viral_mag_home_content')) {
                     <?php if (have_posts()) : ?>
 
                         <div class="site-main-loop">
-                            <?php while (have_posts()) : the_post();
+                            <?php
+                            while (have_posts()) : the_post();
                                 viral_mag_content_summary();
-                            endwhile; ?>
+                            endwhile;
+                            ?>
                         </div>
                         <?php
                         the_posts_pagination(
-                            array(
-                                'prev_text' => esc_html__('Prev', 'viral-mag'),
-                                'next_text' => esc_html__('Next', 'viral-mag'),
-                            )
+                                array(
+                                    'prev_text' => esc_html__('Prev', 'viral-mag'),
+                                    'next_text' => esc_html__('Next', 'viral-mag'),
+                                )
                         );
 
-                    else : 
+                    else :
                         get_template_part('template-parts/content', 'none');
-                    endif; ?>
+                    endif;
+                    ?>
 
                 </div><!-- #primary -->
 
@@ -61,6 +65,7 @@ if (!function_exists('viral_mag_home_content')) {
         </div>
         <?php
     }
+
 }
 
 if (!function_exists('viral_mag_content_summary')) {
@@ -80,7 +85,7 @@ if (!function_exists('viral_mag_content_summary')) {
 if (!function_exists('viral_mag_get_blog_layout')) {
 
     function viral_mag_get_blog_layout() {
-        
+
         $blog_layout = get_theme_mod('viral_mag_blog_layout', 'layout1');
         return apply_filters('viral_mag_blog_layout', $blog_layout);
     }
@@ -91,7 +96,7 @@ if (!function_exists('viral_mag_get_blog_layout')) {
 if (!function_exists('viral_mag_blog_layout1')) {
 
     function viral_mag_blog_layout1() {
-        $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
+        $viral_mag_is_updated_date = get_theme_mod('viral_mag_blog_display_date_option', 'posted') == 'updated' ? true : false;
         $viral_mag_archive_content = get_theme_mod('viral_mag_archive_content', 'excerpt');
         $viral_mag_blog_date = get_theme_mod('viral_mag_blog_date', true);
         $viral_mag_blog_author = get_theme_mod('viral_mag_blog_author', true);
@@ -109,9 +114,9 @@ if (!function_exists('viral_mag_blog_layout1')) {
             $viral_mag_sidebar_layout = get_theme_mod('viral_mag_search_layout', 'right-sidebar');
         }
 
-        if($viral_mag_sidebar_layout == 'no-sidebar' || $viral_mag_sidebar_layout == 'no-sidebar-narrow'){
+        if ($viral_mag_sidebar_layout == 'no-sidebar' || $viral_mag_sidebar_layout == 'no-sidebar-narrow') {
             $image_size = 'viral-mag-1300x540';
-        }else{
+        } else {
             $image_size = 'viral-mag-800x500';
         }
         ?>
@@ -197,13 +202,14 @@ if (!function_exists('viral_mag_blog_layout1')) {
         </article><!-- #post-## -->
         <?php
     }
+
 }
 
 /** Blog Post Layout 2 */
 if (!function_exists('viral_mag_blog_layout2')) {
 
     function viral_mag_blog_layout2() {
-        $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option') == 'updated' ? true : false;
+        $viral_mag_is_updated_date = get_theme_mod('viral_mag_blog_display_date_option', 'posted') == 'updated' ? true : false;
         $viral_mag_archive_content = get_theme_mod('viral_mag_archive_content', 'excerpt');
         $viral_mag_blog_date = get_theme_mod('viral_mag_blog_date', true);
         $viral_mag_blog_author = get_theme_mod('viral_mag_blog_author', true);
@@ -320,6 +326,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
 
         <?php
     }
+
 }
 
 if (!function_exists('viral_mag_search_header')) {
@@ -334,6 +341,7 @@ if (!function_exists('viral_mag_search_header')) {
         </header><!-- .entry-header -->
         <?php
     }
+
 }
 
 if (!function_exists('viral_mag_search_content')) {
@@ -344,8 +352,9 @@ if (!function_exists('viral_mag_search_content')) {
             <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
-                    <?php if (have_posts()) : 
-                        /* Start the Loop */ 
+                    <?php
+                    if (have_posts()) :
+                        /* Start the Loop */
                         while (have_posts()) : the_post();
                             /**
                              * Run the loop for the search to output the results.
@@ -353,17 +362,18 @@ if (!function_exists('viral_mag_search_content')) {
                              * called content-search.php and that will be used instead.
                              */
                             get_template_part('template-parts/content', 'search');
-                            
+
                         endwhile;
                         the_posts_pagination(
-                            array(
-                                'prev_text' => esc_html__('Prev', 'viral-mag'),
-                                'next_text' => esc_html__('Next', 'viral-mag'),
-                            )
+                                array(
+                                    'prev_text' => esc_html__('Prev', 'viral-mag'),
+                                    'next_text' => esc_html__('Next', 'viral-mag'),
+                                )
                         );
-                    else : 
+                    else :
                         get_template_part('template-parts/content', 'none');
-                    endif; ?>
+                    endif;
+                    ?>
 
                 </div><!-- #primary -->
 
@@ -372,6 +382,7 @@ if (!function_exists('viral_mag_search_content')) {
         </div>
         <?php
     }
+
 }
 
 
@@ -395,6 +406,7 @@ if (!function_exists('viral_mag_archive_header')) {
 
         <?php
     }
+
 }
 
 if (!function_exists('viral_mag_archive_content')) {
@@ -437,6 +449,7 @@ if (!function_exists('viral_mag_archive_content')) {
         </div>
         <?php
     }
+
 }
 
 

@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     "use strict";
     $('.viral-mag-open-social-icon').on('click', function () {
-        wp.customize.section( 'viral_mag_social_section' ).focus();
+        wp.customize.section('viral_mag_social_section').focus();
         return false;
     });
 

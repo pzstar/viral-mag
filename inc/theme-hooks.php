@@ -57,7 +57,7 @@ function viral_mag_body_classes($classes) {
 
     if ($common_header_typography) {
         $classes[] = 'vm-common-h-type';
-    }else{
+    } else {
         $classes[] = 'vm-diff-h-type';
     }
 

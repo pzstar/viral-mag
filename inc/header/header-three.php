@@ -35,7 +35,7 @@ if ($viral_mag_th_disable_mobile) {
             <nav id="vm-site-navigation" class="vm-main-navigation">
                 <?php viral_mag_main_navigation(); ?>
             </nav><!--  #vm-site-navigation -->
-            
+
             <div class="vm-site-buttons">
                 <?php do_action('viral_mag_mobile_header'); ?>
             </div>

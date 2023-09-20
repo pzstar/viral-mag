@@ -93,7 +93,7 @@ if (!function_exists('viral_mag_setup')) :
 
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
-        
+
         add_theme_support('editor-styles');
 
         // Add support for Block Styles.
@@ -110,13 +110,12 @@ if (!function_exists('viral_mag_setup')) :
         add_theme_support('custom-spacing');
 
         add_theme_support('custom-units');
-        
+
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
          */
         add_editor_style(array('css/editor-style.css'));
-        
     }
 
 endif; // viral_mag_setup

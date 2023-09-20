@@ -42,6 +42,7 @@ if (!function_exists('viral_mag_sidebar_content')) {
             <?php
         }
     }
+
 }
 
 add_action('viral_mag_sidebar_template', 'viral_mag_sidebar_content');

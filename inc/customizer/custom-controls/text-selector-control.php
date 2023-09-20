@@ -8,7 +8,7 @@ class Viral_Mag_Text_Selector_Control extends WP_Customize_Control {
 
     public function __construct($manager, $id, $args = array()) {
         parent::__construct($manager, $id, $args);
-        
+
         $this->choices = $args['choices'];
         $this->class = isset($args['class']) ? $args['class'] : '';
     }

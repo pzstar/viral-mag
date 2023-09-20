@@ -5,7 +5,7 @@ if (!function_exists('viral_mag_footer_open')) {
         $viral_mag_footer_col = get_theme_mod('viral_mag_footer_col', 'col-3-1-1-1');
         $footer_class = apply_filters('viral_mag_footer_class', array('vm-site-footer'));
         echo '</div><!-- #content -->';
-        echo '<footer id="vm-colophon" class="' . implode(' ', $footer_class) ." ". esc_attr($viral_mag_footer_col) . '" ' . viral_mag_get_schema_attribute('footer') . '>';
+        echo '<footer id="vm-colophon" class="' . implode(' ', $footer_class) . " " . esc_attr($viral_mag_footer_col) . '" ' . viral_mag_get_schema_attribute('footer') . '>';
     }
 
 }
@@ -17,26 +17,29 @@ if (!function_exists('viral_mag_main_footer')) {
         $viral_mag_footer_array = explode('-', $viral_mag_footer_col);
         $count = count($viral_mag_footer_array);
         $footer_col = $count - 2;
-        if (viral_mag_check_active_footer()) { ?>
-        <div class="vm-main-footer">
-            <div class="vm-container">
-                <div class="vm-main-footer-wrap vm-clearfix">
-                    <?php
-                    for ($i = 1; $i <= $footer_col; $i++) {
-                        if (is_active_sidebar('viral-mag-footer' . $i)) {
-                            ?>
-                            <div class="vm-footer vm-footer<?php echo absint($i); ?>">
-                                <?php dynamic_sidebar('viral-mag-footer' . $i); ?>  
-                            </div>
-                            <?php
+        if (viral_mag_check_active_footer()) {
+            ?>
+            <div class="vm-main-footer">
+                <div class="vm-container">
+                    <div class="vm-main-footer-wrap vm-clearfix">
+                        <?php
+                        for ($i = 1; $i <= $footer_col; $i++) {
+                            if (is_active_sidebar('viral-mag-footer' . $i)) {
+                                ?>
+                                <div class="vm-footer vm-footer<?php echo absint($i); ?>">
+                                    <?php dynamic_sidebar('viral-mag-footer' . $i); ?>  
+                                </div>
+                                <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    <?php }
+            <?php
+        }
     }
+
 }
 
 if (!function_exists('viral_mag_bottom_footer')) {
@@ -44,7 +47,8 @@ if (!function_exists('viral_mag_bottom_footer')) {
     function viral_mag_bottom_footer() {
 
         $viral_mag_footer_copyright = get_theme_mod('viral_mag_footer_copyright', esc_html__('&copy; 2021 Viral Mag. All Right Reserved.', 'viral-mag'));
-        if (!empty($viral_mag_footer_copyright)) { ?>
+        if (!empty($viral_mag_footer_copyright)) {
+            ?>
             <div class="vm-bottom-footer">
                 <div class="vm-container">
                     <div class="vm-site-info">
@@ -53,8 +57,10 @@ if (!function_exists('viral_mag_bottom_footer')) {
                     </div><!-- #site-info -->
                 </div>
             </div>
-        <?php }
+            <?php
+        }
     }
+
 }
 
 if (!function_exists('viral_mag_scroll_top')) {
@@ -69,6 +75,7 @@ if (!function_exists('viral_mag_scroll_top')) {
             <?php
         }
     }
+
 }
 
 if (!function_exists('viral_mag_footer_close')) {

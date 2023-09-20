@@ -30,7 +30,6 @@ if (class_exists('WP_Customize_Section')) {
          * @var    string
          */
         public $upgrade_url = '';
-        
         public $options = array();
 
         /**

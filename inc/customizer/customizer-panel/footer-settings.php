@@ -16,7 +16,6 @@ $wp_customize->add_setting('viral_mag_footer_nav', array(
 ));
 
 $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_footer_nav', array(
-    
     'section' => 'viral_mag_footer_section',
     'priority' => 1,
     'buttons' => array(

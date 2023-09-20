@@ -83,16 +83,16 @@ class Viral_Mag_Background_Image_Control extends WP_Customize_Control {
 
             if ('image_url' === $setting_key) {
                 /*
-                $this->json['attachment'] = wp_prepare_attachment_for_js($attachment_id);
-                
-                if ($this->value($setting_key)) {
-                    // Get the attachment model for the existing file.
-                    $attachment_id = attachment_url_to_postid($this->value($setting_key));
-                    if ($attachment_id) {
-                        $this->json['attachment'] = wp_prepare_attachment_for_js($attachment_id);
-                    }
-                }
-                */
+                  $this->json['attachment'] = wp_prepare_attachment_for_js($attachment_id);
+
+                  if ($this->value($setting_key)) {
+                  // Get the attachment model for the existing file.
+                  $attachment_id = attachment_url_to_postid($this->value($setting_key));
+                  if ($attachment_id) {
+                  $this->json['attachment'] = wp_prepare_attachment_for_js($attachment_id);
+                  }
+                  }
+                 */
             } elseif ('repeat' === $setting_key) {
                 $this->json[$setting_key]['choices'] = $background_choices['repeat'];
             } elseif ('size' === $setting_key) {

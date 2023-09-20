@@ -4,7 +4,6 @@
  *
  * @package Viral Mag
  */
-
 if (has_post_thumbnail()) {
     ?>
     <figure class="entry-figure">
