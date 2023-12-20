@@ -165,6 +165,11 @@ function viral_mag_register_required_plugins() {
             'name' => 'Hash Elements',
             'slug' => 'hash-elements',
             'required' => false,
+        ),
+        array(
+            'name' => 'Hash Form - Drag & Drop Form Builder',
+            'slug' => 'hash-form',
+            'required' => false,
         )
     );
 
