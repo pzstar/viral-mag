@@ -25,7 +25,7 @@ $viral_pro_features = '<ul class="upsell-features">
         <li>' . esc_html__("Maintenance mode option", "viral-mag") . '</li>
         <li>' . esc_html__("Remove footer credit text", "viral-mag") . '</li>
 	</ul>
-	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/viral-pro/#theme-comparision-tab" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "viral-mag") . '</a>';
+	<a class="ht-implink" href="' . admin_url('admin.php?page=viral-mag-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "viral-mag") . '</a>';
 
 /* ============PRO FEATURES============ */
 $wp_customize->add_section('viral_pro_feature_section', array(

@@ -119,7 +119,7 @@ if (!class_exists('Viral_Mag_Welcome')) :
 
                     <div class="viral-mag-welcome-info">
                         <div class="viral-mag-welcome-thumb">
-                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_attr_e('Viral Demo', 'viral-mag'); ?>">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.jpg'); ?>" alt="<?php echo esc_attr_e('Viral Demo', 'viral-mag'); ?>">
                         </div>
 
                         <?php
