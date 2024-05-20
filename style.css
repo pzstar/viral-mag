@@ -5132,6 +5132,13 @@ a.add_to_wishlist.button.alt {
     margin: -30px;
 }
 
+.elementor-element.e-con {
+    --padding-top: var(--container-default-padding-top, 0);
+    --padding-right: var(--container-default-padding-right, 0);
+    --padding-bottom: var(--container-default-padding-bottom, 0);
+    --padding-left: var(--container-default-padding-left, 0);
+}
+
 .he-post-thumb .post-categories li a:hover {
     background: var(--vm-template-color, #cf0701);
 }

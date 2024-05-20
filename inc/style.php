@@ -191,11 +191,12 @@ function viral_mag_dymanic_styles() {
         }
 
         @media screen and (max-width: {$wide_container_width}px){        
-            .elementor-section.elementor-section-boxed>.elementor-container,            
+            .elementor-section.elementor-section-boxed>.elementor-container,  
+            .e-con.e-parent>.e-con-inner,
             .vm-wide .vm-container,
             .vm-boxed .vm-container{
-                padding-left: 40px !important;
-                padding-right: 40px !important;
+                padding-left: 30px !important;
+                padding-right: 30px !important;
             }
         }";
 
