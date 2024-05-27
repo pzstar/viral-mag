@@ -195,6 +195,7 @@ function viral_mag_dymanic_styles() {
             .e-con.e-parent>.e-con-inner,
             .vm-wide .vm-container,
             .vm-boxed .vm-container{
+                width: 100% !important;
                 padding-left: 30px !important;
                 padding-right: 30px !important;
             }
