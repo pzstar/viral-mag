@@ -4,7 +4,7 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custo
 
 Requires at least: 5.6
 Tested up to: 6.5
-Stable tag: 2.0.41
+Stable tag: 2.0.42
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.42 - Jul 14, 2024 =
+* New demo added
+
 = 2.0.41 - Jul 09, 2024 =
 * Font Url return bug fixed
 
