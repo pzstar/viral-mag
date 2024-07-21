@@ -198,4 +198,3 @@
 
     <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-footer&utm_campaign=viral-mag-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'viral-mag'); ?></a>
 </div>
-

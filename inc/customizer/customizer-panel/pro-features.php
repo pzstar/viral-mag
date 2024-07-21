@@ -29,28 +29,28 @@ $viral_pro_features = '<ul class="upsell-features">
 
 /* ============PRO FEATURES============ */
 $wp_customize->add_section('viral_pro_feature_section', array(
-    'title' => esc_html__('Pro Theme Features', 'viral-mag'),
-    'priority' => 0
+	'title' => esc_html__('Pro Theme Features', 'viral-mag'),
+	'priority' => 0
 ));
 
 $wp_customize->add_setting('viral_mag_hide_upgrade_notice', array(
-    'sanitize_callback' => 'viral_mag_sanitize_checkbox',
-    'default' => false,
+	'sanitize_callback' => 'viral_mag_sanitize_checkbox',
+	'default' => false,
 ));
 
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_hide_upgrade_notice', array(
-    'section' => 'viral_pro_feature_section',
-    'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'viral-mag'),
-    'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'viral-mag')
+	'section' => 'viral_pro_feature_section',
+	'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'viral-mag'),
+	'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'viral-mag')
 )));
 
 $wp_customize->add_setting('viral_pro_features', array(
-    'sanitize_callback' => 'viral_mag_sanitize_text',
+	'sanitize_callback' => 'viral_mag_sanitize_text',
 ));
 
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_pro_features', array(
-    'settings' => 'viral_pro_features',
-    'section' => 'viral_pro_feature_section',
-    'description' => $viral_pro_features,
-    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+	'settings' => 'viral_pro_features',
+	'section' => 'viral_pro_feature_section',
+	'description' => $viral_pro_features,
+	'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));

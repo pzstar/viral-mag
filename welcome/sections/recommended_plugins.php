@@ -20,20 +20,20 @@ if (!empty($viral_mag_free_plugins)) {
 
                 <div class="plugin-title-wrap">
                     <div class="plugin-title">
-                        <?php echo esc_html($viral_mag_name); ?>	
+                        <?php echo esc_html($viral_mag_name); ?>
                     </div>
 
                     <div class="plugin-btn-wrapper">
-                        <?php if ($this->check_plugin_installed_state($viral_mag_slug, $viral_mag_filename) && !$this->check_plugin_active_state($viral_mag_slug, $viral_mag_filename)) : ?>
+                        <?php if ($this->check_plugin_installed_state($viral_mag_slug, $viral_mag_filename) && !$this->check_plugin_active_state($viral_mag_slug, $viral_mag_filename)): ?>
                             <a target="_blank" href="<?php echo esc_url($this->plugin_generate_url('active', $viral_mag_slug, $viral_mag_filename)) ?>" class="button button-primary"><?php esc_html_e('Activate', 'viral-mag'); ?></a>
-                        <?php elseif ($this->check_plugin_installed_state($viral_mag_slug, $viral_mag_filename)) :
+                        <?php elseif ($this->check_plugin_installed_state($viral_mag_slug, $viral_mag_filename)):
                             ?>
                             <button type="button" class="button button-disabled" disabled="disabled"><?php esc_html_e('Installed', 'viral-mag'); ?></button>
-                        <?php else :
+                        <?php else:
                             ?>
-                            <a target="_blank" class="install-now button-primary" href="<?php echo esc_url($this->plugin_generate_url('install', $viral_mag_slug, $viral_mag_filename)) ?>" >
-                                <?php esc_html_e('Install Now', 'viral-mag'); ?></a>							
-                            <?php endif; ?>
+                            <a target="_blank" class="install-now button-primary" href="<?php echo esc_url($this->plugin_generate_url('install', $viral_mag_slug, $viral_mag_filename)) ?>">
+                                <?php esc_html_e('Install Now', 'viral-mag'); ?></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

@@ -31,13 +31,14 @@ if (!function_exists('viral_mag_page_content')) {
             <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()):
+                        the_post(); ?>
 
                         <?php get_template_part('template-parts/content', 'page'); ?>
 
                         <?php
                         // If comments are open or we have at least one comment, load up the comment template.
-                        if (comments_open() || get_comments_number()) :
+                        if (comments_open() || get_comments_number()):
                             comments_template();
                         endif;
                         ?>
@@ -82,9 +83,10 @@ if (!function_exists('viral_mag_single_layout1')) {
 
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <?php while (have_posts()) : the_post(); ?>
+                        <?php while (have_posts()):
+                            the_post(); ?>
 
-                            <div class="entry-header"> 
+                            <div class="entry-header">
                                 <?php
                                 viral_mag_single_category();
 
@@ -145,7 +147,8 @@ if (!function_exists('viral_mag_single_layout2')) {
         <div class="vm-main-content vm-container vm-clearfix" <?php echo viral_mag_get_schema_attribute('article'); ?>>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()):
+                    the_post(); ?>
 
                     <div class="entry-header">
                         <?php
@@ -163,7 +166,7 @@ if (!function_exists('viral_mag_single_layout2')) {
 
                         <div id="primary" class="content-area">
 
-                            <div class="entry-wrapper">  
+                            <div class="entry-wrapper">
                                 <?php
                                 do_action('viral_mag_single_template_top_options');
 

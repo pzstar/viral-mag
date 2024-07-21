@@ -12,9 +12,9 @@ class viral_mag_contact_info extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-                'viral_mag_contact_info', '&bull; VM : Contact Info', array(
-            'description' => esc_html__('A widget to display Contact Information', 'viral-mag')
-                )
+            'viral_mag_contact_info', '&bull; VM : Contact Info', array(
+                'description' => esc_html__('A widget to display Contact Information', 'viral-mag')
+            )
         );
     }
 
@@ -193,7 +193,7 @@ class viral_mag_contact_info extends WP_Widget {
 
                 <?php if (!empty($time)): ?>
                     <li><i class="icofont-clock-time" <?php echo $icon_style; ?>></i><?php echo wpautop(esc_html($time)); ?></li>
-                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
         <?php

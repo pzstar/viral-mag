@@ -294,7 +294,7 @@ if (!function_exists('viral_mag_single_comment')) {
     function viral_mag_single_comment() {
         $viral_mag_single_comments = get_theme_mod('viral_mag_single_comments', true);
         // If comments are open or we have at least one comment, load up the comment template.
-        if ($viral_mag_single_comments && (comments_open() || get_comments_number())) :
+        if ($viral_mag_single_comments && (comments_open() || get_comments_number())):
             comments_template();
         endif;
     }
@@ -307,7 +307,7 @@ if (!function_exists('viral_mag_single_comment')) {
  * @return bool
  */
 function viral_mag_categorized_blog() {
-    if (false === ( $all_the_cool_cats = get_transient('viral_mag_categories') )) {
+    if (false === ($all_the_cool_cats = get_transient('viral_mag_categories'))) {
         // Create an array of all the categories that are attached to posts.
         $all_the_cool_cats = get_categories(array(
             'fields' => 'ids',

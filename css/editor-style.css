@@ -39,7 +39,7 @@ h2 {
 h3 {
     font-family: var(--viral-mag-h3-family, var(--viral-mag-h-family, Poppins));
     font-size: var(--viral-mag-h3-size, var(--vm-h3-size, 30px));
-    letter-spacing: var( --viral-mag-h3-letter-spacing, var(--viral-mag-h-letter-spacing, 0));
+    letter-spacing: var(--viral-mag-h3-letter-spacing, var(--viral-mag-h-letter-spacing, 0));
     line-height: var(--viral-mag-h3-line-height, var(--viral-mag-h-line-height, 1.3));
     font-weight: var(--viral-mag-h3-weight, var(--viral-mag-h-weight, 400));
     font-style: var(--viral-mag-h3-style, var(--viral-mag-h-style, normal));
@@ -89,7 +89,7 @@ a {
     text-decoration: underline;
 }
 
-a:hover{
+a:hover {
     color: var(--vm-content-link-hov-color, var(--vm-content-link-color));
 }
 
@@ -115,7 +115,7 @@ blockquote {
     padding-left: 17px;
 }
 
-blockquote>blockquote {
+blockquote > blockquote {
     margin-left: 0;
 }
 
@@ -123,7 +123,7 @@ blockquote p {
     margin-bottom: 35px;
 }
 
-blockquote>p:last-child {
+blockquote > p:last-child {
     margin-bottom: 0;
 }
 
@@ -251,8 +251,10 @@ dd {
 }
 
 img {
-    height: auto; /* Make sure images are scaled correctly. */
-    max-width: 100%; /* Adhere to container width. */
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
     vertical-align: middle;
 }
 

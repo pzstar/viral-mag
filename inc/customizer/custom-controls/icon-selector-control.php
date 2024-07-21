@@ -61,7 +61,7 @@ class Viral_Mag_Icon_Selector_Control extends WP_Customize_Control {
                         <# if ( _.size(data.icon_array) > 1 ) { #>
                         <select>
                             <# _.each( data.icon_array, function( val ) { #>
-                            <#  if (val['name'] && val['label']) { #>
+                            <# if (val['name'] && val['label']) { #>
                             <option value="{{ val['name'] }}">{{{ val['label'] }}}</option>
                             <# } #>
                             <# } ) #>
@@ -72,9 +72,8 @@ class Viral_Mag_Icon_Selector_Control extends WP_Customize_Control {
 
 
                     <# 
-                    var index = 0;
-                    _.each( data.icon_array, function( val ) { 
-                    #>
+                    var index = 0; 
+                    _.each( data.icon_array, function( val ) { #>
                     <ul class="ht--icon-list {{val['name']}} <# if( index == 0 ){ #>active<# } #>">
                         <# if (_.isArray(val['icons'])) { #>
                         <# _.each( val['icons'], function( icon ) { #>
@@ -82,9 +81,7 @@ class Viral_Mag_Icon_Selector_Control extends WP_Customize_Control {
                         <# } ) #>
                         <# } #>
                     </ul>
-                    <#  
-                    index++;
-                    } ) #>
+                    <# index++; } ) #>
                 </div>
                 <# } #>
                 <input type="hidden" value="{{ data.value }}" {{{ data.link }}} />

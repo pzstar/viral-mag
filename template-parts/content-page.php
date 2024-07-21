@@ -24,4 +24,3 @@ if (has_post_thumbnail()) {
     ));
     ?>
 </div><!-- .entry-content -->
-

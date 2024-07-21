@@ -44,12 +44,12 @@ function viral_mag_header_logo() {
         <div class="vm-site-title-tagline">
             <?php
             if (!$hide_title) {
-                if (is_front_page()) :
+                if (is_front_page()):
                     ?>
                     <h1 class="vm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                <?php else : ?>
+                <?php else: ?>
                     <p class="vm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                <?php
+                    <?php
                 endif;
             }
 
@@ -308,7 +308,7 @@ if (!function_exists('viral_mag_off_canvas_sidebar')) {
                 }
                 ?>
             </div>
-        </div> 
+        </div>
         <?php
     }
 

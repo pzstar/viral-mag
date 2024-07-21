@@ -45,64 +45,64 @@ if (!function_exists('viral_mag_excerpt')) {
 
 function viral_mag_comment($comment, $args, $depth) {
     extract($args, EXTR_SKIP);
-    $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+    $tag = ('div' === $args['style']) ? 'div' : 'li';
     $show_avatars = get_option('show_avatars');
     ?>
     <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(empty($args['has_children']) ? 'parent' : '', $comment); ?>>
-    <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-        <?php if (0 != $args['avatar_size'] && $show_avatars) { ?>
-            <div class="sp-comment-avatar">
-                <?php echo get_avatar($comment, $args['avatar_size']); ?>
-            </div>
-        <?php } ?>
-
-        <div class="sp-comment-content">
-            <div class="comment-header">
-                <div class="comment-author vcard">
-                    <?php
-                    echo sprintf('<b class="fn">%s</b>', get_comment_author_link($comment));
-                    echo " - ";
-                    ?>
-                    <a href="<?php echo esc_url(get_comment_link($comment, $args)); ?>">
-                        <time datetime="<?php comment_time('c'); ?>">
-                            <?php
-                            echo get_comment_date('', $comment);
-                            ?>
-                        </time>
-                    </a>
+        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+            <?php if (0 != $args['avatar_size'] && $show_avatars) { ?>
+                <div class="sp-comment-avatar">
+                    <?php echo get_avatar($comment, $args['avatar_size']); ?>
                 </div>
+            <?php } ?>
 
-                <?php
-                comment_reply_link(array_merge($args, array(
-                    'add_below' => 'div-comment',
-                    'depth' => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'before' => '<div class="reply">',
-                    'after' => '</div>'
-                )));
-                ?>
+            <div class="sp-comment-content">
+                <div class="comment-header">
+                    <div class="comment-author vcard">
+                        <?php
+                        echo sprintf('<b class="fn">%s</b>', get_comment_author_link($comment));
+                        echo " - ";
+                        ?>
+                        <a href="<?php echo esc_url(get_comment_link($comment, $args)); ?>">
+                            <time datetime="<?php comment_time('c'); ?>">
+                                <?php
+                                echo get_comment_date('', $comment);
+                                ?>
+                            </time>
+                        </a>
+                    </div>
 
-                <!-- .comment-author -->
+                    <?php
+                    comment_reply_link(array_merge($args, array(
+                        'add_below' => 'div-comment',
+                        'depth' => $depth,
+                        'max_depth' => $args['max_depth'],
+                        'before' => '<div class="reply">',
+                        'after' => '</div>'
+                    )));
+                    ?>
 
-                <?php if ('0' == $comment->comment_approved) : ?>
-                    <p class="comment-awaiting-moderation">
-                        <?php _e('Your comment is awaiting moderation.', 'viral-mag'); ?>
-                    </p>
-                <?php endif; ?>
+                    <!-- .comment-author -->
 
+                    <?php if ('0' == $comment->comment_approved): ?>
+                        <p class="comment-awaiting-moderation">
+                            <?php _e('Your comment is awaiting moderation.', 'viral-mag'); ?>
+                        </p>
+                    <?php endif; ?>
+
+                </div>
+                <!-- .comment-meta -->
+
+                <div class="comment-content">
+                    <?php comment_text(); ?>
+                </div>
+                <!-- .comment-content -->
+                <?php edit_comment_link(__('Edit', 'viral-mag'), '<div class="edit-link">', '</div>'); ?>
             </div>
-            <!-- .comment-meta -->
-
-            <div class="comment-content">
-                <?php comment_text(); ?>
-            </div>
-            <!-- .comment-content -->
-            <?php edit_comment_link(__('Edit', 'viral-mag'), '<div class="edit-link">', '</div>'); ?>
-        </div>
-        <!-- .comment-metadata -->
-    </article>
-    <!-- .comment-body -->
-    <?php
+            <!-- .comment-metadata -->
+        </article>
+        <!-- .comment-body -->
+        <?php
 }
 
 /* Convert hexdec color string to rgb(a) string */

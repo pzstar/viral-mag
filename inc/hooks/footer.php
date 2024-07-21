@@ -27,7 +27,7 @@ if (!function_exists('viral_mag_main_footer')) {
                             if (is_active_sidebar('viral-mag-footer' . $i)) {
                                 ?>
                                 <div class="vm-footer vm-footer<?php echo absint($i); ?>">
-                                    <?php dynamic_sidebar('viral-mag-footer' . $i); ?>  
+                                    <?php dynamic_sidebar('viral-mag-footer' . $i); ?>
                                 </div>
                                 <?php
                             }

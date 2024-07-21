@@ -9,7 +9,8 @@ get_header();
 
 <div class="vm-container">
 
-    <?php while (have_posts()) : the_post(); ?>
+    <?php while (have_posts()):
+        the_post(); ?>
 
         <?php the_content(); ?>
 

@@ -2,11 +2,11 @@
     <div class="welcome-manual-setup">
         <h3><?php echo esc_html__('Manual Setup', 'viral-mag'); ?></h3>
         <ol>
-            <li><?php printf(esc_html__('Install and activate "Elementor" and "Hash Elements" plugin from %s.', 'viral-mag'), '<a href="' . admin_url('admin.php?page=viral-mag-welcome&section=recommended_plugins') . '" target="_blank">' . esc_html__('Recommended Plugin page', 'viral-mag') . '</a>'); ?></li><br/>
-            <li><?php echo esc_html__('Create a new page with Page Template as "Elementor Full Width" in the right sidebar and save it.', 'viral-mag'); ?></li><br/>
-            <li><?php echo esc_html__('Now edit the page with Elementor. Drag and drop the news elements in the Elementor to create your own design.', 'viral-mag'); ?></li><br/>
-            <li><?php echo esc_html__('Now go to Appearance > Customize > Homepage Settings and choose "A static page" for "Your latest posts" and select the created page for "Home Page" option.', 'viral-mag'); ?> </li><br/>
-            <li><?php echo esc_html__('Go to Appearance > Customzer to customizer the header, footer and various theme settings.', 'viral-mag'); ?> </li><br/>
+            <li><?php printf(esc_html__('Install and activate "Elementor" and "Hash Elements" plugin from %s.', 'viral-mag'), '<a href="' . admin_url('admin.php?page=viral-mag-welcome&section=recommended_plugins') . '" target="_blank">' . esc_html__('Recommended Plugin page', 'viral-mag') . '</a>'); ?></li><br />
+            <li><?php echo esc_html__('Create a new page with Page Template as "Elementor Full Width" in the right sidebar and save it.', 'viral-mag'); ?></li><br />
+            <li><?php echo esc_html__('Now edit the page with Elementor. Drag and drop the news elements in the Elementor to create your own design.', 'viral-mag'); ?></li><br />
+            <li><?php echo esc_html__('Now go to Appearance > Customize > Homepage Settings and choose "A static page" for "Your latest posts" and select the created page for "Home Page" option.', 'viral-mag'); ?> </li><br />
+            <li><?php echo esc_html__('Go to Appearance > Customzer to customizer the header, footer and various theme settings.', 'viral-mag'); ?> </li><br />
         </ol>
         <p style="margin-bottom: 0"><?php printf(esc_html__('For detailed documentation, please visit %s.', 'viral-mag'), '<a href="https://hashthemes.com/documentation/viral-mag-documentation/#HomePageSetup" target="_blank">' . esc_html__('Documentation Page', 'viral-mag') . '</a>'); ?></p>
     </div>

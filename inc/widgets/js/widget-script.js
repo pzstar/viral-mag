@@ -6,8 +6,8 @@ function viral_mag_upload_media_image(selector) {
         event.preventDefault();
 
         var imgContainer = jQuery(this).closest('.attachment-media-view').find('.thumbnail-image'),
-                placeholder = jQuery(this).closest('.attachment-media-view').find('.placeholder'),
-                imgIdInput = jQuery(this).siblings('.upload-id');
+            placeholder = jQuery(this).closest('.attachment-media-view').find('.placeholder'),
+            imgIdInput = jQuery(this).siblings('.upload-id');
 
         // Create a new media frame
         frame = wp.media({
@@ -42,8 +42,8 @@ function viral_mag_delete_media_image(selector) {
 
         event.preventDefault();
         var imgContainer = jQuery(this).closest('.attachment-media-view').find('.thumbnail-image'),
-                placeholder = jQuery(this).closest('.attachment-media-view').find('.placeholder'),
-                imgIdInput = jQuery(this).siblings('.upload-id');
+            placeholder = jQuery(this).closest('.attachment-media-view').find('.placeholder'),
+            imgIdInput = jQuery(this).siblings('.upload-id');
 
         // Clear out the preview image
         imgContainer.find('img').remove();

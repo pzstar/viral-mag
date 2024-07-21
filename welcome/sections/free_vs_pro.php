@@ -33,7 +33,8 @@
     <tr>
         <td>
             <span><?php esc_html_e('1) One Click Demo Import', 'viral-mag'); ?></span>
-            <p><?php esc_html_e('With one-click demo import, you can install the demo content with just one click. The Premium version has 13+ ready-made demo to choose from.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('With one-click demo import, you can install the demo content with just one click. The Premium version has 13+ ready-made demo to choose from.', 'viral-mag'); ?></p>
+        </td>
         <td><?php esc_html_e('6 Demos', 'viral-mag'); ?></td>
         <td><?php esc_html_e('13 Demos', 'viral-mag'); ?></td>
     </tr>
@@ -72,14 +73,16 @@
     <tr>
         <td>
             <span><?php esc_html_e('6) Multiple Header Layouts and Settings', 'viral-mag'); ?> - <a href="https://hashthemes.com/documentation/viral-pro-documentation/#III)MainHeader" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('Multiple header variants in the theme are bound to make navigating your website fun & dynamic. Choose between 7 differently designed headers. We have included the most popular header layouts that fit your needs.', 'viral-mag'); ?></p></td>
+            <p><?php esc_html_e('Multiple header variants in the theme are bound to make navigating your website fun & dynamic. Choose between 7 differently designed headers. We have included the most popular header layouts that fit your needs.', 'viral-mag'); ?></p>
+        </td>
         <td><?php esc_html_e('2 Styles', 'viral-mag'); ?></td>
         <td><?php esc_html_e('7 Styles', 'viral-mag'); ?></td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('7) Top Header Bar', 'viral-mag'); ?> - <a href="https://hashthemes.com/documentation/viral-pro-documentation/#II)TopHeader" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('Viral Pro comes with an option for the top bar where you can add contact address, social icon, language picker, ticker or any informative texts.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('Viral Pro comes with an option for the top bar where you can add contact address, social icon, language picker, ticker or any informative texts.', 'viral-mag'); ?></p>
+        </td>
         <td><?php esc_html_e('Basic', 'viral-mag'); ?></td>
         <td><?php esc_html_e('Advanced', 'viral-mag'); ?></td>
     </tr>
@@ -166,14 +169,16 @@
     <tr>
         <td>
             <span><?php esc_html_e('18) Front Page 50+ Magazine Blocks', 'viral-mag'); ?> - <a href="https://demo.hashthemes.com/viral-pro/#block-styles" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('The theme has a huge collection of ready to use blocks with tons of options. Play with these blocks, build your own layout, change the background and colors, hide, and show different elements. Have it your Way!', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('The theme has a huge collection of ready to use blocks with tons of options. Play with these blocks, build your own layout, change the background and colors, hide, and show different elements. Have it your Way!', 'viral-mag'); ?></p>
+        </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('19) Ajax Tabs and Pagination for Magazine Blocks', 'viral-mag'); ?> - <a href="https://demo.hashthemes.com/viral-pro/#ajax-loader" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('Speed up your website by loading minimum content and then displaying them with Ajax Tabs and Pagination (Numbered Page, Prev/Next, Load More and Load on Scroll).', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('Speed up your website by loading minimum content and then displaying them with Ajax Tabs and Pagination (Numbered Page, Prev/Next, Load More and Load on Scroll).', 'viral-mag'); ?></p>
+        </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="<?php esc_attr_e('No', 'viral-mag'); ?>"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
     </tr>
@@ -204,21 +209,24 @@
     <tr>
         <td>
             <span><?php esc_html_e('23) Advanced Blog Settings', 'viral-mag'); ?> - <a href="https://hashthemes.com/documentation/viral-pro-documentation/#BlogPageSettings" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('The Premium version has an advanced blog page setting option. The option allows to show or hide each element of the blog.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('The Premium version has an advanced blog page setting option. The option allows to show or hide each element of the blog.', 'viral-mag'); ?></p>
+        </td>
         <td><?php esc_html_e('Basic', 'viral-mag'); ?></td>
         <td><?php esc_html_e('Advanced', 'viral-mag'); ?></td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('24) Blog/Archive Layouts', 'viral-mag'); ?> - <a href="https://demo.hashthemes.com/viral-pro/#archive-demos" target="_blank"><?php esc_html_e('View Demo', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('7 Archive Layouts to showcase your content. Choose from columns, lists, and mosaic layout variations that are suited for your need.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('7 Archive Layouts to showcase your content. Choose from columns, lists, and mosaic layout variations that are suited for your need.', 'viral-mag'); ?></p>
+        </td>
         <td>2</td>
         <td>7</td>
     </tr>
     <tr>
         <td>
             <span><?php esc_html_e('25) Single Article/Post Layouts', 'viral-mag'); ?> - <a href="https://demo.hashthemes.com/viral-pro/#single-demos" target="_blank"><?php esc_html_e('View Demo', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('The theme has 7 differently designed article pages suited for different needs. Each or every post can be shown with different layout and with or without the sidebar. Additionally, the theme has video, audio, gallery, link and standard post formats.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('The theme has 7 differently designed article pages suited for different needs. Each or every post can be shown with different layout and with or without the sidebar. Additionally, the theme has video, audio, gallery, link and standard post formats.', 'viral-mag'); ?></p>
+        </td>
         <td>2</td>
         <td>7</td>
     </tr>
@@ -257,7 +265,8 @@
     <tr>
         <td>
             <span><?php esc_html_e('30) Advertising & Monetization', 'viral-mag'); ?> - <a href="https://hashthemes.com/articles/adding-widgets-above-and-below-front-page-section/" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('Want to monetize your content? Adding image banner ads or Adsense Code is easy with Viral Pro. There are numerous spots where you can display your ads easily using widgets.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('Want to monetize your content? Adding image banner ads or Adsense Code is easy with Viral Pro. There are numerous spots where you can display your ads easily using widgets.', 'viral-mag'); ?></p>
+        </td>
         <td><?php esc_html_e('Basic', 'viral-mag'); ?></td>
         <td><?php esc_html_e('Advanced', 'viral-mag'); ?></td>
     </tr>
@@ -296,7 +305,8 @@
     <tr>
         <td>
             <span><?php esc_html_e('35) Advanced Footer Setting', 'viral-mag'); ?> - <a href="https://hashthemes.com/documentation/viral-pro-documentation/#FooterSettings" target="_blank"><?php esc_html_e('Detail', 'viral-mag'); ?></a></span>
-            <p><?php esc_html_e('The premium version has the option to choose from 15 footer columns layout and customize the background and text colors.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('The premium version has the option to choose from 15 footer columns layout and customize the background and text colors.', 'viral-mag'); ?></p>
+        </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="<?php esc_attr_e('No', 'viral-mag'); ?>"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="<?php esc_attr_e('Yes', 'viral-mag'); ?>"></td>
     </tr>
@@ -335,7 +345,8 @@
     <tr>
         <td>
             <span><?php esc_html_e('40) Translation Ready', 'viral-mag'); ?></span>
-            <p><?php esc_html_e('Both the free and pro versions are fully translation ready.', 'viral-mag'); ?></td>
+            <p><?php esc_html_e('Both the free and pro versions are fully translation ready.', 'viral-mag'); ?></p>
+        </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>

@@ -48,10 +48,11 @@ $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
     <div class="vm-site-wrapper">
         <div id="primary" class="content-area">
 
-            <?php if (have_posts()) : ?>
+            <?php if (have_posts()): ?>
 
                 <div class="site-main-loop">
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()):
+                        the_post(); ?>
 
                         <?php
                         /*
@@ -68,11 +69,11 @@ $viral_mag_show_title = get_theme_mod('viral_mag_show_title', true);
                 the_posts_pagination(array(
                     'prev_text' => esc_html__('Prev', 'viral-mag'),
                     'next_text' => esc_html__('Next', 'viral-mag'),
-                        )
+                )
                 );
                 ?>
 
-            <?php else : ?>
+            <?php else: ?>
 
                 <?php get_template_part('template-parts/content', 'none'); ?>
 

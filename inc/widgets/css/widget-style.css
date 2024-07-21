@@ -150,7 +150,7 @@ img {
     background: #EEE;
 }
 
-.vm-widget-tab>div {
+.vm-widget-tab > div {
     padding: 13px;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -161,7 +161,7 @@ img {
     font-weight: bold;
 }
 
-.vm-widget-tab>div.active {
+.vm-widget-tab > div.active {
     background: #0073aa;
     color: #FFF;
 }
@@ -185,11 +185,11 @@ img {
     top: 50%;
 }
 
-.vm-image-label input[type=radio]+img {
+.vm-image-label input[type=radio] + img {
     border: 3px solid #EEE;
 }
 
-.vm-image-label input[type=radio]:checked+img {
+.vm-image-label input[type=radio]:checked + img {
     border: 3px solid #0073aa;
 }
 
@@ -258,12 +258,12 @@ img {
     position: relative;
 }
 
-.vm-color-widget .button.button-small{
+.vm-color-widget .button.button-small {
     min-height: 30px;
     margin-left: 6px;
 }
 
-.vm-color-widget .wp-picker-container{
+.vm-color-widget .wp-picker-container {
     margin-top: 2px;
 }
 
@@ -350,7 +350,7 @@ img {
 
 .rwmb-label,
 .rwmb-input,
-.rwmb-label~.rwmb-input {
+.rwmb-label ~ .rwmb-input {
     float: none;
     width: auto;
 }
@@ -404,7 +404,7 @@ img {
     -webkit-box-sizing: border-box;
 }
 
-.rwmb-color-wrapper .button.button-small.wp-picker-clear{
+.rwmb-color-wrapper .button.button-small.wp-picker-clear {
     min-height: 30px;
     margin-left: 6px
 }
@@ -472,7 +472,7 @@ img {
     z-index: 100005;
 }
 
-.wp-customizer  #vm-wp-editor-widget-container {
+.wp-customizer #vm-wp-editor-widget-container {
     width: 40%;
     max-width: none;
     top: 0;
@@ -485,7 +485,7 @@ img {
     bottom: 0;
 }
 
-body.elementor-editor-active .vm-wp-editor-widget-update-close{
+body.elementor-editor-active .vm-wp-editor-widget-update-close {
     display: inline-block;
     text-decoration: none;
     font-size: 13px;
@@ -506,15 +506,15 @@ body.elementor-editor-active .vm-wp-editor-widget-update-close{
     margin-top: 20px;
 }
 
-#wpeditorwidget_ifr{
+#wpeditorwidget_ifr {
     min-height: 200px;
 }
 
-.vm-form-row > label{
+.vm-form-row > label {
     display: block;
 }
 
-.vm-form-row input[type="checkbox"] + label{
+.vm-form-row input[type="checkbox"] + label {
     display: inline;
 }
 
@@ -544,7 +544,7 @@ body.elementor-editor-active .vm-wp-editor-widget-update-close{
     width: 50%;
 }
 
-.vm-label-heading  {
+.vm-label-heading {
     background: #F6F6F6;
     padding: 10px;
     display: block;
@@ -939,6 +939,6 @@ a[href="admin.php?page=elementor_custom_fonts"],
 a[href="admin.php?page=elementor_custom_icons"],
 a[href="admin.php?page=elementor_custom_code"],
 a[href="admin.php?page=e-form-submissions"],
-#elementor-notice-bar{
+#elementor-notice-bar {
     display: none !important;
 }

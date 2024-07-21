@@ -197,9 +197,9 @@ jQuery(function ($) {
 
     function startTime() {
         var today = new Date(),
-                h = checkTime(today.getHours()),
-                m = checkTime(today.getMinutes()),
-                s = checkTime(today.getSeconds());
+            h = checkTime(today.getHours()),
+            m = checkTime(today.getMinutes()),
+            s = checkTime(today.getSeconds());
         $('.vm-time').html(h + ":" + m + ":" + s);
         t = setTimeout(function () {
             startTime()

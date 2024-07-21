@@ -1,16 +1,16 @@
 function viralMagDynamicCss(control, style) {
     jQuery('style.' + control).remove();
     jQuery('head').append(
-            '<style class="' + control + '">:root{' + style + '}</style>'
-            );
+        '<style class="' + control + '">:root{' + style + '}</style>'
+    );
 }
 
 function viral_mag_dynamic_css(control, style) {
     jQuery('style.' + control).remove();
 
     jQuery('head').append(
-            '<style class="' + control + '">' + style + '</style>'
-            );
+        '<style class="' + control + '">' + style + '</style>'
+    );
 }
 
 function viralMagLightenDarkenColor(hex, lum) {

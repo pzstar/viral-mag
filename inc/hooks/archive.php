@@ -36,24 +36,25 @@ if (!function_exists('viral_mag_home_content')) {
             <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
-                    <?php if (have_posts()) : ?>
+                    <?php if (have_posts()): ?>
 
                         <div class="site-main-loop">
                             <?php
-                            while (have_posts()) : the_post();
+                            while (have_posts()):
+                                the_post();
                                 viral_mag_content_summary();
                             endwhile;
                             ?>
                         </div>
                         <?php
                         the_posts_pagination(
-                                array(
-                                    'prev_text' => esc_html__('Prev', 'viral-mag'),
-                                    'next_text' => esc_html__('Next', 'viral-mag'),
-                                )
+                            array(
+                                'prev_text' => esc_html__('Prev', 'viral-mag'),
+                                'next_text' => esc_html__('Next', 'viral-mag'),
+                            )
                         );
 
-                    else :
+                    else:
                         get_template_part('template-parts/content', 'none');
                     endif;
                     ?>
@@ -121,7 +122,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
         }
         ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?> <?php echo viral_mag_get_schema_attribute('article'); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(array('viral-mag-hentry', 'blog-layout1')); ?>         <?php echo viral_mag_get_schema_attribute('article'); ?>>
             <div class="vm-post-wrapper">
                 <?php if (has_post_thumbnail()): ?>
                     <figure class="entry-figure">
@@ -139,7 +140,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
                 <div class="vm-post-content">
 
                     <header class="entry-header">
-                        <?php if ('post' == get_post_type() && $viral_mag_blog_date) : ?>
+                        <?php if ('post' == get_post_type() && $viral_mag_blog_date): ?>
                             <div class="vm-post-date">
                                 <?php
                                 $post_date = $viral_mag_is_updated_date ? get_the_modified_date('d') : get_the_date('d');
@@ -150,7 +151,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
                                         <?php echo $post_date; ?>
                                     </span>
                                     <span class="vm-month-year">
-                                        <?php echo $post_month; ?> 
+                                        <?php echo $post_month; ?>
                                     </span>
                                 </span>
                             </div><!-- .entry-meta -->
@@ -251,7 +252,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
                 <?php endif; ?>
 
                 <div class="entry-body vm-clearfix">
-                    <?php if ('post' == get_post_type() && ($viral_mag_blog_date || $viral_mag_blog_author || $viral_mag_blog_comment)) : ?>
+                    <?php if ('post' == get_post_type() && ($viral_mag_blog_date || $viral_mag_blog_author || $viral_mag_blog_comment)): ?>
                         <div class="vm-post-info">
                             <?php
                             $avatar = get_avatar(get_the_author_meta('ID'), 48);
@@ -259,7 +260,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
                             $post_month = $viral_mag_is_updated_date ? get_the_modified_date('M') : get_the_date('M');
 
                             $author = sprintf(
-                                    esc_html_x('By %s', 'post author', 'viral-mag'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+                                esc_html_x('By %s', 'post author', 'viral-mag'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
                             );
                             if ($viral_mag_blog_date) {
                                 ?>
@@ -353,9 +354,10 @@ if (!function_exists('viral_mag_search_content')) {
                 <div id="primary" class="content-area">
 
                     <?php
-                    if (have_posts()) :
+                    if (have_posts()):
                         /* Start the Loop */
-                        while (have_posts()) : the_post();
+                        while (have_posts()):
+                            the_post();
                             /**
                              * Run the loop for the search to output the results.
                              * If you want to overload this in a child theme then include a file
@@ -365,12 +367,12 @@ if (!function_exists('viral_mag_search_content')) {
 
                         endwhile;
                         the_posts_pagination(
-                                array(
-                                    'prev_text' => esc_html__('Prev', 'viral-mag'),
-                                    'next_text' => esc_html__('Next', 'viral-mag'),
-                                )
+                            array(
+                                'prev_text' => esc_html__('Prev', 'viral-mag'),
+                                'next_text' => esc_html__('Next', 'viral-mag'),
+                            )
                         );
-                    else :
+                    else:
                         get_template_part('template-parts/content', 'none');
                     endif;
                     ?>
@@ -417,10 +419,11 @@ if (!function_exists('viral_mag_archive_content')) {
             <div class="vm-site-wrapper">
                 <div id="primary" class="content-area">
 
-                    <?php if (have_posts()) : ?>
+                    <?php if (have_posts()): ?>
 
                         <div class="site-main-loop">
-                            <?php while (have_posts()) : the_post(); ?>
+                            <?php while (have_posts()):
+                                the_post(); ?>
 
                                 <?php
                                 viral_mag_content_summary();
@@ -432,11 +435,11 @@ if (!function_exists('viral_mag_archive_content')) {
                         the_posts_pagination(array(
                             'prev_text' => esc_html__('Prev', 'viral-mag'),
                             'next_text' => esc_html__('Next', 'viral-mag'),
-                                )
+                        )
                         );
                         ?>
 
-                    <?php else : ?>
+                    <?php else: ?>
 
                         <?php get_template_part('template-parts/content', 'none'); ?>
 

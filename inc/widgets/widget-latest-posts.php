@@ -191,7 +191,8 @@ class viral_mag_latest_posts extends WP_Widget {
 
             $query = new WP_Query($args);
 
-            while ($query->have_posts()) : $query->the_post();
+            while ($query->have_posts()):
+                $query->the_post();
                 ?>
                 <li class="vm-clearfix">
                     <?php
@@ -209,9 +210,9 @@ class viral_mag_latest_posts extends WP_Widget {
 
                     <div class="vm-lp-content" style="width:<?php echo $content_width; ?>%">
                         <<?php echo $title_html_tag; ?> class="<?php echo $class ?>" <?php echo $title_style; ?>>
-                        <a href="<?php echo the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
+                            <a href="<?php echo the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
                         </<?php echo $title_html_tag; ?>>
 
                         <?php if ($display_date) { ?>
@@ -226,7 +227,7 @@ class viral_mag_latest_posts extends WP_Widget {
                             </div>
                         <?php } ?>
                     </div>
-                </li>   
+                </li>
                 <?php
             endwhile;
             wp_reset_postdata();

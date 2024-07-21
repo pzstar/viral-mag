@@ -101,7 +101,7 @@ function viral_mag_breadcrumbs() {
 add_action('viral_mag_breadcrumbs', 'viral_mag_breadcrumbs');
 
 function viral_mag_convert_to_negative($arg) {
-    return('-' . $arg);
+    return ('-' . $arg);
 }
 
 function viral_mag_remove_category($query) {

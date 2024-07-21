@@ -11,7 +11,7 @@ if (!defined('VIRAL_MAG_VERSION')) {
     define('VIRAL_MAG_VERSION', $viral_mag_version);
 }
 
-if (!function_exists('viral_mag_setup')) :
+if (!function_exists('viral_mag_setup')):
 
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -223,7 +223,7 @@ function viral_mag_widgets_init() {
 
 add_action('widgets_init', 'viral_mag_widgets_init');
 
-if (!function_exists('viral_mag_fonts_url')) :
+if (!function_exists('viral_mag_fonts_url')):
 
     /**
      * Register Google fonts for Viral Mag.
@@ -285,7 +285,7 @@ if (!function_exists('viral_mag_fonts_url')) :
                     'family' => urlencode(implode('|', $fonts)),
                     'subset' => urlencode($subsets),
                     'display' => 'swap',
-                        ), 'https://fonts.googleapis.com/css');
+                ), 'https://fonts.googleapis.com/css');
             }
         }
 

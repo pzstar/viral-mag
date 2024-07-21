@@ -41,7 +41,7 @@ $wp_customize->add_control(new Viral_Mag_Repeater_Control($wp_customize, 'viral_
     'section' => 'viral_mag_social_section',
     'box_label' => esc_html__('Social Links', 'viral-mag'),
     'add_label' => esc_html__('Add New', 'viral-mag'),
-        ), array(
+), array(
     'icon' => array(
         'type' => 'icon',
         'label' => esc_html__('Select Icon', 'viral-mag'),
