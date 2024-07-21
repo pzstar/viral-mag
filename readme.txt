@@ -3,8 +3,8 @@ Contributors: hashthemes
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-color, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, rtl-language-support, theme-options, translation-ready, threaded-comments, blog, food-and-drink, news
 
 Requires at least: 5.6
-Tested up to: 6.5
-Stable tag: 2.0.42
+Tested up to: 6.6
+Stable tag: 2.0.43
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.43 - Jul 21, 2024 =
+* Compatibility test with WordPress 6.6
+
 = 2.0.42 - Jul 14, 2024 =
 * New demo added
 

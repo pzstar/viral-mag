@@ -99,17 +99,8 @@ if (!function_exists('viral_mag_setup')) :
         // Add support for Block Styles.
         add_theme_support('wp-block-styles');
 
-        // Add support for full and wide align images.
-        add_theme_support('align-wide');
-
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
-
-        add_theme_support('custom-line-height');
-
-        add_theme_support('custom-spacing');
-
-        add_theme_support('custom-units');
 
         /*
          * This theme styles the visual editor to resemble the theme style,
@@ -349,6 +340,31 @@ function viral_mag_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'viral_mag_scripts');
+
+add_action('wp_print_scripts', function () {
+    if (!is_admin()) {
+        return;
+    }
+    if (function_exists('get_current_screen') && get_current_screen() && get_current_screen()->is_block_editor() && get_current_screen()->base === 'post') {
+        echo '<style id="viral-mag-admin-css-vars">';
+        echo viral_mag_dymanic_styles();
+        echo '</style>';
+    }
+});
+
+/**
+ * Enqueue admin style
+ */
+function viral_mag_backend_scripts() {
+    $fonts_url = viral_mag_fonts_url();
+
+    // Load Fonts if necessary.
+    if ($fonts_url && function_exists('get_current_screen') && get_current_screen() && get_current_screen()->is_block_editor() && get_current_screen()->base === 'post') {
+        wp_enqueue_style('viral-mag-fonts', $fonts_url, array(), NULL);
+    }
+}
+
+add_action('admin_enqueue_scripts', 'viral_mag_backend_scripts');
 
 /**
  * BreadCrumb
