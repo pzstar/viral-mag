@@ -4,7 +4,7 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custo
 
 Requires at least: 5.6
 Tested up to: 6.6
-Stable tag: 2.0.45
+Stable tag: 2.0.46
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,13 +16,17 @@ Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 Viral Mag is WordPress theme designed to build a news portal, magazine, newspaper, personal blogging and publishing websites. It is a clean, fast, light weight, modern looking WordPress theme and is SEO Optimized,  WMPL, translation and RTL ready. Hence Viral Mag is suitable for newspapers, magazines, publishers, blogs, editors, news portals, reviews and any creative websites. Viral Mag can be used with the most popular pagebuilder plugin Elementor to create beautiful and stunning websites alongside with our plugin Hash Elements that provides dozens of ready made magazine elements for Elementor. The theme is highly customizable with unlimited color options, multiple header layouts, multiple archive page layouts, multiple single post layouts and many more. Apart from that the theme allows you to selectively show/hide various elements of the archive, blog and article page. As typography plays a vital role in any website, Viral Mag allows you to customize any text of the website with more than 800+ Google fonts.
 
 == Installation ==
-	
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
 
 == Changelog ==
+= 2.0.46 - Sep 10, 2024 =
+* Minor bug fixes
+* pot file updated
+
 = 2.0.45 - Aug 15, 2024 =
 * Pro demo added
 * Excerpt showing styles fixed

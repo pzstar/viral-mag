@@ -509,6 +509,10 @@ body.toplevel_page_viral-mag-welcome #wpfooter a {
     text-decoration: none;
 }
 
+.viral-mag-notice-star {
+    color: #ffa534;
+}
+
 @media screen and (max-width:782px) {
 
     .welcome-wrap {
