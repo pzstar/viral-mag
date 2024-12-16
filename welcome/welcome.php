@@ -39,7 +39,7 @@ if (!class_exists('Viral_Mag_Welcome')):
                     'name' => 'Elementor',
                     'slug' => 'elementor',
                     'filename' => 'elementor',
-                    'thumb_path' => 'https://ps.w.org/elementor/assets/icon-256x256.png'
+                    'thumb_path' => 'https://ps.w.org/elementor/assets/icon-256x256.gif'
                 ),
                 'hash-form' => array(
                     'name' => 'Hash Form - Drag & Drop Form Builder',
