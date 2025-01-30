@@ -314,7 +314,6 @@ if (!class_exists('Viral_Mag_Welcome')):
             if (!get_option('viral_mag_first_activation')) {
                 update_option('viral_mag_first_activation', time());
             }
-            ;
 
             if (get_option('viral_mag_hide_notice') && !$this->is_dismissed('welcome')) {
                 delete_option('viral_mag_hide_notice');

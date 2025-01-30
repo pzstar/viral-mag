@@ -4,11 +4,11 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custo
 
 Requires at least: 5.6
 Tested up to: 6.7
-Stable tag: 2.0.49
+Stable tag: 2.0.50
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Viral Mag WordPress Theme copyright HashThemes 2024
+Viral Mag WordPress Theme copyright HashThemes 2025
 Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
@@ -23,6 +23,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.50 - Jan 30, 2025 =
+* Christmas & New Year Discount banner removed on welcome page
+
 = 2.0.49 - Dec 23, 2024 =
 * Christmas & New Year Discount banner added on welcome page
 
