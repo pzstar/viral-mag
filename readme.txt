@@ -1,10 +1,9 @@
 === Viral Mag===
 Contributors: hashthemes
-Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-color, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, rtl-language-support, theme-options, translation-ready, threaded-comments, blog, food-and-drink, news
-
-Requires at least: 5.6
+Requires at least: 6.3
 Tested up to: 6.7
 Stable tag: 2.0.50
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
