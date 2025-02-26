@@ -213,7 +213,7 @@ $wp_customize->add_setting('viral_mag_sidebar_title_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_sidebar_title_typography', array(
     'label' => esc_html__('Widget Title Typography', 'viral-mag'),
-    'description' => __('Select how you want your widget title to appear. This settings applies for sidebar and footer widget titles', 'viral-mag'),
+    'description' => esc_html__('Select how you want your widget title to appear. This settings applies for sidebar and footer widget titles', 'viral-mag'),
     'section' => 'viral_mag_sidebar_settings_section',
     'settings' => array(
         'family' => 'viral_mag_sidebar_title_family',

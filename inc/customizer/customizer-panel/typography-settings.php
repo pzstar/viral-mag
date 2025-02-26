@@ -61,7 +61,7 @@ $wp_customize->add_setting('viral_mag_body_color', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_body_typography', array(
     'label' => esc_html__('Body Typography', 'viral-mag'),
-    'description' => __('Select how you want your body to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your body to appear.', 'viral-mag'),
     'section' => 'viral_mag_body_typography',
     'settings' => array(
         'family' => 'viral_mag_body_family',
@@ -134,7 +134,7 @@ $wp_customize->add_setting('viral_mag_h_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h_typography', array(
     'label' => esc_html__('Header Typography', 'viral-mag'),
-    'description' => __('Select how you want your Header to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your Header to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h_family',
@@ -353,7 +353,7 @@ $wp_customize->add_setting('viral_mag_h1_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h1_typography', array(
     'label' => esc_html__('Header H1 Typography', 'viral-mag'),
-    'description' => __('Select how you want your H1 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H1 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h1_family',
@@ -415,7 +415,7 @@ $wp_customize->add_setting('viral_mag_h2_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h2_typography', array(
     'label' => esc_html__('Header H2 Typography', 'viral-mag'),
-    'description' => __('Select how you want your H2 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H2 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h2_family',
@@ -477,7 +477,7 @@ $wp_customize->add_setting('viral_mag_h3_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h3_typography', array(
     'label' => esc_html__('Header H3 Typography', 'viral-mag'),
-    'description' => __('Select how you want your H3 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H3 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h3_family',
@@ -539,7 +539,7 @@ $wp_customize->add_setting('viral_mag_h4_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h4_typography', array(
     'label' => esc_html__('Header H4 Typography', 'viral-mag'),
-    'description' => __('Select how you want your H4 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H4 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h4_family',
@@ -601,7 +601,7 @@ $wp_customize->add_setting('viral_mag_h5_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h5_typography', array(
     'label' => esc_html__('Header H5 Typography', 'viral-mag'),
-    'description' => __('Select how you want your H6 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H6 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h5_family',
@@ -663,7 +663,7 @@ $wp_customize->add_setting('viral_mag_h6_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h6_typography', array(
     'label' => esc_html__('Header H6 Typography', 'viral-mag'),
-    'description' => __('Select how you want your H6 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H6 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h6_family',
@@ -730,7 +730,7 @@ $wp_customize->add_setting('viral_mag_frontpage_block_title_letter_spacing', arr
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_frontpage_block_title_typography', array(
     'label' => esc_html__('Front Page Block Title Typography', 'viral-mag'),
-    'description' => __('Select how you want your frontpage block title to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your frontpage block title to appear.', 'viral-mag'),
     'section' => 'viral_mag_frontpage_block_title_typography',
     'settings' => array(
         'family' => 'viral_mag_frontpage_block_title_family',
@@ -798,7 +798,7 @@ $wp_customize->add_setting('viral_mag_frontpage_title_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_frontpage_title_typography', array(
     'label' => esc_html__('Front Page Post Title Typography', 'viral-mag'),
-    'description' => __('Select how you want your frontpage post title to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your frontpage post title to appear.', 'viral-mag'),
     'section' => 'viral_mag_frontpage_title_typography',
     'settings' => array(
         'family' => 'viral_mag_frontpage_title_family',

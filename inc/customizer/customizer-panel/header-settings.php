@@ -911,7 +911,7 @@ $wp_customize->add_setting('viral_mag_menu_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_menu_typography', array(
     'label' => esc_html__('Menu Typography', 'viral-mag'),
-    'description' => __('Select how you want your menu to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your menu to appear.', 'viral-mag'),
     'section' => 'viral_mag_menu_settings_section',
     'settings' => array(
         'family' => 'viral_mag_menu_family',
@@ -1073,7 +1073,7 @@ $wp_customize->add_setting('viral_mag_page_title_color', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_page_title_typography', array(
     'label' => esc_html__('Page Title Typography', 'viral-mag'),
-    'description' => __('Page/Post/Archive Titles', 'viral-mag'),
+    'description' => esc_html__('Page/Post/Archive Titles', 'viral-mag'),
     'section' => 'viral_mag_page_title_options',
     'settings' => array(
         'family' => 'viral_mag_page_title_family',
