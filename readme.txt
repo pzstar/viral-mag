@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 2.0.50
+Stable tag: 2.0.51
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.51 - Feb 28, 2025 =
+* Translation Text escaping issue fixed
+
 = 2.0.50 - Jan 30, 2025 =
 * Christmas & New Year Discount banner removed on welcome page
 
