@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 2.0.51
+Stable tag: 2.0.52
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,8 +12,7 @@ Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
 
-Viral Mag is WordPress theme designed to build a news portal, magazine, newspaper, personal blogging and publishing websites. It is a clean, fast, light weight, modern looking WordPress theme and is SEO Optimized,  WMPL, translation and RTL ready. Hence Viral Mag is suitable for newspapers, magazines, publishers, blogs, editors, news portals, reviews and any creative websites. Viral Mag can be used with the most popular pagebuilder plugin Elementor to create beautiful and stunning websites alongside with our plugin Hash Elements that provides dozens of ready made magazine elements for Elementor. The theme is highly customizable with unlimited color options, multiple header layouts, multiple archive page layouts, multiple single post layouts and many more. Apart from that the theme allows you to selectively show/hide various elements of the archive, blog and article page. As typography plays a vital role in any website, Viral Mag allows you to customize any text of the website with more than 800+ Google fonts.
-
+Create a bold, modern, and content-rich online presence with Viral Mag, a powerful and SEO-optimized WordPress magazine theme built for news portals, digital magazines, personal blogs, and publishing websites. Featuring a clean and lightweight design, Viral Mag delivers blazing-fast performance and a fully responsive layout that looks stunning on all devices. With Elementor compatibility and the Hash Elements plugin, you can easily craft visually striking, custom layouts using pre-designed magazine blocks—no coding required. Whether you're sharing the latest in technology, lifestyle, entertainment, fashion, or business, Viral Mag gives you complete control with multiple header styles, archive layouts, unlimited color options, and access to over 800 Google Fonts for refined typography. It’s translation-ready, supports RTL languages, and is WPML-compatible, making it perfect for reaching a global audience. Ideal for bloggers, editors, and publishers who want a professional, flexible, and high-performance platform to engage readers and grow their brand.
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -22,6 +21,10 @@ Viral Mag is WordPress theme designed to build a news portal, magazine, newspape
 
 
 == Changelog ==
+= 2.0.52 - Apr 8, 2025 =
+* backup pot file removed
+* Description updated
+
 = 2.0.51 - Feb 28, 2025 =
 * Translation Text escaping issue fixed
 
