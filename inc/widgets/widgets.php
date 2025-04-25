@@ -3,7 +3,14 @@
  *
  * @package Viral Mag
  */
-$viral_mag_active_widgets = array_keys(viral_mag_registered_widget_list());
+$viral_mag_active_widgets = array(
+    'widget-category',
+    'widget-contact-info',
+    'widget-latest-posts',
+    'widget-post-carousel-category',
+    'widget-post-list-category',
+    'widget-post-list'
+);
 
 if (is_array($viral_mag_active_widgets)) {
     foreach ($viral_mag_active_widgets as $viral_mag_widgets) {
@@ -11,17 +18,6 @@ if (is_array($viral_mag_active_widgets)) {
             require_once get_template_directory() . '/inc/widgets/' . $viral_mag_widgets . '.php';
         }
     }
-}
-
-function viral_mag_registered_widget_list() {
-    return array(
-        'widget-category' => esc_html__('Categories', 'viral-mag'),
-        'widget-contact-info' => esc_html__('Contact Info', 'viral-mag'),
-        'widget-latest-posts' => esc_html__('Latest Posts', 'viral-mag'),
-        'widget-post-carousel-category' => esc_html__('Post Carousel by Category', 'viral-mag'),
-        'widget-post-list-category' => esc_html__('Post Listing by Category', 'viral-mag'),
-        'widget-post-list' => esc_html__('Post Listing', 'viral-mag'),
-    );
 }
 
 function viral_mag_category_list() {
