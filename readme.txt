@@ -4,9 +4,9 @@ Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 
 Contributors: hashthemes
 Requires at least: 6.3
-Tested up to: 6.8
-Stable tag: 2.0.55
-Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 2.0.56
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.0.56 - Dec 07, 2025 =
+* Black Friday discount banner removed from welcome page
+
 = 2.0.55 - Nov 20, 2025 =
 * Black Friday discount banner added on welcome page
 
