@@ -5,7 +5,7 @@ Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.9
-Stable tag: 2.0.58
+Stable tag: 2.0.60
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.0.60 - Apr 1, 2026 =
+* New Demo Added
+
 = 2.0.58 - Jan 18, 2026 =
 * Christams and New Year discount banner removed from welcome page
 
