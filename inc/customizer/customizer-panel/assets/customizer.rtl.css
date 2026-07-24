@@ -107,12 +107,6 @@
     margin-bottom: 10px;
 }
 
-#accordion-section-viral-mag-doc-section .accordion-section-title .button,
-#accordion-section-viral-mag-demo-import-section .accordion-section-title .button {
-    float: left;
-    margin-top: -2px;
-}
-
 .rtl .control-section-pro-section .accordion-section-title .button {
     margin-right: 0;
     margin-left: 8px;
@@ -178,15 +172,8 @@
 }
 
 .ht-implink {
-    background: #0073aa;
-    padding: 5px 10px;
-    color: #FFF !important;
+    width: 100%;
     text-align: center;
-    display: block;
-    margin-top: 15px;
-    line-height: 1.2;
-    box-shadow: none;
-    font-style: normal;
     text-decoration: none;
 }
 

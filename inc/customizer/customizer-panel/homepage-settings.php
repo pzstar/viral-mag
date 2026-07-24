@@ -12,6 +12,7 @@ $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-m
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-doc-section', array(
     'title' => esc_html__('Documentation', 'viral-mag'),
     'priority' => 1000,
+    'class' => 'ht--single-row',
     'upgrade_text' => esc_html__('View', 'viral-mag'),
     'upgrade_url' => 'https://hashthemes.com/documentation/viral-mag-documentation/'
 )));
@@ -19,6 +20,7 @@ $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-m
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-demo-import-section', array(
     'title' => esc_html__('Import Demo Content', 'viral-mag'),
     'priority' => 999,
+    'class' => 'ht--single-row',
     'upgrade_text' => esc_html__('Import', 'viral-mag'),
     'upgrade_url' => admin_url('admin.php?page=viral-mag-welcome')
 )));
