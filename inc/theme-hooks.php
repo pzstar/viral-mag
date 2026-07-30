@@ -257,7 +257,7 @@ function viral_mag_premium_demo_config($demos) {
                 'elementor' => 'Elementor'
             )
         ),
-        'food' => array(
+        'food-pro' => array(
             'name' => 'Viral Pro - Food',
             'type' => 'pro',
             'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',

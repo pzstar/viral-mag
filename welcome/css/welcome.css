@@ -66,7 +66,6 @@
 
 .free-pro-demos a.button {
     padding: 0 20px;
-    line-height: 42px;
     font-weight: bold;
     margin-right: 20px;
 }
@@ -74,8 +73,8 @@
 .free-pro-demos a.button .dashicons {
     height: auto;
     width: auto;
-    line-height: 42px;
     margin-right: 8px;
+    color: #FFF !important;
 }
 
 .welcome-promo-banner {
@@ -199,7 +198,7 @@
     object-position: top center;
 }
 
-.welcome-demo-import-text .button{
+.welcome-demo-import-text .button {
     width: 100%;
     text-align: center;
     padding: 10px;
@@ -638,6 +637,7 @@ body.toplevel_page_viral-mag-welcome #wpfooter a {
         margin-bottom: 0;
     }
 }
+
 /*
 #toplevel_page_viral-mag-welcome .wp-menu-name:after{
     content: "40%\AOFF";
