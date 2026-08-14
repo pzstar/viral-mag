@@ -4,8 +4,10 @@
 
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-pro-section', array(
     'priority' => 0,
-    //'title' => esc_html__('Christmas & New Year Discount!', 'viral-mag'),
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-mag'),
+    'title' => esc_html__('One-time payment. Unlimited sites. Lifetime updates.', 'viral-mag'),
+    // Seasonal campaign: replace the title above with e.g.
+    // esc_html__('Christmas & New Year Discount!', 'viral-mag')
+    'upgrade_text' => esc_html__('Get Viral Pro - $69', 'viral-mag'),
     'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-customizer-button&utm_campaign=viral-mag-upgrade'
 )));
 

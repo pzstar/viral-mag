@@ -1,16 +1,24 @@
 <?php
 
-$viral_pro_features = '<ul class="upsell-features">
-	<li>' . esc_html__("14 more demos that can be imported with one click", "viral-mag") . '</li>
+$viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no renewal fees.", "viral-mag") . '</strong><br>' . esc_html__("Use Viral Pro on unlimited websites, keep every future update free, and get support replies in 10 hours or less.", "viral-mag") . '</p>
+    <ul class="upsell-features">
+	<li>' . esc_html__("11 more demos that can be imported with one click", "viral-mag") . '</li>
         <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "viral-mag") . '</li>
 	<li>' . esc_html__("50+ magazine blocks for customizer", "viral-mag") . '</li>
 	<li>' . esc_html__("Customizer home page section reorder", "viral-mag") . '</li>
 	<li>' . esc_html__("45+ magazine widgets for Elementor", "viral-mag") . '</li>
         <li>' . esc_html__("Ajax Tabs and Ajax Paginations for all Elementor widgets", "viral-mag") . '</li>
+	<li>' . esc_html__("12 title bar styles and 10 thumbnail hover effects for magazine blocks", "viral-mag") . '</li>
 	<li>' . esc_html__("7 header layouts with advanced settings", "viral-mag") . '</li>
         <li>' . esc_html__("7 differently designed Blog/Archive layouts", "viral-mag") . '</li>
 	<li>' . esc_html__("7 differently designed Article/Post layouts", "viral-mag") . '</li>
-	<li>' . esc_html__("22 custom widgets", "viral-mag") . '</li>
+	<li>' . esc_html__("23 custom widgets", "viral-mag") . '</li>
+	<li>' . esc_html__("Table of contents for single posts", "viral-mag") . '</li>
+	<li>' . esc_html__("NewsArticle structured data in JSON-LD with speakable markup", "viral-mag") . '</li>
+	<li>' . esc_html__("Google News sitemap", "viral-mag") . '</li>
+	<li>' . esc_html__("Speculative loading - the next article opens instantly", "viral-mag") . '</li>
+	<li>' . esc_html__("Icon library and Google font loading control", "viral-mag") . '</li>
+	<li>' . esc_html__("Print stylesheet for articles", "viral-mag") . '</li>
 	<li>' . esc_html__("GDPR compliance & cookies consent", "viral-mag") . '</li>
 	<li>' . esc_html__("In-built megaMenu", "viral-mag") . '</li>
 	<li>' . esc_html__("Advanced typography options", "viral-mag") . '</li>
@@ -25,11 +33,12 @@ $viral_pro_features = '<ul class="upsell-features">
         <li>' . esc_html__("Maintenance mode option", "viral-mag") . '</li>
         <li>' . esc_html__("Remove footer credit text", "viral-mag") . '</li>
 	</ul>
-	<a class="ht-implink button button-primary" href="' . admin_url('admin.php?page=viral-mag-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "viral-mag") . '</a>';
+	<a class="ht-implink button button-primary" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade" target="_blank">' . esc_html__("Get Viral Pro - $69", "viral-mag") . '</a>
+	<p style="text-align:center;margin:10px 0 0"><a href="' . admin_url('admin.php?page=viral-mag-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Compare Free vs Pro", "viral-mag") . '</a></p>';
 
 /* ============PRO FEATURES============ */
 $wp_customize->add_section('viral_pro_feature_section', array(
-	'title' => esc_html__('Pro Theme Features', 'viral-mag'),
+	'title' => esc_html__('Why Upgrade to Viral Pro?', 'viral-mag'),
 	'priority' => 0
 ));
 
