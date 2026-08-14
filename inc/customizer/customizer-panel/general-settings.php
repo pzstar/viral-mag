@@ -138,7 +138,7 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade',
+    'upgrade_url' => viral_mag_upgrade_url('general-options', 'viral-mag-customizer'),
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
@@ -173,7 +173,7 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade',
+    'upgrade_url' => viral_mag_upgrade_url('back-to-top', 'viral-mag-customizer'),
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 

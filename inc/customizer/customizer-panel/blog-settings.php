@@ -215,7 +215,7 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade',
+    'upgrade_url' => viral_mag_upgrade_url('blog', 'viral-mag-customizer'),
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
@@ -358,6 +358,30 @@ $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_ma
     'label' => esc_html__('Display Comments', 'viral-mag')
 )));
 
+$wp_customize->add_setting('viral_mag_single_post_preview', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Pro_Preview_Control($wp_customize, 'viral_mag_single_post_preview', array(
+    'section' => 'viral_mag_blog_settings_section',
+    'priority' => 99,
+    'label' => esc_html__('7 single post layouts in Viral Pro', 'viral-mag'),
+    'columns' => 3,
+    'images' => array(
+        'single-layouts/layout1.png',
+        'single-layouts/layout2.png',
+        'single-layouts/layout3.png',
+        'single-layouts/layout4.png',
+        'single-layouts/layout5.png',
+        'single-layouts/layout6.png',
+        'single-layouts/layout7.png'
+    ),
+    'more_count' => 0,
+    'upgrade_text' => esc_html__('Unlock these layouts', 'viral-mag'),
+    'upgrade_url' => viral_mag_upgrade_url('preview-single-post', 'viral-mag-customizer'),
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));
+
 $wp_customize->add_setting('viral_mag_single_upgrade_text', array(
     'sanitize_callback' => 'viral_mag_sanitize_text'
 ));
@@ -372,6 +396,6 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade',
+    'upgrade_url' => viral_mag_upgrade_url('single-post', 'viral-mag-customizer'),
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));

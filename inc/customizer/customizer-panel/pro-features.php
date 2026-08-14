@@ -33,7 +33,7 @@ $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no 
         <li>' . esc_html__("Maintenance mode option", "viral-mag") . '</li>
         <li>' . esc_html__("Remove footer credit text", "viral-mag") . '</li>
 	</ul>
-	<a class="ht-implink button button-primary" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-mag-link&utm_campaign=viral-mag-upgrade" target="_blank">' . esc_html__("Get Viral Pro - $69", "viral-mag") . '</a>
+	<a class="ht-implink button button-primary" href="' . esc_url(viral_mag_upgrade_url('why-upgrade-cta', 'viral-mag-customizer')) . '" target="_blank">' . esc_html__("Get Viral Pro - $69", "viral-mag") . '</a>
 	<p style="text-align:center;margin:10px 0 0"><a href="' . admin_url('admin.php?page=viral-mag-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Compare Free vs Pro", "viral-mag") . '</a></p>';
 
 /* ============PRO FEATURES============ */
@@ -49,6 +49,7 @@ $wp_customize->add_setting('viral_mag_hide_upgrade_notice', array(
 
 $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_hide_upgrade_notice', array(
 	'section' => 'viral_pro_feature_section',
+	'priority' => 20,
 	'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'viral-mag'),
 	'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'viral-mag')
 )));
@@ -60,6 +61,7 @@ $wp_customize->add_setting('viral_pro_features', array(
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_pro_features', array(
 	'settings' => 'viral_pro_features',
 	'section' => 'viral_pro_feature_section',
+	'priority' => 10,
 	'description' => $viral_pro_features,
 	'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
