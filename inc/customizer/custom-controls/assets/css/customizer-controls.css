@@ -1448,6 +1448,11 @@
     justify-content: space-between;
 }
 
+.control-section-ht--upgrade-section.ht--single-row h3 .button{
+    min-height: 30px;
+    line-height: 28px;
+}
+
 .control-section-ht--upgrade-section .accordion-section-title:after {
     display: none !important;
 }

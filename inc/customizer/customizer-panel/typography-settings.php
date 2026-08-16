@@ -828,3 +828,22 @@ $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-m
     'upgrade_url' => 'https://hashthemes.com/downloads/hash-custom-font-uploader/',
     'active_callback' => 'viral_mag_check_cfu'
 )));
+
+/* ============CONTEXTUAL UPSELL============ */
+
+$wp_customize->add_setting('viral_mag_typography_upgrade_text', array(
+    'sanitize_callback' => 'viral_mag_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_typography_upgrade_text', array(
+    'section' => 'viral_mag_body_typography',
+    'label' => esc_html__('For more typography options,', 'viral-mag'),
+    'choices' => array(
+        esc_html__('Separate typography for the site title and tagline', 'viral-mag'),
+        esc_html__('Table of contents title and list typography', 'viral-mag')
+    ),
+    'priority' => 100,
+    'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
+    'upgrade_url' => viral_mag_upgrade_url('typo-body', 'viral-mag-customizer'),
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));

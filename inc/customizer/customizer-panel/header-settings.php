@@ -143,8 +143,7 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     'section' => 'title_tagline',
     'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
-        esc_html__('Set typography for title & tagline individually', 'viral-mag'),
-        esc_html__('Set color for title & tagline individually', 'viral-mag'),
+        esc_html__('Set typography for title & tagline individually', 'viral-mag')
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
