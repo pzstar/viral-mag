@@ -198,10 +198,30 @@ $wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_ma
 
 /* SEO SECTION */
 $wp_customize->add_section('viral_mag_seo_section', array(
-    'title' => esc_html__('SEO', 'viral-mag'),
+    'title' => esc_html__('SEO and Performance', 'viral-mag'),
     'panel' => 'viral_mag_general_settings_panel',
     'priority' => 1000
 ));
+
+$wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-preloader-upgrade-section', array(
+    'title' => esc_html__('Preloader Settings', 'viral-mag'),
+    'panel' => 'viral_mag_general_settings_panel',
+    'priority' => 1001,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-mag'),
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_url' => viral_mag_upgrade_url('sec-preloader', 'viral-mag-customizer'),
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-toc-upgrade-section', array(
+    'title' => esc_html__('Table of Contents', 'viral-mag'),
+    'panel' => 'viral_mag_general_settings_panel',
+    'priority' => 1002,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-mag'),
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_url' => viral_mag_upgrade_url('sec-table-of-contents', 'viral-mag-customizer'),
+    'active_callback' => 'viral_mag_is_upgrade_notice_active'
+)));
 
 $wp_customize->add_setting('viral_mag_schema_markup', array(
     'sanitize_callback' => 'viral_mag_sanitize_checkbox',
@@ -256,10 +276,9 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
 
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-site-tools-upgrade-section', array(
     'title' => esc_html__('GDPR & Maintenance', 'viral-mag'),
-    'panel' => 'viral_mag_general_settings_panel',
-    'priority' => 1002,
+    'priority' => 36,
     'upgrade_text' => esc_html__('Get Pro', 'viral-mag'),
-    'class' => 'ht--single-row',
+    'class' => 'ht--single-row ht--pro-row',
     'upgrade_url' => viral_mag_upgrade_url('sec-gdpr-maintenance', 'viral-mag-customizer'),
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
@@ -268,16 +287,8 @@ $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-m
     'title' => esc_html__('Advertising & Monetization', 'viral-mag'),
     'priority' => 35,
     'upgrade_text' => esc_html__('Get Pro', 'viral-mag'),
-    'class' => 'ht--single-row',
+    'class' => 'ht--single-row ht--pro-row',
     'upgrade_url' => viral_mag_upgrade_url('sec-advertising', 'viral-mag-customizer'),
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 
-$wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-woocommerce-upgrade-section', array(
-    'title' => esc_html__('WooCommerce', 'viral-mag'),
-    'priority' => 36,
-    'upgrade_text' => esc_html__('Get Pro', 'viral-mag'),
-    'class' => 'ht--single-row',
-    'upgrade_url' => viral_mag_upgrade_url('sec-woocommerce', 'viral-mag-customizer'),
-    'active_callback' => 'viral_mag_is_upgrade_notice_active'
-)));
