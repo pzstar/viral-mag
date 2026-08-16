@@ -2,8 +2,8 @@
 
 $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no renewal fees.", "viral-mag") . '</strong><br>' . esc_html__("Use Viral Pro on unlimited websites, keep every future update free, and get support replies in 10 hours or less.", "viral-mag") . '</p>
     <ul class="upsell-features">
-	<li>' . esc_html__("11 more demos that can be imported with one click", "viral-mag") . '</li>
-        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "viral-mag") . '</li>
+	<li>' . esc_html__("17 ready-made demos that can be imported with one click", "viral-mag") . '</li>
+        <li>' . esc_html__("Elementor widgets built into the theme - no companion plugin needed", "viral-mag") . '</li>
 	<li>' . esc_html__("50+ magazine blocks for customizer", "viral-mag") . '</li>
 	<li>' . esc_html__("Customizer home page section reorder", "viral-mag") . '</li>
 	<li>' . esc_html__("45+ magazine widgets for Elementor", "viral-mag") . '</li>
@@ -28,10 +28,13 @@ $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no 
 	<li>' . esc_html__("Advanced footer setting", "viral-mag") . '</li>
 	<li>' . esc_html__("Advanced advertising & monetization options", "viral-mag") . '</li>
 	<li>' . esc_html__("WooCommerce compatible", "viral-mag") . '</li>
-	<li>' . esc_html__("Fully multilingual and translation ready", "viral-mag") . '</li>
-	<li>' . esc_html__("Fully RTL(right to left) languages compatible", "viral-mag") . '</li>
+	<li>' . esc_html__("Polylang compatible", "viral-mag") . '</li>
         <li>' . esc_html__("Maintenance mode option", "viral-mag") . '</li>
         <li>' . esc_html__("Remove footer credit text", "viral-mag") . '</li>
+	<li>' . esc_html__("Unlimited custom widget areas", "viral-mag") . '</li>
+	<li>' . esc_html__("Video, gradient and parallax backgrounds for front page sections", "viral-mag") . '</li>
+	<li>' . esc_html__("16 SVG shape dividers between front page sections", "viral-mag") . '</li>
+	<li>' . esc_html__("Front page sections with full screen height", "viral-mag") . '</li>
 	</ul>
 	<a class="ht-implink button button-primary" href="' . esc_url(viral_mag_upgrade_url('why-upgrade-cta', 'viral-mag-customizer')) . '" target="_blank">' . esc_html__("Get Viral Pro - $69", "viral-mag") . '</a>
 	<p style="text-align:center;margin:10px 0 0"><a href="' . admin_url('admin.php?page=viral-mag-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Compare Free vs Pro", "viral-mag") . '</a></p>';

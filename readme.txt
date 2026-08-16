@@ -1,11 +1,11 @@
 === Viral Mag===
-Viral Mag WordPress Theme, Copyright HashThemes 2025
+Viral Mag WordPress Theme, Copyright HashThemes 2026
 Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 
 Contributors: hashthemes
 Requires at least: 6.3
-Tested up to: 6.9
-Stable tag: 2.0.61
+Tested up to: 7.0
+Stable tag: 2.0.7
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,13 +19,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
-= 2.0.61 - Aug 14, 2026 =
+= 2.0.7 - Aug 16, 2026 =
 * Free vs Pro comparison rebuilt against Viral Pro 1.6.0 - table of contents, NewsArticle structured data, Google News sitemap, speculative loading, icon and font loading control and print stylesheet added; demo, widget and layout counts corrected - Updated
 * Customizer upgrade section now shows the price and licence terms up front with clearer calls to action - Changed
 * Upgrade notices checked against the premium theme; claims the free theme already provides have been removed - Fixed
 * GDPR & Maintenance, Advertising and WooCommerce upgrade sections added to the customizer - Added
 * Upgrade notices added to the Google Fonts, SEO and typography sections - Added
 * Button height inside single row upgrade sections - Fixed
+* Pro blog and archive layout previews added to the blog settings section - Added
+* Upgrade feature list expanded with premium features it was not mentioning - Added
 
 = 2.0.60 - Apr 1, 2026 =
 * New Demo Added
