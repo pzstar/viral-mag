@@ -5,7 +5,7 @@ Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 2.0.7
+Stable tag: 2.1.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
-= 2.0.7 - Aug 16, 2026 =
+= 2.1.0 - Aug 16, 2026 =
 * Free vs Pro comparison rebuilt against Viral Pro 1.6.0 - table of contents, NewsArticle structured data, Google News sitemap, speculative loading, icon and font loading control and print stylesheet added; demo, widget and layout counts corrected - Updated
 * Customizer upgrade section now shows the price and licence terms up front with clearer calls to action - Changed
 * Upgrade notices checked against the premium theme; claims the free theme already provides have been removed - Fixed
