@@ -4,8 +4,8 @@
 
 // Seasonal campaigns swap the banner copy automatically - see viral_mag_get_active_campaign().
 $viral_mag_campaign = viral_mag_get_active_campaign();
-$viral_mag_banner_title = $viral_mag_campaign ? $viral_mag_campaign['title'] : esc_html__('One-time payment. Unlimited sites. Lifetime updates.', 'viral-mag');
-$viral_mag_banner_button = $viral_mag_campaign ? $viral_mag_campaign['button'] : esc_html__('Get Viral Pro - $69', 'viral-mag');
+$viral_mag_banner_title = $viral_mag_campaign ? $viral_mag_campaign['title'] : esc_html__('One-time payment. Lifetime updates and support.', 'viral-mag');
+$viral_mag_banner_button = $viral_mag_campaign ? $viral_mag_campaign['button'] : esc_html__('Get Viral Pro - From $69', 'viral-mag');
 
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-pro-section', array(
     'priority' => 0,

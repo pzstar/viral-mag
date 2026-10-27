@@ -370,7 +370,7 @@ if (!function_exists('viral_mag_typography_css')) {
  */
 function viral_mag_upgrade_url($placement = '', $medium = 'viral-mag-link') {
     $args = array(
-        'utm_source' => 'wordpress',
+        'utm_source' => 'WordPress',
         'utm_medium' => $medium,
         'utm_campaign' => 'viral-mag-upgrade'
     );
@@ -400,7 +400,7 @@ function viral_mag_get_active_campaign() {
             'start' => '11-20',
             'end' => '12-02',
             'title' => esc_html__('Black Friday - our biggest discount of the year', 'viral-mag'),
-            'button' => esc_html__('Get Viral Pro - $69', 'viral-mag'),
+            'button' => esc_html__('Get Viral Pro - From $69', 'viral-mag'),
             'image' => 'blackfriday.jpg'
         ),
         array(
@@ -408,7 +408,7 @@ function viral_mag_get_active_campaign() {
             'start' => '12-15',
             'end' => '01-05',
             'title' => esc_html__('Christmas & New Year Sale', 'viral-mag'),
-            'button' => esc_html__('Get Viral Pro - $69', 'viral-mag'),
+            'button' => esc_html__('Get Viral Pro - From $69', 'viral-mag'),
             'image' => 'christmas-sale.jpg'
         )
     ));

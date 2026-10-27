@@ -134,7 +134,11 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
         esc_html__('16 animated preloaders, or upload your own image', 'viral-mag'),
-        esc_html__('Admin page custom logo', 'viral-mag')
+        esc_html__('Admin page custom logo', 'viral-mag'),
+        esc_html__('Corner radius for images, buttons, form fields and labels', 'viral-mag'),
+        esc_html__('Form field colors', 'viral-mag'),
+        esc_html__('Accessibility - keyboard focus outline and reduced-motion support', 'viral-mag'),
+        esc_html__('Header and footer code for analytics, tracking pixels and site verification', 'viral-mag')
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
@@ -284,7 +288,7 @@ $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-m
 )));
 
 $wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-ads-upgrade-section', array(
-    'title' => esc_html__('Advertising & Monetization', 'viral-mag'),
+    'title' => esc_html__('Advertisement Manager', 'viral-mag'),
     'priority' => 35,
     'upgrade_text' => esc_html__('Get Pro', 'viral-mag'),
     'class' => 'ht--single-row ht--pro-row',

@@ -253,7 +253,7 @@
 .social_googleplus,
 .social_tumblr,
 .social_tumbleupon,
-.social_wordpress,
+.social_word-press,
 .social_instagram,
 .social_dribbble,
 .social_vimeo,
@@ -276,7 +276,7 @@
 .social_googleplus_circle,
 .social_tumblr_circle,
 .social_stumbleupon_circle,
-.social_wordpress_circle,
+.social_word-press_circle,
 .social_instagram_circle,
 .social_dribbble_circle,
 .social_vimeo_circle,
@@ -299,7 +299,7 @@
 .social_googleplus_square,
 .social_tumblr_square,
 .social_stumbleupon_square,
-.social_wordpress_square,
+.social_word-press_square,
 .social_instagram_square,
 .social_dribbble_square,
 .social_vimeo_square,
@@ -1366,7 +1366,7 @@
     content: "\e098";
 }
 
-.social_wordpress:before {
+.social_word-press:before {
     content: "\e099";
 }
 
@@ -1458,7 +1458,7 @@
     content: "\e0af";
 }
 
-.social_wordpress_circle:before {
+.social_word-press_circle:before {
     content: "\e0b0";
 }
 
@@ -1550,7 +1550,7 @@
     content: "\e0c6";
 }
 
-.social_wordpress_square:before {
+.social_word-press_square:before {
     content: "\e0c7";
 }
 

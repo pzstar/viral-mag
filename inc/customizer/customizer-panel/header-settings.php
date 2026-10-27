@@ -410,6 +410,11 @@ $wp_customize->add_setting('viral_mag_th_upgrade_text', array(
 $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'viral_mag_th_upgrade_text', array(
     'section' => 'viral_mag_top_header_section',
     'label' => esc_html__('For more settings,', 'viral-mag'),
+    'choices' => array(
+        esc_html__('Top header builder with left, center and right elements', 'viral-mag'),
+        esc_html__('News ticker, search, login/account link, button and trending tags', 'viral-mag'),
+        esc_html__('Dismissible breaking news bar above the header', 'viral-mag')
+    ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
     'upgrade_url' => viral_mag_upgrade_url('top-header', 'viral-mag-customizer'),
@@ -711,6 +716,8 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
         esc_html__('7 header layouts', 'viral-mag'),
+        esc_html__('5 page title layouts with background image and overlay', 'viral-mag'),
+        esc_html__('Offcanvas panel colors', 'viral-mag'),
         esc_html__('More advanced options', 'viral-mag')
     ),
     'priority' => 100,

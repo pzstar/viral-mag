@@ -261,9 +261,12 @@ if (!function_exists('viral_mag_fonts_url')):
             $customizer_fonts['viral_mag_h6_family'] = 'Oswald';
         }
 
+        // Uploaded fonts win over Google fonts of the same name, so a self-hosted copy is never fetched from Google.
+        $custom_fonts = class_exists('Hash_Custom_Font_Uploader_Public') ? Hash_Custom_Font_Uploader_Public::get_all_fonts_names() : array();
+
         foreach ($customizer_fonts as $key => $value) {
             $font = get_theme_mod($key, $value);
-            if (array_key_exists($font, $google_fonts)) {
+            if (array_key_exists($font, $google_fonts) && !isset($custom_fonts[$font])) {
                 $customizer_font_family[] = $font;
             }
         }
@@ -420,3 +423,8 @@ require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
  * Dynamic Styles additions
  */
 require get_template_directory() . '/inc/style.php';
+
+/**
+ * Starter Content
+ */
+require get_template_directory() . '/inc/starter-content.php';

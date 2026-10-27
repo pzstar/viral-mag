@@ -198,6 +198,7 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     'choices' => array(
         esc_html__('More footer columns styles with up to 6 columns', 'viral-mag'),
         esc_html__('20+ widgets/blocks for footer', 'viral-mag'),
+        esc_html__('Footer bar with logo, footer menu and social icons', 'viral-mag'),
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),

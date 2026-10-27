@@ -212,6 +212,8 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
     'label' => esc_html__('For more options,', 'viral-mag'),
     'choices' => array(
         esc_html__('7 differently designed archive page layouts', 'viral-mag'),
+        esc_html__('Own blog layout for any category, tag or author page', 'viral-mag'),
+        esc_html__('Page numbers, Load More or infinite scroll pagination', 'viral-mag'),
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
@@ -393,6 +395,7 @@ $wp_customize->add_control(new Viral_Mag_Upgrade_Info_Control($wp_customize, 'vi
         esc_html__('7 differently designed single page layouts', 'viral-mag'),
         esc_html__('Sticky social share buttons', 'viral-mag'),
         esc_html__('Display related posts', 'viral-mag'),
+        esc_html__('Reading progress bar', 'viral-mag'),
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-mag'),
