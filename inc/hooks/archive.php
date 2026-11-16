@@ -131,7 +131,7 @@ if (!function_exists('viral_mag_blog_layout1')) {
                         ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="entry-thumb-container">
-                                <img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>">
+                                <?php if ($viral_mag_image) { ?><img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"><?php } ?>
                             </div>
                         </a>
                     </figure>
@@ -245,7 +245,7 @@ if (!function_exists('viral_mag_blog_layout2')) {
                         ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="entry-thumb-container">
-                                <img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>">
+                                <?php if ($viral_mag_image) { ?><img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"><?php } ?>
                             </div>
                         </a>
                     </figure>

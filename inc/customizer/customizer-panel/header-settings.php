@@ -57,11 +57,10 @@ $wp_customize->add_setting('viral_mag_hide_title', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control('viral_mag_hide_title', array(
-    'type' => 'checkbox',
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_hide_title', array(
     'section' => 'title_tagline',
     'label' => esc_html__('Hide Site Title', 'viral-mag')
-));
+)));
 
 $wp_customize->add_setting('viral_mag_hide_tagline', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
@@ -69,11 +68,10 @@ $wp_customize->add_setting('viral_mag_hide_tagline', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control('viral_mag_hide_tagline', array(
-    'type' => 'checkbox',
+$wp_customize->add_control(new Viral_Mag_Toggle_Control($wp_customize, 'viral_mag_hide_tagline', array(
     'section' => 'title_tagline',
     'label' => esc_html__('Hide Site Tagline', 'viral-mag')
-));
+)));
 
 $wp_customize->add_setting('viral_mag_tagline_position', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',

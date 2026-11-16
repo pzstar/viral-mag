@@ -73,7 +73,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                         if (isset($viral_mag_icon_array) && !empty($viral_mag_icon_array)) {
                             $icon_array = $viral_mag_icon_array;
                         } else {
-                            $icon_array = viral_mag_eleganticons_array();
+                            $icon_array = preg_filter('/^/', 'icofont-', viral_mag_icofont_icon_array());
                         }
 
                         foreach ($icon_array as $icon) {
@@ -540,7 +540,7 @@ function viral_mag_widgets_show_widget_field($instance = '', $widget_field = '',
                                                         if (isset($viral_mag_widgets_repeater_field['icon_array']) && !empty($viral_mag_widgets_repeater_field['icon_array'])) {
                                                             $icon_array = $viral_mag_widgets_repeater_field['icon_array'];
                                                         } else {
-                                                            $icon_array = viral_mag_icofont_icon_array();
+                                                            $icon_array = preg_filter('/^/', 'icofont-', viral_mag_icofont_icon_array());
                                                         }
                                                         foreach ($icon_array as $icon) {
                                                             $icon_class = $value == $icon ? 'icon-active' : '';

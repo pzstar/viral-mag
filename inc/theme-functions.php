@@ -388,8 +388,9 @@ function viral_mag_upgrade_url($placement = '', $medium = 'viral-mag-link') {
  * Replaces hand-editing the banner title and shipping a release for every
  * sale. Date windows are month-day, so they repeat every year.
  *
- * IMPORTANT: 'button' ships with the regular price. Set your actual sale price
- * there before a window opens, or the banner advertises a sale at full price.
+ * 'badge', 'title' and 'button' replace the upgrade card's copy while a
+ * window is open, and the card hides its list price. No prices or coupon
+ * codes go here.
  *
  * @return array|false Campaign array, or false outside every window.
  */
@@ -400,16 +401,18 @@ function viral_mag_get_active_campaign() {
             'start' => '11-20',
             'end' => '12-02',
             'title' => esc_html__('Black Friday - our biggest discount of the year', 'viral-mag'),
-            'button' => esc_html__('Get Viral Pro - From $69', 'viral-mag'),
-            'image' => 'blackfriday.jpg'
+            'badge' => esc_html__('Black Friday Sale', 'viral-mag'),
+            'button' => esc_html__('Get the Black Friday Deal', 'viral-mag'),
+            'image' => 'sale-blackfriday.jpg'
         ),
         array(
             'id' => 'newyear',
             'start' => '12-15',
             'end' => '01-05',
             'title' => esc_html__('Christmas & New Year Sale', 'viral-mag'),
-            'button' => esc_html__('Get Viral Pro - From $69', 'viral-mag'),
-            'image' => 'christmas-sale.jpg'
+            'badge' => esc_html__('Holiday Sale', 'viral-mag'),
+            'button' => esc_html__('Get the Holiday Deal', 'viral-mag'),
+            'image' => 'sale-holiday.jpg'
         )
     ));
 

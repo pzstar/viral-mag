@@ -10,7 +10,7 @@ if (has_post_thumbnail()) {
         <?php
         $viral_mag_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'viral-mag-840x420');
         ?>
-        <img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>">
+        <?php if ($viral_mag_image) { ?><img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"><?php } ?>
     </figure>
 <?php }
 ?>

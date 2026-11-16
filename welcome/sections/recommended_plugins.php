@@ -1,44 +1,55 @@
 <?php
-$viral_mag_free_plugins = $this->free_plugins;
+$free_plugins = $this->free_plugins;
+$plugin_descriptions = $this->plugin_descriptions();
 
-if (!empty($viral_mag_free_plugins)) {
+if (!empty($free_plugins)) {
     ?>
-    <h3><?php echo esc_html__('Recommended Plugins', 'viral-mag'); ?></h3>
-    <p><?php echo esc_html__('Please install these free plugins. These plugins are complementary that adds more features to the theme.', 'viral-mag'); ?></p>
-    <div class="recomended-plugin-wrap">
+    <div class="welcome-block-head">
+        <h3><?php echo esc_html__('Recommended Plugins', 'viral-mag'); ?></h3>
+    </div>
+    <p class="welcome-block-intro"><?php echo esc_html__('These free plugins are made to work with Viral Mag and add more features to your site. Install the ones you need.', 'viral-mag'); ?></p>
+
+    <div class="welcome-grid welcome-grid-3">
         <?php
-        foreach ($viral_mag_free_plugins as $viral_mag_plugin) {
-            $viral_mag_slug = $viral_mag_plugin['slug'];
-            $viral_mag_name = $viral_mag_plugin['name'];
-            $viral_mag_filename = $viral_mag_plugin['filename'];
-            $viral_mag_thumb = $viral_mag_plugin['thumb_path'];
+        foreach ($free_plugins as $plugin) {
+            $slug = $plugin['slug'];
+            $filename = $plugin['filename'];
+            $installed = $this->check_plugin_installed_state($slug, $filename);
+            $active = $installed && $this->check_plugin_active_state($slug, $filename);
+
+            if ($active) {
+                $status = array('is-active', esc_html__('Active', 'viral-mag'));
+            } elseif ($installed) {
+                $status = array('is-inactive', esc_html__('Inactive', 'viral-mag'));
+            } else {
+                $status = array('is-missing', esc_html__('Not installed', 'viral-mag'));
+            }
             ?>
-            <div class="recommended-plugins">
-                <div class="plugin-image">
-                    <img src="<?php echo esc_url($viral_mag_thumb) ?>" />
+            <div class="welcome-card welcome-plugin">
+                <div class="welcome-plugin-head">
+                    <img src="<?php echo esc_url($plugin['thumb_path']); ?>" alt="" loading="lazy" />
+                    <div>
+                        <h4><?php echo esc_html($plugin['name']); ?></h4>
+                        <span class="welcome-status <?php echo esc_attr($status[0]); ?>"><?php echo esc_html($status[1]); ?></span>
+                    </div>
                 </div>
 
-                <div class="plugin-title-wrap">
-                    <div class="plugin-title">
-                        <?php echo esc_html($viral_mag_name); ?>
-                    </div>
+                <?php if (!empty($plugin_descriptions[$slug])) { ?>
+                    <p><?php echo esc_html($plugin_descriptions[$slug]); ?></p>
+                <?php } ?>
 
-                    <div class="plugin-btn-wrapper">
-                        <?php if ($this->check_plugin_installed_state($viral_mag_slug, $viral_mag_filename) && !$this->check_plugin_active_state($viral_mag_slug, $viral_mag_filename)): ?>
-                            <a target="_blank" href="<?php echo esc_url($this->plugin_generate_url('active', $viral_mag_slug, $viral_mag_filename)) ?>" class="button button-primary"><?php esc_html_e('Activate', 'viral-mag'); ?></a>
-                        <?php elseif ($this->check_plugin_installed_state($viral_mag_slug, $viral_mag_filename)):
-                            ?>
-                            <button type="button" class="button button-disabled" disabled="disabled"><?php esc_html_e('Installed', 'viral-mag'); ?></button>
-                        <?php else:
-                            ?>
-                            <a target="_blank" class="install-now button-primary" href="<?php echo esc_url($this->plugin_generate_url('install', $viral_mag_slug, $viral_mag_filename)) ?>">
-                                <?php esc_html_e('Install Now', 'viral-mag'); ?></a>
-                        <?php endif; ?>
-                    </div>
+                <div class="welcome-plugin-action">
+                    <?php if ($active) { ?>
+                        <button type="button" class="button button-disabled" disabled="disabled"><?php esc_html_e('Installed', 'viral-mag'); ?></button>
+                    <?php } elseif ($installed) { ?>
+                        <a href="<?php echo esc_url($this->plugin_generate_url('active', $slug, $filename)); ?>" class="button button-primary"><?php esc_html_e('Activate', 'viral-mag'); ?></a>
+                    <?php } else { ?>
+                        <a class="install-now button button-primary" href="<?php echo esc_url($this->plugin_generate_url('install', $slug, $filename)); ?>"><?php esc_html_e('Install Now', 'viral-mag'); ?></a>
+                    <?php } ?>
+                    <a class="welcome-plugin-more" href="<?php echo esc_url('https://wordpress.org/plugins/' . $slug . '/'); ?>" target="_blank"><?php esc_html_e('Details', 'viral-mag'); ?></a>
                 </div>
             </div>
-        <?php }
-        ?>
+        <?php } ?>
     </div>
     <?php
 }

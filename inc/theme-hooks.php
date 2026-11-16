@@ -34,7 +34,7 @@ function viral_mag_body_classes($classes) {
     $sticky_header = get_theme_mod('viral_mag_sticky_header', 'off');
     $viral_mag_top_header = get_theme_mod('viral_mag_top_header', 'on');
     $website_layout = get_theme_mod('viral_mag_website_layout', 'wide');
-    $header_style = get_theme_mod('viral_mag_mh_layout', 'header-style1');
+    $header_style = get_theme_mod('viral_mag_mh_layout', 'header-style2');
     $sidebar_style = get_theme_mod('viral_mag_sidebar_style', 'sidebar-style2');
     $sticky_sidebar = get_theme_mod('viral_mag_sticky_sidebar', true);
     $block_title_style = get_theme_mod('viral_mag_block_title_style', 'style2');
@@ -217,6 +217,32 @@ add_filter('viral_mag_regsiter_fonts', 'viral_mag_add_custom_fonts');
 
 function viral_mag_premium_demo_config($demos) {
     $premium_demos = array(
+        'spotlight' => array(
+            'name' => 'Viral Pro - Spotlight',
+            'type' => 'pro',
+            'buy_url' => viral_mag_upgrade_url('demo-spotlight', 'viral-mag-demo-importer'),
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/spotlight.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/spotlight/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'customizer' => 'Customizer'
+            )
+        ),
+        'wellness-journal' => array(
+            'name' => 'Viral Pro - The Wellness Journal',
+            'type' => 'pro',
+            'buy_url' => viral_mag_upgrade_url('demo-wellness-journal', 'viral-mag-demo-importer'),
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/wellness-journal.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/wellness-journal/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'customizer' => 'Customizer'
+            )
+        ),
         'buzz' => array(
             'name' => 'Viral Pro - Buzz',
             'type' => 'pro',

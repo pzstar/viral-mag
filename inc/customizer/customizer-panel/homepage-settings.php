@@ -3,15 +3,26 @@
 /* ============PRO FEATURES============ */
 
 // Seasonal campaigns swap the banner copy automatically - see viral_mag_get_active_campaign().
+// During a sale the card leads with the sale and drops the list price, which
+// would contradict the discount shown at checkout.
 $viral_mag_campaign = viral_mag_get_active_campaign();
-$viral_mag_banner_title = $viral_mag_campaign ? $viral_mag_campaign['title'] : esc_html__('One-time payment. Lifetime updates and support.', 'viral-mag');
-$viral_mag_banner_button = $viral_mag_campaign ? $viral_mag_campaign['button'] : esc_html__('Get Viral Pro - From $69', 'viral-mag');
 
-$wp_customize->add_section(new Viral_Mag_Upgrade_Section($wp_customize, 'viral-mag-pro-section', array(
+$wp_customize->add_section(new Viral_Mag_Pro_Banner_Section($wp_customize, 'viral-mag-pro-section', array(
     'priority' => 0,
-    'title' => $viral_mag_banner_title,
-    'upgrade_text' => $viral_mag_banner_button,
+    'badge' => $viral_mag_campaign ? $viral_mag_campaign['badge'] : esc_html__('Viral Pro', 'viral-mag'),
+    'title' => $viral_mag_campaign ? $viral_mag_campaign['title'] : esc_html__('Run a better news site', 'viral-mag'),
+    'points' => array(
+        esc_html__('50+ magazine blocks', 'viral-mag'),
+        esc_html__('7 header, blog and post layouts', 'viral-mag'),
+        esc_html__('19 one-click demos', 'viral-mag')
+    ),
+    'price' => $viral_mag_campaign ? '' : '$69',
+    'price_prefix' => esc_html__('From', 'viral-mag'),
+    'price_note' => esc_html__('one-time · no renewals', 'viral-mag'),
+    'upgrade_text' => $viral_mag_campaign ? $viral_mag_campaign['button'] : esc_html__('Upgrade to Viral Pro', 'viral-mag'),
     'upgrade_url' => viral_mag_upgrade_url($viral_mag_campaign ? 'banner-' . $viral_mag_campaign['id'] : 'banner', 'viral-mag-customizer-button'),
+    'note' => esc_html__('7-day money-back guarantee', 'viral-mag'),
+    'is_sale' => (bool) $viral_mag_campaign,
     'active_callback' => 'viral_mag_is_upgrade_notice_active'
 )));
 

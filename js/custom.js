@@ -82,7 +82,7 @@ jQuery(function ($) {
         viralMagMenuFocus($(' #vm-mobile-menu'));
     });
 
-    $(' #vm-responsive-menu .menu-item-has-children > a').append('<button class="dropdown-nav ei arrow_carrot-down"></button>');
+    $(' #vm-responsive-menu .menu-item-has-children > a').append('<button class="dropdown-nav icofont-simple-down"></button>');
 
     $(' #vm-responsive-menu .dropdown-nav').on('click', function () {
         $el = $(this);
@@ -116,9 +116,6 @@ jQuery(function ($) {
     if ($('.vm-sticky-header').length > 0 && $stickyHeader.length > 0) {
         hHeight = $stickyHeader.outerHeight();
 
-        if ($('body').hasClass('vm-header-style4')) {
-            hHeight = hHeight + 38
-        }
         var hOffset = $stickyHeader.offset().top;
 
         var offset = hOffset - adminbarHeight;

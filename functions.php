@@ -312,9 +312,7 @@ function viral_mag_scripts() {
     wp_enqueue_script('viral-mag-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), VIRAL_MAG_VERSION, true);
 
     wp_enqueue_style('viral-mag-style', get_stylesheet_uri(), array(), VIRAL_MAG_VERSION);
-    wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_MAG_VERSION);
-    wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_MAG_VERSION);
-    wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VERSION);
+    wp_enqueue_style('icofont-1.0.1', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_MAG_VERSION);
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), VIRAL_MAG_VERSION);
 
     wp_add_inline_style('viral-mag-style', viral_mag_dymanic_styles());
@@ -380,6 +378,11 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * IcoFont icon list and one-time conversion of saved icons.
+ */
+require get_template_directory() . '/inc/font-icons.php';
+
+/**
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/theme-functions.php';
@@ -428,3 +431,4 @@ require get_template_directory() . '/inc/style.php';
  * Starter Content
  */
 require get_template_directory() . '/inc/starter-content.php';
+

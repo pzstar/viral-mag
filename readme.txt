@@ -5,7 +5,7 @@ Viral Mag is distributed under the terms of the GNU GPL v2 or later.
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.2.0 - Nov 16, 2026 =
+* Settings page redesigned, with a compact header, a Viral Pro card, clearer tabs, a setup checklist, Customizer shortcuts and rewritten help text - Changed
+* Spotlight and The Wellness Journal Viral Pro demos on the Settings page and in the demo importer, for 19 Viral Pro demos - Added
+* Free vs Pro table rewritten and its counts corrected - Changed
+* Black Friday and Christmas & New Year sale banners redesigned - Changed
+* Customizer upgrade box redesigned, with the main Viral Pro features, the price and the 7-day money-back guarantee - Changed
+* Customizer checkboxes replaced with on/off switches, and Customizer labels corrected - Changed
+* The theme's own icons - post meta, header date, menu and breadcrumb arrows, the author link and the scroll to top button - now all use IcoFont, so pages load one icon font instead of three - Changed
+* Material Design Icons and Elegant Icons removed. The social icon picker offers the IcoFont icons, and social icons already set to a Material Design or Elegant icon switch to the matching IcoFont icon automatically - Removed
+* Widget icon fields called icon lists that no longer existed - Fixed
+* Google Fonts list updated to 1,980 fonts - Changed
+* IcoFont now loads under the same stylesheet handle as in the other HashThemes themes and plugins, so it loads only once - Changed
+* Featured images in the blog and on pages no longer print an empty image or a PHP warning when the image file is missing - Fixed
+* Unused styles left over from Viral Pro (personal info and contact widgets, header button and ticker, WooCommerce quick view and compare, footer layouts not in this theme) and an unused placeholder image option removed - Removed
+* Unused files - Removed
+
 = 2.1.1 - Oct 27, 2026 =
 * Starter content added, based on the News demo - new sites and the WordPress.org theme preview open with its header, colors, fonts and red footer, the Viral Mag logo, eight news posts with photos, widgets in every widget area and a menu - Added
 * Starter posts show on the home page and in widgets while previewing a new site in the Customizer, before it is published - Added
@@ -209,20 +225,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * License: The MIT License (MIT)
 * License Url: https://github.com/necolas/normalize.css/blob/master/LICENSE.md
 
-* Elegant Icons
-* Source: https://www.elegantthemes.com/blog/resources/elegant-icon-font
-* License: MIT License
-* License Url: http://opensource.org/licenses/MIT
-
 * IcoFonts
 * Source: https://icofont.com/
 * License: MIT License
 * License Url: https://icofont.com/license
-
-* Material Design Icons
-* Source: https://materialdesignicons.com/
-* License: MIT License
-* License Url: https://github.com/Templarian/MaterialDesign
 
 * jQuery OwlCarousel - Copyright 2013-2018 David Deutsch
 * Source: https://owlcarousel2.github.io/OwlCarousel2/

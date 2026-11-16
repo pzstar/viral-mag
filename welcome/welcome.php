@@ -32,7 +32,7 @@ if (!class_exists('Viral_Mag_Welcome')):
                     'thumb_path' => 'https://ps.w.org/elementor/assets/icon-256x256.gif'
                 ),
                 'hash-form' => array(
-                    'name' => 'Hash Form - Drag & Drop Form Builder',
+                    'name' => 'Hash Form Builder',
                     'slug' => 'hash-form',
                     'filename' => 'hash-form',
                     'thumb_path' => 'https://ps.w.org/hash-form/assets/icon-256x256.gif'
@@ -117,7 +117,7 @@ if (!class_exists('Viral_Mag_Welcome')):
                 <?php $this->dismiss_button('welcome'); ?>
                 <div class="viral-mag-welcome-notice-wrap">
                     <h2><?php esc_html_e('Congratulations!', 'viral-mag'); ?></h2>
-                    <p><?php printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'viral-mag'), $this->theme_name); ?></p>
+                    <p><?php printf(esc_html__('%1$s is installed and ready to use. Start from a ready-made demo, or set up the site yourself.', 'viral-mag'), $this->theme_name); ?></p>
 
                     <div class="viral-mag-welcome-info">
                         <div class="viral-mag-welcome-thumb">
@@ -129,7 +129,7 @@ if (!class_exists('Viral_Mag_Welcome')):
                             ?>
                             <div class="viral-mag-welcome-import">
                                 <h3><?php esc_html_e('Import Demo', 'viral-mag'); ?></h3>
-                                <p><?php esc_html_e('Click below to install and active HashThemes Demo Importer Plugin.', 'viral-mag'); ?></p>
+                                <p><?php esc_html_e('Install and activate the HashThemes Demo Importer plugin to import a demo in one click.', 'viral-mag'); ?></p>
                                 <p><?php echo $this->generate_hdi_install_button(); ?></p>
                             </div>
                             <?php
@@ -138,8 +138,8 @@ if (!class_exists('Viral_Mag_Welcome')):
 
                         <div class="viral-mag-welcome-getting-started">
                             <h3><?php esc_html_e('Get Started', 'viral-mag'); ?></h3>
-                            <p><?php printf(esc_html__('Here you will find all the necessary links and information on how to use %s.', 'viral-mag'), $this->theme_name); ?></p>
-                            <p><a href="<?php echo esc_url(admin_url('admin.php?page=viral-mag-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'viral-mag'); ?></a></p>
+                            <p><?php printf(esc_html__('A setup checklist, Customizer shortcuts and help for getting the most out of %s.', 'viral-mag'), $this->theme_name); ?></p>
+                            <p><a href="<?php echo esc_url(admin_url('admin.php?page=viral-mag-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Settings Page', 'viral-mag'); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -157,28 +157,21 @@ if (!class_exists('Viral_Mag_Welcome')):
         public function welcome_screen() {
             /** Define Tabs Sections */
             $tabs = array(
-                'getting_started' => esc_html__('Getting Started', 'viral-mag'),
-                'recommended_plugins' => esc_html__('Recommended Plugins', 'viral-mag'),
-                'support' => esc_html__('Support', 'viral-mag'),
-                'free_vs_pro' => esc_html__('Free Vs Pro', 'viral-mag')
+                'getting_started' => array(esc_html__('Getting Started', 'viral-mag'), 'dashicons-flag'),
+                'recommended_plugins' => array(esc_html__('Recommended Plugins', 'viral-mag'), 'dashicons-admin-plugins'),
+                'support' => array(esc_html__('Help & Support', 'viral-mag'), 'dashicons-sos'),
+                'free_vs_pro' => array(esc_html__('Free vs Pro', 'viral-mag'), 'dashicons-star-filled')
             );
+            $section = isset($_GET['section']) && array_key_exists($_GET['section'], $tabs) ? sanitize_key($_GET['section']) : 'getting_started';
             ?>
             <div class="welcome-wrap">
-                <div class="welcome-main-content">
-                    <?php require_once get_template_directory() . '/welcome/sections/header.php'; ?>
+                <?php require_once get_template_directory() . '/welcome/sections/header.php'; ?>
 
-                    <div class="welcome-section-wrapper">
-                        <?php $section = isset($_GET['section']) && array_key_exists($_GET['section'], $tabs) ? $_GET['section'] : 'getting_started'; ?>
-
-                        <div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
-                            <?php require_once get_template_directory() . '/welcome/sections/' . $section . '.php'; ?>
-                        </div>
-                    </div>
+                <div class="welcome-section welcome-section-<?php echo esc_attr($section); ?>">
+                    <?php require_once get_template_directory() . '/welcome/sections/' . $section . '.php'; ?>
                 </div>
 
-                <div class="welcome-footer-content">
-                    <?php require_once get_template_directory() . '/welcome/sections/footer.php'; ?>
-                </div>
+                <?php require_once get_template_directory() . '/welcome/sections/footer.php'; ?>
             </div>
             <?php
         }
@@ -198,11 +191,8 @@ if (!class_exists('Viral_Mag_Welcome')):
                 wp_localize_script('viral-mag-welcome', 'importer_params', $importer_params);
             }
 
-            if (is_rtl()) {
-                wp_enqueue_style('viral-mag-welcome', get_template_directory_uri() . '/welcome/css/welcome.rtl.css', array(), VIRAL_MAG_VERSION);
-            } else {
-                wp_enqueue_style('viral-mag-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), VIRAL_MAG_VERSION);
-            }
+            // One stylesheet for both directions: it uses logical properties.
+            wp_enqueue_style('viral-mag-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array('dashicons'), VIRAL_MAG_VERSION);
         }
 
         /* Check if plugin is installed */
@@ -277,7 +267,7 @@ if (!class_exists('Viral_Mag_Welcome')):
             $screen = get_current_screen();
 
             if ('toplevel_page_viral-mag-welcome' == $screen->id) {
-                $text = sprintf(esc_html__('Please leave us a %s rating if you like our theme . A huge thank you from HashThemes in advance!', 'viral-mag'), '<a href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
+                $text = sprintf(esc_html__('Enjoying Viral Mag? Please leave us a %s rating on WordPress.org. Thank you from the HashThemes team!', 'viral-mag'), '<a href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
             }
 
             return $text;
@@ -309,6 +299,86 @@ if (!class_exists('Viral_Mag_Welcome')):
 
             $headers = get_headers($url);
             return stripos($headers[0], "200 OK") ? TRUE : FALSE;
+        }
+
+        // The first things to set up, each marked done from the site's own settings.
+        public function setup_steps() {
+            $demo_active = $this->check_plugin_active_state('hashthemes-demo-importer', 'hashthemes-demo-importer');
+            return array(
+                array(
+                    'title' => esc_html__('Build your home page', 'viral-mag'),
+                    'text' => esc_html__('Design a page with Elementor, then set it as your homepage.', 'viral-mag'),
+                    'done' => 'page' === get_option('show_on_front') && (bool) get_option('page_on_front'),
+                    'url' => admin_url('customize.php?autofocus[section]=static_front_page'),
+                ),
+                array(
+                    'title' => esc_html__('Add your logo', 'viral-mag'),
+                    'text' => esc_html__('Upload a logo, or keep the site title as text.', 'viral-mag'),
+                    'done' => has_custom_logo(),
+                    'url' => admin_url('customize.php?autofocus[control]=custom_logo'),
+                ),
+                array(
+                    'title' => esc_html__('Set up the main menu', 'viral-mag'),
+                    'text' => esc_html__('Create a menu and assign it to the Primary Menu location.', 'viral-mag'),
+                    'done' => has_nav_menu('viral-mag-primary-menu'),
+                    'url' => admin_url('customize.php?autofocus[panel]=nav_menus'),
+                ),
+                array(
+                    'title' => esc_html__('Choose your colors', 'viral-mag'),
+                    'text' => esc_html__('Set the theme color used for buttons, links and highlights.', 'viral-mag'),
+                    'done' => false !== get_theme_mod('viral_mag_template_color', false),
+                    'url' => admin_url('customize.php?autofocus[section]=colors'),
+                ),
+                array(
+                    'title' => esc_html__('Import a demo (optional)', 'viral-mag'),
+                    'text' => esc_html__('Start from a ready-made website instead of an empty one.', 'viral-mag'),
+                    'done' => (bool) get_option('hdi_last_imported_demo'),
+                    'url' => $demo_active ? admin_url('themes.php?page=hdi-demo-importer') : '',
+                ),
+            );
+        }
+
+        // Shortcuts into the Customizer panels people look for most.
+        public function quick_links() {
+            $links = array(
+                array('dashicons-id', esc_html__('Site Identity', 'viral-mag'), 'section', 'title_tagline'),
+                array('dashicons-admin-appearance', esc_html__('Header', 'viral-mag'), 'panel', 'viral_mag_header_settings_panel'),
+                array('dashicons-art', esc_html__('Colors', 'viral-mag'), 'section', 'colors'),
+                array('dashicons-editor-textcolor', esc_html__('Typography', 'viral-mag'), 'panel', 'viral_mag_typography_settings_panel'),
+                array('dashicons-menu', esc_html__('Menus', 'viral-mag'), 'panel', 'nav_menus'),
+                array('dashicons-admin-post', esc_html__('Blog', 'viral-mag'), 'section', 'viral_mag_blog_settings_section'),
+                array('dashicons-align-right', esc_html__('Sidebar', 'viral-mag'), 'section', 'viral_mag_sidebar_settings_section'),
+                array('dashicons-share', esc_html__('Social Icons', 'viral-mag'), 'section', 'viral_mag_social_section'),
+                array('dashicons-editor-insertmore', esc_html__('Footer', 'viral-mag'), 'section', 'viral_mag_footer_section'),
+                array('dashicons-admin-generic', esc_html__('General', 'viral-mag'), 'panel', 'viral_mag_general_settings_panel'),
+            );
+
+            foreach ($links as $i => $link) {
+                $links[$i] = array(
+                    'icon' => $link[0],
+                    'label' => $link[1],
+                    'url' => admin_url('customize.php?autofocus[' . $link[2] . ']=' . $link[3]),
+                );
+            }
+
+            return $links;
+        }
+
+        /*
+         *  One-line plugin descriptions. Built on demand, not in the constructor:
+         *  the class is created before init, and translating there makes
+         *  WordPress load the text domain too early.
+         */
+        public function plugin_descriptions() {
+            return array(
+                'hashthemes-demo-importer' => esc_html__('Import any Viral Mag demo, with its content and settings, in one click.', 'viral-mag'),
+                'elementor' => esc_html__('Design pages visually with drag and drop.', 'viral-mag'),
+                'hash-form' => esc_html__('Build contact forms, surveys and quotes with drag and drop.', 'viral-mag'),
+                'hash-elements' => esc_html__('Elementor widgets designed by the makers of Viral Mag.', 'viral-mag'),
+                'simple-floating-menu' => esc_html__('Add a floating bar of buttons for calls, chat and social links.', 'viral-mag'),
+                'smart-blocks' => esc_html__('Magazine-style post blocks for the block editor.', 'viral-mag'),
+                'onyx-dark-mode-switcher' => esc_html__('Let visitors switch your site to dark mode.', 'viral-mag'),
+            );
         }
 
         public function erase_hide_notice() {
@@ -501,8 +571,8 @@ if (!class_exists('Viral_Mag_Welcome')):
                     <p>
                         <?php
                         printf(
-                            /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('Great to see that you have been using Viral Mag Theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a %3$s rating%2$s. Your valuable review will inspire us to make it more better.', 'viral-mag'), '<a style="text-decoration:none;font-weight:bold;" target="_blank" href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post">', '</a>', '<span class="viral-mag-notice-star"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag, %3$s is five stars. */
+                            esc_html__('You have been using the Viral Mag theme for a while now, and we hope you love it. Would you %1$sgive it a %3$s rating%2$s on WordPress.org? Your review helps other people find the theme and keeps us improving it.', 'viral-mag'), '<a style="text-decoration:none;font-weight:bold;" target="_blank" href="https://wordpress.org/support/theme/viral-mag/reviews/?filter=5#new-post">', '</a>', '<span class="viral-mag-notice-star"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
                         );
                         ?>
                     </p>

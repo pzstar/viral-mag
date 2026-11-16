@@ -1,3 +1,4 @@
+/* IcoFont 1.0.1 - handle icofont-1.0.1 */
 /*! 
 * @package IcoFont 
 * @version 1.0.1 
@@ -9,6 +10,7 @@
         url("fonts/icofont/icofont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 [class^="icofont-"],
@@ -7653,7 +7655,7 @@
     content: "\e95b";
 }
 
-.icofont-brand-word-press:before {
+.icofont-brand-word-press:before{
     content: "\e95c";
 }
 

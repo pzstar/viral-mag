@@ -70,7 +70,7 @@ if (!function_exists('viral_mag_scroll_top')) {
         if ($backtotop) {
             ?>
             <a href="#" id="back-to-top" class="progress" data-tooltip="<?php esc_attr_e('Back To Top', 'viral-mag'); ?>">
-                <i class="arrow_carrot-up"></i>
+                <i class="icofont-simple-up"></i>
             </a>
             <?php
         }

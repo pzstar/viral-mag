@@ -26,7 +26,7 @@ if (!function_exists('viral_mag_posted_on')) {
 
         if ($viral_mag_single_date) {
             $viral_mag_is_updated_date = get_theme_mod('viral_mag_display_date_option', 'posted') == 'updated' ? true : false;
-            echo '<span class="entry-post-date"><i class="mdi-clock-time-four-outline"></i><time class="entry-date published updated">' . ($viral_mag_is_updated_date ? get_the_modified_date() : get_the_date()) . '</time></span>';
+            echo '<span class="entry-post-date"><i class="icofont-clock-time"></i><time class="entry-date published updated">' . ($viral_mag_is_updated_date ? get_the_modified_date() : get_the_date()) . '</time></span>';
         }
 
         if ($viral_mag_single_comment_count) {
@@ -45,7 +45,7 @@ if (!function_exists('viral_mag_posted_on')) {
                 $comment_link = "";
             }
 
-            echo '<span class="entry-comment"><i class="mdi-comment-outline"></i>' . $comment_link . '</span>';
+            echo '<span class="entry-comment"><i class="icofont-comment"></i>' . $comment_link . '</span>';
         }
     }
 
@@ -54,7 +54,7 @@ if (!function_exists('viral_mag_posted_on')) {
 if (!function_exists('viral_mag_post_author')) {
 
     function viral_mag_post_author() {
-        echo '<span class="vm-posted-by"><i class="mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
+        echo '<span class="vm-posted-by"><i class="icofont-ui-user"></i>' . esc_html(get_the_author()) . '</span>';
     }
 
 }
@@ -65,7 +65,7 @@ if (!function_exists('viral_mag_post_date')) {
      * Prints HTML with meta information for the current post-date/time and author.
      */
     function viral_mag_post_date() {
-        echo '<span class="vm-posted-on"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>'; // WPCS: XSS OK.
+        echo '<span class="vm-posted-on"><i class="icofont-clock-time"></i>' . get_the_date() . '</span>'; // WPCS: XSS OK.
     }
 
 }
@@ -100,7 +100,6 @@ if (!function_exists('viral_mag_post_featured_image')) {
 
     function viral_mag_post_featured_image($viral_mag_image_size = 'full', $default_lazy_load = true) {
 
-        $placeholder_image = get_theme_mod('viral_mag_placeholder_image');
         $viral_mag_get_all_image_sizes = viral_mag_get_all_image_sizes();
 
         if ($viral_mag_image_size == 'full') {
@@ -119,11 +118,7 @@ if (!function_exists('viral_mag_post_featured_image')) {
 
         if (has_post_thumbnail()) {
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $viral_mag_image_size);
-            $image_url = $image[0];
-        } else {
-            if ($placeholder_image) {
-                $placeholder_image_id = attachment_url_to_postid($placeholder_image);
-                $image = wp_get_attachment_image_src($placeholder_image_id, $viral_mag_image_size);
+            if ($image) {
                 $image_url = $image[0];
             }
         }
@@ -144,7 +139,7 @@ if (!function_exists('viral_mag_single_featured_image')) {
                 <?php
                 $viral_mag_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'viral-mag-840x420');
                 ?>
-                <img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>">
+                <?php if ($viral_mag_image) { ?><img src="<?php echo esc_url($viral_mag_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"><?php } ?>
             </figure>
             <?php
         }
@@ -240,7 +235,7 @@ if (!function_exists('viral_mag_single_author_box')) {
                         <?php
                         $web_url = get_the_author_meta('url', $post->post_author);
                         if ($web_url && $web_url != '') {
-                            echo '<a href="' . esc_url($web_url) . '"><i class="icon_house"></i></a>';
+                            echo '<a href="' . esc_url($web_url) . '"><i class="icofont-home"></i></a>';
                         }
                         ?>
                     </div>
@@ -304,7 +299,7 @@ if (!function_exists('viral_mag_single_comment')) {
 if (!function_exists('viral_mag_entry_author')) {
 
     function viral_mag_entry_author() {
-        $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="mdi-account"></i>' . esc_html(get_the_author()) . '</a></span>';
+        $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="icofont-ui-user"></i>' . esc_html(get_the_author()) . '</a></span>';
         echo '<span class="entry-author">' . $author . '</span>';
     }
 
@@ -316,7 +311,7 @@ if (!function_exists('viral_mag_entry_category')) {
         $categories_list = get_the_category_list(', ');
         if ($categories_list) {
             echo '<span class="entry-categories">';
-            echo '<i class="mdi-folder"></i>' . $categories_list;
+            echo '<i class="icofont-folder"></i>' . $categories_list;
             echo '</span>';
         }
     }
@@ -326,7 +321,7 @@ if (!function_exists('viral_mag_entry_category')) {
 if (!function_exists('viral_mag_entry_tag')) {
 
     function viral_mag_entry_tag() {
-        $tags_list = get_the_tag_list('<i class="mdi-bookmark"></i>', ', ');
+        $tags_list = get_the_tag_list('<i class="icofont-tag"></i>', ', ');
         if ($tags_list) {
             echo '<span class="entry-tags">';
             echo $tags_list;
@@ -351,7 +346,7 @@ if (!function_exists('viral_mag_comment_link')) {
                 $comments = esc_html__('1 Comment', 'viral-mag');
             }
             $comment_link .= '<span class="entry-comment">';
-            $comment_link .= '<a class="comment-link" href="' . get_comments_link() . '"><i class="mdi-comment"></i>' . $comments . '</a>';
+            $comment_link .= '<a class="comment-link" href="' . get_comments_link() . '"><i class="icofont-comment"></i>' . $comments . '</a>';
             $comment_link .= '</span>';
         }
 
