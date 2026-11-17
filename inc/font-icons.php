@@ -10,12 +10,7 @@ if (!function_exists('viral_mag_icofont_icon_array')) {
 
 if (!function_exists('viral_mag_old_icon_to_icofont')) {
 
-    /*
-     *  Viral Mag no longer ships Material Design Icons or Elegant Icons. A social icon
-     *  picked from either set becomes the matching IcoFont icon (mdi-facebook and
-     *  social_facebook_circle -> icofont-facebook), or the generic link icon when
-     *  IcoFont has no match. IcoFont values are returned unchanged.
-     */
+    // MDI / Elegant icon -> IcoFont icon (link icon when there is no match).
     function viral_mag_old_icon_to_icofont($icon, $icofont) {
         $icon = trim((string) $icon);
         if ($icon === '' || strpos($icon, 'icofont-') === 0) {
@@ -25,7 +20,7 @@ if (!function_exists('viral_mag_old_icon_to_icofont')) {
         if (strpos($icon, 'mdi-') === 0) {
             $name = substr($icon, 4);
         } else {
-            // Elegant Icons: old names (social_facebook_circle) and egi- names (egi-social-facebook-circle)
+            // Elegant: old and egi- names.
             $name = str_replace('_', '-', preg_replace('/^egi-/', '', $icon));
             $name = preg_replace('/^(social|icon)-/', '', $name);
         }
@@ -51,7 +46,7 @@ if (!function_exists('viral_mag_old_icon_to_icofont')) {
 
 if (!function_exists('viral_mag_migrate_icons')) {
 
-    // Runs once: converts the Material Design and Elegant icons saved in the social icon list to IcoFont.
+    // One-time: saved social icons to IcoFont.
     function viral_mag_migrate_icons() {
         if (get_option('viral_mag_icons_migrated')) {
             return;

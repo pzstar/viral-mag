@@ -2,8 +2,6 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features.
- *
  * @package Viral Mag
  */
 if (!function_exists('viral_mag_posted_on')) {
@@ -243,7 +241,6 @@ if (!function_exists('viral_mag_single_author_box')) {
             </div>
 
             <?php
-            //}
         }
     }
 

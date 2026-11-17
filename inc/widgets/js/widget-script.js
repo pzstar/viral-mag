@@ -350,7 +350,6 @@ jQuery(document).ready(function ($) {
         // customize.php
         if (currentEditorPage == "wp-customizer" && $(currentContentId).attr('class') == 'editorfield') {
             var controlid = $(currentContentId).data('customize-setting-link');
-            //console.log(controlid);
             setTimeout(function () {
                 wp.customize(controlid, function (obj) {
                     obj.set(editor.getContent());

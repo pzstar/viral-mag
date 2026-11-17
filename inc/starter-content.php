@@ -173,7 +173,7 @@ if (!function_exists('viral_mag_starter_content')) {
                 ),
             ),
 
-            // Settings from the News demo (demo.hashthemes.com/viral-mag/news). The home page stays the latest posts.
+            // Settings from the News demo (demo.hashthemes.com/viral-mag/news).
             'theme_mods' => array(
                 'custom_logo' => '{{viral-mag-logo}}',
                 'viral_mag_hide_title' => true,
@@ -289,7 +289,7 @@ add_action('after_setup_theme', 'viral_mag_starter_content');
 
 if (!function_exists('viral_mag_preview_starter_posts')) {
 
-    // In the Customizer, starter posts stay auto-drafts until the user publishes, so post lists can't see them; include them while previewing.
+    // In the Customizer, starter posts stay auto-drafts until the user publishes.
     function viral_mag_preview_starter_posts($query) {
         global $wp_customize;
 
@@ -330,8 +330,7 @@ add_filter('posts_where', 'viral_mag_preview_starter_posts_where', 10, 2);
 
 if (!function_exists('viral_mag_theme_preview_posts')) {
 
-    // The WordPress.org theme preview keeps starter posts only in the object cache, with made-up IDs from 10000 and their keys as slugs, so post lists never see them.
-    // Finds them there and gives them the dates and author the preview leaves out; returns nothing on real sites.
+    // The WordPress.org theme preview keeps starter posts only in the object cache.
     function viral_mag_theme_preview_posts() {
         static $posts = null;
 
