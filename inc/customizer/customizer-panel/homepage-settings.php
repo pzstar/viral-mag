@@ -3,6 +3,7 @@
 /* ============PRO FEATURES============ */
 
 // Seasonal campaigns swap the banner copy automatically - see viral_mag_get_active_campaign().
+// During a sale the card drops the list price, which would contradict the checkout discount.
 $viral_mag_campaign = viral_mag_get_active_campaign();
 
 $wp_customize->add_section(new Viral_Mag_Pro_Banner_Section($wp_customize, 'viral-mag-pro-section', array(

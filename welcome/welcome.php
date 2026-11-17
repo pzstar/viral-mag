@@ -411,7 +411,7 @@ if (!class_exists('Viral_Mag_Welcome')):
 
 
         /**
-         * Renders the widgets-screen prompt.
+         * Renders the widgets-screen prompt, on in_admin_header as the block editor drops admin_notices.
          *
          * @return void
          */
@@ -471,7 +471,8 @@ if (!class_exists('Viral_Mag_Welcome')):
         }
 
         /**
-         * Widgets prompt for the block-based widget editor.
+         * Widgets prompt for the block-based widget editor, pushed into its core/notices store.
+         * Uses add_query_arg, not wp_nonce_url, whose &amp; would break the nonce.
          *
          * @return void
          */
