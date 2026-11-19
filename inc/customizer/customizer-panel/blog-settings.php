@@ -20,7 +20,7 @@ $wp_customize->add_control(new Viral_Mag_Tab_Control($wp_customize, 'viral_mag_b
     'priority' => 1,
     'buttons' => array(
         array(
-            'name' => esc_html__('BLog Page', 'viral-mag'),
+            'name' => esc_html__('Blog Page', 'viral-mag'),
             'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'viral_mag_blog_layout',

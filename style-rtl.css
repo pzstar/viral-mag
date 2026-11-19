@@ -2558,8 +2558,36 @@ body.vm-fluid .vm-container {
 
 .vm-header .vm-offcanvas-nav,
 .vm-header .vm-search-button,
+.vm-header .vm-cart-button,
 .vm-header .vm-header-social-icons {
     margin-right: 15px;
+}
+
+.vm-cart-button a {
+    position: relative;
+    display: block;
+    width: 45px;
+    padding: 10px;
+    text-align: center;
+    color: var(--vm-mh-menu-color, #ffffff);
+}
+
+.vm-cart-button a:hover {
+    color: var(--vm-mh-menu-hover-color, var(--vm-mh-menu-color, #ffffff));
+}
+
+.vm-cart-button .vm-cart-count {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 8px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    line-height: 16px;
 }
 
 .vm-header .vm-header-social-icons {

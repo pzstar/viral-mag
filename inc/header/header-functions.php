@@ -5,6 +5,7 @@
 add_action('viral_mag_mobile_header', 'viral_mag_responsive_navigation', 100);
 add_action('viral_mag_mobile_header', 'viral_mag_header_social_icons', 30);
 add_action('viral_mag_mobile_header', 'viral_mag_search_button', 40);
+add_action('viral_mag_mobile_header', 'viral_mag_cart_button', 45);
 add_action('viral_mag_mobile_header', 'viral_mag_offcanvas_menu_button', 50);
 
 add_action('viral_mag_header', 'viral_mag_header_styles');
@@ -318,3 +319,31 @@ if (!function_exists('viral_mag_off_canvas_sidebar')) {
 }
 
 add_action('wp_footer', 'viral_mag_off_canvas_sidebar');
+
+// Cart button with the item count, shown when WooCommerce is active and "Show Cart Button" is on.
+function viral_mag_cart_button() {
+    if (!viral_mag_is_woocommerce_activated() || !get_theme_mod('viral_mag_mh_show_cart', false) || !WC()->cart) {
+        return;
+    }
+    echo '<div class="vm-cart-button">';
+    viral_mag_cart_link();
+    echo '</div>';
+}
+
+function viral_mag_cart_link() {
+    ?>
+    <a class="vm-cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'viral-mag'); ?>">
+        <i class="icofont-cart"></i><span class="vm-cart-count"><?php echo wp_kses_data(WC()->cart->get_cart_contents_count()); ?></span>
+    </a>
+    <?php
+}
+
+// Keeps the count up to date after AJAX add to cart.
+add_filter('woocommerce_add_to_cart_fragments', 'viral_mag_cart_link_fragment');
+
+function viral_mag_cart_link_fragment($fragments) {
+    ob_start();
+    viral_mag_cart_link();
+    $fragments['a.vm-cart-contents'] = ob_get_clean();
+    return $fragments;
+}

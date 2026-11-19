@@ -45,7 +45,7 @@ $viral_mag_percent = round(100 * $viral_mag_done / count($viral_mag_steps));
             <h3><?php esc_html_e('Start From a Demo', 'viral-mag'); ?></h3>
             <p><?php esc_html_e('Import a complete demo website, with its content and settings, in a single click, then replace the content with your own.', 'viral-mag'); ?></p>
             <?php echo $this->generate_hdi_install_button(); ?>
-            <p class="welcome-small"><a href="https://hashthemes.com/documentation/viral-mag-documentation/#ImportDemoContent" target="_blank"><?php esc_html_e('How the demo importer works', 'viral-mag'); ?></a></p>
+            <p class="welcome-small"><a href="https://hashthemes.com/documentation/viral-mag-documentation/#Import-Demo-Content" target="_blank"><?php esc_html_e('How the demo importer works', 'viral-mag'); ?></a></p>
         </div>
     </div>
 </div>
@@ -68,7 +68,7 @@ $viral_mag_percent = round(100 * $viral_mag_done / count($viral_mag_steps));
 <div class="welcome-block">
     <div class="welcome-block-head">
         <h3><?php esc_html_e('Build Your Home Page', 'viral-mag'); ?></h3>
-        <a href="https://hashthemes.com/documentation/viral-mag-documentation/#HomePageSetup" target="_blank"><?php esc_html_e('Step-by-step guide', 'viral-mag'); ?> <span aria-hidden="true">&rarr;</span></a>
+        <a href="https://hashthemes.com/documentation/viral-mag-documentation/#Home-Page-Setup" target="_blank"><?php esc_html_e('Step-by-step guide', 'viral-mag'); ?> <span aria-hidden="true">&rarr;</span></a>
     </div>
     <p class="welcome-block-intro"><?php esc_html_e('Viral Mag builds its home page with Elementor and the news widgets from Hash Elements.', 'viral-mag'); ?></p>
 
@@ -90,7 +90,7 @@ $viral_mag_percent = round(100 * $viral_mag_done / count($viral_mag_steps));
             <ol>
                 <li><?php echo sprintf(esc_html__('Open %s to set up the header, footer, colors and typography.', 'viral-mag'), '<a href="' . esc_url(admin_url('customize.php')) . '">' . esc_html__('Appearance > Customize', 'viral-mag') . '</a>'); ?></li>
                 <li><?php esc_html_e('Choose the blog and sidebar layouts under Blog and Sidebar.', 'viral-mag'); ?></li>
-                <li><?php esc_html_e('Add your social profiles so they show in the header and footer.', 'viral-mag'); ?></li>
+                <li><?php esc_html_e('Add your social profiles so they show in the header.', 'viral-mag'); ?></li>
             </ol>
         </div>
     </div>

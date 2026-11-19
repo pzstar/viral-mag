@@ -601,7 +601,7 @@ $wp_customize->add_setting('viral_mag_h5_letter_spacing', array(
 
 $wp_customize->add_control(new Viral_Mag_Typography_Control($wp_customize, 'viral_mag_h5_typography', array(
     'label' => esc_html__('Header H5 Typography', 'viral-mag'),
-    'description' => esc_html__('Select how you want your H6 to appear.', 'viral-mag'),
+    'description' => esc_html__('Select how you want your H5 to appear.', 'viral-mag'),
     'section' => 'viral_mag_header_typography',
     'settings' => array(
         'family' => 'viral_mag_h5_family',

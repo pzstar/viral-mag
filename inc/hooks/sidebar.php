@@ -8,7 +8,7 @@ if (!function_exists('viral_mag_sidebar_content')) {
             $viral_mag_sidebar_layout = get_theme_mod('viral_mag_page_layout', 'right-sidebar');
         } elseif (is_singular('post')) {
             $viral_mag_sidebar_layout = get_theme_mod('viral_mag_post_layout', 'right-sidebar');
-        } elseif (is_singular('product')) {
+        } elseif (viral_mag_is_woocommerce_activated() && is_woocommerce()) {
             $viral_mag_sidebar_layout = get_theme_mod('viral_mag_shop_layout', 'right-sidebar');
         } elseif (is_archive() && !is_home() && !is_search()) {
             $viral_mag_sidebar_layout = get_theme_mod('viral_mag_archive_layout', 'right-sidebar');

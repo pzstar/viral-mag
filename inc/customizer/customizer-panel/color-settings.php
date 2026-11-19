@@ -36,7 +36,7 @@ $wp_customize->add_setting('viral_mag_color_content_info', array(
 $wp_customize->add_control(new Viral_Mag_Text_Info_Control($wp_customize, 'viral_mag_color_content_info', array(
     'section' => 'colors',
     'label' => esc_html__('Content Colors', 'viral-mag'),
-    'description' => esc_html__('This settings apply only in the single posts (ie page and post detail pages only)', 'viral-mag')
+    'description' => esc_html__('These settings apply to the main content area of posts, pages, the blog and archives', 'viral-mag')
 )));
 
 $wp_customize->add_setting('viral_mag_content_header_color', array(

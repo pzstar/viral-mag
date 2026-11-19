@@ -177,7 +177,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
 
 $wp_customize->add_setting('viral_mag_footer_copyright', array(
     'sanitize_callback' => 'viral_mag_sanitize_text',
-    'default' => esc_html__('&copy; 2020 Viral Mag. All Right Reserved.', 'viral-mag'),
+    'default' => esc_html__('&copy; [display-year] Viral Mag. All Right Reserved.', 'viral-mag'),
     'transport' => 'postMessage'
 ));
 
@@ -185,7 +185,7 @@ $wp_customize->add_control('viral_mag_footer_copyright', array(
     'section' => 'viral_mag_footer_section',
     'type' => 'textarea',
     'label' => esc_html__('Copyright Text', 'viral-mag'),
-    'description' => esc_html__('Custom HTMl and Shortcodes Supported', 'viral-mag')
+    'description' => esc_html__('Custom HTML and shortcodes supported. Use [display-year] to show the current year.', 'viral-mag')
 ));
 
 $wp_customize->add_setting('viral_mag_footer_upgrade_text', array(

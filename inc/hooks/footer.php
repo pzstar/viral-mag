@@ -46,7 +46,7 @@ if (!function_exists('viral_mag_bottom_footer')) {
 
     function viral_mag_bottom_footer() {
 
-        $viral_mag_footer_copyright = get_theme_mod('viral_mag_footer_copyright', esc_html__('&copy; 2021 Viral Mag. All Right Reserved.', 'viral-mag'));
+        $viral_mag_footer_copyright = get_theme_mod('viral_mag_footer_copyright', esc_html__('&copy; [display-year] Viral Mag. All Right Reserved.', 'viral-mag'));
         if (!empty($viral_mag_footer_copyright)) {
             ?>
             <div class="vm-bottom-footer">

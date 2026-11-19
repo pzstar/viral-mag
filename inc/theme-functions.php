@@ -425,3 +425,22 @@ function viral_mag_get_active_campaign() {
 
     return false;
 }
+
+// [display-year] prints the current year in the Copyright Text.
+add_shortcode('display-year', 'viral_mag_current_year');
+
+function viral_mag_current_year() {
+    return esc_html(date_i18n('Y'));
+}
+
+// Counts post views, used by the "Most Viewed" order of the Post Listing widget.
+add_action('template_redirect', 'viral_mag_set_post_view');
+
+function viral_mag_set_post_view() {
+    if (!is_singular('post') || is_preview() || is_customize_preview()) {
+        return;
+    }
+    $post_id = get_queried_object_id();
+    $count = (int) get_post_meta($post_id, 'post_views_count', true);
+    update_post_meta($post_id, 'post_views_count', $count + 1);
+}
