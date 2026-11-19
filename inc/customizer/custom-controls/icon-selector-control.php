@@ -58,7 +58,7 @@ class Viral_Mag_Icon_Selector_Control extends WP_Customize_Control {
                 <# if ( !_.isEmpty(data.icon_array) ) { #>
                 <div class="ht--icon-box">
                     <div class="ht--icon-search">
-                        <# if ( _.size(data.icon_array) > 1 ) { #>
+                        <# if ( _.size(data.icon_array)> 1 ) { #>
                         <select>
                             <# _.each( data.icon_array, function( val ) { #>
                             <# if (val['name'] && val['label']) { #>
@@ -71,9 +71,7 @@ class Viral_Mag_Icon_Selector_Control extends WP_Customize_Control {
                     </div>
 
 
-                    <# 
-                    var index = 0; 
-                    _.each( data.icon_array, function( val ) { #>
+                    <# var index=0; _.each( data.icon_array, function( val ) { #>
                     <ul class="ht--icon-list {{val['name']}} <# if( index == 0 ){ #>active<# } #>">
                         <# if (_.isArray(val['icons'])) { #>
                         <# _.each( val['icons'], function( icon ) { #>

@@ -43,7 +43,7 @@ class Viral_Mag_Upgrade_Info_Control extends WP_Customize_Control {
         }
 
         if ($this->upgrade_url && false !== $this->upgrade_note) {
-            $note = $this->upgrade_note ? $this->upgrade_note : esc_html__('From $69 one-time. 1 site $69, unlimited sites $99. Lifetime updates, no renewal fees.', 'viral-mag');
+            $note = $this->upgrade_note ? $this->upgrade_note : apply_filters('viral_mag_upgrade_note', esc_html__('One-time payment, lifetime updates, no renewal fees.', 'viral-mag'));
             echo '<p class="ht--upgrade-note">' . esc_html($note) . '</p>';
         }
     }

@@ -30,9 +30,9 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
         public function enqueue_customizer_script() {
             wp_enqueue_script('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.js', array('jquery'), VIRAL_MAG_VERSION, true);
             if (is_rtl()) {
-                wp_enqueue_style('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.rtl.css', array(), VIRAL_MAG_VERSION);
+                wp_enqueue_style('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.rtl.css', array('viral-customizer-control'), VIRAL_MAG_VERSION);
             } else {
-                wp_enqueue_style('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.css', array(), VIRAL_MAG_VERSION);
+                wp_enqueue_style('viral-mag-customizer', VIRAL_MAG_CUSTOMIZER_URL . 'customizer-panel/assets/customizer.css', array('viral-customizer-control'), VIRAL_MAG_VERSION);
             }
         }
 
@@ -44,3 +44,8 @@ if (!class_exists('Viral_Mag_Register_Customizer_Controls')) {
 
     new Viral_Mag_Register_Customizer_Controls();
 }
+
+// Price line under the Customizer upgrade notes.
+add_filter('viral_mag_upgrade_note', function () {
+    return esc_html__('One-time payment: 1 site $69, unlimited sites $99. Lifetime updates, no renewal fees.', 'viral-mag');
+});
